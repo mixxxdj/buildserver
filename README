@@ -82,7 +82,10 @@ the box, we need to configure VRDE.
 
   $ VBoxManage modifyvm $NAME --vrde on --vrdeport 9000 --vrdeaddress $HOSTIP
 
-TODO(XXX) figure out how to set authentication details.
+To enable RDP authentication via PAM, turn on the default authentication library. You can then login
+with your username and password for the host machine.
+
+  $ VBoxManage modifyvm $NAME --vrdeauthtype external
 
 Make sure to pick a port that is not used. You can look at currently bound ports
 by doing `$ netstat --listening'.
