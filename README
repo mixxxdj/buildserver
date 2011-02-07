@@ -3,7 +3,6 @@ Mixxx Build Server README
 
 * Updated 1/23/2011 by rryan
 
-
 Machine and Directory Layout
 ================================================================================
 
@@ -43,7 +42,7 @@ by the same name does not already exist.
 
 Now, set machine characteristics like memory, networking, etc.
 
-  $ VBoxManage modifyvm $NAME --memory 2048 --cpus 2 --acpi on --boot1 dvd --nic1 nat
+  $ VBoxManage modifyvm $NAME --memory 2048 --cpus 2 --acpi on --ioapic on --boot1 dvd --nic1 nat
 
 In this case, you should pick nat to start for the networking. The reason is
 that MIT networking will DHCP the machine into a subnet that requires
@@ -175,4 +174,8 @@ Pretty easy. Copy the VM folder with the .vbox and .vdi files into
 
   $ VBoxManage registervm /opt/mixxx/vms/$NAME/$NAME.vbox
 
+Make sure to change the folder and files to be owned by the mixxx user and group
+and setup group read/write permissions like this:
 
+  $ chown mixxx:mixxx -R /opt/mixxx/vms/$NAME/
+  $ chmod g+rw -R /opt/mixxx/vms/$NAME/
