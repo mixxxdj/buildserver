@@ -27,6 +27,12 @@ is safe to ignore.
 Mount the EmpireEFI disc again and reboot. When the EmpireEFI bootloader 
 screen appears, select Macintosh HD to boot.
 
+**Warning**:
+In order to boot without the EmpireEFI boot disc, run the myHack installer
+located on the boot disc. (Run this while you're in Mac OS X.) Unfortunately,
+this broke the VM when I tried it, so make sure you snapshot before you try it.
+It worked fine for me when the host machine had an Intel processor though.
+
 You should be able to make it through the user creation and end up at the
 Mac OS X desktop. To speed up RDP sessions, change the background to a flat
 colour. 
@@ -45,13 +51,20 @@ To disable sleeping of peripherals and the VM itself from the terminal, run:
 
   $ sudo pmset disksleep 0 displaysleep 0 sleep 0
 
+Next, you should enable Remote Login (SSH) in System Preferences. You can 
+set up SSH keys now too, if you'd like.
 
-Warning:
-===================
-In order to boot without the EmpireEFI boot disc, run the myHack installer
-located on the boot disc. (Run this while you're in Mac OS X.) Unfortunately,
-this broke the VM when I tried it, so make sure you snapshot before you try it.
-It worked fine for me when the host machine had an Intel processor though.
+When Hudson or Seamstress tries to login remotely via SSH, it will require
+the PATH to be set up to something sane. Edit /etc/sshd_config and enable
+
+   PermitUserEnvironment yes
+
+Next, create or edit ~/.ssh/environment and add:
+
+   PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/bin
+
+When Hudson tries to launch builds via SSH, it should now find bzr and scons
+successfully.
 
 Pro Tips
 ===================
