@@ -62,7 +62,7 @@ it's a pain to change later.
 The machine by default does not have a storage controller. We have to add
 one. Let's add a SATA controller:
 
-  $ VBoxManage storagectl $NAME --name "SATA-1" --add sata --sataportcount 8
+  $ VBoxManage storagectl $NAME --name "SATA-1" --add sata --sataportcount 8 --hostiocache on
 
 I was reading that apparently this causes problems for earlier than Vista. You
 can just replace "-add sata" with "-add ide" and drop the "--sataportcount"
