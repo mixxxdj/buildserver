@@ -20,3 +20,7 @@ for DIST in $DISTS; do
 	sudo DIST=$DIST ARCH=$ARCH pbuilder create
     done;
 done;
+
+sudo apt-get build-dep mixxx
+# 1.11 dependencies which aren't in our build file yet.
+sudo apt-get install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev
