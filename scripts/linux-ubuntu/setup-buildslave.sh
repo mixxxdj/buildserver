@@ -13,7 +13,7 @@ sudo su -c "echo \"# $USER is given passwordless access to pbuilder and debsign 
 sudo su -c "echo \"$USER    ALL=(ALL) NOPASSWD: SETENV: /usr/bin/debsign, /usr/sbin/pbuilder\" >> /etc/sudoers"
 
 sudo apt-get install pbuilder debootstrap devscripts
-cp pbuilderrc ~/.pbuilderrc
+cp $PROGDIR/pbuilderrc ~/.pbuilderrc
 
 for DIST in $DISTS; do
     for ARCH in $ARCHS; do
@@ -22,5 +22,5 @@ for DIST in $DISTS; do
 done;
 
 sudo apt-get build-dep mixxx
-# 1.11 dependencies which aren't in our build file yet.
-sudo apt-get install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev
+# new dependencies which aren't in our build file yet.
+sudo apt-get install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev libchromaprint-dev librubberband-dev

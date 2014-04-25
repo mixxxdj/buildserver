@@ -1,3 +1,3 @@
 
-DISTS="lucid precise raring"
+DISTS="precise raring saucy trusty"
 ARCHS="i386 amd64"

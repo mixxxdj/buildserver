@@ -5,7 +5,7 @@ TESTING_CODENAME="squeeze"
 STABLE_CODENAME="lenny"
 STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
 
-EXTRAPACKAGES="fakeroot debhelper pkg-config docbook-to-man libglu1-mesa-dev libqt4-dev scons libjack-dev libsamplerate-dev portaudio19-dev libid3tag0-dev libmad0-dev libogg-dev libsndfile1-dev libaudiofile-dev libasound2-dev libvorbis-dev libexpat-dev libsoundtouch1-dev libmp4v2-dev libfaad-dev libportmidi-dev libqt4-opengl libqt4-svg libqt4-xmlpatterns libqt4-opengl-dev libqt4-webkit libshout-dev libtag1-dev bzr scons vamp-plugin-sdk
+EXTRAPACKAGES="fakeroot debhelper pkg-config docbook-to-man libglu1-mesa-dev libqt4-dev scons libjack-dev libsamplerate-dev portaudio19-dev libid3tag0-dev libmad0-dev libogg-dev libsndfile1-dev libaudiofile-dev libasound2-dev libvorbis-dev libexpat-dev libsoundtouch1-dev libmp4v2-dev libfaad-dev libportmidi-dev libqt4-opengl libqt4-svg libqt4-xmlpatterns libqt4-opengl-dev libqt4-webkit libshout-dev libtag1-dev librubberband-dev libchromaprint-dev bzr scons vamp-plugin-sdk
 
 libprotobuf-dev protobuf-compiler libusb-1.0-0-dev "
 # maverick needs libqtwebkit-dev
@@ -15,7 +15,7 @@ DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME
     "unstable" "testing" "stable")
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("raring" "quantal" "precise" "oneiric" "natty" "maverick" "lucid" "karmic" "jaunty" "intrepid" "hardy")
+UBUNTU_SUITES=("trusty" "saucy" "raring" "quantal" "precise" "oneiric" "natty" "maverick" "lucid" "karmic" "jaunty" "intrepid" "hardy")
 
 # Mirrors to use. Update these to your preferred mirror.
 DEBIAN_MIRROR="ftp.us.debian.org"
