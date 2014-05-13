@@ -92,18 +92,18 @@ export HOST_ARCH=x86_64
 
 
 # Setup cmake first so that we can build other projects that use cmake.
-#$PROGDIR/build_cmake.sh
+$PROGDIR/build_cmake.sh
 
-#$PROGDIR/build_chromaprint.sh
+$PROGDIR/build_chromaprint.sh
 $PROGDIR/build_flac.sh
 $PROGDIR/build_hss1394.sh
 $PROGDIR/build_ogg.sh
 $PROGDIR/build_portaudio.sh
-#$PROGDIR/build_portmidi.sh
+$PROGDIR/build_portmidi.sh
 $PROGDIR/build_protobuf.sh
 $PROGDIR/build_qt4.sh
 $PROGDIR/build_sndfile.sh
-#$PROGDIR/build_taglib.sh
+$PROGDIR/build_taglib.sh
 $PROGDIR/build_vorbis.sh
 
 # Shout depends on libogg and libvorbis.
