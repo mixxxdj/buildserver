@@ -64,8 +64,8 @@ lipo -create ./$STATICLIB ${OTHER_STATICLIBS[@]} -output ./$STATICLIB
 
 # We can't make install because the Makefile insists on creating the VAMP plugin
 # and the LADSPA plugin and the binary.
-export RUBBERBAND_INCLUDE=${MIXXX_PREFIX}include/rubberband
-export RUBBERBAND_LIB=${MIXXX_PREFIX}lib
+export RUBBERBAND_INCLUDE=${MIXXX_PREFIX}/include/rubberband
+export RUBBERBAND_LIB=${MIXXX_PREFIX}/lib
 mkdir -p $RUBBERBAND_INCLUDE
 mkdir -p $RUBBERBAND_LIB
 cp rubberband/rubberband-c.h rubberband/RubberBandStretcher.h $RUBBERBAND_INCLUDE

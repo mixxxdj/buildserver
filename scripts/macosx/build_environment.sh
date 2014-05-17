@@ -89,8 +89,6 @@ source $PROGDIR/environment.sh
 export HOST=$TARGET_X86_64
 export HOST_ARCH=x86_64
 
-
-
 # Setup cmake first so that we can build other projects that use cmake.
 $PROGDIR/build_cmake.sh
 
@@ -101,6 +99,7 @@ $PROGDIR/build_ogg.sh
 $PROGDIR/build_portaudio.sh
 $PROGDIR/build_portmidi.sh
 $PROGDIR/build_protobuf.sh
+$PROGDIR/build_rubberband.sh
 $PROGDIR/build_qt4.sh
 $PROGDIR/build_sndfile.sh
 $PROGDIR/build_taglib.sh
