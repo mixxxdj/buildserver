@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		656F126D127CA62A00CD8FAB /* 1394API.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6634D350EAE6BE200CFB8D4 /* 1394API.cpp */; };
+		656F126E127CA63500CD8FAB /* 1394API.h in Headers */ = {isa = PBXBuildFile; fileRef = F6634D360EAE6BE200CFB8D4 /* 1394API.h */; };
+		656F126F127CA63700CD8FAB /* ConfigRom.h in Headers */ = {isa = PBXBuildFile; fileRef = F6634D380EAE6BE200CFB8D4 /* ConfigRom.h */; };
+		656F1270127CA63900CD8FAB /* HSS1394.h in Headers */ = {isa = PBXBuildFile; fileRef = F6634D3A0EAE6BE200CFB8D4 /* HSS1394.h */; };
+		656F1271127CA63B00CD8FAB /* HSS1394Types.h in Headers */ = {isa = PBXBuildFile; fileRef = F6634D3B0EAE6BE200CFB8D4 /* HSS1394Types.h */; };
+		656F1272127CA64300CD8FAB /* ConfigRom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6634D370EAE6BE200CFB8D4 /* ConfigRom.cpp */; };
+		656F1273127CA64600CD8FAB /* HSS1394.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6634D390EAE6BE200CFB8D4 /* HSS1394.cpp */; };
+		656F1274127CA64600CD8FAB /* 1394API_OSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6666B620ED3F893001715D4 /* 1394API_OSX.cpp */; };
+		656F140B127CA64E00CD8FAB /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB77AAFE841565C02AAC07 /* Carbon.framework */; };
+		656F140C127CA64E00CD8FAB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6634D310EAE6B9A00CFB8D4 /* CoreFoundation.framework */; };
+		656F140D127CA64E00CD8FAB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6634D330EAE6BA800CFB8D4 /* IOKit.framework */; };
+		D2AAC0700554677100DB518D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB77AAFE841565C02AAC07 /* Carbon.framework */; };
+		F6634D320EAE6B9A00CFB8D4 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6634D310EAE6B9A00CFB8D4 /* CoreFoundation.framework */; };
+		F6634D340EAE6BA800CFB8D4 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6634D330EAE6BA800CFB8D4 /* IOKit.framework */; };
+		F6634D3C0EAE6BE200CFB8D4 /* 1394API.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6634D350EAE6BE200CFB8D4 /* 1394API.cpp */; };
+		F6634D3D0EAE6BE200CFB8D4 /* 1394API.h in Headers */ = {isa = PBXBuildFile; fileRef = F6634D360EAE6BE200CFB8D4 /* 1394API.h */; };
+		F6634D3E0EAE6BE200CFB8D4 /* ConfigRom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6634D370EAE6BE200CFB8D4 /* ConfigRom.cpp */; };
+		F6634D3F0EAE6BE200CFB8D4 /* ConfigRom.h in Headers */ = {isa = PBXBuildFile; fileRef = F6634D380EAE6BE200CFB8D4 /* ConfigRom.h */; };
+		F6634D400EAE6BE200CFB8D4 /* HSS1394.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6634D390EAE6BE200CFB8D4 /* HSS1394.cpp */; };
+		F6634D410EAE6BE200CFB8D4 /* HSS1394.h in Headers */ = {isa = PBXBuildFile; fileRef = F6634D3A0EAE6BE200CFB8D4 /* HSS1394.h */; };
+		F6634D420EAE6BE200CFB8D4 /* HSS1394Types.h in Headers */ = {isa = PBXBuildFile; fileRef = F6634D3B0EAE6BE200CFB8D4 /* HSS1394Types.h */; };
+		F6666B630ED3F893001715D4 /* 1394API_OSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6666B620ED3F893001715D4 /* 1394API_OSX.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08FB77AAFE841565C02AAC07 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		32BAE0B70371A74B00C91783 /* HSS1394lib_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSS1394lib_Prefix.pch; sourceTree = "<group>"; };
+		656F1269127CA5D700CD8FAB /* libhss1394.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libhss1394.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AAC06F0554671400DB518D /* libHSS1394lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHSS1394lib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6634D310EAE6B9A00CFB8D4 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		F6634D330EAE6BA800CFB8D4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		F6634D350EAE6BE200CFB8D4 /* 1394API.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = 1394API.cpp; path = ../../../src/1394API.cpp; sourceTree = SOURCE_ROOT; };
+		F6634D360EAE6BE200CFB8D4 /* 1394API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 1394API.h; path = ../../../src/1394API.h; sourceTree = SOURCE_ROOT; };
+		F6634D370EAE6BE200CFB8D4 /* ConfigRom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ConfigRom.cpp; path = ../../../src/ConfigRom.cpp; sourceTree = SOURCE_ROOT; };
+		F6634D380EAE6BE200CFB8D4 /* ConfigRom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigRom.h; path = ../../../src/ConfigRom.h; sourceTree = SOURCE_ROOT; };
+		F6634D390EAE6BE200CFB8D4 /* HSS1394.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HSS1394.cpp; path = ../../../src/HSS1394.cpp; sourceTree = SOURCE_ROOT; };
+		F6634D3A0EAE6BE200CFB8D4 /* HSS1394.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSS1394.h; path = ../../../src/HSS1394.h; sourceTree = SOURCE_ROOT; };
+		F6634D3B0EAE6BE200CFB8D4 /* HSS1394Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSS1394Types.h; path = ../../../src/HSS1394Types.h; sourceTree = SOURCE_ROOT; };
+		F6666B620ED3F893001715D4 /* 1394API_OSX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = 1394API_OSX.cpp; path = ../../../src/osx/1394API_OSX.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		656F1267127CA5D700CD8FAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656F140B127CA64E00CD8FAB /* Carbon.framework in Frameworks */,
+				656F140C127CA64E00CD8FAB /* CoreFoundation.framework in Frameworks */,
+				656F140D127CA64E00CD8FAB /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC06D0554671400DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2AAC0700554677100DB518D /* Carbon.framework in Frameworks */,
+				F6634D320EAE6B9A00CFB8D4 /* CoreFoundation.framework in Frameworks */,
+				F6634D340EAE6BA800CFB8D4 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DDFF38A45A11DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC06F0554671400DB518D /* libHSS1394lib.a */,
+				656F1269127CA5D700CD8FAB /* libhss1394.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* HSS1394lib */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77ACFE841707C02AAC07 /* Source */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DDFF38A45A11DB9C8B /* Products */,
+			);
+			name = HSS1394lib;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F6634D330EAE6BA800CFB8D4 /* IOKit.framework */,
+				F6634D310EAE6B9A00CFB8D4 /* CoreFoundation.framework */,
+				08FB77AAFE841565C02AAC07 /* Carbon.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		08FB77ACFE841707C02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F6666B620ED3F893001715D4 /* 1394API_OSX.cpp */,
+				F6634D350EAE6BE200CFB8D4 /* 1394API.cpp */,
+				F6634D360EAE6BE200CFB8D4 /* 1394API.h */,
+				F6634D370EAE6BE200CFB8D4 /* ConfigRom.cpp */,
+				F6634D380EAE6BE200CFB8D4 /* ConfigRom.h */,
+				F6634D390EAE6BE200CFB8D4 /* HSS1394.cpp */,
+				F6634D3A0EAE6BE200CFB8D4 /* HSS1394.h */,
+				F6634D3B0EAE6BE200CFB8D4 /* HSS1394Types.h */,
+				32BAE0B70371A74B00C91783 /* HSS1394lib_Prefix.pch */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		656F1265127CA5D700CD8FAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656F1270127CA63900CD8FAB /* HSS1394.h in Headers */,
+				656F1271127CA63B00CD8FAB /* HSS1394Types.h in Headers */,
+				656F126F127CA63700CD8FAB /* ConfigRom.h in Headers */,
+				656F126E127CA63500CD8FAB /* 1394API.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC06B0554671400DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6634D3D0EAE6BE200CFB8D4 /* 1394API.h in Headers */,
+				F6634D3F0EAE6BE200CFB8D4 /* ConfigRom.h in Headers */,
+				F6634D410EAE6BE200CFB8D4 /* HSS1394.h in Headers */,
+				F6634D420EAE6BE200CFB8D4 /* HSS1394Types.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		656F1268127CA5D700CD8FAB /* libhss1394 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 656F126C127CA5F500CD8FAB /* Build configuration list for PBXNativeTarget "libhss1394" */;
+			buildPhases = (
+				656F1265127CA5D700CD8FAB /* Headers */,
+				656F1266127CA5D700CD8FAB /* Sources */,
+				656F1267127CA5D700CD8FAB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libhss1394;
+			productName = HSS1394lib_dynamic;
+			productReference = 656F1269127CA5D700CD8FAB /* libhss1394.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		D2AAC06E0554671400DB518D /* HSS1394lib_static */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB920108733DBB0010E9CD /* Build configuration list for PBXNativeTarget "HSS1394lib_static" */;
+			buildPhases = (
+				D2AAC06B0554671400DB518D /* Headers */,
+				D2AAC06C0554671400DB518D /* Sources */,
+				D2AAC06D0554671400DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HSS1394lib_static;
+			productName = HSS1394lib;
+			productReference = D2AAC06F0554671400DB518D /* libHSS1394lib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB920508733DBB0010E9CD /* Build configuration list for PBXProject "HSS1394lib" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* HSS1394lib */;
+			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC06E0554671400DB518D /* HSS1394lib_static */,
+				656F1268127CA5D700CD8FAB /* libhss1394 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		656F1266127CA5D700CD8FAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656F1272127CA64300CD8FAB /* ConfigRom.cpp in Sources */,
+				656F1273127CA64600CD8FAB /* HSS1394.cpp in Sources */,
+				656F1274127CA64600CD8FAB /* 1394API_OSX.cpp in Sources */,
+				656F126D127CA62A00CD8FAB /* 1394API.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC06C0554671400DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6634D3C0EAE6BE200CFB8D4 /* 1394API.cpp in Sources */,
+				F6634D3E0EAE6BE200CFB8D4 /* ConfigRom.cpp in Sources */,
+				F6634D400EAE6BE200CFB8D4 /* HSS1394.cpp in Sources */,
+				F6666B630ED3F893001715D4 /* 1394API_OSX.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB920208733DBB0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HSS1394lib_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = HSS1394lib;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB920308733DBB0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_LOCATION = NO;
+				EXECUTABLE_EXTENSION = a;
+				GCC_MODEL_TUNING = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HSS1394lib_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = HSS1394lib;
+			};
+			name = Release;
+		};
+		1DEB920608733DBB0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEPLOYMENT_LOCATION = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = _OSX_;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		1DEB920708733DBB0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				DEPLOYMENT_LOCATION = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = _OSX_;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+		656F126A127CA5D700CD8FAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = HSS1394lib_dynamic;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		656F126B127CA5D700CD8FAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = libhss1394;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB920108733DBB0010E9CD /* Build configuration list for PBXNativeTarget "HSS1394lib_static" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB920208733DBB0010E9CD /* Debug */,
+				1DEB920308733DBB0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB920508733DBB0010E9CD /* Build configuration list for PBXProject "HSS1394lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB920608733DBB0010E9CD /* Debug */,
+				1DEB920708733DBB0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		656F126C127CA5F500CD8FAB /* Build configuration list for PBXNativeTarget "libhss1394" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				656F126A127CA5D700CD8FAB /* Debug */,
+				656F126B127CA5D700CD8FAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

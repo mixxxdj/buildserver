@@ -1,0 +1,49 @@
+import os
+import sys
+import SCons
+
+Import('env')
+
+# Import environment variables from the terminal. Note that some
+# variables correspond to variables inside the SCons env with different
+# names, eg. the shell's "CFLAGS" ---> SCons' "CCFLAGS".
+if os.environ.has_key('CC'):
+    env['CC'] = os.environ['CC']
+if os.environ.has_key('CFLAGS'):
+    env['CCFLAGS'] += SCons.Util.CLVar(os.environ['CFLAGS'])
+if os.environ.has_key('CXX'):
+    env['CXX'] = os.environ['CXX']
+if os.environ.has_key('CXXFLAGS'):
+    env['CXXFLAGS'] += SCons.Util.CLVar(os.environ['CXXFLAGS'])
+if os.environ.has_key('LDFLAGS'):
+    env['LINKFLAGS'] += SCons.Util.CLVar(os.environ['LDFLAGS'])
+
+# Initialize this as a list, fixes a bug where first CPPDEFINE would get
+# mangled
+env['CPPDEFINES'] = []
+env['LIBS'] = []
+env['LIBPATH'] = []
+
+#The OS X Firewire APIs are different in OS X 10.4...
+using_osx_104_sdk = (str(env['CCFLAGS']).find("10.4u") >= 0)
+if using_osx_104_sdk:
+    env.Append(CCFLAGS = '-DOSX10_4')
+
+prefix = ARGUMENTS.get('prefix', '/usr/local')
+lib_path = prefix + '/lib'
+inc_path = prefix + '/include/hss1394'
+
+sources = ["1394API.cpp",
+           "ConfigRom.cpp",
+           "HSS1394.cpp"]
+env.Append(CPPPATH=".")
+if env['PLATFORM'] == 'darwin':
+    sources += ["osx/1394API_OSX.cpp"]
+    env.Append(FRAMEWORKS=['IOKit', 'CoreFoundation', 'Carbon'])
+    env.Append(SHLINKFLAGS='-install_name /usr/local/lib/libhss1394.dylib')
+hss1394lib = env.SharedLibrary(target='hss1394', source=sources)
+
+env.Install(lib_path, hss1394lib)
+env.Install(inc_path, ['HSS1394.h', 'HSS1394Types.h'])
+env.Alias('install', lib_path)
+env.Alias('install', inc_path)

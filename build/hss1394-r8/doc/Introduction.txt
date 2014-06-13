@@ -1,0 +1,26 @@
+// Documentation (Doxygen) hook
+/*! \mainpage HSS1394 Library
+ *
+ * \section intro_sec Introduction
+ * HSS1394 is a library providing a cross-platform mechanism for reliable packet-based
+ * communications services across the IEEE1394 bus. It was developed to provide a
+ * high-speed transport for control data, bypassing the WMD and higher-level OSX protcol
+ * stack for MIDI, thus delivering low latency high-bandwidth control information to and
+ * from IEEE1394 devices; specifically the Stanton SCS.1D and SCS.1M devices.
+ * 
+ * This documentation describes the user calls into the HSS1394 library. The library
+ * itself may be built using the supplied Win32 or OSX projects. 
+ *
+ * As a user, your starting point is the 'Node' singleton class which represents the local
+ * node.
+ *
+ * \section include_sec Includes
+ * To build a HSS1394 application, the user only need include HSS1394.h and be familiar
+ * with this file and HSS1394Types.h. An illustration is provided in the file
+ * TestHSS1394.cpp which will compile for both Win32 and OSX targets.
+ *
+ * \section install_sec Installation
+ * To provide a linked library, the following files should be compiled and linked:
+ * HSS1394.cpp, ConfigRom.cpp, 1394API.cpp and then either 1394API_VHPD1394.cpp (Win32
+ * using Thesycon VHPD1394 driver interface) or 1394API_OSX.cpp (OSX IOKit interface).
+ */
