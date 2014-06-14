@@ -20,4 +20,10 @@ copy %PLATFORM%\%CONFIG%\portmidi-dynamic.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\portmidi-dynamic.dll %LIB_DIR%
 copy ..\pm_common\portmidi.h %INCLUDE_DIR% 
 
+cd ..\porttime
+%MSBUILD% porttime.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:PortTime:Clean;PortTime:Rebuild
+copy %PLATFORM%\%CONFIG%\porttime.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\porttime.dll %LIB_DIR%
+copy porttime.h %INCLUDE_DIR% 
+
 cd %ROOT_DIR%
