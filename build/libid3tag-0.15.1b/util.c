@@ -26,6 +26,7 @@
 # include "global.h"
 
 # include <stdlib.h>
+#define ZLIB_WINAPI
 # include <zlib.h>
 
 # include "id3tag.h"
