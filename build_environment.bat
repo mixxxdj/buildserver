@@ -24,4 +24,5 @@ SET BUILD_DIR=%CD%\build\
 
 call build_zlib.bat 
 
+call build_pthreads.bat
 
