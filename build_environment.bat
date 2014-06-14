@@ -26,3 +26,4 @@ call build_zlib.bat
 
 call build_pthreads.bat
 
+call build_protobuf.bat
