@@ -88,10 +88,10 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderOutputFile>.\$(OutDir)porttime.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\$(OutDir)</AssemblerListingLocation>
-      <ObjectFileName>.\$(OutDir)</ObjectFileName>
-      <ProgramDataBaseFileName>.\$(OutDir)</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(OutDir)porttime.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(OutDir)</AssemblerListingLocation>
+      <ObjectFileName>$(OutDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
@@ -119,10 +119,10 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderOutputFile>.\$(OutDir)porttime.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\$(OutDir)</AssemblerListingLocation>
-      <ObjectFileName>.\$(OutDir)</ObjectFileName>
-      <ProgramDataBaseFileName>.\$(OutDir)</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(OutDir)porttime.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(OutDir)</AssemblerListingLocation>
+      <ObjectFileName>$(OutDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
@@ -149,10 +149,10 @@
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>.\$(OutDir)porttime.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\$(OutDir)</AssemblerListingLocation>
-      <ObjectFileName>.\$(OutDir)</ObjectFileName>
-      <ProgramDataBaseFileName>.\$(OutDir)</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(OutDir)porttime.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(OutDir)</AssemblerListingLocation>
+      <ObjectFileName>$(OutDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -179,10 +179,10 @@
       <PreprocessorDefinitions>_LIB;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>.\$(OutDir)porttime.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\$(OutDir)</AssemblerListingLocation>
-      <ObjectFileName>.\$(OutDir)</ObjectFileName>
-      <ProgramDataBaseFileName>.\$(OutDir)</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(OutDir)porttime.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(OutDir)</AssemblerListingLocation>
+      <ObjectFileName>$(OutDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
