@@ -27,4 +27,5 @@ call build_zlib.bat
 call build_pthreads.bat
 
 call build_protobuf.bat
-call build_portmidi.bat
+call build_portmidi.batcall build_libid3tag.bat
+call build_libmad.bat
