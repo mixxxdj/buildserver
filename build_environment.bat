@@ -16,7 +16,7 @@ if %CONFIG_RELEASE% (
   echo Building debug mode.  
 )
 
-SET MSBUILD=msbuild /p:VCTargetsPath="C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120"
+SET MSBUILD=msbuild /p:VCTargetsPath="C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\\"
 set ROOT_DIR=%CD%
 SET LIB_DIR=%CD%\lib\
 SET INCLUDE_DIR=%CD%\include\
