@@ -54,9 +54,9 @@ uint64_t timing_get_time(void)
 
     return (uint64_t)(mtv.tv_sec) * 1000 + (uint64_t)(mtv.tv_usec) / 1000;
 #elif HAVE_FTIME
-    struct timeb t;
+    struct _timeb t;
 
-    ftime(&t);
+    _ftime(&t);
     return t.time * 1000 + t.millitm;
 #else
 #error need time query handler

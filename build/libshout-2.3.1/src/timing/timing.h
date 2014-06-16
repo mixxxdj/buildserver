@@ -8,6 +8,11 @@
 #ifndef __TIMING_H__
 #define __TIMING_H__
 
+#if defined(_WIN32)
+#define HAVE_FTIME 1
+#include <sys/timeb.h>
+#endif
+
 #include <sys/types.h>
 #ifdef HAVE_INTTYPES_H
 #include <inttypes.h>
