@@ -45,7 +45,11 @@
 	/*	Win32 doesn't seem to have these functions. 
 	**	Therefore implement inline versions of these functions here.
 	*/
-	
+#ifdef _WIN64
+/* MSVS doesn't support inline assembly for 64-bit */
+/*#define	lrint(dbl)		((int)(dbl))*/
+#define	lrintf(flt)		((int)(flt))
+#else
 	__inline long int 
 	lrint (double flt) 
 	{	int intgr;
@@ -69,7 +73,7 @@
 			
 		return intgr ;
 	}
-
+#endif
 #endif
 
 #endif

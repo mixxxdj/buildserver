@@ -27,6 +27,7 @@
 #define RUBBERBAND_VERSION "1.8.1"
 #define RUBBERBAND_API_MAJOR_VERSION 2
 #define RUBBERBAND_API_MINOR_VERSION 5
+#define RUBBERBAND_EXPORT __declspec(dllexport)
 
 #include <vector>
 #include <map>
@@ -60,7 +61,7 @@
 namespace RubberBand
 {
 
-class RubberBandStretcher
+class RUBBERBAND_EXPORT RubberBandStretcher
 {
 public:
     /**
