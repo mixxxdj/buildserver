@@ -30,20 +30,20 @@ if %MACHINE_X86% (
 )
 
 call build_zlib.bat 
-#call build_pthreads.bat
-#call build_protobuf.bat
-#call build_portmidi.bat
-#call build_libid3tag.bat
-#call build_libmad.bat
-#call build_libogg.bat
-#call build_libvorbis.bat
-#call build_libshout.bat
-#call build_libflac.bat
-#call build_libsndfile.bat
-#call build_rubberband.bat
-#call build_portaudio.bat
-REM call build_fftw3.bat
-REM call build_chromaprint.bat REM depends on fftw3
+call build_pthreads.bat
+call build_protobuf.bat
+call build_portmidi.bat
+call build_libid3tag.bat
+call build_libmad.bat
+call build_libogg.bat
+call build_libvorbis.bat
+call build_libshout.bat
+call build_libflac.bat
+call build_libsndfile.bat
+call build_rubberband.bat
+call build_portaudio.bat
+call build_fftw3.bat
+call build_chromaprint.bat REM depends on fftw3
 call build_taglib.bat REM depends on zlib 
 
 REM Clean up after vcvarsall.bat since repeated running eventually overflows PATH.
