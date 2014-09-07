@@ -1,5 +1,5 @@
 echo "Building rubberband"
-set RUBBERBAND_PATH%=rubberband-1.8.1
+set RUBBERBAND_PATH=rubberband-1.8.1
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
