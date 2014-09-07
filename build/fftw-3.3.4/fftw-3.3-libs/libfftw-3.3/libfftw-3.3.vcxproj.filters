@@ -1940,5 +1940,8 @@
     <ClCompile Include="..\..\threads\vrank-geq1-rdft2.c">
       <Filter>Source Files\threads</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\api\mkprinter-str.c">
+      <Filter>Source Files\api</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

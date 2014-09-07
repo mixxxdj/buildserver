@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libfftwf-3.3", "libfftwf-3.3\libfftwf-3.3.vcxproj", "{2482251C-2F99-4779-B61D-B091852B4A36}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libfftw-3.3", "libfftw-3.3\libfftw-3.3.vcxproj", "{EA3DCC95-2423-4EA0-A508-7A427B4C0594}"
