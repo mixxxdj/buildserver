@@ -23,7 +23,8 @@
 #include	<ctype.h>
 #include	<math.h>
 #include	<time.h>
-#include	<sys/time.h>
+/* NOTE(rryan): sys/time.h was included here */
+#include    <winsock2.h>
 
 #include	"sndfile.h"
 #include	"sfendian.h"

@@ -7,6 +7,9 @@
 #ifndef	PRIVATE_H
 #define	PRIVATE_H
 
+/* NOTE(rryan): Support for inline */
+#define inline __inline
+
 /* Added by Erik de Castro Lopo */
 #define	USE_FLOAT_MUL
 #define	FAST
