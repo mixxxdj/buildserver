@@ -8,7 +8,7 @@ if %MACHINE_X86% (
 )
 
 if %CONFIG_RELEASE% (
-  set CONFIG=ReleaseWithoutAsm
+  set CONFIG=Release
 ) else (
   set CONFIG=Debug
 )
