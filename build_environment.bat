@@ -18,6 +18,7 @@ if %CONFIG_RELEASE% (
 
 SET MSBUILD=msbuild /p:VCTargetsPath="C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\\"
 set ROOT_DIR=%CD%
+SET BIN_DIR=%CD%\bin\
 SET LIB_DIR=%CD%\lib\
 SET INCLUDE_DIR=%CD%\include\
 SET BUILD_DIR=%CD%\build\
@@ -28,6 +29,10 @@ if %MACHINE_X86% (
 ) else (
   call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
 )
+
+md %LIB_DIR%
+md %INCLUDE_DIR%
+md %BIN_DIR%
 
 call build_zlib.bat 
 call build_pthreads.bat
