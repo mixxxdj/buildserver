@@ -72,25 +72,25 @@
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>..\..\..\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>..\..\..\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>..\..\..\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>..\..\..\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -121,6 +121,8 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>zlibwapi.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\lib</AdditionalLibraryDirectories>
     </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -155,6 +157,8 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>zlibwapi.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\lib</AdditionalLibraryDirectories>
     </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -189,6 +193,8 @@
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SubSystem>Windows</SubSystem>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+      <AdditionalDependencies>zlibwapi.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\lib</AdditionalLibraryDirectories>
     </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -223,6 +229,8 @@
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SubSystem>Windows</SubSystem>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+      <AdditionalDependencies>zlibwapi.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\lib</AdditionalLibraryDirectories>
     </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
