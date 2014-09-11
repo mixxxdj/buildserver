@@ -22,6 +22,7 @@ cd build\%TAGLIB_PATH%
 copy %PLATFORM%\%CONFIG%\tag.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\tag.dll %LIB_DIR%
 md %INCLUDE_DIR%\taglib
+xcopy taglib\*.h %INCLUDE_DIR%\taglib
 xcopy taglib\ape\*.h %INCLUDE_DIR%\taglib
 xcopy taglib\asf\*.h %INCLUDE_DIR%\taglib
 xcopy taglib\flac\*.h %INCLUDE_DIR%\taglib
@@ -43,6 +44,7 @@ xcopy taglib\riff\aiff\*.h %INCLUDE_DIR%\taglib
 xcopy taglib\riff\wav\*.h %INCLUDE_DIR%\taglib
 xcopy taglib\s3m\*.h %INCLUDE_DIR%\taglib
 xcopy taglib\toolkit\*.h %INCLUDE_DIR%\taglib
+xcopy taglib\toolkit\*.tcc %INCLUDE_DIR%\taglib
 xcopy taglib\trueaudio\*.h %INCLUDE_DIR%\taglib
 xcopy taglib\wavpack\*.h %INCLUDE_DIR%\taglib
 xcopy taglib\xm\*.h %INCLUDE_DIR%\taglib
