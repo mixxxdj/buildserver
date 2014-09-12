@@ -16,8 +16,8 @@ if %CONFIG_RELEASE% (
 cd build\%PORTMIDI_PATH%\pm_dylib
 %MSBUILD% portmidi-dynamic.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:portmidi-dynamic:Clean;portmidi-dynamic:Rebuild
 
-copy %PLATFORM%\%CONFIG%\portmidi-dynamic.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\portmidi-dynamic.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\portmidi.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\portmidi.dll %LIB_DIR%
 copy ..\pm_common\portmidi.h %INCLUDE_DIR% 
 
 cd ..\porttime

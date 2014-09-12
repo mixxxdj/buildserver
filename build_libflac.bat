@@ -16,8 +16,8 @@ if %CONFIG_RELEASE% (
 cd build\%FLAC_PATH%\src\libFLAC\
 %MSBUILD% libFLAC_dynamic.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libFLAC_dynamic:Clean;libFLAC_dynamic:Rebuild
 
-copy %PLATFORM%\%CONFIG%\libFLAC_dynamic.lib %LIB_DIR%\libFLAC.lib
-copy %PLATFORM%\%CONFIG%\libFLAC_dynamic.dll %LIB_DIR%\libFLAC.dll
+copy %PLATFORM%\%CONFIG%\libFLAC.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libFLAC.dll %LIB_DIR%
 md %INCLUDE_DIR%\FLAC
 copy ..\..\include\FLAC\*.h %INCLUDE_DIR%\FLAC\
 

@@ -16,8 +16,8 @@ if %CONFIG_RELEASE% (
 cd build\%RUBBERBAND_PATH%
 %MSBUILD% rubberband-library.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:rubberband-library:Clean;rubberband-library:Rebuild
 
-copy %PLATFORM%\%CONFIG%\rubberband-library.lib %LIB_DIR%\rubberband.lib
-copy %PLATFORM%\%CONFIG%\rubberband-library.dll %LIB_DIR%\rubberband.dll
+copy %PLATFORM%\%CONFIG%\rubberband.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\rubberband.dll %LIB_DIR%
 md %INCLUDE_DIR%\rubberband
 copy rubberband\*.h %INCLUDE_DIR%\rubberband\
 
