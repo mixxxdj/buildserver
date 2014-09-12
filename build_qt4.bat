@@ -18,8 +18,9 @@ configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2013 -qt
 nmake
 
 %XCOPY% bin\*.exe %BIN_DIR%
-%XCOPY% lib\*.dll %LIB_DIR%
-%XCOPY% lib\*.lib %LIB_DIR%
-%XCOPY% include\* %INCLUDE_DIR%
+REM Don't copy DLLs or includes since we refer to them from QTDIR and the include files refer to the Qt source tree.
+REM %XCOPY% lib\*.dll %LIB_DIR%
+REM %XCOPY% lib\*.lib %LIB_DIR%
+REM %XCOPY% include\* %INCLUDE_DIR%
 
 cd %ROOT_DIR%
