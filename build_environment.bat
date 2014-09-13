@@ -48,6 +48,7 @@ call build_libflac.bat
 call build_libsndfile.bat
 call build_rubberband.bat
 call build_portaudio.bat
+call build_hss1394.bat
 call build_fftw3.bat
 call build_chromaprint.bat REM depends on fftw3
 call build_taglib.bat REM depends on zlib 

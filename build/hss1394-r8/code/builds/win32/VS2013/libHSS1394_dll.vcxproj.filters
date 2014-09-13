@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="HSS1394">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="VHPD1394">
+      <UniqueIdentifier>{85efe688-741b-4f2c-ab49-1753908519cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ST1394_ASIO">
+      <UniqueIdentifier>{56fb0b4b-ac04-459b-ad4f-ab41a79c8114}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\1394API.cpp">
+      <Filter>HSS1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\win32\1394API_VHPD1394.cpp">
+      <Filter>HSS1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ConfigRom.cpp">
+      <Filter>HSS1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\HSS1394.cpp">
+      <Filter>HSS1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpd.cpp">
+      <Filter>VHPD1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdAsyncSlave.cpp">
+      <Filter>VHPD1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdBuf.cpp">
+      <Filter>VHPD1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdDataSlave.cpp">
+      <Filter>VHPD1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdNotifySlave.cpp">
+      <Filter>VHPD1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdThread.cpp">
+      <Filter>VHPD1394</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\win32\Thesycon\VHPD1394\SetupApiDll.cpp">
+      <Filter>VHPD1394</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\1394API.h">
+      <Filter>HSS1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ConfigRom.h">
+      <Filter>HSS1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\HSS1394.h">
+      <Filter>HSS1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\HSS1394Types.h">
+      <Filter>HSS1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpd.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdAsyncSlave.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdBuf.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdDataSlave.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdNotifySlave.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\CVhpdThread.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\SetupApiDll.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\spec1394.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\VHPD1394\vhpd1394.h">
+      <Filter>VHPD1394</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\ST1394_ASIO\ams1394defs.h">
+      <Filter>ST1394_ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\ST1394_ASIO\ams1394ioctl.h">
+      <Filter>ST1394_ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\ST1394_ASIO\ams1394stats.h">
+      <Filter>ST1394_ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\ST1394_ASIO\verdef.h">
+      <Filter>ST1394_ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\win32\Thesycon\ST1394_ASIO\vhpd1394.h">
+      <Filter>ST1394_ASIO</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
