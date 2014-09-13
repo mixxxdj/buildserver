@@ -42,6 +42,7 @@ call build_portmidi.bat
 call build_libid3tag.bat REM depends on zlib
 call build_libmad.bat
 call build_libogg.bat
+call build_libopus.bat REM depends on libogg
 call build_libvorbis.bat
 call build_libshout.bat
 call build_libflac.bat
