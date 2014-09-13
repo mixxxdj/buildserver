@@ -37,6 +37,10 @@
 #ifndef _HSS1394_
 #define _HSS1394_
 
+// Added by rryan 9/2014.
+#ifndef _WIN32_
+#define _WIN32_
+#endif 
 
 #if defined(_WIN32)
 #if defined(HSS1394_EXPORT_DLL)

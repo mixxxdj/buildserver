@@ -25,6 +25,11 @@
 #ifndef _HSS1394Types_
 #define _HSS1394Types_
 
+// Added by rryan 9/2014.
+#ifndef _WIN32_
+#define _WIN32_
+#endif 
+
 //*** Defines
 //*****************************************************************************
 #ifndef NULL
