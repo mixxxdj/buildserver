@@ -16,11 +16,11 @@ if %CONFIG_RELEASE% (
 )
 
 cd build\%CHROMAPRINT_PATH%
-cmake . -G %CMAKE_CONF% -DWITH_FFTW3=ON -DFFTW3_FFTW_LIBRARY=%LIB_DIR%/libfftw-3.3.dll -DWITH_AVFFT=OFF -DBUILD_EXAMPLES=OFF -DFFTW3_DIR=../../include
+cmake . -G %CMAKE_CONF% -DWITH_FFTW3=ON -DFFTW3_FFTW_LIBRARY=%LIB_DIR%/libfftw-3.3.lib -DWITH_AVFFT=OFF -DBUILD_EXAMPLES=OFF -DFFTW3_DIR=%INCLUDE_DIR%
 %MSBUILD% chromaprint.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:chromaprint:Clean;chromaprint:Rebuild
 
-copy %PLATFORM%\%CONFIG%\chromaprint.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\chromaprint.dll %LIB_DIR%
+copy src\%CONFIG%\chromaprint.lib %LIB_DIR%
+copy src\%CONFIG%\chromaprint.dll %LIB_DIR%
 copy src\chromaprint.h %INCLUDE_DIR%
 
 cd %ROOT_DIR%
