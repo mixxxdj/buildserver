@@ -35,6 +35,7 @@ md %LIB_DIR%
 md %INCLUDE_DIR%
 md %BIN_DIR%
 
+call build_sqlite3.bat
 call build_zlib.bat 
 call build_pthreads.bat
 call build_protobuf.bat
