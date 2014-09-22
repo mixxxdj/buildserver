@@ -15,8 +15,12 @@ if %CONFIG_RELEASE% (
 )
 
 cd build\%OPUS_PATH%\win32\VS2010
-%MSBUILD% opus.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:opus:Clean;opus:Rebuild
+%MSBUILD% opus.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:celt:Clean;silk_common:Clean;silk_fixed:Clean;silk_float:Clean;opus:Clean;celt:Rebuild;silk_common:Rebuild;silk_fixed:Rebuild;silk_float:Rebuild;opus:Rebuild
 
+copy %PLATFORM%\%CONFIG%\celt.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\silk_common.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\silk_fixed.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\silk_float.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\opus.lib %LIB_DIR%
 md %INCLUDE_DIR%\opus
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
