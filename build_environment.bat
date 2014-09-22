@@ -54,7 +54,7 @@ call build_hss1394.bat
 call build_fftw3.bat
 call build_chromaprint.bat REM depends on fftw3
 call build_taglib.bat REM depends on zlib 
-call build_qt4.bat
+call build_qt4.bat REM depends on sqlite3
 
 REM Clean up after vcvarsall.bat since repeated running eventually overflows PATH.
 SET PATH=%OLDPATH%
