@@ -16,6 +16,7 @@ if %CONFIG_RELEASE% (
   echo Building debug mode.  
 )
 
+SET MSVC_PATH=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC
 SET XCOPY=xcopy /S /Y /I
 SET MSBUILD=msbuild /p:VCTargetsPath="C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\\"
 set ROOT_DIR=%CD%
@@ -26,9 +27,9 @@ SET BUILD_DIR=%CD%\build\
 
 set OLDPATH=%PATH%
 if %MACHINE_X86% (
-  call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86
+  call "%MSVC_PATH%\vcvarsall.bat" x86
 ) else (
-  call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
+  call "%MSVC_PATH%\vcvarsall.bat" x86_amd64
 )
 
 md %LIB_DIR%
@@ -55,6 +56,13 @@ call build_fftw3.bat
 call build_chromaprint.bat REM depends on fftw3
 call build_taglib.bat REM depends on zlib 
 call build_qt4.bat REM depends on sqlite3
+
+REM Copy debug runtime DLLs for debug builds.
+if not %CONFIG_RELEASE% (
+  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC120.DebugCRT\*.dll" %LIB_DIR%
+  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC120.DebugCXXAMP\*.dll" %LIB_DIR%
+  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC120.DebugOpenMP\*.dll" %LIB_DIR%
+)
 
 REM Clean up after vcvarsall.bat since repeated running eventually overflows PATH.
 SET PATH=%OLDPATH%
