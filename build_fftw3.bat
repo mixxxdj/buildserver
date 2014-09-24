@@ -20,6 +20,7 @@ REM %MSBUILD% fftw-3.3-libs.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM%
 %MSBUILD% libfftw-3.3.vcxproj /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:Clean;Rebuild
 
 copy %PLATFORM%\%CONFIG%\libfftw-3.3.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libfftw-3.3.pdb %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libfftw-3.3.dll %LIB_DIR%
 copy ..\..\api\fftw3.h %INCLUDE_DIR%
 

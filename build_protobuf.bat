@@ -18,6 +18,7 @@ cd build\%PROTOBUF_PATH%\vsprojects
 
 copy %PLATFORM%\%CONFIG%\libprotobuf-lite.dll %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libprotobuf-lite.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libprotobuf-lite.pdb %LIB_DIR%
 call extract_includes.bat 
 xcopy /E /Y include %INCLUDE_DIR%
 

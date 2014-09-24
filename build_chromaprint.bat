@@ -21,6 +21,7 @@ cd build\%CHROMAPRINT_PATH%
 
 copy %PLATFORM%\%CONFIG%\chromaprint.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\chromaprint.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\chromaprint.pdb %LIB_DIR%
 copy src\chromaprint.h %INCLUDE_DIR%
 
 cd %ROOT_DIR%

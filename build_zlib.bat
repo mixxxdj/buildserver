@@ -18,6 +18,7 @@ cd build\%ZLIB_PATH%\contrib\vstudio\vc11
 
 copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.dll %LIB_DIR%
 copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.lib %LIB_DIR%
+copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.pdb %LIB_DIR%
 cd %BUILD_DIR%\%ZLIB_PATH%
 copy zlib.h %INCLUDE_DIR%
 copy zconf.h %INCLUDE_DIR%

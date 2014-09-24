@@ -18,6 +18,7 @@ cd build\%ID3TAG_PATH%\msvc++
 
 REM TODO(rryan): Currently generating a static library only.
 copy %PLATFORM%\%CONFIG%\libid3tag.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libid3tag.pdb %LIB_DIR%
 REM copy %PLATFORM%\%CONFIG%\libid3tag.dll %LIB_DIR%
 copy ..\id3tag.h %INCLUDE_DIR% 
 

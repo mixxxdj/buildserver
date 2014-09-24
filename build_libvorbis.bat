@@ -18,8 +18,10 @@ cd build\%VORBIS_PATH%\win32\VS2010
 
 copy %PLATFORM%\%CONFIG%\libvorbis.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libvorbis.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libvorbis.pdb %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libvorbisfile.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libvorbisfile.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libvorbisfile.pdb %LIB_DIR%
 md %INCLUDE_DIR%\vorbis
 copy ..\..\include\vorbis\*.h %INCLUDE_DIR%\vorbis\
 

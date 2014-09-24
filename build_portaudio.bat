@@ -18,6 +18,7 @@ cd build\%PORTAUDIO_PATH%\build\msvc
 
 copy %PLATFORM%\%CONFIG%\portaudio.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\portaudio.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\portaudio.pdb %LIB_DIR%
 copy ..\..\include\portaudio.h %INCLUDE_DIR%
 
 cd %ROOT_DIR%

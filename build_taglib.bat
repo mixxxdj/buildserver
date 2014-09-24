@@ -21,6 +21,7 @@ cd build\%TAGLIB_PATH%
 
 copy %PLATFORM%\%CONFIG%\tag.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\tag.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\tag.pdb %LIB_DIR%
 md %INCLUDE_DIR%\taglib
 %XCOPY% taglib_config.h %INCLUDE_DIR%\taglib
 %XCOPY% taglib\*.h %INCLUDE_DIR%\taglib

@@ -18,12 +18,14 @@ cd build\%PORTMIDI_PATH%\pm_dylib
 
 copy %PLATFORM%\%CONFIG%\portmidi.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\portmidi.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\portmidi.pdb %LIB_DIR%
 copy ..\pm_common\portmidi.h %INCLUDE_DIR% 
 
 cd ..\porttime
 %MSBUILD% porttime.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:PortTime:Clean;PortTime:Rebuild
 copy %PLATFORM%\%CONFIG%\porttime.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\porttime.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\porttime.pdb %LIB_DIR%
 copy porttime.h %INCLUDE_DIR% 
 
 cd %ROOT_DIR%

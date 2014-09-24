@@ -18,6 +18,7 @@ cd build\%MAD_PATH%\msvc++
 
 REM TODO(rryan): Currently generating a static library only.
 copy %PLATFORM%\%CONFIG%\libmad.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libmad.pdb %LIB_DIR%
 REM copy %PLATFORM%\%CONFIG%\libmad.dll %LIB_DIR%
 REM TODO(rryan): mad.h defines FPM_INTEL.
 copy ..\mad.h %INCLUDE_DIR% 

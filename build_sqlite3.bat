@@ -19,6 +19,7 @@ cd build\%SQLITE_PATH%
 
 copy %PLATFORM%\%CONFIG%\sqlite3.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\sqlite3.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\sqlite3.pdb %LIB_DIR%
 copy sqlite3.h %INCLUDE_DIR%
 
 cd %ROOT_DIR%

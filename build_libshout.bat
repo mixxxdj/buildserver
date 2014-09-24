@@ -18,6 +18,7 @@ cd build\%SHOUT_PATH%\win32
 
 copy %PLATFORM%\%CONFIG%\libshout.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libshout.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libshout.pdb %LIB_DIR%
 md %INCLUDE_DIR%\shout
 copy ..\include\shout\*.h %INCLUDE_DIR%\shout\
 copy ..\include\os.h %INCLUDE_DIR%

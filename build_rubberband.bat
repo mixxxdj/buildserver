@@ -18,6 +18,7 @@ cd build\%RUBBERBAND_PATH%
 
 copy %PLATFORM%\%CONFIG%\rubberband.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\rubberband.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\rubberband.pdb %LIB_DIR%
 md %INCLUDE_DIR%\rubberband
 copy rubberband\*.h %INCLUDE_DIR%\rubberband\
 

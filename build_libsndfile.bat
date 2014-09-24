@@ -18,6 +18,7 @@ cd build\%SNDFILE_PATH%
 
 copy %PLATFORM%\%CONFIG%\libsndfile.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libsndfile.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libsndfile.pdb %LIB_DIR%
 copy src\sndfile.h %INCLUDE_DIR%
 
 cd %ROOT_DIR%

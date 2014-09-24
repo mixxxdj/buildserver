@@ -18,6 +18,7 @@ cd build\%HSS1394_PATH%\code\builds\win32\VS2013
 
 copy %PLATFORM%\%CONFIG%\libHSS1394.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libHSS1394.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libHSS1394.pdb %LIB_DIR%
 md %INCLUDE_DIR%\hss1394
 copy ..\..\..\..\inc\*.h %INCLUDE_DIR%\hss1394\
 

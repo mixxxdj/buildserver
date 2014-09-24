@@ -18,6 +18,7 @@ cd build\%FLAC_PATH%\src\libFLAC\
 
 copy %PLATFORM%\%CONFIG%\libFLAC.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libFLAC.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libFLAC.pdb %LIB_DIR%
 md %INCLUDE_DIR%\FLAC
 copy ..\..\include\FLAC\*.h %INCLUDE_DIR%\FLAC\
 

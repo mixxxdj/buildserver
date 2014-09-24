@@ -18,6 +18,7 @@ cd build\%OPUS_PATH%\win32\VS2010
 %MSBUILD% opus.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:celt:Clean;silk_common:Clean;silk_fixed:Clean;silk_float:Clean;opus:Clean;opus:Rebuild
 
 copy %PLATFORM%\%CONFIG%\opus.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\opus.pdb %LIB_DIR%
 md %INCLUDE_DIR%\opus
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
 
@@ -27,6 +28,7 @@ cd build\%OPUSFILE_PATH%\win32\VS2010
 %MSBUILD% opusfile.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:opusfile:Clean;opusfile:Rebuild
 
 copy %PLATFORM%\%CONFIG%\opusfile.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\opusfile.pdb %LIB_DIR%
 md %INCLUDE_DIR%\opus
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
 

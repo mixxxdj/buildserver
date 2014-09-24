@@ -18,6 +18,7 @@ cd build\%OGG_PATH%\win32\VS2010
 
 copy %PLATFORM%\%CONFIG%\libogg.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libogg.dll %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libogg.pdb %LIB_DIR%
 md %INCLUDE_DIR%\ogg
 copy ..\..\include\ogg\*.h %INCLUDE_DIR%\ogg\
 
