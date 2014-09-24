@@ -16,10 +16,9 @@ if %CONFIG_RELEASE% (
 cd build\%PTHREADS_PATH%
 %MSBUILD% pthread.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:pthread:Clean;pthread:Rebuild
 
-REM TODO(rryan): Update the solution for the output directories to match at some point.
 copy pthreadVC2.dll %LIB_DIR%
 copy pthreadVC2.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\pthreadVC2.pdb %LIB_DIR%
+copy pthreadVC2.pdb %LIB_DIR%
 copy pthread.h %INCLUDE_DIR%
 copy semaphore.h %INCLUDE_DIR%
 copy sched.h %INCLUDE_DIR%
