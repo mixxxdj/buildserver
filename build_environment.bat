@@ -55,6 +55,8 @@ call build_hss1394.bat
 call build_fftw3.bat
 call build_chromaprint.bat REM depends on fftw3
 call build_taglib.bat REM depends on zlib 
+REM We do not distribute LAME with Mixxx. If you wish to build it locally, uncomment.
+REM call build_lame.bat
 call build_qt4.bat REM depends on sqlite3
 
 REM Copy debug runtime DLLs for debug builds.

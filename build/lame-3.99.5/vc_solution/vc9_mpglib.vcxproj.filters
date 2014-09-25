@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{6cf2e3b7-44f4-4101-bb77-796a1a6bfa9e}</UniqueIdentifier>
+      <Extensions>c</Extensions>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{a569b472-a11f-45bf-ace2-9f2af28b506c}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\mpglib\common.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mpglib\dct64_i386.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mpglib\decode_i386.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mpglib\interface.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mpglib\layer1.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mpglib\layer2.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mpglib\layer3.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mpglib\tabinit.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\mpglib\common.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\dct64_i386.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\decode_i386.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\huffman.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\interface.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\l2tables.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\layer1.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\layer2.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\layer3.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\mpg123.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\mpglib.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mpglib\tabinit.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\configMS.h">
+      <Filter>Include</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
