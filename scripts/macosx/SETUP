@@ -46,7 +46,7 @@ wget http://www.contrib.andrew.cmu.edu/~somlo/OSXKVM/chameleon_svn2360_boot
 cp chameleon_svn2360_boot $KVMOSX_PREFIX/lib/
 
 # setup vm
-export VM_NAME=build-osx-10.9-amd64
+export VM_NAME=build-macosx-10.9-amd64
 export VM_PATH=/opt/mixxx/vms/$VM_NAME
 mkdir $VM_PATH
 cd $VM_PATH
@@ -69,6 +69,8 @@ $KVMOSX_PREFIX/bin/qemu-system-x86_64 -enable-kvm \
   -vnc $GUEST_QEMU_VNC \
   -monitor stdio
 
+$KVMOSX_PREFIX/bin/qemu-system-x86_64 -enable-kvm -m 2048 -cpu core2duo -smp 2 -machine q35 -vga std -usb -device usb-kbd -device usb-mouse -device isa-applesmc,osk="ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc" -kernel $KVMOSX_PREFIX/lib/chameleon_svn2360_boot -smbios type=2 -device ide-drive,bus=ide.2,drive=MacHDD -drive id=MacHDD,if=none,file=$VM_PATH/$VM_NAME.img -bios $KVMOSX_PREFIX/lib/bios-mac.bin -device virtio-net,netdev=hub0port0,id=eth0 -netdev user,id=hub0port0,hostfwd=tcp:${GUEST_NATIVE_VNC}-:5900,hostfwd=tcp:${GUEST_SSH}-:22 -vnc $GUEST_QEMU_VNC -monitor stdio
+
 ===============================================================================
 CREATING A SNAPSHOT
 ===============================================================================
@@ -81,7 +83,7 @@ ones.
 export SNAPSHOT_NAME="2014_05_10_post_install_xcode_clean"
 $ mv $VM_PATH/$VM_NAME.img $VM_PATH/${VM_NAME}_${SNAPSHOT_NAME}.img
 $ echo "Just installed. Turned off energy saving, spotlight indexing, etc. Installed XCode." > $VM_PATH/${VM_NAME}_${SNAPSHOT_NAME}.txt
-$ $KVMOSX_PREFIX/bin/qemu-img create -f qcow2 -b $VM_PATH/${VM_NAME}_${SNAPSHOT_NAME}.img ${VM_NAME}.img
+$ $KVMOSX_PREFIX/bin/qemu-img create -f qcow2 -b $VM_PATH/${VM_NAME}_${SNAPSHOT_NAME}.img $VM_PATH/${VM_NAME}.img
 
 ===============================================================================
 GUEST SETUP
@@ -93,7 +95,10 @@ GUEST SETUP
 4) TODO: Install XCode 10.6 and 10.4u SDKs? Link them into the XCode platforms dir [1]
 5) Create build environments (see [2]):
 
+To build an OS X 10.6 build environment:
 $ bash ./scripts/macosx/build_environment.sh --name intel-osx10.6 --enable-x86-64 --enable-i386 --macosx-sdk 10.9 --macosx-target 10.6
+To build an OS X 10.5 build environment:
+$ bash ./scripts/macosx/build_environment.sh --name intel-osx10.5 --enable-x86-64 --enable-i386 --macosx-sdk 10.9 --macosx-target 10.5
 
 
 [1] https://gist.github.com/rnapier/3370649
