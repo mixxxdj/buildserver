@@ -18,7 +18,8 @@ export ARCHIVE=$VERSION.tar.gz
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export DYLIB=src/libchromaprint.0.2.2.dylib
+export DYLIB_NAME=libchromaprint.0.2.2.dylib
+export DYLIB=src/$DYLIB_NAME
 export STATICLIB=src/libchromaprint_p.a
 
 for ARCH in ${MIXXX_ARCHS[@]}
@@ -28,6 +29,7 @@ do
   cd $VERSION-$ARCH
   source $PROGDIR/environment.sh $ARCH
   cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$MIXXX_PREFIX" -DCMAKE_OSX_DEPLOYMENT_TARGET="$MACOSX_DEPLOYMENT_TARGET" -DCMAKE_OSX_SYSROOT="$OSX_SDK" -DCMAKE_VERBOSE_MAKEFILE=TRUE -DWITH_VDSP=TRUE
+  make clean
   make
   cd ..
 done
@@ -50,4 +52,7 @@ done
 lipo -create ./$DYLIB ${OTHER_DYLIBS[@]} -output ./$DYLIB
 lipo -create ./$STATICLIB ${OTHER_STATICLIBS[@]} -output ./$STATICLIB
 make install
+# NOTE(rryan): Mixxx depends on id (not rpath) being the full path to the
+# dylib. Until we fix this, set the chromaprint dylib id:
+install_name_tool -id $MIXXX_PREFIX/lib/$DYLIB_NAME $MIXXX_PREFIX/lib/$DYLIB_NAME
 cd ..
