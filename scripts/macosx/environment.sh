@@ -49,8 +49,8 @@ export I386_OPT_FLAGS="-mmmx -msse -msse2 -msse3 -mfpmath=sse -march=prescott -m
 export X86_64_OPT_FLAGS="-mmmx -msse -msse2 -msse3 -mfpmath=sse -mtune=generic"
 export POWERPC_OPT_FLAGS=""
 
-export OSX_CFLAGS="-isysroot $OSX_SDK -mmacosx-version-min=$MIXXX_MACOSX_TARGET $ARCH_FLAGS $COMMON_OPT_FLAGS"
-export OSX_LDFLAGS="-isysroot $OSX_SDK -Wl,-syslibroot,$OSX_SDK -mmacosx-version-min=$MIXXX_MACOSX_TARGET $ARCH_FLAGS $COMMON_OPT_FLAGS"
+export OSX_CFLAGS="-isysroot $OSX_SDK -mmacosx-version-min=$MIXXX_MACOSX_TARGET $ARCH_FLAGS $COMMON_OPT_FLAGS -I$MIXXX_PREFIX/include"
+export OSX_LDFLAGS="-isysroot $OSX_SDK -Wl,-syslibroot,$OSX_SDK -mmacosx-version-min=$MIXXX_MACOSX_TARGET $ARCH_FLAGS $COMMON_OPT_FLAGS -L$MIXXX_PREFIX/lib"
 
 if [[ "$1" == "i386" ]]; then
   echo "Setting options for $1";
