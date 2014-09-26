@@ -38,7 +38,12 @@ fi
 
 export PATH=$PATH:$MIXXX_PREFIX/bin/
 
-export COMMON_OPT_FLAGS="-O2 -ffast-math"
+if [[ "$DISABLE_FFAST_MATH" == "yes" ]]; then
+    export COMMON_OPT_FLAGS="-O2"
+else
+    export COMMON_OPT_FLAGS="-O2 -ffast-math"
+fi
+
 # Core Solo and Core Duo are the only 32-bit mac machines. These support MMX, SSE, SSE2, SSE3. -march=prescott is safe to assume
 export I386_OPT_FLAGS="-mmmx -msse -msse2 -msse3 -mfpmath=sse -march=prescott -mtune=generic"
 export X86_64_OPT_FLAGS="-mmmx -msse -msse2 -msse3 -mfpmath=sse -mtune=generic"
