@@ -52,7 +52,13 @@ echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${QT_ARCH
 # See:
 # - http://llvm.org/bugs/show_bug.cgi?id=16805
 # - https://qt.gitorious.org/qt/qt/source/5267ff3c462986f514f33998a2614b8f9c22402e:src/plugins/phonon/qt7/qt7.pro#L5
-./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk $OSX_SDK -plugin-sql-sqlite -no-phonon -no-webkit -platform macx-g++ -no-qt3support -debug-and-release -nomake examples -nomake demos -confirm-license
+# Mixxx may want to call sqlite functions directly so we use the statically
+# linked version of SQLite (-qt-sql-sqlite) and link it to the system SQLite
+# (-system-sqlite) instead of the SQLite plugin
+# (-plugin-sql-sqlite).
+# See:
+# - http://www.mimec.org/node/296
+./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -no-phonon -no-webkit -platform macx-g++ -no-qt3support -debug-and-release -nomake examples -nomake demos -confirm-license
 
 # NOTE: Using -ffast-math will fail when building SQLite so either remove -ffast-math from environment.sh temporarily or remove -ffast-math from the SQLite Makefiles (you'll have to do it for QtWebkit and QtSql). You can do this as the build fails since it will complain about -ffast-math. We remove it with sed:
 find src/sql -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
