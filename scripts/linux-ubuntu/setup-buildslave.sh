@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # make sure to get the path right
-PROGNAME=`basename $0`
-PROGDIR=`dirname $0`
+PROGDIR="$( cd "$(dirname "$0")" ; pwd -P )"
 source $PROGDIR/config.sh
 
 sudo apt-get -y install emacs build-essential git-core
