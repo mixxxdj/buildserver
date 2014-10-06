@@ -24,4 +24,4 @@ done;
 
 sudo apt-get -y build-dep mixxx
 # new dependencies which aren't in our build file yet.
-sudo apt-get -y install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev libchromaprint-dev librubberband-dev libopus-dev libopusfile-dev
+sudo apt-get -y install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev libchromaprint-dev librubberband-dev libopus-dev libopusfile-dev libsqlite3-dev
