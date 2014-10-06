@@ -5,7 +5,7 @@ PROGNAME=`basename $0`
 PROGDIR=`dirname $0`
 source $PROGDIR/config.sh
 
-sudo apt-get install emacs build-essential git-core
+sudo apt-get -y install emacs build-essential git-core
 git config --global user.name "Mixxx Buildbot"
 git config --global user.email builds@mixxx.org
 
@@ -14,7 +14,7 @@ git config --global user.email builds@mixxx.org
 sudo su -c "echo \"# $USER is given passwordless access to pbuilder and debsign for buildbot purposes.\" >> /etc/sudoers"
 sudo su -c "echo \"$USER    ALL=(ALL) NOPASSWD: SETENV: /usr/bin/debsign, /usr/sbin/pbuilder\" >> /etc/sudoers"
 
-sudo apt-get install pbuilder debootstrap devscripts
+sudo apt-get -y install pbuilder debootstrap devscripts
 ln -s $PROGDIR/pbuilderrc ~/.pbuilderrc
 
 for DIST in $DISTS; do
@@ -23,6 +23,6 @@ for DIST in $DISTS; do
     done;
 done;
 
-sudo apt-get build-dep mixxx
+sudo apt-get -y build-dep mixxx
 # new dependencies which aren't in our build file yet.
-sudo apt-get install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev libchromaprint-dev librubberband-dev
+sudo apt-get -y install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev libchromaprint-dev librubberband-dev
