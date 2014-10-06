@@ -4,7 +4,7 @@
 PROGDIR="$( cd "$(dirname "$0")" ; pwd -P )"
 source $PROGDIR/config.sh
 
-sudo apt-get -y install emacs build-essential git-core
+sudo apt-get -y install emacs build-essential git-core default-jre-headless htop iotop
 git config --global user.name "Mixxx Buildbot"
 git config --global user.email builds@mixxx.org
 
