@@ -5,7 +5,9 @@ PROGNAME=`basename $0`
 PROGDIR=`dirname $0`
 source $PROGDIR/config.sh
 
-sudo apt-get install bzr emacs build-essential
+sudo apt-get install emacs build-essential git-core
+git config --global user.name "Mixxx Buildbot"
+git config --global user.email builds@mixxx.org
 
 # Enable passwordless sudo
 #echo "WARNING: Enabling passwordless sudo acess for $USER."
