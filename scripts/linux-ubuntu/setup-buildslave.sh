@@ -15,7 +15,7 @@ sudo su -c "echo \"# $USER is given passwordless access to pbuilder and debsign 
 sudo su -c "echo \"$USER    ALL=(ALL) NOPASSWD: SETENV: /usr/bin/debsign, /usr/sbin/pbuilder\" >> /etc/sudoers"
 
 sudo apt-get install pbuilder debootstrap devscripts
-cp $PROGDIR/pbuilderrc ~/.pbuilderrc
+ln -s $PROGDIR/pbuilderrc ~/.pbuilderrc
 
 for DIST in $DISTS; do
     for ARCH in $ARCHS; do
