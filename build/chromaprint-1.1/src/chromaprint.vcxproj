@@ -166,10 +166,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;_SCL_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"Debug\";CHROMAPRINT_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -210,10 +210,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;_SCL_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"Debug\";CHROMAPRINT_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -254,10 +254,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_SCL_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"Release\";CHROMAPRINT_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -298,10 +298,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_SCL_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"Release\";CHROMAPRINT_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -342,10 +342,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_SCL_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"MinSizeRel\";CHROMAPRINT_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -386,10 +386,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_SCL_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"MinSizeRel\";CHROMAPRINT_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -429,10 +429,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_SCL_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"RelWithDebInfo\";CHROMAPRINT_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -472,10 +472,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_SCL_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"RelWithDebInfo\";CHROMAPRINT_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\chromaprint-1.1;C:\mixxx\environments\prototype\build\chromaprint-1.1\src;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -499,10 +499,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/mixxx/environments/prototype/build/chromaprint-1.1 -BC:/mixxx/environments/prototype/build/chromaprint-1.1 --check-stamp-file C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H -B --check-stamp-file src\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -511,7 +511,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/mixxx/environments/prototype/build/chromaprint-1.1 -BC:/mixxx/environments/prototype/build/chromaprint-1.1 --check-stamp-file C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H -B --check-stamp-file src\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -519,16 +519,16 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;src\CMakeLists.txt;src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;src\CMakeLists.txt;src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:\mixxx\environments\prototype\build\chromaprint-1.1\src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/mixxx/environments/prototype/build/chromaprint-1.1 -BC:/mixxx/environments/prototype/build/chromaprint-1.1 --check-stamp-file C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H -B --check-stamp-file src\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -537,7 +537,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/mixxx/environments/prototype/build/chromaprint-1.1 -BC:/mixxx/environments/prototype/build/chromaprint-1.1 --check-stamp-file C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H -B --check-stamp-file src\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -545,16 +545,16 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;src\CMakeLists.txt;src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;src\CMakeLists.txt;src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/mixxx/environments/prototype/build/chromaprint-1.1 -BC:/mixxx/environments/prototype/build/chromaprint-1.1 --check-stamp-file C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H -B --check-stamp-file src\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -563,7 +563,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/mixxx/environments/prototype/build/chromaprint-1.1 -BC:/mixxx/environments/prototype/build/chromaprint-1.1 --check-stamp-file C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H -B --check-stamp-file src\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -571,16 +571,16 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;src\CMakeLists.txt;src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;src\CMakeLists.txt;src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/mixxx/environments/prototype/build/chromaprint-1.1 -BC:/mixxx/environments/prototype/build/chromaprint-1.1 --check-stamp-file C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H -B --check-stamp-file src\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -589,7 +589,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/mixxx/environments/prototype/build/chromaprint-1.1 -BC:/mixxx/environments/prototype/build/chromaprint-1.1 --check-stamp-file C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H -B --check-stamp-file src\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -597,10 +597,10 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/mixxx/environments/prototype/build/chromaprint-1.1/src/CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;src\CMakeLists.txt;src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\mixxx\environments\prototype\build\chromaprint-1.1\src\CMakeLists.txt;src\CMakeLists.txt;src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
