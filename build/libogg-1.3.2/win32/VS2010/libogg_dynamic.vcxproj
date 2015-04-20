@@ -139,6 +139,7 @@
       <CompileAs>CompileAsC</CompileAs>
       <DisableSpecificWarnings>4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <CallingConvention>Cdecl</CallingConvention>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>..\ogg.def</ModuleDefinitionFile>
@@ -169,6 +170,7 @@
       <CompileAs>CompileAsC</CompileAs>
       <DisableSpecificWarnings>4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <CallingConvention>Cdecl</CallingConvention>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>..\ogg.def</ModuleDefinitionFile>

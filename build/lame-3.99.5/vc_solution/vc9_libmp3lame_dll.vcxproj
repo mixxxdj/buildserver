@@ -325,6 +325,7 @@
       <ImportLibrary>$(OutDir)libmp3lame.lib</ImportLibrary>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSSE2|x64'">
@@ -352,6 +353,7 @@
       <ImportLibrary>$(OutDir)libmp3lame.lib</ImportLibrary>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

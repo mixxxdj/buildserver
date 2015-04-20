@@ -243,6 +243,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../libmp3lame;../include;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;HAVE_MPGLIB;_WINDOWS;USE_LAYER_2;WIN32;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -251,6 +252,7 @@
       <OutputFile>$(OutDir)libmpghip-static.lib</OutputFile>
       <SubSystem>Windows</SubSystem>
       <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSSE2|x64'">
@@ -261,6 +263,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../libmp3lame;../include;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;HAVE_MPGLIB;_WINDOWS;USE_LAYER_2;WIN32;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -269,6 +272,7 @@
       <OutputFile>$(OutDir)libmpghip-static.lib</OutputFile>
       <SubSystem>Windows</SubSystem>
       <MinimumRequiredVersion>5.02</MinimumRequiredVersion>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>

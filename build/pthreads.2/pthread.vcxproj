@@ -100,6 +100,7 @@
       <PrecompiledHeaderOutputFile>.\.\pthread.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\.\</ObjectFileName>
       <ProgramDataBaseFileName>.\.\</ProgramDataBaseFileName>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -145,6 +146,7 @@
       <PrecompiledHeaderOutputFile>.\.\pthread.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\.\</ObjectFileName>
       <ProgramDataBaseFileName>.\.\</ProgramDataBaseFileName>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>

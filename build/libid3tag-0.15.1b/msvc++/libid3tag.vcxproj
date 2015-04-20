@@ -179,6 +179,8 @@
       <PrecompiledHeaderOutputFile>.\Release\libid3tag.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -215,6 +217,8 @@
       <PrecompiledHeaderOutputFile>.\Release\libid3tag.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>

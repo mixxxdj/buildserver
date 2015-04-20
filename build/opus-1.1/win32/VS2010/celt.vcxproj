@@ -215,6 +215,7 @@
       <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -252,6 +253,7 @@
       <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;WIN64;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

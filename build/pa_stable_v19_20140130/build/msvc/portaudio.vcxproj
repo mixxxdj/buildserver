@@ -148,6 +148,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -195,6 +196,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -298,6 +300,7 @@
       <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
       <TargetMachine>MachineX64</TargetMachine>
       <SubSystem>Windows</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>

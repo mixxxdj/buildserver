@@ -149,6 +149,8 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libogg.lib;libvorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -162,6 +164,7 @@
       <ImportLibrary>$(OutDir)libvorbisfile.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)libvorbisfile.pdb</ProgramDatabaseFile>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -177,6 +180,8 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libogg.lib;libvorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -190,6 +195,7 @@
       <ImportLibrary>$(OutDir)libvorbisfile.lib</ImportLibrary>
       <TargetMachine>MachineX64</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)libvorbisfile.pdb</ProgramDatabaseFile>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

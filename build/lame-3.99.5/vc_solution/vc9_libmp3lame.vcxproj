@@ -244,6 +244,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../mpglib;../include;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;HAVE_MPGLIB;WIN32;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -252,6 +253,7 @@
       <OutputFile>$(OutDir)libmp3lame-static.lib</OutputFile>
       <SubSystem>Windows</SubSystem>
       <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSSE2|x64'">
@@ -262,6 +264,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../mpglib;../include;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;HAVE_MPGLIB;WIN32;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -270,6 +273,7 @@
       <OutputFile>$(OutDir)libmp3lame-static.lib</OutputFile>
       <SubSystem>Windows</SubSystem>
       <MinimumRequiredVersion>5.02</MinimumRequiredVersion>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -141,6 +141,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <DisableSpecificWarnings>4267;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -169,6 +170,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <DisableSpecificWarnings>4267;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>

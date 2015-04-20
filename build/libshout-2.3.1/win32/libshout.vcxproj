@@ -103,6 +103,8 @@
       <PrecompiledHeaderOutputFile>.\Release\libshout.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -121,6 +123,7 @@
       <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>pthreadVC2.lib;libogg.lib;libvorbis.lib;winmm.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -138,6 +141,8 @@
       <PrecompiledHeaderOutputFile>.\Release\libshout.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -156,6 +161,7 @@
       <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>pthreadVC2.lib;libogg.lib;libvorbis.lib;winmm.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

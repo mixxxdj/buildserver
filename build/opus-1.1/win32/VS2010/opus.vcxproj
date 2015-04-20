@@ -168,6 +168,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -208,6 +209,8 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -235,6 +238,7 @@
       <MinimumRequiredVersion>5.02</MinimumRequiredVersion>
       <AdditionalDependencies>
       </AdditionalDependencies>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
     </Lib>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>

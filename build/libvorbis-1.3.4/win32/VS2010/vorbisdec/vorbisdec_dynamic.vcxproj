@@ -157,6 +157,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>CompileAsC</CompileAs>
       <CallingConvention>Cdecl</CallingConvention>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libogg.lib;libvorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -191,6 +192,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>CompileAsC</CompileAs>
       <CallingConvention>Cdecl</CallingConvention>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libogg.lib;libvorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>

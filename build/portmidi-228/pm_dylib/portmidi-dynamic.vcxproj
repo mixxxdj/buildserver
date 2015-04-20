@@ -195,6 +195,8 @@
       <AssemblerListingLocation>Release</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -239,6 +241,8 @@
       <AssemblerListingLocation>Release</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
