@@ -58,7 +58,8 @@ echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${QT_ARCH
 # (-plugin-sql-sqlite).
 # See:
 # - http://www.mimec.org/node/296
-./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -no-phonon -no-webkit -platform macx-g++ -no-qt3support -debug-and-release -nomake examples -nomake demos -confirm-license
+# NOTE(rryan): Setting -system-sqlite sets -system-zlib. Set -qt-zlib explicitly.
+./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -platform macx-g++ -no-qt3support -debug-and-release -nomake examples -nomake demos -confirm-license
 
 # NOTE: Using -ffast-math will fail when building SQLite so either remove -ffast-math from environment.sh temporarily or remove -ffast-math from the SQLite Makefiles (you'll have to do it for QtWebkit and QtSql). You can do this as the build fails since it will complain about -ffast-math. We remove it with sed:
 find src/sql -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
@@ -69,4 +70,5 @@ find src/plugins/sqldrivers/sqlite2 -name 'Makefile*' -exec sed -i -e 's/-ffast-
 #find src/3rdparty/webkit/Source/WebCore -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
 
 make && make install
+
 cd ..
