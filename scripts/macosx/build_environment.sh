@@ -108,6 +108,7 @@ $PROGDIR/build_protobuf.sh
 $PROGDIR/build_rubberband.sh
 $PROGDIR/build_sqlite.sh
 $PROGDIR/build_qt4.sh # depends on sqlite
+# $PROGDIR/build_qt5.sh # depends on sqlite
 $PROGDIR/build_sndfile.sh
 $PROGDIR/build_taglib.sh
 $PROGDIR/build_vorbis.sh
