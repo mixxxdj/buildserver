@@ -13,6 +13,7 @@ usage() { echo "Usage: $0 --name <name> [--macosx-sdk <version>] [--maxosx-targe
 MIXXX_ENVIRONMENT_NAME=""
 MIXXX_MACOSX_SDK='10.9'
 MIXXX_MACOSX_TARGET='10.9'
+MIXXX_MACOSX_STDLIB='libc++'
 ENABLE_I386=false
 ENABLE_X86_64=false
 ENABLE_PPC=false
@@ -28,6 +29,9 @@ while getopts ":-:" o; do
                     ;;
                 macosx-target)
                     MIXXX_MACOSX_TARGET="${!OPTIND}"; OPTIND=$(( $OPTIND + 1 ))
+                    ;;
+                macosx-stdlib)
+                    MIXXX_MACOSX_STDLIB="${!OPTIND}"; OPTIND=$(( $OPTIND + 1 ))
                     ;;
                 enable-ppc)
                     ENABLE_PPC=true
@@ -53,6 +57,7 @@ fi
 export MIXXX_ENVIRONMENT_NAME
 export MIXXX_MACOSX_SDK
 export MIXXX_MACOSX_TARGET
+export MIXXX_MACOSX_STDLIB
 ARCHS=()
 if $ENABLE_I386; then
     ARCHS+=(i386)
@@ -72,7 +77,7 @@ if [ ${#ARCHS[@]} -eq 0 ]; then
 fi
 
 export MIXXX_PREFIX=`pwd -P`/environment/$MIXXX_ENVIRONMENT_NAME
-echo "Building environment ${MIXXX_ENVIRONMENT_NAME} for architectures ${ARCHS[@]} in $MIXXX_PREFIX on Mac OS X (sdk: $MIXXX_MACOSX_SDK, target: $MIXXX_MACOSX_TARGET)"
+echo "Building environment ${MIXXX_ENVIRONMENT_NAME} for architectures ${ARCHS[@]} in $MIXXX_PREFIX on Mac OS X (sdk: $MIXXX_MACOSX_SDK, target: $MIXXX_MACOSX_TARGET, stdlib: $MIXXX_MACOSX_STDLIB)"
 
 export DEPENDENCIES=`pwd -P`/dependencies
 if [[ ! -d $DEPENDENCIES ]]; then
