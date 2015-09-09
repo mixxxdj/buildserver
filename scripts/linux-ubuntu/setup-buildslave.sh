@@ -4,7 +4,9 @@
 PROGDIR="$( cd "$(dirname "$0")" ; pwd -P )"
 source $PROGDIR/config.sh
 
-sudo apt-get -y install emacs build-essential git-core default-jre-headless htop iotop
+# default-jre-headless: for running Jenkins node
+# xvfb: for running tests
+sudo apt-get -y install emacs build-essential git-core default-jre-headless htop iotop xvfb
 git config --global user.name "Mixxx Buildbot"
 git config --global user.email builds@mixxx.org
 
@@ -24,4 +26,4 @@ done;
 
 sudo apt-get -y build-dep mixxx
 # new dependencies which aren't in our build file yet.
-sudo apt-get -y install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev libchromaprint-dev librubberband-dev libopus-dev libopusfile-dev libsqlite3-dev
+sudo apt-get -y install protobuf-compiler libusb-1.0-0-dev vamp-plugin-sdk libprotobuf-dev libchromaprint-dev librubberband-dev libopus-dev libopusfile-dev libsqlite3-dev libqt4-sql-sqlite
