@@ -1,5 +1,5 @@
 echo "Building taglib"
-set TAGLIB_PATH=taglib-1.9.1
+set TAGLIB_PATH=taglib-1.10
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
