@@ -1,0 +1,5 @@
+C:/mixxx/environments/prototype/build/taglib-1.10/CMakeFiles/ALL_BUILD.dir
+C:/mixxx/environments/prototype/build/taglib-1.10/CMakeFiles/docs.dir
+C:/mixxx/environments/prototype/build/taglib-1.10/taglib/CMakeFiles/tag.dir
+C:/mixxx/environments/prototype/build/taglib-1.10/bindings/c/CMakeFiles/tag_c.dir
+C:/mixxx/environments/prototype/build/taglib-1.10/CMakeFiles/uninstall.dir

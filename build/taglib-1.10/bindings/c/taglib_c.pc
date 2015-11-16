@@ -1,0 +1,12 @@
+prefix=C:/Program Files (x86)/taglib
+exec_prefix=C:/Program Files (x86)/taglib
+libdir=C:/Program Files (x86)/taglib/lib
+includedir=C:/Program Files (x86)/taglib/include
+
+
+Name: TagLib C Bindings
+Description: Audio meta-data library (C bindings)
+Requires: taglib
+Version: 1.10
+Libs: -LC:/Program Files (x86)/taglib/lib -ltag_c
+Cflags: -IC:/Program Files (x86)/taglib/include/taglib 
