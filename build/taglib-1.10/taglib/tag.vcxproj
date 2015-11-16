@@ -57,25 +57,25 @@
   <PropertyGroup Label="UserMacros" />
     <PropertyGroup>
       <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\mixxx\environments\prototype\build\taglib-1.10\taglib\Debug\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tag.dir\Debug\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tag</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\mixxx\environments\prototype\build\taglib-1.10\taglib\Release\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tag.dir\Release\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tag</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\mixxx\environments\prototype\build\taglib-1.10\taglib\MinSizeRel\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.\MinSizeRel\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">tag.dir\MinSizeRel\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">tag</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.dll</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\mixxx\environments\prototype\build\taglib-1.10\taglib\RelWithDebInfo\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.\RelWithDebInfo\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">tag.dir\RelWithDebInfo\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">tag</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
@@ -84,7 +84,7 @@
     </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -96,15 +96,15 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Debug";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Debug";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Debug\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Debug\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -113,11 +113,11 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\mixxx\environments\prototype\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>C:/mixxx/environments/prototype/build/taglib-1.10/taglib/Debug/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/mixxx/environments/prototype/build/taglib-1.10/taglib/Debug/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>./Debug/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>./Debug/tag.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -127,7 +127,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -138,15 +138,15 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat></DebugInformationFormat>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Release";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Release";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Release\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Release\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -155,11 +155,11 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\mixxx\environments\prototype\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <ImportLibrary>C:/mixxx/environments/prototype/build/taglib-1.10/taglib/Release/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/mixxx/environments/prototype/build/taglib-1.10/taglib/Release/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>./Release/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>./Release/tag.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -169,7 +169,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -180,15 +180,15 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat></DebugInformationFormat>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="MinSizeRel";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="MinSizeRel";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"MinSizeRel\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"MinSizeRel\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -197,11 +197,11 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\mixxx\environments\prototype\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <ImportLibrary>C:/mixxx/environments/prototype/build/taglib-1.10/taglib/MinSizeRel/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/mixxx/environments/prototype/build/taglib-1.10/taglib/MinSizeRel/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>./MinSizeRel/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>./MinSizeRel/tag.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -211,7 +211,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -222,15 +222,15 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="RelWithDebInfo";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="RelWithDebInfo";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"RelWithDebInfo\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"RelWithDebInfo\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10\taglib;C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ogg\opus;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mpeg\id3v1;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\ape;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\trueaudio;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\aiff;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\riff\wav;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\mod;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\s3m;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\it;C:\mixxx\environments\prototype\build\taglib-1.10\taglib\xm;C:\mixxx\environments\prototype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -239,11 +239,11 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\mixxx\environments\prototype\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>C:/mixxx/environments/prototype/build/taglib-1.10/taglib/RelWithDebInfo/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/mixxx/environments/prototype/build/taglib-1.10/taglib/RelWithDebInfo/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>./RelWithDebInfo/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>./RelWithDebInfo/tag.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
