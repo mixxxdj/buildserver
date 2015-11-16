@@ -104,7 +104,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tag.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tag</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">tag</TargetName>
@@ -114,7 +114,7 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tag.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tag</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">tag</TargetName>
@@ -124,7 +124,7 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">tag.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">tag</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">tag</TargetName>
@@ -134,7 +134,7 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">tag.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">tag</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">tag</TargetName>
@@ -179,8 +179,8 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>./Debug/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>./Debug/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
       <Version>
       </Version>
@@ -223,8 +223,8 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>./Debug/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>./Debug/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
       <Version>
       </Version>
@@ -266,8 +266,8 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>./Release/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>./Release/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
       <Version>
       </Version>
@@ -310,8 +310,8 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>./Release/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>./Release/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
       <Version>
       </Version>
@@ -354,8 +354,8 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>./MinSizeRel/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>./MinSizeRel/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
       <Version>
       </Version>
@@ -398,8 +398,8 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>./MinSizeRel/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>./MinSizeRel/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
       <Version>
       </Version>
@@ -442,8 +442,8 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>./RelWithDebInfo/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>./RelWithDebInfo/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
       <Version>
       </Version>
@@ -486,8 +486,8 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>./RelWithDebInfo/tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>./RelWithDebInfo/tag.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
       <Version>
       </Version>
