@@ -86,6 +86,6 @@ lipo -create ./$PROTOC_DYLIB ${OTHER_PROTOC_DYLIBS[@]} -output ./$PROTOC_DYLIB
 lipo -create ./$PROTOC_STATICLIB ${OTHER_PROTOC_STATICLIBS[@]} -output ./$PROTOC_STATICLIB
 
 make install
-ln -s $MIXXX_PREFIX/bin/$HOST_ARCH-protoc $MIXXX_PREFIX/bin/protoc
+ln -s $MIXXX_PREFIX/bin/$HOST-protoc $MIXXX_PREFIX/bin/protoc
 
 cd ..
