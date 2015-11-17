@@ -47,6 +47,20 @@ done
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${QT_ARCHS[@]}"
 
+# Reset CC / CXX since Qt doesn't like us including -stdlib in them:
+export CC="${XCODE_ROOT}/usr/bin/gcc"
+export CXX="${XCODE_ROOT}/usr/bin/g++"
+export CPP="$CC -E"
+export CXXCPP="$CXX -E"
+
+# Qt embeds various OSX platform selections in its makefiles and configure
+# scripts. Fix them to use $MIXXX_MACOSX_TARGET.
+sed -e "s/MACOSX_DEPLOYMENT_TARGET = 10.5/MACOSX_DEPLOYMENT_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' configure
+sed -e "s/MACOSX_DEPLOYMENT_TARGET 10.[45]/MACOSX_DEPLOYMENT_TARGET $MIXXX_MACOSX_TARGET/g" -i '' configure
+sed -e "s/-mmacosx-version-min=10.[45]/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g" -i '' configure
+sed -e "s/QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4/QMAKE_MACOSX_DEPLOYMENT_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/mac.conf
+sed -e "s/-mmacosx-version-min=10.5/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/g++-macx.conf
+
 # Mixxx does not use Phonon or Webkit and as of Qt 4.8.6 Phonon does not build
 # with i386/x86_64 using gcc-llvm (the default GCC included with XCode).
 # See:
