@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=2.3.1
+export VERSION_NUMBER=2.4.0
 export VERSION=libshout-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
@@ -26,6 +26,8 @@ do
   mkdir -p $VERSION-$ARCH
   tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$ARCH --strip-components 1
   cd $VERSION-$ARCH
+  # libshout.ckport is missing from the 2.4.0 release tarball.
+  touch libshout.ckport
   source $PROGDIR/environment.sh $ARCH
   ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX
   make
