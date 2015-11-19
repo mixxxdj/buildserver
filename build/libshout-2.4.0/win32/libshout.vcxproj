@@ -97,8 +97,8 @@
       <Optimization>MaxSpeed</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\src;..\src/httpp;..\src/thread;..\src/log;..\src/avl;..\src/net;..\src/timings;../;..\include;..\..\..\include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_WIN32;VERSION="2.0.0";LIBSHOUT_MAJOR=2;LIBSHOUT_MINOR=0;LIBSHOUT_MICRO=0;HAVE_WINSOCK2_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src;..\src\common;..\src/common/httpp;..\src/common/thread;..\src/log;..\src/common/avl;..\src/common/net;..\src/common/timing;../;..\include;..\..\..\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;NDEBUG;_LIB;_WIN32;VERSION="2.4.0";LIBSHOUT_MAJOR=2;LIBSHOUT_MINOR=0;LIBSHOUT_MICRO=0;HAVE_WINSOCK2_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Release\libshout.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
@@ -135,8 +135,8 @@
       <Optimization>MaxSpeed</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\src;..\src/httpp;..\src/thread;..\src/log;..\src/avl;..\src/net;..\src/timings;../;..\include;..\..\..\include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_WIN32;VERSION="2.0.0";LIBSHOUT_MAJOR=2;LIBSHOUT_MINOR=0;LIBSHOUT_MICRO=0;HAVE_WINSOCK2_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src;..\src\common;..\src/common/httpp;..\src/common/thread;..\src/log;..\src/common/avl;..\src/common/net;..\src/common/timing;../;..\include;..\..\..\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;NDEBUG;_LIB;_WIN32;VERSION="2.4.0";LIBSHOUT_MAJOR=2;LIBSHOUT_MINOR=0;LIBSHOUT_MICRO=0;HAVE_WINSOCK2_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Release\libshout.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
@@ -174,8 +174,8 @@
       <WarningLevel>Level3</WarningLevel>
       <MinimalRebuild>true</MinimalRebuild>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\src;..\src/httpp;..\src/thread;..\src/log;..\src/avl;..\src/net;..\src/timings;../;..\include;..\..\..\include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_WIN32;VERSION="2.0.0";LIBSHOUT_MAJOR=2;LIBSHOUT_MINOR=0;LIBSHOUT_MICRO=0;HAVE_WINSOCK2_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src;..\src\common;..\src/common/httpp;..\src/common/thread;..\src/log;..\src/common/avl;..\src/common/net;..\src/common/timing;../;..\include;..\..\..\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;_DEBUG;_LIB;_WIN32;VERSION="2.4.0";LIBSHOUT_MAJOR=2;LIBSHOUT_MINOR=0;LIBSHOUT_MICRO=0;HAVE_WINSOCK2_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Debug\libshout.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Debug\</ObjectFileName>
@@ -210,8 +210,8 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\src;..\src/httpp;..\src/thread;..\src/log;..\src/avl;..\src/net;..\src/timings;../;..\include;..\..\..\include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_WIN32;VERSION="2.0.0";LIBSHOUT_MAJOR=2;LIBSHOUT_MINOR=0;LIBSHOUT_MICRO=0;HAVE_WINSOCK2_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src;..\src\common;..\src/common/httpp;..\src/common/thread;..\src/log;..\src/common/avl;..\src/common/net;..\src/common/timing;../;..\include;..\..\..\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;_DEBUG;_LIB;_WIN32;VERSION="2.4.0";LIBSHOUT_MAJOR=2;LIBSHOUT_MINOR=0;LIBSHOUT_MICRO=0;HAVE_WINSOCK2_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Debug\libshout.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Debug\</ObjectFileName>
@@ -238,31 +238,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\avl\avl.c" />
-    <ClCompile Include="..\src\httpp\httpp.c" />
-    <ClCompile Include="..\src\mp3.c" />
-    <ClCompile Include="..\src\ogg.c" />
-    <ClCompile Include="..\src\net\resolver.c" />
-    <ClCompile Include="..\src\opus.c" />
-    <ClCompile Include="..\src\shout.c" />
-    <ClCompile Include="..\src\net\sock.c" />
-    <ClCompile Include="..\src\thread\thread.c" />
-    <ClCompile Include="..\src\timing\timing.c" />
-    <ClCompile Include="..\src\util.c" />
-    <ClCompile Include="..\src\vorbis.c" />
-    <ClCompile Include="..\src\webm.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\avl\avl.h" />
-    <ClInclude Include="..\src\httpp\httpp.h" />
-    <ClInclude Include="..\src\net\resolver.h" />
-    <ClInclude Include="..\src\shout_private.h" />
-    <ClInclude Include="..\src\net\sock.h" />
-    <ClInclude Include="..\src\thread\thread.h" />
-    <ClInclude Include="..\src\timing\timing.h" />
-    <ClInclude Include="..\src\util.h" />
+    <ClInclude Include="..\include\compat.h" />
     <ClInclude Include="..\include\os.h" />
     <ClInclude Include="..\include\shout\shout.h" />
+    <ClInclude Include="..\src\common\avl\avl.h" />
+    <ClInclude Include="..\src\common\httpp\encoding.h" />
+    <ClInclude Include="..\src\common\httpp\httpp.h" />
+    <ClInclude Include="..\src\common\net\resolver.h" />
+    <ClInclude Include="..\src\common\net\sock.h" />
+    <ClInclude Include="..\src\common\thread\thread.h" />
+    <ClInclude Include="..\src\common\timing\timing.h" />
+    <ClInclude Include="..\src\config.h" />
+    <ClInclude Include="..\src\format_ogg.h" />
+    <ClInclude Include="..\src\shout_private.h" />
+    <ClInclude Include="..\src\util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\codec_opus.c" />
+    <ClCompile Include="..\src\codec_vorbis.c" />
+    <ClCompile Include="..\src\common\avl\avl.c" />
+    <ClCompile Include="..\src\common\httpp\encoding.c" />
+    <ClCompile Include="..\src\common\httpp\httpp.c" />
+    <ClCompile Include="..\src\common\net\resolver.c" />
+    <ClCompile Include="..\src\common\net\sock.c" />
+    <ClCompile Include="..\src\common\thread\thread.c" />
+    <ClCompile Include="..\src\common\timing\timing.c" />
+    <ClCompile Include="..\src\format_mp3.c" />
+    <ClCompile Include="..\src\format_ogg.c" />
+    <ClCompile Include="..\src\format_webm.c" />
+    <ClCompile Include="..\src\proto_http.c" />
+    <ClCompile Include="..\src\proto_icy.c" />
+    <ClCompile Include="..\src\proto_roaraudio.c" />
+    <ClCompile Include="..\src\proto_xaudiocast.c" />
+    <ClCompile Include="..\src\queue.c" />
+    <ClCompile Include="..\src\shout.c" />
+    <ClCompile Include="..\src\util.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

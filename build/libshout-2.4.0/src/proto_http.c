@@ -25,7 +25,9 @@
  #include <config.h>
 #endif
 
+#ifndef _WIN32
 #include <strings.h>
+#endif
 
 #include <shout/shout.h>
 #include "shout_private.h"
