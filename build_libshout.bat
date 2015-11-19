@@ -1,5 +1,5 @@
 echo "Building libshout"
-set SHOUT_PATH=libshout-2.3.1
+set SHOUT_PATH=libshout-2.4.0
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
