@@ -11,10 +11,9 @@
 *.suo
 *.tlog
 *.user
-Win32
 x64
 x86
 Debug
 Release
-lib
-include
+/lib
+/include
