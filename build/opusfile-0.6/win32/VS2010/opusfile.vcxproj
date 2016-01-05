@@ -116,6 +116,8 @@
     <Lib>
       <SubSystem>Windows</SubSystem>
       <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+      <AdditionalDependencies>opus.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\opus-1.1\win32\VS2010\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -135,6 +137,8 @@
     <Lib>
       <SubSystem>Windows</SubSystem>
       <MinimumRequiredVersion>5.02</MinimumRequiredVersion>
+      <AdditionalDependencies>opus.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\opus-1.1\win32\VS2010\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -162,6 +166,8 @@
     <Lib>
       <SubSystem>Windows</SubSystem>
       <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+      <AdditionalDependencies>opus.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\opus-1.1\win32\VS2010\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -189,6 +195,8 @@
     <Lib>
       <SubSystem>Windows</SubSystem>
       <MinimumRequiredVersion>5.02</MinimumRequiredVersion>
+      <AdditionalDependencies>opus.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\opus-1.1\win32\VS2010\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
