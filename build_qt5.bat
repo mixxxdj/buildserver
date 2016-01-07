@@ -31,7 +31,7 @@ set QMAKESPEC=win32-msvc2013
 
 REM NOTE(rryan): By setting -system-sqlite, -system-zlib is set as well. Building with -system-zlib fails with missing "zlib.dll". So I think our zlib build is not currently ready to be used with Qt. We should fix this but for now use -qt-zlib.
 REM NOTE(rryan): For some reason configure.bat returns an error even if it succeeded. Use "& nmake" to build regardless of the result.
-configure %CONFIG% -opensource -confirm-license -platform %QMAKESPEC% -qt-zlib -system-sqlite -qt-sql-sqlite -c++11 -ltcg -shared -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -skip multimedia -skip qt3d -skip qtwebkit -skip qtwebkit-examples -skip qtwebengine -nomake examples -nomake tests -no-dbus -no-audio-backend & nmake
+configure %CONFIG% -opensource -confirm-license -platform %QMAKESPEC% -qt-zlib -system-sqlite -qt-sql-sqlite -c++11 -ltcg -shared -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -skip qtmultimedia -skip qt3d -skip qtwebkit -skip qtwebkit-examples -skip qtwebengine -nomake examples -nomake tests -no-dbus -no-audio-backend & nmake
 
 REM Copy uic, rcc, and other utilities.
 %XCOPY% qtbase\bin\*.exe %BIN_DIR%
