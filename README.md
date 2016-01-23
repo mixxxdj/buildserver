@@ -1,7 +1,7 @@
 This repository contains everything needed to make a buildserver for Mixxx.
 It contains mainly documentation and script files
 
-* To make an Ubunut build server, see [README.UBUNTU](blob/master/README.UBUNTU)
+* To make an Ubunut build server, see [README.Ubuntu.md](blob/master/README.Ubuntu.md)
 * For a MAC OS X build server, take a look at [README.MACOSX](blob/master/README.MACOSX)
 * All windows stuff are in the [`windows_environment` branch](tree/windows_environment)
 
