@@ -8,10 +8,10 @@ Buildserver architecture
 Our buildserver is a virtualized environment.
 The "master" server is the physical virtualization host which runs the "guest" slaves, one for each target OS.
 
-* To make a master virtualized environment containing all three build environments, see [README.Master.md](blob/master/README.Master.md)
-* To make an Ubuntu slave build server, see [README.Ubuntu.slave.md](blob/master/README.Ubuntu.slave.md)
-* For a MAC OS X slave build server, take a look at [README.MacOSX.slave.md](blob/master/README.MacOSX.slave.md)
-* All windows stuff are in the [`windows_environment` branch](tree/windows_environment)
+* To make a master virtualized environment containing all three build environments, see [README.Master.md](README.Master.md)
+* To make an Ubuntu slave build server, see [README.Ubuntu.slave.md](README.Ubuntu.slave.md)
+* For a MAC OS X slave build server, take a look at [README.MacOSX.slave.md](README.MacOSX.slave.md)
+* All windows stuff are in the [`windows_environment` branch](buildserver/tree/windows_environment)
 
 Standalone Build servers
 ========================
