@@ -1,24 +1,25 @@
-This repository contains everything needed to make a complete buildserver for Mixxx.
-By complete, we mean a buildserver able to build for all three target OS.
-It contains mainly documentation and script files
+This repository contains instructions and script files for producing a Mixxx
+build server.
 
-Buildserver architecture
-========================
+Build Server Architecture
+=========================
 
-Our buildserver is a virtualized environment.
-The "master" server is the physical virtualization host which runs the "guest" slaves, one for each target OS.
+Our build environment consists of a master machine and worker machines that
+compile and package Mixxx. The master and workers need not be on the same
+machine. However, we typically run the master as a "real" host machine and the
+workers as virtualized guests on that machine.
 
-* To make a master virtualized environment containing all three build environments, see [README.Master.md](README.Master.md)
-* To make an Ubuntu slave build server, see [README.Ubuntu.slave.md](README.Ubuntu.slave.md)
-* For a MAC OS X slave build server, take a look at [README.MacOSX.slave.md](README.MacOSX.slave.md)
-* All windows stuff are in the [`windows_environment` branch](https://github.com/mixxxdj/buildserver/tree/windows_environment/)
+* To setup the master environment, see [README.Master.md](README.Master.md).
+* To setup an Ubuntu builder, see [README.Ubuntu.worker.md](README.Ubuntu.worker.md).
+* To setup an OS X builder, see [README.MacOSX.worker.md](README.MacOSX.worker.md).
+* To setup a Windows builder, see the [`windows_environment` branch](https://github.com/mixxxdj/buildserver/tree/windows_environment/).
 
-Standalone Build servers
-========================
+Standalone Build Environment
+============================
 
-You can also make a standalone build server that will build Mixxx for one target OS only.
-Standalone build server documentation is hosted on Mixxx wiki at the moment
+If you're looking to build Mixxx on your own computer, you don't need this
+repository. You can follow instructions on our wiki for each platform:
 
-* [Standalone build server on Linux](http://www.mixxx.org/wiki/doku.php/compiling_on_linux)
-* [Standalone build server on MacOSX] (http://www.mixxx.org/wiki/doku.php/compiling_on_os_x)
-* [Standalone build server on Windows] (http://www.mixxx.org/wiki/doku.php/compiling_on_windows)
+* [Compiling on Linux](http://www.mixxx.org/wiki/doku.php/compiling_on_linux)
+* [Compiling on Mac OS X](http://www.mixxx.org/wiki/doku.php/compiling_on_os_x)
+* [Compiling on Windows](http://www.mixxx.org/wiki/doku.php/compiling_on_windows)
