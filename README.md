@@ -1,8 +1,24 @@
-This repository contains everything needed to make a buildserver for Mixxx.
+This repository contains everything needed to make a complete buildserver for Mixxx.
+By complete, we mean a buildserver able to build for all three target OS.
 It contains mainly documentation and script files
 
-* To make an Ubunut build server, see [README.Ubuntu.md](blob/master/README.Ubuntu.md)
-* For a MAC OS X build server, take a look at [README.MacOSX.md](blob/master/README.MacOSX.md)
+Buildserver architecture
+========================
+
+Our buildserver is a virtualized environment.
+The "master" server is the physical virtualization host which runs the "guest" slaves, one for each target OS.
+
+* To make a master virtualized environment containing all three build environments, see [README.Master.md](blob/master/README.Master.md)
+* To make an Ubuntu slave build server, see [README.Ubuntu.slave.md](blob/master/README.Ubuntu.slave.md)
+* For a MAC OS X slave build server, take a look at [README.MacOSX.slave.md](blob/master/README.MacOSX.slave.md)
 * All windows stuff are in the [`windows_environment` branch](tree/windows_environment)
 
-* To make a virtualized environment containing all three build environments, see [README.Virtualization.md](blob/master/README.Virtualization.md)
+Standalone Build servers
+========================
+
+You can also make a standalone build server that will build Mixxx for one target OS only.
+Standalone build server documentation is hosted on Mixxx wiki at the moment
+
+* [Standalone build server on Linux](http://www.mixxx.org/wiki/doku.php/compiling_on_linux)
+* [Standalone build server on MacOSX] (http://www.mixxx.org/wiki/doku.php/compiling_on_os_x)
+* [Standalone build server on Windows] (http://www.mixxx.org/wiki/doku.php/compiling_on_windows)
