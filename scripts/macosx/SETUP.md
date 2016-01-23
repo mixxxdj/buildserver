@@ -2,10 +2,10 @@ Detailed instructions: http://www.contrib.andrew.cmu.edu/~somlo/OSXKVM/
 
 As of Ubuntu 14.04, need to build kvm, qemu, chameleon, etc. from master.
 
-===============================================================================
 HOST SETUP
-===============================================================================
+==========
 
+```
 export KVMOSX_PREFIX=/usr/local/kvmosx
 mkdir -p $KVMOSX_PREFIX
 chown mixxx:mixxx $KVMOSX_PREFIX
@@ -70,36 +70,40 @@ $KVMOSX_PREFIX/bin/qemu-system-x86_64 -enable-kvm \
   -monitor stdio
 
 $KVMOSX_PREFIX/bin/qemu-system-x86_64 -enable-kvm -m 2048 -cpu core2duo -smp 2 -machine q35 -vga std -usb -device usb-kbd -device usb-mouse -device isa-applesmc,osk="ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc" -kernel $KVMOSX_PREFIX/lib/chameleon_svn2360_boot -smbios type=2 -device ide-drive,bus=ide.2,drive=MacHDD -drive id=MacHDD,if=none,file=$VM_PATH/$VM_NAME.img -bios $KVMOSX_PREFIX/lib/bios-mac.bin -device virtio-net,netdev=hub0port0,id=eth0 -netdev user,id=hub0port0,hostfwd=tcp:${GUEST_NATIVE_VNC}-:5900,hostfwd=tcp:${GUEST_SSH}-:22 -vnc $GUEST_QEMU_VNC -monitor stdio
+```
 
-===============================================================================
 CREATING A SNAPSHOT
-===============================================================================
+===================
 
-WARNING: The new snapshot file is what qemu should use! If you roll back to the
+**WARNING:** The new snapshot file is what qemu should use! If you roll back to the
 backing image then the snapshot becomes invalid / destroyed / unusable. Always
 inherit snapshots from the MOST RECENT snapshot or you destroy all the previous
 ones.
-
-export SNAPSHOT_NAME="2014_05_10_post_install_xcode_clean"
+```
+$ export SNAPSHOT_NAME="2014_05_10_post_install_xcode_clean"
 $ mv $VM_PATH/$VM_NAME.img $VM_PATH/${VM_NAME}_${SNAPSHOT_NAME}.img
 $ echo "Just installed. Turned off energy saving, spotlight indexing, etc. Installed XCode." > $VM_PATH/${VM_NAME}_${SNAPSHOT_NAME}.txt
 $ $KVMOSX_PREFIX/bin/qemu-img create -f qcow2 -b $VM_PATH/${VM_NAME}_${SNAPSHOT_NAME}.img $VM_PATH/${VM_NAME}.img
+```
 
-===============================================================================
 GUEST SETUP
-===============================================================================
+===========
 
-1) install virtio-net driver.
-2) configure Screen Sharing (VNC) and SSH access
-3) install XCode from Mac App Store
-4) TODO: Install XCode 10.6 and 10.4u SDKs? Link them into the XCode platforms dir [1]
-5) Create build environments (see [2]):
+1. install virtio-net driver.
+2. configure Screen Sharing (VNC) and SSH access
+3. install XCode from Mac App Store
+4. TODO: Install XCode 10.6 and 10.4u SDKs? [Link them into the XCode platforms dir][1]
+5. Create build environments (see [Mac OS X builder setup][2]):
 
 To build an OS X 10.6 build environment:
+```
 $ bash ./scripts/macosx/build_environment.sh --name intel-osx10.6 --enable-x86-64 --enable-i386 --macosx-sdk 10.9 --macosx-target 10.6
-To build an OS X 10.5 build environment:
-$ bash ./scripts/macosx/build_environment.sh --name intel-osx10.5 --enable-x86-64 --enable-i386 --macosx-sdk 10.9 --macosx-target 10.5
+```
 
+To build an OS X 10.5 build environment:
+```
+$ bash ./scripts/macosx/build_environment.sh --name intel-osx10.5 --enable-x86-64 --enable-i386 --macosx-sdk 10.9 --macosx-target 10.5
+```
 
 [1] https://gist.github.com/rnapier/3370649
 [2] http://mixxx.org/wiki/doku.php/macosx_builder_setup
