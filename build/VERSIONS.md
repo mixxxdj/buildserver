@@ -16,7 +16,7 @@ Most recent library versions present in this directory.
     <tr>
       <td>fftw</td>
       <td>3.3.4</td>
-      <td></td>
+      <td>2016-02-09</td>
     </tr>
     <tr>
       <td>flac</td>
@@ -96,7 +96,7 @@ Most recent library versions present in this directory.
     <tr>
       <td>pthreads-win32</td>
       <td>2.9.1</td>
-      <td></td>
+      <td>2016-02-09</td>
     </tr>
     <tr>
       <td>qt</td>
@@ -111,7 +111,7 @@ Most recent library versions present in this directory.
     <tr>
       <td>sqlite-amalgamation</td>
       <td>3100200</td>
-      <td></td>
+      <td>2016-02-08</td>
     </tr>
     <tr>
       <td>taglib</td>
@@ -121,6 +121,6 @@ Most recent library versions present in this directory.
     <tr>
       <td>zlib</td>
       <td>1.2.8</td>
-      <td>2015-11-15</td>
+      <td>2016-02-09</td>
     </tr>
 </table>
