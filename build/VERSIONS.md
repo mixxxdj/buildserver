@@ -110,7 +110,7 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>sqlite-amalgamation</td>
-      <td>3080600</td>
+      <td>3100200</td>
       <td></td>
     </tr>
     <tr>
