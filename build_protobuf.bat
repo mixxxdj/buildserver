@@ -1,5 +1,5 @@
 echo "Building protobuf"
-set PROTOBUF_PATH=protobuf-2.5.0
+set PROTOBUF_PATH=protobuf-2.6.1
 
 if %MACHINE_X86% (
   set PLATFORM=Win32

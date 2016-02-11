@@ -90,8 +90,8 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>protobuf</td>
-      <td>2.5.0</td>
-      <td></td>
+      <td>2.6.1</td>
+      <td>2016-02-09</td>
     </tr>
     <tr>
       <td>pthreads-win32</td>
