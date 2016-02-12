@@ -1,6 +1,6 @@
 echo "Building opus"
-set OPUS_PATH=opus-1.1
-set OPUSFILE_PATH=opusfile-0.6
+set OPUS_PATH=opus
+set OPUSFILE_PATH=opusfile-0.7
 
 if %MACHINE_X86% (
   set PLATFORM=Win32

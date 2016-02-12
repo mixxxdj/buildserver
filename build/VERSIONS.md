@@ -36,17 +36,17 @@ Most recent library versions present in this directory.
     <tr>
       <td>libid3tag</td>
       <td>0.15.1b</td>
-      <td></td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>libmad</td>
       <td>0.15.1b</td>
-      <td></td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>libogg</td>
       <td>1.3.2</td>
-      <td></td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>libshout</td>
@@ -70,13 +70,13 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>opus</td>
-      <td>1.1</td>
-      <td></td>
+      <td>1.1.2</td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>opusfile</td>
-      <td>0.6</td>
-      <td></td>
+      <td>0.7</td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>portaudio</td>
@@ -85,7 +85,7 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>portmidi</td>
-      <td>228</td>
+      <td>r228</td>
       <td></td>
     </tr>
     <tr>

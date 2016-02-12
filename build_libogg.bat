@@ -1,5 +1,5 @@
 echo "Building libogg"
-set OGG_PATH=libogg-1.3.2
+set OGG_PATH=ogg
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
