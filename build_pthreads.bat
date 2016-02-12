@@ -1,5 +1,5 @@
 echo "Building pthreads"
-set PTHREADS_PATH=pthreads.2
+set PTHREADS_PATH=pthreads
 
 if %MACHINE_X86% (
   set PLATFORM=Win32

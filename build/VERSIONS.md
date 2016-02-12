@@ -50,8 +50,8 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>libshout</td>
-      <td>2.3.1</td>
-      <td></td>
+      <td>2.4.1</td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>libshout</td>
