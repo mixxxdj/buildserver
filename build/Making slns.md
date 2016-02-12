@@ -4,7 +4,7 @@
 - Use /MT for release and /MTd for debug
 - Use v<latest>_xp for platform toolset
 - Use /subsystem:WINDOWS
-- Use /Zi and define the PDB output filename as "$(OutDir)$(TargetName).pdb" 
+- Use /Zi and define the PDB output filename as "$(OutDir)$(TargetName).pdb"
     (for ease of scripting the copy in build_xxx.bat)
 - Use /O2 on Release build
 - /fp:fast if appropriate (skipped protobuf, SQLite, zlib, taglib, pthreads

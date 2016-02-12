@@ -65,8 +65,8 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>libvorbis</td>
-      <td>1.3.4</td>
-      <td></td>
+      <td>1.3.5</td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>opus</td>
