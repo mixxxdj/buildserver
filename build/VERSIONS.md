@@ -20,8 +20,8 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>flac</td>
-      <td>1.3.0</td>
-      <td></td>
+      <td>1.3.1</td>
+      <td>2016-02-12</td>
     </tr>
     <tr>
       <td>hss1394</td>
