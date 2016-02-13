@@ -1,5 +1,5 @@
 echo "Building libsndfile"
-set SNDFILE_PATH=libsndfile-1.0.25
+set SNDFILE_PATH=libsndfile-1.0.26
 
 if %MACHINE_X86% (
   set PLATFORM=Win32

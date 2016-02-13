@@ -60,8 +60,8 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>libsndfile</td>
-      <td>1.0.25</td>
-      <td></td>
+      <td>1.0.26</td>
+      <td>2016-02-13</td>
     </tr>
     <tr>
       <td>libvorbis</td>
