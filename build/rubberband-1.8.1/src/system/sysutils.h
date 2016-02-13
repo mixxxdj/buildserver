@@ -52,7 +52,7 @@
 #define getpid _getpid
 #endif
 
-#ifdef __MSVC__
+#if (__MSVC__ && _MSC_VER < 1900)
 #define uint8_t unsigned __int8
 #define uint16_t unsigned __int16
 #define uint32_t unsigned __int32

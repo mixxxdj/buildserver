@@ -27,8 +27,6 @@
 
 #include "system/Allocators.h"
 
-#include <algorithm>
-
 namespace RubberBand 
 {
       

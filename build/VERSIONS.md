@@ -106,7 +106,7 @@ Most recent library versions present in this directory.
     <tr>
       <td>rubberband</td>
       <td>1.8.1</td>
-      <td></td>
+      <td>2016-02-12</td>
     </tr>
     <tr>
       <td>sqlite-amalgamation</td>
