@@ -10,8 +10,8 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
         <td>chromaprint</td>
-        <td>1.1</td>
-        <td></td>
+        <td>1.3.1</td>
+        <td>2016-02-19</td>
     </tr>
     <tr>
       <td>fftw</td>

@@ -1,0 +1,8 @@
+#cmakedefine HAVE_ROUND 1
+#cmakedefine HAVE_LRINTF 1
+#cmakedefine WITH_AVFFT 1
+#cmakedefine WITH_FFTW3 1
+#cmakedefine WITH_VDSP 1
+#cmakedefine WITH_KISSFFT 1
+#cmakedefine TESTS_DIR "@TESTS_DIR@"
+

@@ -1,5 +1,5 @@
 echo "Building chromaprint"
-set CHROMAPRINT_PATH=chromaprint-1.1
+set CHROMAPRINT_PATH=chromaprint-1.3.1
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
@@ -8,13 +8,13 @@ if %MACHINE_X86% (
 )
 
 if %CONFIG_RELEASE% (
-  set CONFIG=Release
+  set CONFIG=RelWithDebInfo
 ) else (
   set CONFIG=Debug
 )
 
-REM NOTE(rryan): generated solution with
-REM C:\mixxx\environments\prototype\build\chromaprint-1.1>cmake . -G "Visual Studio 12 2013" -DWITH_FFTW3=ON -DFFTW3_FFTW_LIBRARY=c:/mixxx/environments/prototype/lib/libfftw-3.3.dll -DWITH_AVFFT=OFF -DBUILD_EXAMPLES=OFF
+REM NOTE(pegasus): generated solution one with
+REM E:\Mixxx\Buildserver\build\chromaprint-1.3.1>cmake . -G "Visual Studio 14 2015 Win64" -DWITH_FFTW3=ON -DFFTW3_DIR=../..
 
 cd build\%CHROMAPRINT_PATH%
 %MSBUILD% chromaprint.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:chromaprint:Clean;chromaprint:Rebuild
