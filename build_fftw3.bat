@@ -8,15 +8,16 @@ if %MACHINE_X86% (
 )
 
 if %CONFIG_RELEASE% (
-  set CONFIG=Release
+  set CONFIG=Static-Release
 ) else (
-  set CONFIG=Debug
+  set CONFIG=Static-Debug
 )
 
+rem cd build\%FFTW_PATH%\fftw-3.3-libs
 cd build\%FFTW_PATH%\fftw-3.3-libs\libfftw-3.3
 
 REM NOTE(rryan): Couldn't get solution itself to resolve the build actions. Odd.
-REM %MSBUILD% fftw-3.3-libs.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:fftw-3.3-libs\libfftw-3.3:Clean;fftw-3.3-libs\libfftw-3.3:Rebuild
+rem %MSBUILD% fftw-3.3-libs.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libfftw-3.3:Clean;libfftw-3.3:Rebuild
 %MSBUILD% libfftw-3.3.vcxproj /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:Clean;Rebuild
 
 copy %PLATFORM%\%CONFIG%\libfftw-3.3.lib %LIB_DIR%
