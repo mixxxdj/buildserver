@@ -1,4 +1,5 @@
 REM Usage: build_environment.bat x86 Release
+@ECHO off
 set MACHINE_X86="%1" == "x86"
 set CONFIG_RELEASE="%2" == "Release"
 
@@ -16,9 +17,22 @@ if %CONFIG_RELEASE% (
   echo Building debug mode.  
 )
 
-SET MSVC_PATH=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC
+rem Edit to suit your environment
+SET MSVC_PATH=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC
+SET VCVERSION=140
+SET BUILDTOOLS_PATH=E:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\
+SET BUILDTOOLS_SCRIPT=vcvarsall.bat
+rem If using the Visual C++ Build Tools, uncomment & adjust the following
+rem SET BUILDTOOLS_PATH=C:\Program Files (x86)\Microsoft Visual C++ Build Tools
+rem SET BUILDTOOLS_SCRIPT=vcbuildtools.bat
+rem If building for XP and using the C++ Build Tools package (not full VS,)
+rem   install the Windows 7.1 SDK then uncomment and adjust the following
+rem SET WindowsSdkDir_71A=E:\Program Files\Microsoft SDKs\Windows\v7.1\
+
 SET XCOPY=xcopy /S /Y /I
-SET MSBUILD=msbuild /p:VCTargetsPath="C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\\"
+SET MSBUILD=msbuild /m /p:PlatformToolset=v%VCVERSION%_xp
+rem If using the Visual C++ Build Tools, uncomment & adjust the following
+rem SET MSBUILD=msbuild /m /p:PlatformToolset=v140_xp /p:VCTargetsPath="C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\\"
 set ROOT_DIR=%CD%
 SET BIN_DIR=%CD%\bin\
 SET LIB_DIR=%CD%\lib\
@@ -27,9 +41,17 @@ SET BUILD_DIR=%CD%\build\
 
 set OLDPATH=%PATH%
 if %MACHINE_X86% (
-  call "%MSVC_PATH%\vcvarsall.bat" x86
+  rem If build OS is 64-bit:
+rem  call "%BUILDTOOLS_PATH%\vcbuildtools.bat" amd64_x86
+call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" amd64_x86
+  rem If build OS is 32-bit, uncomment the following:
+  rem call "%BUILDTOOLS_PATH%\vcbuildtools.bat" x86
 ) else (
-  call "%MSVC_PATH%\vcvarsall.bat" x86_amd64
+  rem If build OS is 64-bit:
+rem  call "%BUILDTOOLS_PATH%\vcbuildtools.bat" amd64
+call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" amd64
+  rem If build OS is 32-bit, uncomment the following:
+  rem call "%BUILDTOOLS_PATH%\vcbuildtools.bat" x86_amd64
 )
 
 md %LIB_DIR%
@@ -61,10 +83,10 @@ call build_qt4.bat REM depends on sqlite3
 
 REM Copy debug runtime DLLs for debug builds.
 if not %CONFIG_RELEASE% (
-  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC120.DebugCRT\*.dll" %LIB_DIR%
-  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC120.DebugCXXAMP\*.dll" %LIB_DIR%
-  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC120.DebugOpenMP\*.dll" %LIB_DIR%
+  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCRT\*.dll" %LIB_DIR%
+  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCXXAMP\*.dll" %LIB_DIR%
+  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugOpenMP\*.dll" %LIB_DIR%
 )
 
-REM Clean up after vcvarsall.bat since repeated running eventually overflows PATH.
+REM Clean up after vcbuildtools.bat since repeated running eventually overflows PATH.
 SET PATH=%OLDPATH%
