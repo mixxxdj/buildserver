@@ -81,7 +81,7 @@ Most recent library versions present in this directory.
     <tr>
       <td>portaudio</td>
       <td>v19_20140130</td>
-      <td></td>
+      <td>2016-02-08</td>
     </tr>
     <tr>
       <td>portmidi</td>
