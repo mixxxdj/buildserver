@@ -17,6 +17,9 @@ if %CONFIG_RELEASE% (
   echo Building debug mode.  
 )
 
+rem Use all CPU cores
+set CL=/MP
+
 rem Edit to suit your environment
 SET MSVC_PATH=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC
 SET VCVERSION=140
