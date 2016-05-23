@@ -1,3 +1,3 @@
 
-DISTS="precise raring saucy trusty utopic vivid wily"
+DISTS="trusty utopic vivid wily xenial yakkety"
 ARCHS="i386 amd64"
