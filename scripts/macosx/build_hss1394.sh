@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION=hss1394
+export VERSION=hss1394-r8
 export ARCHIVE=$VERSION.tar.gz
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
@@ -24,7 +24,7 @@ do
   mkdir -p $VERSION-$ARCH/scons
   tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$ARCH --strip-components 1
   cd $VERSION-$ARCH
-  tar -zxf $DEPENDENCIES/scons-2.3.1.tar.gz -C scons --strip-components 1
+  tar -zxf $DEPENDENCIES/scons-2.5.0.tar.gz -C scons --strip-components 1
   # Build SCons
   cd scons && python setup.py build && cd ..
   source $PROGDIR/environment.sh $ARCH
