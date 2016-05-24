@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=2.4.0
+export VERSION_NUMBER=2.4.1
 export VERSION=libshout-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
@@ -34,8 +34,8 @@ do
   cd ..
 done
 
-# Install the i386 version in case there are binaries we want to run (our host is i386)
-export ARCH=i386
+# Install the host version in case there are binaries we want to run.
+export ARCH=$HOST_ARCH
 cd $VERSION-$ARCH
 source $PROGDIR/environment.sh $ARCH
 
