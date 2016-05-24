@@ -44,8 +44,8 @@ do
   cd ..
 done
 
-# Install the i386 version in case there are binaries we want to run (our host is i386)
-export ARCH=i386
+# Install the host version in case there are binaries we want to run.
+export ARCH=$HOST_ARCH
 cd $VERSION-$ARCH
 source $PROGDIR/environment.sh $ARCH
 
