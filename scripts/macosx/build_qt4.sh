@@ -61,6 +61,12 @@ sed -e "s/-mmacosx-version-min=10.[45]/-mmacosx-version-min=$MIXXX_MACOSX_TARGET
 sed -e "s/QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4/QMAKE_MACOSX_DEPLOYMENT_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/mac.conf
 sed -e "s/-mmacosx-version-min=10.5/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/g++-macx.conf
 
+# https://bugreports.qt.io/browse/QTBUG-24361
+sed -e 's/\|contains/||contains/g' -i '' src/plugins/bearer/corewlan/corewlan.pro
+
+# Build issue with 10.11 SDK.
+curl https://raw.githubusercontent.com/Homebrew/patches/480b7142c4e2ae07de6028f672695eb927a34875/qt/el-capitan.patch | patch -p1 
+
 # Mixxx does not use Phonon or Webkit and as of Qt 4.8.6 Phonon does not build
 # with i386/x86_64 using gcc-llvm (the default GCC included with XCode).
 # See:
@@ -73,7 +79,7 @@ sed -e "s/-mmacosx-version-min=10.5/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g"
 # See:
 # - http://www.mimec.org/node/296
 # NOTE(rryan): Setting -system-sqlite sets -system-zlib. Set -qt-zlib explicitly.
-./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -platform macx-g++ -no-qt3support -debug-and-release -nomake examples -nomake demos -confirm-license
+./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -no-qt3support -release -nomake examples -nomake demos -confirm-license
 
 # NOTE: Using -ffast-math will fail when building SQLite so either remove -ffast-math from environment.sh temporarily or remove -ffast-math from the SQLite Makefiles (you'll have to do it for QtWebkit and QtSql). You can do this as the build fails since it will complain about -ffast-math. We remove it with sed:
 find src/sql -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
