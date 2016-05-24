@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.3.4
+export VERSION_NUMBER=1.3.5
 export VERSION=libvorbis-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.xz
 
@@ -36,8 +36,8 @@ do
   cd ..
 done
 
-# Install the i386 version in case there are binaries we want to run (our host is i386)
-export ARCH=i386
+# Install the host version in case there are binaries we want to run.
+export ARCH=$HOST_ARCH
 cd $VERSION-$ARCH
 source $PROGDIR/environment.sh $ARCH
 export CC="$CC $CFLAGS"
