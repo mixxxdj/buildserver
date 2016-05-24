@@ -11,9 +11,9 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=5.3.0-RC
+export VERSION_NUMBER=5.6.0
 export VERSION=qt-everywhere-opensource-src-${VERSION_NUMBER}
-export ARCHIVE=$VERSION.tar.xz
+export ARCHIVE=$VERSION.tar.gz
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
