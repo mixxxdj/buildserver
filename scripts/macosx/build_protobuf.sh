@@ -11,18 +11,18 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=2.5.0
+export VERSION_NUMBER=2.6.1
 export VERSION=protobuf-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export PROTOBUF_DYLIB=src/.libs/libprotobuf.8.dylib
+export PROTOBUF_DYLIB=src/.libs/libprotobuf.9.dylib
 export PROTOBUF_STATICLIB=src/.libs/libprotobuf.a
-export PROTOBUF_LITE_DYLIB=src/.libs/libprotobuf-lite.8.dylib
+export PROTOBUF_LITE_DYLIB=src/.libs/libprotobuf-lite.9.dylib
 export PROTOBUF_LITE_STATICLIB=src/.libs/libprotobuf-lite.a
-export PROTOC_DYLIB=src/.libs/libprotoc.8.dylib
+export PROTOC_DYLIB=src/.libs/libprotoc.9.dylib
 export PROTOC_STATICLIB=src/.libs/libprotoc.a
 
 # We need a working version of protoc for this architecture (regardless of
@@ -32,6 +32,7 @@ tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$HOST_ARCH --strip-components 1
 cd $VERSION-$HOST_ARCH
 source $PROGDIR/environment.sh $HOST_ARCH
 COMMON_FLAGS="--host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX"
+./autogen.sh
 ./configure $COMMON_FLAGS
 make
 make install
