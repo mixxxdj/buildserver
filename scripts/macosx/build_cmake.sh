@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=2.8.12.2
+export VERSION_NUMBER=3.5.2
 export VERSION=cmake-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
