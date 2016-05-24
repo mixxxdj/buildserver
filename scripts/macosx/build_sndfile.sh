@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.0.25
+export VERSION_NUMBER=1.0.26
 export VERSION=libsndfile-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
@@ -26,16 +26,18 @@ do
   mkdir -p $VERSION-$ARCH
   tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$ARCH --strip-components 1
   cd $VERSION-$ARCH
-  # libsndfile references Carbon.h
-  curl https://gist.githubusercontent.com/metabr/8623583/raw/90966b76c6f52e1293b5303541e1f2d72e2afd08/0001-libsndfile-doesn-t-find-Carbon.h-using-XCode-4.3.patch | patch -p1
+  # libsndfile test programs references Carbon.h. We work around this by only building in src/ now instead of adding this patch.
+  #curl https://gist.githubusercontent.com/metabr/8623583/raw/90966b76c6f52e1293b5303541e1f2d72e2afd08/0001-libsndfile-doesn-t-find-Carbon.h-using-XCode-4.3.patch | patch -p1
   source $PROGDIR/environment.sh $ARCH
   ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX
-  make
-  cd ..
+  # Don't build test programs by only making in src/.
+  cd src
+  make 
+  cd ../..
 done
 
-# Install the i386 version in case there are binaries we want to run (our host is i386)
-export ARCH=i386
+# Install the host version in case there are binaries we want to run.
+export ARCH=$HOST_ARCH
 cd $VERSION-$ARCH
 source $PROGDIR/environment.sh $ARCH
 
@@ -51,5 +53,7 @@ done
 
 lipo -create ./$DYLIB ${OTHER_DYLIBS[@]} -output ./$DYLIB
 lipo -create ./$STATICLIB ${OTHER_STATICLIBS[@]} -output ./$STATICLIB
+# Don't build test programs by only installing from src/.
+cd src
 make install
-cd ..
+cd ../..
