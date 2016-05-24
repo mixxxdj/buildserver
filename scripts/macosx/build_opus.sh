@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export OPUS_VERSION_NUMBER=1.1
+export OPUS_VERSION_NUMBER=1.1.2
 export OPUS_VERSION=opus-${OPUS_VERSION_NUMBER}
 export OPUS_ARCHIVE=$OPUS_VERSION.tar.gz
 
@@ -27,14 +27,14 @@ do
   tar -zxf $DEPENDENCIES/$OPUS_ARCHIVE -C $OPUS_VERSION-$ARCH --strip-components 1
   cd $OPUS_VERSION-$ARCH
   source $PROGDIR/environment.sh $ARCH
-  ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX
+  ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX --enable-float-approx
   make clean
   make
   cd ..
 done
 
-# Install the i386 version in case there are binaries we want to run (our host is i386)
-export ARCH=i386
+# Install the host version in case there are binaries we want to run.
+export ARCH=$HOST_ARCH
 cd $OPUS_VERSION-$ARCH
 source $PROGDIR/environment.sh $ARCH
 
@@ -53,7 +53,7 @@ lipo -create ./$OPUS_STATICLIB ${OTHER_OPUS_STATICLIBS[@]} -output ./$OPUS_STATI
 make install
 cd ..
 
-export OPUSFILE_VERSION_NUMBER=0.6
+export OPUSFILE_VERSION_NUMBER=0.7
 export OPUSFILE_VERSION=opusfile-${OPUSFILE_VERSION_NUMBER}
 export OPUSFILE_ARCHIVE=$OPUSFILE_VERSION.tar.gz
 
@@ -73,14 +73,14 @@ do
   # opus/opus_multistream.h.
   sed -e 's/<opus_multistream.h>/<opus\/opus_multistream.h>/g' -i '' include/opusfile.h
   source $PROGDIR/environment.sh $ARCH
-  DEPS_CFLAGS="-I$MIXXX_PREFIX/include" DEPS_LIBS="-L$MIXXX_PREFIX/lib -logg -lopus" ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX --enable-fixed-point --disable-http
+  DEPS_CFLAGS="-I$MIXXX_PREFIX/include" DEPS_LIBS="-L$MIXXX_PREFIX/lib -logg -lopus" ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX --disable-http
   make clean
   make
   cd ..
 done
 
-# Install the i386 version in case there are binaries we want to run (our host is i386)
-export ARCH=i386
+# Install the host version in case there are binaries we want to run.
+export ARCH=$HOST_ARCH
 cd $OPUSFILE_VERSION-$ARCH
 source $PROGDIR/environment.sh $ARCH
 
