@@ -8,7 +8,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-usage() { echo "Usage: $0 --name <name> [--macosx-sdk <version>] [--maxosx-target <version>] [--enable-ppc] [--enable-i386] [--enable-x86-64]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 --name <name> [--macosx-sdk <version>] [--maxosx-target <version>] [--macosx-stdlib <stdlib>] [--enable-ppc] [--enable-i386] [--enable-x86-64]" 1>&2; exit 1; }
 
 MIXXX_ENVIRONMENT_NAME=""
 MIXXX_MACOSX_SDK='10.9'
@@ -94,8 +94,11 @@ source $PROGDIR/environment.sh
 export HOST=$TARGET_X86_64
 export HOST_ARCH=x86_64
 
-# Setup cmake first so that we can build other projects that use cmake.
+# Setup build systems first so that we can build other projects that use them.
 $PROGDIR/build_cmake.sh
+$PROGDIR/build_autoconf.sh
+$PROGDIR/build_automake.sh
+$PROGDIR/build_libtool.sh
 
 $PROGDIR/build_chromaprint.sh
 $PROGDIR/build_flac.sh
@@ -112,6 +115,6 @@ $PROGDIR/build_qt4.sh # depends on sqlite
 $PROGDIR/build_sndfile.sh
 $PROGDIR/build_taglib.sh
 $PROGDIR/build_vorbis.sh
-
-# Shout depends on libogg and libvorbis.
+$PROGDIR/build_openssl.sh
+# Shout depends on openssl, libogg and libvorbis.
 $PROGDIR/build_shout.sh
