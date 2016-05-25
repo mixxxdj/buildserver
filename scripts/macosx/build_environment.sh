@@ -96,13 +96,16 @@ export HOST_ARCH=x86_64
 
 # Setup build systems first so that we can build other projects that use them.
 $PROGDIR/build_cmake.sh
+$PROGDIR/build_scons.sh
 $PROGDIR/build_autoconf.sh
 $PROGDIR/build_automake.sh
 $PROGDIR/build_libtool.sh
+$PROGDIR/build_pkgconfig.sh
 
 $PROGDIR/build_chromaprint.sh
 $PROGDIR/build_flac.sh
 $PROGDIR/build_hss1394.sh
+$PROGDIR/build_libusb.sh
 $PROGDIR/build_ogg.sh
 $PROGDIR/build_opus.sh # depends on ogg
 $PROGDIR/build_portaudio.sh
