@@ -89,21 +89,24 @@ $ $KVMOSX_PREFIX/bin/qemu-img create -f qcow2 -b $VM_PATH/${VM_NAME}_${SNAPSHOT_
 GUEST SETUP
 ===========
 
-1. install virtio-net driver.
-2. configure Screen Sharing (VNC) and SSH access
-3. install XCode from Mac App Store
-4. TODO: Install XCode 10.6 and 10.4u SDKs? [Link them into the XCode platforms dir][1]
-5. Create build environments (see [Mac OS X builder setup][2]):
+1. Configure Screen Sharing (VNC) and SSH access (Settings -> Sharing -> Screen Sharing / Remote Login).
+2. Install XCode from Mac App Store. Run it once to accept the license.
+3. Install a JDK from Oracle (used by Jenkins -- must be a JDK since the JRE isn't headless).
+4. Disable screensaver.
+5. Disable Spotlight indexing of $HOME (or wherever build are happening). Settings -> Spotlight -> Privacy -> Add /Users/mixxx.
+6. Make Windows shell scripts run by Jenkins do nothing: ```ln -s /bin/true /usr/local/bin/cmd```
+7. In Jenkins, set prefix start slave command to: ```eval `/usr/libexec/path_helper -s` && ``` to get the PATH set correctly to include /usr/local/bin. https://issues.jenkins-ci.org/browse/JENKINS-15655
+8. Create build environments (see [Mac OS X builder setup][1]):
 
-To build an OS X 10.6 build environment:
+To build an OS X 10.7 (libc++) amd64 build environment:
+
 ```
-$ bash ./scripts/macosx/build_environment.sh --name intel-osx10.6 --enable-x86-64 --enable-i386 --macosx-sdk 10.9 --macosx-target 10.6
+./scripts/macosx/build_environment.sh --name mixxx-2.0-x86_64-10.7 --macosx-sdk 10.11 --macosx-target 10.7 --enable-x86-64 --macosx-stdlib libc++
 ```
 
-To build an OS X 10.5 build environment:
+To build an OS X 10.6 (libstdc++) amd64/i386 build environment:
 ```
-$ bash ./scripts/macosx/build_environment.sh --name intel-osx10.5 --enable-x86-64 --enable-i386 --macosx-sdk 10.9 --macosx-target 10.5
+$ bash ./scripts/macosx/build_environment.sh --name intel-osx10.6 --enable-x86-64 --enable-i386 --macosx-sdk 10.11 --macosx-target 10.6 --macosx-stdlib libstdc++
 ```
 
-[1] https://gist.github.com/rnapier/3370649
-[2] http://mixxx.org/wiki/doku.php/macosx_builder_setup
+[1] http://mixxx.org/wiki/doku.php/macosx_builder_setup
