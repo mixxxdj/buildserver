@@ -45,9 +45,7 @@ echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${QT_ARCH
 # See:
 # - http://llvm.org/bugs/show_bug.cgi?id=16805
 # - https://qt.gitorious.org/qt/qt/source/5267ff3c462986f514f33998a2614b8f9c22402e:src/plugins/phonon/qt7/qt7.pro#L5
-./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk macosx${MIXXX_MACOSX_SDK} -plugin-sql-sqlite -platform macx-g++ -release -skip qtwebkit-examples -confirm-license
-
-./configure -opensource -prefix $QTDIR -arch x86 -arch x86_64 -sdk macosx${MIXXX_MACOSX_SDK} -plugin-sql-sqlite -platform macx-g++ -release -skip qtwebkit-examples -confirm-license
+./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk macosx${MIXXX_MACOSX_SDK} -plugin-sql-sqlite -platform macx-g++ -release -confirm-license -force-debug-info -nomake examples -nomake tests -skip qt3d -skip qtwebengine
 
 # NOTE: Using -ffast-math will fail when building SQLite so either remove -ffast-math from environment.sh temporarily or remove -ffast-math from the SQLite Makefiles. You can do this as the build fails since it will complain about -ffast-math. We remove it with sed:
 find qtbase/src/plugins/sqldrivers/sqlite -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
