@@ -32,10 +32,12 @@ function download_and_verify {
 download_and_verify http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz 64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684
 download_and_verify http://ftp.gnu.org/gnu/automake/automake-1.15.tar.xz 9908c75aabd49d13661d6dcb1bc382252d22cc77bf733a2d55e87f2aa2db8636
 download_and_verify http://ftp.wayne.edu/gnu/libtool/libtool-2.4.tar.xz afcce660d3dc54c63a0a5ba3cf05272239dc3c54bbeba20f6bad250f9dc007ae
+download_and_verify https://pkg-config.freedesktop.org/releases/pkg-config-0.29.1.tar.gz beb43c9e064555469bd4390dcfd8030b1536e0aa103f08d7abf7ae8cac0cb001
 download_and_verify https://bitbucket.org/acoustid/chromaprint/downloads/chromaprint-1.3.1.tar.gz 8f95a011e6fe3a75281520daa9376b7f028300e20a5be9af08ef9c851d4bb581
 download_and_verify https://cmake.org/files/v3.5/cmake-3.5.2.tar.gz 92d8410d3d981bb881dfff2aed466da55a58d34c7390d50449aa59b32bb5e62a
 download_and_verify http://downloads.xiph.org/releases/flac/flac-1.3.1.tar.xz 4773c0099dba767d963fd92143263be338c48702172e8754b9bc5103efe1c56c
 download_and_verify http://downloads.mixxx.org/hss1394-r8.tar.gz d5c87a92ad8e277b418300fbbfcc06a0826dfde71f7b10643ac59703d795c002
+download_and_verify http://downloads.sourceforge.net/project/libusb/libusb-1.0/libusb-1.0.20/libusb-1.0.20.tar.bz2 cb057190ba0a961768224e4dc6883104c6f945b2bf2ef90d7da39e7c1834f7ff
 download_and_verify https://www.openssl.org/source/openssl-1.0.2h.tar.gz 1d4007e53aad94a5b2002fe045ee7bb0b3d98f1a47f8b2bc851dcd1c74332919
 download_and_verify http://downloads.xiph.org/releases/ogg/libogg-1.3.2.tar.xz 3f687ccdd5ac8b52d76328fbbfebc70c459a40ea891dbf3dccb74a210826e79b
 download_and_verify http://downloads.xiph.org/releases/opus/opus-1.1.2.tar.gz 0e290078e31211baa7b5886bcc8ab6bc048b9fc83882532da4a1a45e58e907fd
