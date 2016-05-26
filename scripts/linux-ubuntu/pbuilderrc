@@ -1,23 +1,28 @@
+EXTRAPACKAGES="fakeroot debhelper pkg-config docbook-to-man libglu1-mesa-dev libqt4-dev scons libjack-dev libsamplerate-dev portaudio19-dev libid3tag0-dev libmad0-dev libogg-dev libsndfile1-dev libaudiofi
+le-dev libasound2-dev libvorbis-dev libexpat-dev libsoundtouch1-dev libmp4v2-dev libfaad-dev libportmidi-dev libqt4-opengl libqt4-svg libqt4-xmlpatterns libqt4-opengl-dev libqt4-webkit libshout-dev libtag
+1-dev librubberband-dev libchromaprint-dev bzr scons vamp-plugin-sdk libprotobuf-dev protobuf-compiler libusb-1.0-0-dev libopus-dev libopusfile-dev libsqlite3-dev"
+# maverick needs libqtwebkit-dev
+
+# Taken from https://wiki.ubuntu.com/PbuilderHowto
+
 # Codenames for Debian suites according to their alias. Update these when
 # needed.
 UNSTABLE_CODENAME="sid"
-TESTING_CODENAME="squeeze"
-STABLE_CODENAME="lenny"
+TESTING_CODENAME="jessie"
+STABLE_CODENAME="wheezy"
 STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
-
-EXTRAPACKAGES="fakeroot debhelper pkg-config docbook-to-man libglu1-mesa-dev libqt4-dev scons libjack-dev libsamplerate-dev portaudio19-dev libid3tag0-dev libmad0-dev libogg-dev libsndfile1-dev libaudiofile-dev libasound2-dev libvorbis-dev libexpat-dev libsoundtouch1-dev libmp4v2-dev libfaad-dev libportmidi-dev libqt4-opengl libqt4-svg libqt4-xmlpatterns libqt4-opengl-dev libqt4-webkit libshout-dev libtag1-dev librubberband-dev libchromaprint-dev bzr scons vamp-plugin-sdk libprotobuf-dev protobuf-compiler libusb-1.0-0-dev libopus-dev libopusfile-dev libsqlite3-dev"
-# maverick needs libqtwebkit-dev
 
 # List of Debian suites.
 DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME
     "unstable" "testing" "stable")
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("wily" "vivid" "utopic" "trusty" "saucy" "raring" "quantal" "precise" "oneiric" "natty" "maverick" "lucid" "karmic" "jaunty" "intrepid" "hardy")
+UBUNTU_SUITES=("yakkety" "xenial" "wily" "vivid" "utopic" "trusty" "saucy" "raring" "quantal" "precise" "oneiric" "natty" "maverick" "lucid" "karmic" "jaunty" "intrepid" "hardy")
+
 
 # Mirrors to use. Update these to your preferred mirror.
 DEBIAN_MIRROR="ftp.us.debian.org"
-UBUNTU_MIRROR="ubuntu.media.mit.edu"
+UBUNTU_MIRROR="mirrors.kernel.org"
 
 # Optionally use the changelog of a package to determine the suite to use if
 # none set.
@@ -26,6 +31,10 @@ if [ -z "${DIST}" ] && [ -r "debian/changelog" ]; then
     # Use the unstable suite for certain suite values.
     if $(echo "experimental UNRELEASED" | grep -q $DIST); then
         DIST="$UNSTABLE_CODENAME"
+    fi
+    # Use the stable suite for stable-backports.
+    if $(echo "$STABLE_BACKPORTS_SUITE" | grep -q $DIST); then
+        DIST="$STABLE_CODENAME"
     fi
 fi
 
@@ -62,22 +71,21 @@ DISTRIBUTION="$DIST"
 BUILDRESULT="/var/cache/pbuilder/$NAME/result/"
 APTCACHE="/var/cache/pbuilder/$NAME/aptcache/"
 BUILDPLACE="/var/cache/pbuilder/build/"
+BINDMOUNTS="/var/cache/archive"
 
 if $(echo ${DEBIAN_SUITES[@]} | grep -q $DIST); then
     # Debian configuration
     MIRRORSITE="http://$DEBIAN_MIRROR/debian/"
     COMPONENTS="main contrib non-free"
     DEBOOTSTRAPOPTS=("${DEBOOTSTRAPOPTS[@]}" "--keyring=/usr/share/keyrings/debian-archive-keyring.gpg")
-    # This is for enabling backports for the Debian stable suite.
-    if $(echo "$STABLE_CODENAME stable" | grep -q $DIST); then
-        EXTRAPACKAGES="$EXTRAPACKAGES debian-backports-keyring"
-        OTHERMIRROR="$OTHERMIRROR | deb http://www.backports.org/debian $STABLE_BACKPORTS_SUITE $COMPONENTS"
-    fi
+    OTHERMIRROR="deb file:///var/cache/archive $DIST/"
+
 elif $(echo ${UBUNTU_SUITES[@]} | grep -q $DIST); then
     # Ubuntu configuration
     MIRRORSITE="http://$UBUNTU_MIRROR/ubuntu/"
     COMPONENTS="main restricted universe multiverse"
     DEBOOTSTRAPOPTS=("${DEBOOTSTRAPOPTS[@]}" "--keyring=/usr/share/keyrings/ubuntu-archive-keyring.gpg")
+    OTHERMIRROR="deb file:///var/cache/archive $DIST/"
 else
     echo "Unknown distribution: $DIST"
     exit 1
