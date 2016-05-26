@@ -1,7 +1,6 @@
-EXTRAPACKAGES="fakeroot debhelper pkg-config docbook-to-man libglu1-mesa-dev libqt4-dev scons libjack-dev libsamplerate-dev portaudio19-dev libid3tag0-dev libmad0-dev libogg-dev libsndfile1-dev libaudiofi
-le-dev libasound2-dev libvorbis-dev libexpat-dev libsoundtouch1-dev libmp4v2-dev libfaad-dev libportmidi-dev libqt4-opengl libqt4-svg libqt4-xmlpatterns libqt4-opengl-dev libqt4-webkit libshout-dev libtag
-1-dev librubberband-dev libchromaprint-dev bzr scons vamp-plugin-sdk libprotobuf-dev protobuf-compiler libusb-1.0-0-dev libopus-dev libopusfile-dev libsqlite3-dev"
-# maverick needs libqtwebkit-dev
+QT4_PACKAGES="libqt4-dev libqt4-opengl libqt4-svg libqt4-xmlpatterns libqt4-opengl-dev libqt4-webkit"
+QT5_PACKAGES="qt5-default qtdeclarative5-dev qtdeclarative5-dev-tools"
+EXTRAPACKAGES="fakeroot debhelper pkg-config docbook-to-man libglu1-mesa-dev scons libjack-dev portaudio19-dev libid3tag0-dev libmad0-dev libogg-dev libsndfile1-dev libaudiofile-dev libasound2-dev libvorbis-dev libexpat-dev libsoundtouch1-dev libmp4v2-dev libfaad-dev libportmidi-dev libshout-dev libtag1-dev librubberband-dev libchromaprint-dev git-core scons libprotobuf-dev protobuf-compiler libusb-1.0-0-dev libopus-dev libopusfile-dev libsqlite3-dev $QT4_PACKAGES $QT5_PACKAGES"
 
 # Taken from https://wiki.ubuntu.com/PbuilderHowto
 
