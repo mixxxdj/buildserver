@@ -23,16 +23,13 @@ export ARCH=
 # Qt gets sad if you use -arch in your CFLAGS/CXXFLAGS. For some reason it does some cutting / munging of your flags and you end up with lone '-arch' flags in your CFLAGS/CXXFLAGS which breaks the build.
 export ARCH_FLAGS=
 
+# Don't use -ffast-math when building Qt. It's incompatible with sqlite.
+export DISABLE_FFAST_MATH=yes
+
 source $PROGDIR/environment.sh
 export QTDIR=$MIXXX_PREFIX/Qt-${VERSION_NUMBER}
 
-# Apply patch from QTBUG-23258 to fix Qt 4.8.2 and 4.8.3 build on OS X 10.5 SDK
-#curl https://bugreports.qt-project.org/secure/attachment/26712/Patch-Qt-4.8-for-10.5 > Patch-Qt-4.8-for-10.5
-#patch -p1 < Patch-Qt-4.8-for-10.5
-
-# Qt uses -arch x86 not -arch i386
-# -arch ppc is no longer supported.
-
+# Qt uses -arch x86 not -arch i386. -arch ppc is no longer supported.
 QT_ARCHS=()
 for ARCH in ${MIXXX_ARCHS[@]}
 do
@@ -41,7 +38,8 @@ do
   elif [[ "$ARCH" == "x86_64" ]]; then
       QT_ARCHS+=(-arch x86_64)
   elif [[ "$ARCH" == "ppc" ]]; then
-      QT_ARCHS+=(-arch ppc)
+      echo "ppc is unsupported by Qt!"
+      exit 1
   fi
 done
 
@@ -67,11 +65,6 @@ sed -e 's/\|contains/||contains/g' -i '' src/plugins/bearer/corewlan/corewlan.pr
 # Build issue with 10.11 SDK.
 curl https://raw.githubusercontent.com/Homebrew/patches/480b7142c4e2ae07de6028f672695eb927a34875/qt/el-capitan.patch | patch -p1 
 
-# Mixxx does not use Phonon or Webkit and as of Qt 4.8.6 Phonon does not build
-# with i386/x86_64 using gcc-llvm (the default GCC included with XCode).
-# See:
-# - http://llvm.org/bugs/show_bug.cgi?id=16805
-# - https://qt.gitorious.org/qt/qt/source/5267ff3c462986f514f33998a2614b8f9c22402e:src/plugins/phonon/qt7/qt7.pro#L5
 # Mixxx may want to call sqlite functions directly so we use the statically
 # linked version of SQLite (-qt-sql-sqlite) and link it to the system SQLite
 # (-system-sqlite) instead of the SQLite plugin
@@ -80,14 +73,6 @@ curl https://raw.githubusercontent.com/Homebrew/patches/480b7142c4e2ae07de6028f6
 # - http://www.mimec.org/node/296
 # NOTE(rryan): Setting -system-sqlite sets -system-zlib. Set -qt-zlib explicitly.
 ./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -no-qt3support -release -nomake examples -nomake demos -confirm-license
-
-# NOTE: Using -ffast-math will fail when building SQLite so either remove -ffast-math from environment.sh temporarily or remove -ffast-math from the SQLite Makefiles (you'll have to do it for QtWebkit and QtSql). You can do this as the build fails since it will complain about -ffast-math. We remove it with sed:
-find src/sql -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
-find src/plugins/sqldrivers/sqlite -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
-find src/plugins/sqldrivers/sqlite2 -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
-# We don't build with webkit (see above comment). Re-enable this if you turn it
-# on.
-#find src/3rdparty/webkit/Source/WebCore -name 'Makefile*' -exec sed -i -e 's/-ffast-math //g' "{}" \;
 
 make && make install
 
