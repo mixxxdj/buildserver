@@ -3,7 +3,7 @@ import os
 from fabric.api import *
 
 LOGIN_KEY_NAME = 'build-login'
-LOGIN_KEY_PATH = os.path.join('keys', 'build-login')
+LOGIN_KEY_PATH = os.path.join('keys', LOGIN_KEY_NAME)
 UBUNTU_VERSION = '16.04'
 UBUNTU_NAME = 'xenial'
 PBUILDER_DISTS = ['trusty', 'wily', 'xenial', 'yakkety']
@@ -64,7 +64,7 @@ def setup_host():
 
 def make_ssh_login_key(key_filename=LOGIN_KEY_PATH):
     if not os.path.exists(key_filename):
-        local('ssh-keygen -t rsa -b 4096 -f %s -C build-login' % key_filename)
+        local('ssh-keygen -t rsa -b 4096 -f %s -C %s' % (key_filename, LOGIN_KEY_NAME))
     else:
         print('Login key already exists.')
 
