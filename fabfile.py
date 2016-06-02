@@ -15,10 +15,15 @@ PBUILDER_ARCHS = ['amd64', 'i386']
 # TODO(rryan): Remove duplication with pbuilderrc.
 # TODO(rryan): Fix this mess.
 MIXXX_DEBIAN_DEPENDENCIES = [
+    'debhelper',
+    'libasound2-dev',
     'libchromaprint-dev',
+    'libfaad-dev',
+    'libhidapi-dev',
     'libid3tag0-dev',
     'libjack-dev',
     'libmad0-dev',
+    'libmp4v2-dev',
     'libogg-dev',
     'libopus-dev',
     'libopusfile-dev',
@@ -46,6 +51,7 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'qtdeclarative5-dev-tools',
     'qtscript5-dev',
     'scons',
+    'vamp-plugin-sdk',
 ]
 
 env.user = 'mixxx'
@@ -122,7 +128,7 @@ def update_pbuilderrc():
     run('mv pbuilderrc .pbuilderrc')
 
 def setup_pbuilder():
-    sudo('apt-get -y install pbuilder debootstrap devscripts debhelper')
+    sudo('apt-get -y install pbuilder debootstrap devscripts')
 
 def create_pbuilder_chroots():
     update_pbuilderrc()
