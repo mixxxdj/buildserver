@@ -32,4 +32,8 @@ copy %PLATFORM%\%CONFIG%\opusfile.pdb %LIB_DIR%
 md %INCLUDE_DIR%\opus
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
 
+python -c "import sys; sys.stdout.write(open('%INCLUDE_DIR%\opus\opusfile.h', 'r').read().replace('opus_multistream.h', 'opus/opus_multistream.h'))" > temp
+copy temp %INCLUDE_DIR%\opus\opusfile.h
+erase temp
+
 cd %ROOT_DIR%
