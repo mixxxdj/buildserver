@@ -1,5 +1,6 @@
-REM Usage: build_environment.bat x86 Release
 @ECHO off
+REM Usage: build_environment.bat x86 Release
+
 set MACHINE_X86="%1" == "x86"
 set CONFIG_RELEASE="%2" == "Release"
 
@@ -13,8 +14,12 @@ if %MACHINE_X86% (
 
 if %CONFIG_RELEASE% (
   echo Building release mode.
+  set _CL_=/MD
+  set RUNTIMELIB="MultiThreadedDLL"
 ) else (
   echo Building debug mode.  
+  set _CL_=/MDd
+  set RUNTIMELIB="MultiThreadedDebugDLL"
 )
 
 rem Use all CPU cores
