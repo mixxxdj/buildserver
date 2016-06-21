@@ -14,12 +14,13 @@ if %MACHINE_X86% (
 
 if %CONFIG_RELEASE% (
   echo Building release mode.
-  set _CL_=/MD
   set RUNTIMELIB="MultiThreadedDLL"
+  REM the above doesn't actually seem to work, so we do the following
+  set _CL_=/MD
 ) else (
-  echo Building debug mode.  
-  set _CL_=/MDd
+  echo Building debug mode.
   set RUNTIMELIB="MultiThreadedDebugDLL"
+  set _CL_=/MDd
 )
 
 rem Use all CPU cores
@@ -38,7 +39,7 @@ rem   install the Windows 7.1 SDK then uncomment and adjust the following
 rem SET WindowsSdkDir_71A=E:\Program Files\Microsoft SDKs\Windows\v7.1\
 
 SET XCOPY=xcopy /S /Y /I
-SET MSBUILD=msbuild /m /p:PlatformToolset=v%VCVERSION%_xp
+SET MSBUILD=msbuild /m /p:PlatformToolset=v%VCVERSION%_xp /p:RuntimeLibrary=%RUNTIMELIB%
 rem If using the Visual C++ Build Tools, uncomment & adjust the following
 rem SET MSBUILD=msbuild /m /p:PlatformToolset=v140_xp /p:VCTargetsPath="C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\\"
 set ROOT_DIR=%CD%
