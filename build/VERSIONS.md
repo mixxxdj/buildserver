@@ -109,9 +109,9 @@ Most recent library versions present in this directory.
       <td>2016-02-12</td>
     </tr>
     <tr>
-      <td>sqlite-amalgamation</td>
-      <td>3100200</td>
-      <td>2016-02-08</td>
+      <td>SQLite</td>
+      <td>3.13.0</td>
+      <td>2016-06-22</td>
     </tr>
     <tr>
       <td>taglib</td>
