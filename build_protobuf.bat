@@ -22,4 +22,7 @@ copy %PLATFORM%\%CONFIG%\libprotobuf-lite.pdb %LIB_DIR%
 call extract_includes.bat 
 xcopy /E /Y include %INCLUDE_DIR%
 
+rem Get items their extractor missed that we need:
+copy ..\src\google\protobuf\stubs\stl_util.h %INCLUDE_DIR%\google\protobuf\stubs\
+
 cd %ROOT_DIR%
