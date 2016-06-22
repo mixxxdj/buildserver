@@ -1,5 +1,5 @@
 echo "Building libvorbis"
-set VORBIS_PATH=vorbis
+set VORBIS_PATH=vorbis-1.3.5
 
 if %MACHINE_X86% (
   set PLATFORM=Win32

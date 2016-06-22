@@ -1,5 +1,5 @@
 echo "Building opus"
-set OPUS_PATH=opus
+set OPUS_PATH=opus-1.1.2
 set OPUSFILE_PATH=opusfile-0.7
 
 if %MACHINE_X86% (
