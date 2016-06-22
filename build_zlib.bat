@@ -1,4 +1,4 @@
-echo "Building zlib"
+echo ---- Building Zlib ----
 SET ZLIB_PATH=zlib-1.2.8
 
 if %MACHINE_X86% (
@@ -13,7 +13,7 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
-cd build\%ZLIB_PATH%\contrib\vstudio\vc11
+cd build\%ZLIB_PATH%\contrib\vstudio\vc14
 %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Clean;zlibvc:Rebuild
 
 copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.dll %LIB_DIR%
