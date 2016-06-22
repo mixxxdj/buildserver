@@ -13,7 +13,7 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
-cd build\%HSS1394_PATH%\code\builds\win32\VS2013
+cd build\%HSS1394_PATH%\code\builds\win32\VS2015
 %MSBUILD% libHSS1394.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libHSS1394_dll:Clean;libHSS1394_dll:Rebuild
 
 copy %PLATFORM%\%CONFIG%\libHSS1394.lib %LIB_DIR%

@@ -91,7 +91,6 @@
       <PreprocessorDefinitions>__MSVC__;WIN32;HAVE_FFTW3;_DEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;USE_SPEEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level2</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
@@ -99,6 +98,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <UndefinePreprocessorDefinitions>USE_KISSFFT</UndefinePreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -107,7 +107,6 @@
       <AdditionalIncludeDirectories>.;.\src;..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>__MSVC__;WIN32;HAVE_FFTW3;_DEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;USE_SPEEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level2</WarningLevel>
@@ -116,6 +115,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <UndefinePreprocessorDefinitions>USE_KISSFFT</UndefinePreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,7 +127,6 @@
       <OmitFramePointers>true</OmitFramePointers>
       <AdditionalIncludeDirectories>.;.\src;..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>__MSVC__;WIN32;HAVE_FFTW3;NDEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;NO_TIMING;USE_SPEEX;NO_THREAD_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Fast</FloatingPointModel>
       <PrecompiledHeader />
@@ -148,7 +147,6 @@
       <OmitFramePointers>true</OmitFramePointers>
       <AdditionalIncludeDirectories>.;.\src;..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>__MSVC__;WIN32;HAVE_FFTW3;NDEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;NO_TIMING;USE_SPEEX;NO_THREAD_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Fast</FloatingPointModel>
       <PrecompiledHeader>

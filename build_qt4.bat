@@ -38,7 +38,7 @@ REM
 REM If you don't want to do that, just set -qt-zlib explicitly in the
 REM   Configure options below.
 
-rem nmake clean
+nmake distclean
 configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2013 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -static -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -D ZLIB_WINAPI -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -nomake demos -nomake examples -nomake tests
 rem /K keeps building things not affected by errors
 nmake /K
