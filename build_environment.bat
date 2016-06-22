@@ -63,6 +63,12 @@ call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" amd64
   rem call "%BUILDTOOLS_PATH%\vcbuildtools.bat" x86_amd64
 )
 
+IF %3 == "nuke" (
+  rd /S /Q %LIB_DIR%
+  rd /S /Q %INCLUDE_DIR%
+  rd /S /Q %BIN_DIR%
+)
+
 md %LIB_DIR%
 md %INCLUDE_DIR%
 md %BIN_DIR%
@@ -80,10 +86,10 @@ call build_libvorbis.bat
 call build_libshout.bat
 call build_libflac.bat
 call build_libsndfile.bat
-call build_rubberband.bat
+call build_fftw3.bat
+call build_rubberband.bat REM depends on fftw3.h
 call build_portaudio.bat
 call build_hss1394.bat
-call build_fftw3.bat
 call build_chromaprint.bat REM depends on fftw3
 call build_taglib.bat REM depends on zlib 
 REM We do not distribute LAME with Mixxx. If you wish to build it locally, uncomment.
