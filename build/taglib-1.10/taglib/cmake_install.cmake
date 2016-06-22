@@ -1,4 +1,4 @@
-# Install script for directory: C:/mixxx/environments/prototype/build/taglib-1.10/taglib
+# Install script for directory: E:/Mixxx/Buildserver/build/taglib-1.10/taglib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,7 +37,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/Debug/tag.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Debug/tag.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/taglib/lib/tag.lib")
@@ -47,7 +47,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/Release/tag.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Release/tag.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/taglib/lib/tag.lib")
@@ -57,7 +57,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/MinSizeRel/tag.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/MinSizeRel/tag.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/taglib/lib/tag.lib")
@@ -67,7 +67,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/RelWithDebInfo/tag.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/RelWithDebInfo/tag.lib")
   endif()
 endif()
 
@@ -81,7 +81,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/Debug/tag.dll")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Debug/tag.dll")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/taglib/bin/tag.dll")
@@ -91,7 +91,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/Release/tag.dll")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Release/tag.dll")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/taglib/bin/tag.dll")
@@ -101,7 +101,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/MinSizeRel/tag.dll")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/MinSizeRel/tag.dll")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/taglib/bin/tag.dll")
@@ -111,7 +111,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/RelWithDebInfo/tag.dll")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE SHARED_LIBRARY FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/RelWithDebInfo/tag.dll")
   endif()
 endif()
 
@@ -125,109 +125,109 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/include/taglib" TYPE FILE FILES
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/tag.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/fileref.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/audioproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/taglib_export.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/../taglib_config.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/taglib.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tstring.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tlist.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tlist.tcc"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tstringlist.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tbytevector.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tbytevectorlist.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tbytevectorstream.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tiostream.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tfilestream.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tmap.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tmap.tcc"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tpropertymap.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/trefcounter.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/toolkit/tdebuglistener.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/mpegfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/mpegproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/mpegheader.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/xingheader.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v1/id3v1tag.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v1/id3v1genres.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/id3v2extendedheader.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/id3v2frame.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/id3v2header.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/id3v2synchdata.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/id3v2footer.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/id3v2framefactory.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/id3v2tag.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/attachedpictureframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/commentsframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/eventtimingcodesframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/generalencapsulatedobjectframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/ownershipframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/popularimeterframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/privateframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/relativevolumeframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/synchronizedlyricsframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/textidentificationframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/uniquefileidentifierframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/unknownframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/unsynchronizedlyricsframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/urllinkframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/chapterframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpeg/id3v2/frames/tableofcontentsframe.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/oggfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/oggpage.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/oggpageheader.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/xiphcomment.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/vorbis/vorbisfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/vorbis/vorbisproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/flac/oggflacfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/speex/speexfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/speex/speexproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/opus/opusfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ogg/opus/opusproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/flac/flacfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/flac/flacpicture.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/flac/flacproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/flac/flacmetadatablock.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ape/apefile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ape/apeproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ape/apetag.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ape/apefooter.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/ape/apeitem.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpc/mpcfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mpc/mpcproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/wavpack/wavpackfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/wavpack/wavpackproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/trueaudio/trueaudiofile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/trueaudio/trueaudioproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/riff/rifffile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/riff/aiff/aifffile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/riff/aiff/aiffproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/riff/wav/wavfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/riff/wav/wavproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/riff/wav/infotag.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/asf/asffile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/asf/asfproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/asf/asftag.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/asf/asfattribute.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/asf/asfpicture.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mp4/mp4file.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mp4/mp4atom.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mp4/mp4tag.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mp4/mp4item.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mp4/mp4properties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mp4/mp4coverart.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mod/modfilebase.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mod/modfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mod/modtag.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/mod/modproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/it/itfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/it/itproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/s3m/s3mfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/s3m/s3mproperties.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/xm/xmfile.h"
-    "C:/mixxx/environments/prototype/build/taglib-1.10/taglib/xm/xmproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/tag.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/fileref.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/audioproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/taglib_export.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/../taglib_config.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/taglib.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tstring.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tlist.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tlist.tcc"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tstringlist.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tbytevector.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tbytevectorlist.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tbytevectorstream.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tiostream.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tfilestream.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tmap.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tmap.tcc"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tpropertymap.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/trefcounter.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/toolkit/tdebuglistener.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/mpegfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/mpegproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/mpegheader.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/xingheader.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v1/id3v1tag.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v1/id3v1genres.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/id3v2extendedheader.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/id3v2frame.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/id3v2header.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/id3v2synchdata.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/id3v2footer.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/id3v2framefactory.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/id3v2tag.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/attachedpictureframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/commentsframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/eventtimingcodesframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/generalencapsulatedobjectframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/ownershipframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/popularimeterframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/privateframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/relativevolumeframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/synchronizedlyricsframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/textidentificationframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/uniquefileidentifierframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/unknownframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/unsynchronizedlyricsframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/urllinkframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/chapterframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpeg/id3v2/frames/tableofcontentsframe.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/oggfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/oggpage.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/oggpageheader.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/xiphcomment.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/vorbis/vorbisfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/vorbis/vorbisproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/flac/oggflacfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/speex/speexfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/speex/speexproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/opus/opusfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ogg/opus/opusproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/flac/flacfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/flac/flacpicture.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/flac/flacproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/flac/flacmetadatablock.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ape/apefile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ape/apeproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ape/apetag.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ape/apefooter.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/ape/apeitem.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpc/mpcfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mpc/mpcproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/wavpack/wavpackfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/wavpack/wavpackproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/trueaudio/trueaudiofile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/trueaudio/trueaudioproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/riff/rifffile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/riff/aiff/aifffile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/riff/aiff/aiffproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/riff/wav/wavfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/riff/wav/wavproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/riff/wav/infotag.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/asf/asffile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/asf/asfproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/asf/asftag.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/asf/asfattribute.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/asf/asfpicture.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mp4/mp4file.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mp4/mp4atom.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mp4/mp4tag.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mp4/mp4item.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mp4/mp4properties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mp4/mp4coverart.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mod/modfilebase.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mod/modfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mod/modtag.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/mod/modproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/it/itfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/it/itproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/s3m/s3mfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/s3m/s3mproperties.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/xm/xmfile.h"
+    "E:/Mixxx/Buildserver/build/taglib-1.10/taglib/xm/xmproperties.h"
     )
 endif()
 

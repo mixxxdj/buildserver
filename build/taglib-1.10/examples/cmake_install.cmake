@@ -1,4 +1,4 @@
-# Install script for directory: C:/mixxx/environments/prototype/build/taglib-1.10/examples
+# Install script for directory: E:/Mixxx/Buildserver/build/taglib-1.10/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

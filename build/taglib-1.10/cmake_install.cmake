@@ -1,4 +1,4 @@
-# Install script for directory: C:/mixxx/environments/prototype/build/taglib-1.10
+# Install script for directory: E:/Mixxx/Buildserver/build/taglib-1.10
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -36,7 +36,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE PROGRAM FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib-config.cmd")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/bin" TYPE PROGRAM FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib-config.cmd")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -48,14 +48,14 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib/pkgconfig" TYPE FILE FILES "C:/mixxx/environments/prototype/build/taglib-1.10/taglib.pc")
+file(INSTALL DESTINATION "C:/Program Files (x86)/taglib/lib/pkgconfig" TYPE FILE FILES "E:/Mixxx/Buildserver/build/taglib-1.10/taglib.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/mixxx/environments/prototype/build/taglib-1.10/taglib/cmake_install.cmake")
-  include("C:/mixxx/environments/prototype/build/taglib-1.10/bindings/cmake_install.cmake")
-  include("C:/mixxx/environments/prototype/build/taglib-1.10/examples/cmake_install.cmake")
+  include("E:/Mixxx/Buildserver/build/taglib-1.10/taglib/cmake_install.cmake")
+  include("E:/Mixxx/Buildserver/build/taglib-1.10/bindings/cmake_install.cmake")
+  include("E:/Mixxx/Buildserver/build/taglib-1.10/examples/cmake_install.cmake")
 
 endif()
 
@@ -65,7 +65,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "C:/mixxx/environments/prototype/build/taglib-1.10/${CMAKE_INSTALL_MANIFEST}" "")
-foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "C:/mixxx/environments/prototype/build/taglib-1.10/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
-endforeach()
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+file(WRITE "E:/Mixxx/Buildserver/build/taglib-1.10/${CMAKE_INSTALL_MANIFEST}"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")

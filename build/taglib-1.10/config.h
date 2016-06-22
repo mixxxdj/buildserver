@@ -25,4 +25,4 @@
 /* Indicates whether debug messages are shown even in release mode */
 /* #undef TRACE_IN_RELEASE */
 
-#define TESTS_DIR "C:/mixxx/environments/prototype/build/taglib-1.10/tests/"
+#define TESTS_DIR "E:/Mixxx/Buildserver/build/taglib-1.10/tests/"

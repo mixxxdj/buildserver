@@ -1,4 +1,4 @@
 # CMake generation dependency list for this directory.
-C:/mixxx/environments/prototype/build/taglib-1.10/bindings/c/CMakeLists.txt
-C:/Program Files (x86)/CMake/share/cmake-3.0/Modules/CheckFunctionExists.c
-C:/mixxx/environments/prototype/build/taglib-1.10/bindings/c/taglib_c.pc.cmake
+E:/Mixxx/Buildserver/build/taglib-1.10/bindings/c/CMakeLists.txt
+E:/Program Files (x86)/CMake/share/cmake-3.3/Modules/CheckFunctionExists.c
+E:/Mixxx/Buildserver/build/taglib-1.10/bindings/c/taglib_c.pc.cmake
