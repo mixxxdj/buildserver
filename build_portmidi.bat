@@ -1,4 +1,4 @@
-echo ---- Building PortMIDI ----
+echo ---- Building PortMIDI & PortTime ----
 set PORTMIDI_PATH=portmidi-228
 
 if %MACHINE_X86% (
@@ -28,7 +28,7 @@ if %STATIC_LIBS% (
 copy %PLATFORM%\%CONFIG%\portmidi.lib %LIB_DIR%
 if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\portmidi.dll %LIB_DIR% )
 copy %PLATFORM%\%CONFIG%\portmidi.pdb %LIB_DIR%
-copy ..\pm_common\portmidi.h %INCLUDE_DIR% 
+copy pm_common\portmidi.h %INCLUDE_DIR% 
 
 cd porttime
 %MSBUILD% porttime.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:PortTime:Clean;PortTime:Rebuild
