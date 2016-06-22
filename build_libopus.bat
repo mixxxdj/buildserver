@@ -1,4 +1,4 @@
-echo "Building opus"
+echo ---- Building Opus ----
 set OPUS_PATH=opus-1.1.2
 set OPUSFILE_PATH=opusfile-0.7
 
@@ -29,9 +29,9 @@ cd build\%OPUSFILE_PATH%\win32\VS2015
 
 copy %PLATFORM%\%CONFIG%\opusfile.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\opusfile.pdb %LIB_DIR%
-md %INCLUDE_DIR%\opus
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
 
+rem Fix a path problem
 python -c "import sys; sys.stdout.write(open('%INCLUDE_DIR%\opus\opusfile.h', 'r').read().replace('opus_multistream.h', 'opus/opus_multistream.h'))" > temp
 copy temp %INCLUDE_DIR%\opus\opusfile.h
 erase temp
