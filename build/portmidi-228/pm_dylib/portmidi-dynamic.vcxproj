@@ -107,10 +107,8 @@
       <Optimization>Disabled</Optimization>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;PM_CHECK_ERRORS=1;DEBUG;CMAKE_INTDIR="Debug";portmidi_dynamic_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>Debug</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -152,10 +150,8 @@
       <Optimization>Disabled</Optimization>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;PM_CHECK_ERRORS=1;DEBUG;CMAKE_INTDIR="Debug";portmidi_dynamic_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>Debug</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -194,11 +190,9 @@
       <Optimization>MaxSpeed</Optimization>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";portmidi_dynamic_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>Release</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -239,11 +233,9 @@
       <Optimization>MaxSpeed</Optimization>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";portmidi_dynamic_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>Release</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

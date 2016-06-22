@@ -30,7 +30,7 @@ if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\portmidi.dll %LIB_DIR% )
 copy %PLATFORM%\%CONFIG%\portmidi.pdb %LIB_DIR%
 copy ..\pm_common\portmidi.h %INCLUDE_DIR% 
 
-cd ..\porttime
+cd porttime
 %MSBUILD% porttime.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:PortTime:Clean;PortTime:Rebuild
 copy %PLATFORM%\%CONFIG%\porttime.lib %LIB_DIR%
 if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\porttime.dll %LIB_DIR% )

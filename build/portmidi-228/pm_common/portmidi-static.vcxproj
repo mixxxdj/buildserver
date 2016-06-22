@@ -40,13 +40,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -109,10 +109,8 @@
       <Optimization>Disabled</Optimization>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;PM_CHECK_ERRORS=1;DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>Debug</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>../Debug/portmidi_s.pdb</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;C:\Program Files\Java\jdk1.6.0_16\include;C:\Program Files\Java\jdk1.6.0_16\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -145,10 +143,8 @@
       <Optimization>Disabled</Optimization>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;PM_CHECK_ERRORS=1;DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>Debug</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>../Debug/portmidi_s.pdb</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;C:\Program Files\Java\jdk1.6.0_16\include;C:\Program Files\Java\jdk1.6.0_16\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -178,9 +174,7 @@
       <Optimization>MaxSpeed</Optimization>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>Release</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>../Release/portmidi_s.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;C:\Program Files\Java\jdk1.6.0_16\include;C:\Program Files\Java\jdk1.6.0_16\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -211,9 +205,7 @@
       <Optimization>MaxSpeed</Optimization>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>Release</AssemblerListingLocation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>../Release/portmidi_s.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\pm_common;..\porttime;C:\Program Files\Java\jdk1.6.0_16\include;C:\Program Files\Java\jdk1.6.0_16\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
