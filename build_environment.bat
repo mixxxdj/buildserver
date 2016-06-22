@@ -86,28 +86,33 @@ md %LIB_DIR%
 md %INCLUDE_DIR%
 md %BIN_DIR%
 
-rem call build_sqlite3.bat
+rem Use our directories as well
+set INCLUDE=%INCLUDE%;%INCLUDE_DIR%
+set LIB=%LIB%;%LIB_DIR%
+set UseEnv=true
+
+call build_sqlite3.bat
 call build_zlib.bat 
-rem call build_pthreads.bat
-rem call build_protobuf.bat
-rem call build_portmidi.bat
-rem call build_libid3tag.bat REM depends on zlib
-rem call build_libmad.bat
-rem call build_libogg.bat
-rem call build_libopus.bat REM depends on libogg
-rem call build_libvorbis.bat
-rem call build_libshout.bat
-rem call build_libflac.bat
-rem call build_libsndfile.bat
-rem call build_fftw3.bat
-rem call build_rubberband.bat REM depends on fftw3.h
-rem call build_portaudio.bat
-rem call build_hss1394.bat
-rem call build_chromaprint.bat REM depends on fftw3
-rem call build_taglib.bat REM depends on zlib 
+call build_pthreads.bat
+call build_protobuf.bat
+call build_portmidi.bat
+call build_libid3tag.bat REM depends on zlib
+call build_libmad.bat
+call build_libogg.bat
+call build_libopus.bat REM depends on libogg
+call build_libvorbis.bat
+call build_libshout.bat
+call build_libflac.bat
+call build_libsndfile.bat
+call build_fftw3.bat
+call build_rubberband.bat REM depends on fftw3.h
+call build_portaudio.bat
+call build_hss1394.bat
+call build_chromaprint.bat REM depends on fftw3
+call build_taglib.bat REM depends on zlib 
 REM We do not distribute LAME with Mixxx. If you wish to build it locally, uncomment.
 REM call build_lame.bat
-rem call build_qt4.bat REM depends on sqlite3
+call build_qt4.bat REM depends on sqlite3
 
 REM Copy debug runtime DLLs for debug builds.
 if not %CONFIG_RELEASE% (
