@@ -1,5 +1,6 @@
-- Set Output Directory to $(SolutionDir)$(Platform)\$(Configuration)\
-- Set Intermediate directory to $(Platform)\$(Configuration)\
+- [General] Set Output Directory to $(SolutionDir)$(Platform)\$(Configuration)\
+- [General] Set Intermediate directory to $(Platform)\$(Configuration)\
+- [C++/Output Dirs] Set Program Database File name to $(OutDir)$(TargetName).pdb
 - Specify minimum platform version to be 5.01 for x86 and 5.02 for x64
 - Use /MD for release and /MDd for debug
 - Use v<latest>_xp for platform toolset
