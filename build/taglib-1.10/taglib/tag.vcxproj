@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{EBC7EFBB-732D-43B5-B5B8-C4145407DBD7}</ProjectGUID>
+    <ProjectGUID>{01E1C9E5-5300-44E5-A980-11CFE66919B5}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
     <ProjectName>tag</ProjectName>
@@ -518,7 +518,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:/Mixxx/Buildserver/build/taglib-1.10/ZERO_CHECK.vcxproj">
-      <Project>EBED476E-6A51-4B25-9DFB-816083A844D4</Project>
+      <Project>424ED9F1-7C2E-484E-8FDB-35455EBFF73D</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

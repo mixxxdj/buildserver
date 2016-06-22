@@ -15,10 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{1150F7AC-BD0E-4660-A94A-29C746D98B78}</UniqueIdentifier>
+      <UniqueIdentifier>{A87ABE66-4B5D-4F58-AD08-13AC1C085D24}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{DA504606-1B1E-4490-A5CC-315A90841FAF}</UniqueIdentifier>
+      <UniqueIdentifier>{71334F3C-EB10-4DBF-B44A-B5108A7A2216}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
