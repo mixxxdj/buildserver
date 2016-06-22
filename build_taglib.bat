@@ -13,8 +13,8 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
-REM NOTE(rryan): generated solution with
-REM cmake . -G "Visual Studio 12 2013" -DZLIB_INCLUDE_DIR=..\..\include -DZLIB_LIBRARY=..\..\lib\zlibwapi.lib
+REM NOTE(pegasus): generated solution with
+REM cmake . -G "Visual Studio 14 2015" -DZLIB_INCLUDE_DIR=..\..\include -DZLIB_LIBRARY=..\..\lib\zlibwapi.lib
  
 cd build\%TAGLIB_PATH%
 %MSBUILD% taglib.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:tag:Clean;tag:Rebuild
