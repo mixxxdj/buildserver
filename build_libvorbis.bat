@@ -20,7 +20,7 @@ echo Cleaning both...
 
 echo Building...
 if %STATIC_LIBS% (
-  %MSBUILD% vorbis_static.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:;libvorbis_static:Rebuild;libvorbisfile:Rebuild
+  %MSBUILD% vorbis_static.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libvorbis_static:Rebuild;libvorbisfile:Rebuild
 ) else (
   %MSBUILD% vorbis_dynamic.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libvorbis:Rebuild;libvorbisfile:Rebuild
 )
