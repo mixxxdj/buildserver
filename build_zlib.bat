@@ -14,11 +14,21 @@ if %CONFIG_RELEASE% (
 )
 
 cd build\%ZLIB_PATH%\contrib\vstudio\vc14
-%MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Clean;zlibvc:Rebuild
+echo Cleaning both...
+%MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Clean;zlibstat:Clean
 
-copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.dll %LIB_DIR%
-copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.lib %LIB_DIR%
-copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.pdb %LIB_DIR%
+echo Building...
+if %STATIC_LIBS% (
+  %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibstat:Rebuild
+  copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi.lib %LIB_DIR%
+  copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi.pdb %LIB_DIR%
+) else (
+  %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Rebuild
+  copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.dll %LIB_DIR%
+  copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.lib %LIB_DIR%
+  copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.pdb %LIB_DIR%
+)
+
 cd %BUILD_DIR%\%ZLIB_PATH%
 copy zlib.h %INCLUDE_DIR%
 copy zconf.h %INCLUDE_DIR%
