@@ -16,16 +16,15 @@ if %CONFIG_RELEASE% (
 set OLDFLACPATH=%PATH%
 set PATH=E:\Mixxx\Buildserver\build\nasm-2.11.08;%PATH%
 
-cd build\%FLAC_PATH%\src\libFLAC\
+cd build\%FLAC_PATH%\
 echo Cleaning both...
-%MSBUILD% libFLAC_dynamic.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libFLAC_dynamic:Clean
-%MSBUILD% libFLAC_static.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libFLAC:Clean
+%MSBUILD% FLAC.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libFLAC_dynamic:Clean;libFLAC_static:Clean
 
 echo Building...
 if %STATIC_LIBS% (
-  %MSBUILD% libFLAC_static.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libFLAC:Clean
+  %MSBUILD% FLAC.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libFLAC_static:Rebuild
 ) else (
-  %MSBUILD% libFLAC_dynamic.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libFLAC_dynamic:Rebuild
+  %MSBUILD% FLAC.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libFLAC_dynamic:Rebuild
 )
 
 
@@ -36,6 +35,6 @@ copy %PLATFORM%\%CONFIG%\libFLAC.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libFLAC.pdb %LIB_DIR%
 if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\libFLAC.dll %LIB_DIR% )
 md %INCLUDE_DIR%\FLAC
-copy ..\..\include\FLAC\*.h %INCLUDE_DIR%\FLAC\
+copy include\FLAC\*.h %INCLUDE_DIR%\FLAC\
 
 cd %ROOT_DIR%
