@@ -1,5 +1,5 @@
 @ECHO off
-REM Usage: build_environment.bat x86 Release
+REM Usage: build_environment.bat x86 Release [nuke]
 
 set MACHINE_X86="%1" == "x86"
 set CONFIG_RELEASE="%2" == "Release"
@@ -86,10 +86,12 @@ md %LIB_DIR%
 md %INCLUDE_DIR%
 md %BIN_DIR%
 
-rem Use our directories as well
+rem Use our directories as well. Needed for a number of dependencies to find zlib, sqlite and xiph headers, including Qt.
 set INCLUDE=%INCLUDE%;%INCLUDE_DIR%
 set LIB=%LIB%;%LIB_DIR%
 set UseEnv=true
+rem Qt may need this
+set LIBPATH=%LIBPATH%;%LIB_DIR%
 
 call build_sqlite3.bat
 call build_zlib.bat 
@@ -112,7 +114,7 @@ call build_chromaprint.bat REM depends on fftw3
 call build_taglib.bat REM depends on zlib 
 REM We do not distribute LAME with Mixxx. If you wish to build it locally, uncomment.
 REM call build_lame.bat
-call build_qt4.bat REM depends on sqlite3
+call build_qt4.bat REM depends on sqlite3 and zlib
 
 REM Copy debug runtime DLLs for debug builds.
 if not %CONFIG_RELEASE% (

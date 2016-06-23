@@ -1,4 +1,5 @@
-echo "Building Qt4"
+echo.
+echo ---- Building Qt4 ----
 SET QT4_PATH=qt-everywhere-opensource-src-4.8.6
 
 if %MACHINE_X86% (
@@ -19,12 +20,6 @@ REM We link against the system SQLite so that Mixxx can link with and use the
 REM same instance of the SQLite library in our binary (for example, so we 
 REM can install custom functions).
 
-REM Add %INCLUDE_DIR% and %LIB_DIR% to paths so Qt can find our versions
-REM  of sqlite3 and zlib.
-set INCLUDE=%INCLUDE%;%INCLUDE_DIR%
-set LIB=%LIB%;%LIB_DIR%
-set LIBPATH=%LIBPATH%;%LIB_DIR%
-
 REM Needed so stuff (like uic.exe) can find our zlibwapi.dll at run time
 set PATH=%PATH%;%LIB_DIR%
 
@@ -38,10 +33,15 @@ REM
 REM If you don't want to do that, just set -qt-zlib explicitly in the
 REM   Configure options below.
 
-nmake distclean
-configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2013 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -static -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -D ZLIB_WINAPI -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -nomake demos -nomake examples -nomake tests
+nmake /nologo distclean /K
+nmake /nologo confclean /K
+set CONFIG_ADD=
+if NOT %STATIC_LIBS% ( SET CONFIG_ADD=-D ZLIB_WINAPI )
+configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2013 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -static -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS %CONFIG_ADD% -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests -nomake tools
 rem /K keeps building things not affected by errors
-nmake /K
+nmake /nologo /K
+rem Remove obj files, supposedly
+rem nmake /nologo clean /K
 
 %XCOPY% bin\*.exe %BIN_DIR%
 REM Don't copy DLLs or includes since we refer to them from QTDIR and the include files refer to the Qt source tree.

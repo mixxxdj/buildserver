@@ -14,7 +14,7 @@ if %CONFIG_RELEASE% (
 )
 
 REM NOTE(pegasus): generated solution with
-REM cmake . -G "Visual Studio 14 2015" -DZLIB_INCLUDE_DIR=..\..\include -DZLIB_LIBRARY=..\..\lib\zlibwapi.lib
+REM cmake . -G "Visual Studio 14 2015" -DCMAKE_SUPPRESS_REGENERATION=1 -DCMAKE_USE_RELATIVE_PATHS=1 -DZLIB_INCLUDE_DIR=..\..\include -DZLIB_LIBRARY=..\..\lib\zlibwapi.lib
  
 cd build\%TAGLIB_PATH%
 %MSBUILD% taglib.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:tag:Clean;tag:Rebuild
