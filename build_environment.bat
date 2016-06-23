@@ -103,7 +103,8 @@ call build_libmad.bat
 call build_libogg.bat
 call build_libopus.bat REM depends on libogg
 call build_libvorbis.bat
-call build_libshout.bat
+call build_openssl.bat
+call build_libshout.bat REM may soon depend on openssl
 call build_libflac.bat
 call build_libsndfile.bat
 call build_fftw3.bat
@@ -114,7 +115,7 @@ call build_chromaprint.bat REM depends on fftw3
 call build_taglib.bat REM depends on zlib 
 REM We do not distribute LAME with Mixxx. If you wish to build it locally, uncomment.
 REM call build_lame.bat
-call build_qt4.bat REM depends on sqlite3 and zlib
+call build_qt4.bat REM depends on sqlite3, zlib and openssl
 
 REM Copy debug runtime DLLs for debug builds.
 if not %CONFIG_RELEASE% (

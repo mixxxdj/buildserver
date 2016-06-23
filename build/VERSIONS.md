@@ -69,6 +69,11 @@ Most recent library versions present in this directory.
       <td>2016-02-11</td>
     </tr>
     <tr>
+      <td>OpenSSL</td>
+      <td>1.0.2h</td>
+      <td>2016-06-22</td>
+    </tr>
+    <tr>
       <td>opus</td>
       <td>1.1.2</td>
       <td>2016-02-11</td>

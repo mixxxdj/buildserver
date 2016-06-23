@@ -37,7 +37,7 @@ nmake /nologo distclean /K
 nmake /nologo confclean /K
 set CONFIG_ADD=
 if NOT %STATIC_LIBS% ( SET CONFIG_ADD=-D ZLIB_WINAPI )
-configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2013 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -static -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS %CONFIG_ADD% -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests -nomake tools
+configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2013 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -static -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS %CONFIG_ADD% -openssl -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests -nomake tools
 rem /K keeps building things not affected by errors
 nmake /nologo /K
 rem Remove obj files, supposedly
