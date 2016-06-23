@@ -54,11 +54,6 @@ Most recent library versions present in this directory.
       <td>2016-02-11</td>
     </tr>
     <tr>
-      <td>libshout</td>
-      <td>2.4.0</td>
-      <td>2015-11-15</td>
-    </tr>
-    <tr>
       <td>libsndfile</td>
       <td>1.0.26</td>
       <td>2016-02-13</td>
