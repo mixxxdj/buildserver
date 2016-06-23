@@ -99,9 +99,9 @@ Most recent library versions present in this directory.
       <td>2016-02-09</td>
     </tr>
     <tr>
-      <td>qt4</td>
-      <td>4.8.6</td>
-      <td>2015 (no longer updated)</td>
+      <td>Qt4</td>
+      <td>4.8.7</td>
+      <td>2016-06-23 (no longer updated)</td>
     </tr>
     <tr>
       <td>rubberband</td>
