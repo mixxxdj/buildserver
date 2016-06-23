@@ -1,6 +1,6 @@
 echo.
 echo ---- Building Qt4 ----
-SET QT4_PATH=qt-everywhere-opensource-src-4.8.6
+SET QT4_PATH=qt-everywhere-opensource-src-4.8.7
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
@@ -33,15 +33,25 @@ REM
 REM If you don't want to do that, just set -qt-zlib explicitly in the
 REM   Configure options below.
 
+REM patch Qt 4.8.7 to build on MSVC 2015.
+REM (Get patch.exe from http://gnuwin32.sourceforge.net/packages/patch.htm)
+..\patch.exe -p1 --verbose -i ..\qt-4.8.7-win.patch -r ..\qt4fix.rej.txt
+
+echo Cleaning...
 nmake /nologo distclean /K
 nmake /nologo confclean /K
+
+echo Building...
 set CONFIG_ADD=
 if NOT %STATIC_LIBS% ( SET CONFIG_ADD=-D ZLIB_WINAPI )
-configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2013 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -static -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS %CONFIG_ADD% -openssl -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests -nomake tools
+rem Might need -openssl-linked instead
+configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2015 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -static -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS %CONFIG_ADD% -openssl -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests
 rem /K keeps building things not affected by errors
-nmake /nologo /K
+nmake /nologo
+
 rem Remove obj files, supposedly
-rem nmake /nologo clean /K
+echo Cleaning up...
+nmake /nologo clean /K
 
 %XCOPY% bin\*.exe %BIN_DIR%
 REM Don't copy DLLs or includes since we refer to them from QTDIR and the include files refer to the Qt source tree.

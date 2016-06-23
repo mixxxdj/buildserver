@@ -22,6 +22,9 @@ if %STATIC_LIBS% (
   %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibstat:Rebuild
   copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi.lib %LIB_DIR%
   copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi.pdb %LIB_DIR%
+  rem May need to do this hack at an elevated command prompt (so not in this script)
+  rem   so Qt can find the file by another name
+  rem mklink zdll.lib zlibwapi.lib
 ) else (
   %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Rebuild
   copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.dll %LIB_DIR%
