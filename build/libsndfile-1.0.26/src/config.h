@@ -1,6 +1,6 @@
 /* src/config.h.in.  Generated from configure.ac by autoheader.  */
 
-// hack
+// hacks
 typedef int __w64 ssize_t;
 
 /* Set to 1 if the compile is GNU GCC. */

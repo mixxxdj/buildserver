@@ -170,7 +170,7 @@ alac_close	(SF_PRIVATE *psf)
 	{	ALAC_ENCODER *penc = &plac->encoder ;
 		SF_CHUNK_INFO chunk_info ;
 		sf_count_t readcount ;
-		uint8_t *kuki_data [plac->kuki_size] ;
+		uint8_t** kuki_data = _alloca(sizeof(uint8_t*) * plac->kuki_size);
 		uint32_t pakt_size = 0, saved_partial_block_frames ;
 
 		plac->final_write_block = 1 ;
@@ -402,7 +402,7 @@ alac_reader_calc_frames (SF_PRIVATE *psf, ALAC_PRIVATE *plac)
 static int
 alac_decode_block (SF_PRIVATE *psf, ALAC_PRIVATE *plac)
 {	ALAC_DECODER *pdec = &plac->decoder ;
-	uint8_t		byte_buffer [psf->sf.channels * ALAC_BYTE_BUFFER_SIZE] ;
+	uint8_t*	byte_buffer = _alloca(sizeof(uint8_t) * psf->sf.channels * ALAC_BYTE_BUFFER_SIZE);
 	uint32_t	packet_size ;
 	BitBuffer	bit_buffer ;
 
@@ -438,7 +438,7 @@ alac_decode_block (SF_PRIVATE *psf, ALAC_PRIVATE *plac)
 static int
 alac_encode_block (SF_PRIVATE * psf, ALAC_PRIVATE *plac)
 {	ALAC_ENCODER *penc = &plac->encoder ;
-	uint8_t	byte_buffer [psf->sf.channels * ALAC_BYTE_BUFFER_SIZE] ;
+	uint8_t* byte_buffer = _alloca(sizeof(uint8_t) * psf->sf.channels * ALAC_BYTE_BUFFER_SIZE);
 	uint32_t num_bytes = 0 ;
 
 	alac_encode (penc, plac->partial_block_frames, plac->buffer, byte_buffer, &num_bytes) ;
