@@ -96,6 +96,10 @@
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
+    <Lib>
+      <AdditionalDependencies>win_utf8_io_static.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)objs\$(Platform)\$(Configuration)\lib\</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -114,6 +118,10 @@
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
+    <Lib>
+      <AdditionalDependencies>win_utf8_io_static.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)objs\$(Platform)\$(Configuration)\lib\</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -133,6 +141,10 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
+    <Lib>
+      <AdditionalDependencies>win_utf8_io_static.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)objs\$(Platform)\$(Configuration)\lib\</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -153,6 +165,10 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
+    <Lib>
+      <AdditionalDependencies>win_utf8_io_static.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)objs\$(Platform)\$(Configuration)\lib\</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\FLAC\all.h" />
@@ -274,6 +290,11 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ia32/lpc_asm.obj;%(Outputs)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ia32/lpc_asm.obj;%(Outputs)</Outputs>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\share\win_utf8_io\win_utf8_io_static.vcxproj">
+      <Project>{4cefbe02-c215-11db-8314-0800200c9a66}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
