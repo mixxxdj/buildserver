@@ -1,4 +1,4 @@
-echo "Building libsndfile"
+echo ---- Building libsndfile ----
 set SNDFILE_PATH=libsndfile-1.0.26
 
 if %MACHINE_X86% (
@@ -14,6 +14,7 @@ if %CONFIG_RELEASE% (
 )
 
 cd build\%SNDFILE_PATH%
+rem TODO(Pegasus): Need a way to specify FLAC__NO_DLL from here for static builds without clobbering the other defines in the project file
 %MSBUILD% libsndfile.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libsndfile:Clean;libsndfile:Rebuild
 
 copy %PLATFORM%\%CONFIG%\libsndfile.lib %LIB_DIR%
