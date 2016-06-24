@@ -14,6 +14,7 @@ if %CONFIG_RELEASE% (
 )
 
 cd build\%PTHREADS_PATH%
+rem TODO(Pegasus): Add PTW32_STATIC_LIB for static builds without clobbering the others defined in the project files
 %MSBUILD% pthread.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:pthread:Clean;pthread:Rebuild
 
 copy %PLATFORM%\%CONFIG%\pthread.dll %LIB_DIR%
