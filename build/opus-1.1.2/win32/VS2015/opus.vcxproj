@@ -115,6 +115,10 @@
       <Outputs>
       </Outputs>
     </CustomBuildStep>
+    <Lib>
+      <AdditionalDependencies>celt.lib;silk_common.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -145,6 +149,10 @@
       <Outputs>
       </Outputs>
     </CustomBuildStep>
+    <Lib>
+      <AdditionalDependencies>celt.lib;silk_common.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -179,6 +187,10 @@
       <Outputs>
       </Outputs>
     </CustomBuildStep>
+    <Lib>
+      <AdditionalDependencies>celt.lib;silk_common.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -212,6 +224,10 @@
       <Outputs>
       </Outputs>
     </CustomBuildStep>
+    <Lib>
+      <AdditionalDependencies>celt.lib;silk_common.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\celt\arch.h" />
