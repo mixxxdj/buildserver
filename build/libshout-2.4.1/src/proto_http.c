@@ -28,7 +28,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <strings.h>
+#ifndef _WIN32
+	#include <strings.h>
+#endif
 
 #include <shout/shout.h>
 #include "shout_private.h"

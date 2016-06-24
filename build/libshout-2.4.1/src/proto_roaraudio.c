@@ -28,7 +28,11 @@
 #endif
 
 /* for htonl(). */
-#include <arpa/inet.h>
+#ifdef _WIN32
+	#include <Winsock2.h>
+#else
+	#include <arpa/inet.h>
+#endif
 
 #include <stdio.h>
 #include <stdlib.h>

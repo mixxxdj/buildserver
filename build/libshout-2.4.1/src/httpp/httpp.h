@@ -27,6 +27,10 @@
 #ifndef __HTTPP_H
 #define __HTTPP_H
 
+#ifdef _MSC_VER
+	#define strcasecmp _stricmp
+#endif
+
 #include <avl/avl.h>
 
 #define HTTPP_VAR_PROTOCOL "__protocol"
