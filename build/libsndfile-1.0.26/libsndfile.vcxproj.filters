@@ -221,5 +221,14 @@
     <ClCompile Include="src\xi.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\alac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cart.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ogg_opus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
