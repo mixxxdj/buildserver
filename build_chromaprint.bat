@@ -14,7 +14,7 @@ if %CONFIG_RELEASE% (
 )
 
 REM NOTE(pegasus): generated solution one with
-REM E:\Mixxx\Buildserver\build\chromaprint-1.3.1>cmake . -G "Visual Studio 14 2015 Win64" -DWITH_FFTW3=ON -DFFTW3_DIR=../..
+REM cmake . -G "Visual Studio 14 2015 Win64" -DWITH_FFTW3=ON -DFFTW3_DIR=../..
 
 cd build\%CHROMAPRINT_PATH%
 %MSBUILD% chromaprint.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:chromaprint:Clean;chromaprint:Rebuild
