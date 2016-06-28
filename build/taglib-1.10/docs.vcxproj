@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="us-ascii"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -35,7 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{D5236695-088C-4BEF-8501-6A17FB554701}</ProjectGUID>
+    <ProjectGUID>{78C2AC49-0147-4453-B874-5E9661D69268}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
     <ProjectName>docs</ProjectName>
@@ -45,49 +45,49 @@
     <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -109,8 +109,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -119,8 +119,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -129,8 +129,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -139,8 +139,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -149,8 +149,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -159,8 +159,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -169,8 +169,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -179,8 +179,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -188,7 +188,115 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="CMakeFiles\8d0044ddd4d95ef5c7d44e97bfab43e7\docs.rule">
+    <CustomBuild Include="E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCCompiler.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCXXCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeRCCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCXXInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Compiler\MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\ConfigureChecks.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckLibraryExists.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFileCXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckCXXSourceCompiles.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_LONGLONG.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_WCHAR_T.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_FLOAT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_DOUBLE.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindZLIB.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib-config.cmd.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib.pc.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\Doxyfile.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\cmake_uninstall.cmake.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCCompiler.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCXXCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeRCCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCXXInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Compiler\MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\ConfigureChecks.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckLibraryExists.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFileCXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckCXXSourceCompiles.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_LONGLONG.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_WCHAR_T.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_FLOAT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_DOUBLE.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindZLIB.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib-config.cmd.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib.pc.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\Doxyfile.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\cmake_uninstall.cmake.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCCompiler.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCXXCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeRCCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCXXInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Compiler\MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\ConfigureChecks.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckLibraryExists.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFileCXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckCXXSourceCompiles.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_LONGLONG.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_WCHAR_T.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_FLOAT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_DOUBLE.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindZLIB.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib-config.cmd.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib.pc.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\Doxyfile.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\cmake_uninstall.cmake.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCCompiler.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCXXCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeRCCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCXXInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Compiler\MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\ConfigureChecks.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckLibraryExists.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFileCXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckCXXSourceCompiles.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_LONGLONG.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_WCHAR_T.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_FLOAT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_DOUBLE.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindZLIB.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib-config.cmd.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib.pc.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\Doxyfile.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\cmake_uninstall.cmake.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCCompiler.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCXXCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeRCCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCXXInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Compiler\MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\ConfigureChecks.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckLibraryExists.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFileCXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckCXXSourceCompiles.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_LONGLONG.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_WCHAR_T.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_FLOAT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_DOUBLE.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindZLIB.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib-config.cmd.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib.pc.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\Doxyfile.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\cmake_uninstall.cmake.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCCompiler.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCXXCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeRCCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCXXInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Compiler\MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\ConfigureChecks.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckLibraryExists.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFileCXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckCXXSourceCompiles.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_LONGLONG.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_WCHAR_T.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_FLOAT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_DOUBLE.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindZLIB.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib-config.cmd.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib.pc.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\Doxyfile.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\cmake_uninstall.cmake.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCCompiler.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCXXCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeRCCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCXXInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Compiler\MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\ConfigureChecks.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckLibraryExists.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFileCXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckCXXSourceCompiles.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_LONGLONG.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_WCHAR_T.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_FLOAT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_DOUBLE.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindZLIB.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib-config.cmd.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib.pc.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\Doxyfile.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\cmake_uninstall.cmake.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCCompiler.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeCXXCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\3.3.1\CMakeRCCompiler.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCXXInformation.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Compiler\MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\ConfigureChecks.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckLibraryExists.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFileCXX.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckCXXSourceCompiles.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckIncludeFile.c.in;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_LONGLONG.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_WCHAR_T.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_FLOAT.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CheckTypeSize.c.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\CheckTypeSize\SIZEOF_DOUBLE.c;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindZLIB.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;E:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib-config.cmd.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib.pc.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_config.h.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\Doxyfile.cmake;E:\Mixxx\Buildserver\build\taglib-1.10\cmake_uninstall.cmake.in;E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\f96d34ad7a84e2892a3b19d522e18317\docs.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -211,10 +319,10 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./CMakeFiles/8d0044ddd4d95ef5c7d44e97bfab43e7/docs.rule;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./CMakeFiles/8d0044ddd4d95ef5c7d44e97bfab43e7/docs.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\CMakeFiles\docs</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\CMakeFiles\docs</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/f96d34ad7a84e2892a3b19d522e18317/docs.rule;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/f96d34ad7a84e2892a3b19d522e18317/docs.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -239,10 +347,10 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./CMakeFiles/8d0044ddd4d95ef5c7d44e97bfab43e7/docs.rule;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./CMakeFiles/8d0044ddd4d95ef5c7d44e97bfab43e7/docs.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\CMakeFiles\docs</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\CMakeFiles\docs</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/f96d34ad7a84e2892a3b19d522e18317/docs.rule;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/f96d34ad7a84e2892a3b19d522e18317/docs.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
@@ -267,10 +375,10 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">./CMakeFiles/8d0044ddd4d95ef5c7d44e97bfab43e7/docs.rule;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">./CMakeFiles/8d0044ddd4d95ef5c7d44e97bfab43e7/docs.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.\CMakeFiles\docs</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.\CMakeFiles\docs</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/f96d34ad7a84e2892a3b19d522e18317/docs.rule;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/f96d34ad7a84e2892a3b19d522e18317/docs.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
@@ -295,18 +403,21 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">./CMakeFiles/8d0044ddd4d95ef5c7d44e97bfab43e7/docs.rule;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">./CMakeFiles/8d0044ddd4d95ef5c7d44e97bfab43e7/docs.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.\CMakeFiles\docs</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.\CMakeFiles\docs</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/f96d34ad7a84e2892a3b19d522e18317/docs.rule;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/f96d34ad7a84e2892a3b19d522e18317/docs.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CMakeFiles\docs" />
+    <None Include="E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="E:/Mixxx/Buildserver/build/taglib-1.10/ZERO_CHECK.vcxproj">
+      <Project>424ED9F1-7C2E-484E-8FDB-35455EBFF73D</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,16 +1,17 @@
-﻿<?xml version="1.0" encoding="Windows-1252"?>
-<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="CMakeFiles\8d0044ddd4d95ef5c7d44e97bfab43e7\docs.rule">
+    <CustomBuild Include="E:\Mixxx\Buildserver\build\taglib-1.10\CMakeLists.txt" />
+    <CustomBuild Include="E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\f96d34ad7a84e2892a3b19d522e18317\docs.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CMakeFiles\docs" />
+    <None Include="E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\docs" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{A82949A5-10DF-434C-97B5-F88569CCBC35}</UniqueIdentifier>
+      <UniqueIdentifier>{A5076642-2B19-41A3-AAF7-5E7738BF227F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -38,7 +38,6 @@
 #include <alloca.h>
 #endif
 
-#include <algorithm>
 #include <cassert>
 #include <cmath>
 #include <set>

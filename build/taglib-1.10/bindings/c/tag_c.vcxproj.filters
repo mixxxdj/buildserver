@@ -1,21 +1,24 @@
-﻿<?xml version="1.0" encoding="Windows-1252"?>
-<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="tag_c.cpp">
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\tag_c.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tag_c.h">
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\tag_c.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{E53A504F-6128-44C5-97FD-80FA26848B3B}</UniqueIdentifier>
+      <UniqueIdentifier>{A87ABE66-4B5D-4F58-AD08-13AC1C085D24}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{8F65B277-F705-4683-91C8-7D795AB470FE}</UniqueIdentifier>
+      <UniqueIdentifier>{71334F3C-EB10-4DBF-B44A-B5108A7A2216}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

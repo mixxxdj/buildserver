@@ -9,74 +9,74 @@ Most recent library versions present in this directory.
       <th>Last checked</th>
     </tr>
     <tr>
-        <td>chromaprint</td>
-        <td>1.1</td>
-        <td></td>
+      <td>chromaprint</td>
+      <td>1.3.1</td>
+      <td>2016-02-19</td>
     </tr>
     <tr>
       <td>fftw</td>
       <td>3.3.4</td>
-      <td></td>
+      <td>2016-02-09</td>
     </tr>
     <tr>
       <td>flac</td>
-      <td>1.3.0</td>
-      <td></td>
+      <td>1.3.1</td>
+      <td>2016-02-12</td>
     </tr>
     <tr>
       <td>hss1394</td>
       <td>r8</td>
-      <td></td>
+      <td>2016-03-14</td>
     </tr>
     <tr>
       <td>lame</td>
       <td>3.99.5</td>
-      <td></td>
+      <td>2016-03-14</td>
     </tr>
     <tr>
       <td>libid3tag</td>
       <td>0.15.1b</td>
-      <td></td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>libmad</td>
       <td>0.15.1b</td>
-      <td></td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>libogg</td>
       <td>1.3.2</td>
-      <td></td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>libshout</td>
-      <td>2.3.1</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>libshout</td>
-      <td>2.4.0</td>
-      <td>2015-11-15</td>
+      <td>2.4.1</td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>libsndfile</td>
-      <td>1.0.25</td>
-      <td></td>
+      <td>1.0.26</td>
+      <td>2016-02-13</td>
     </tr>
     <tr>
       <td>libvorbis</td>
-      <td>1.3.4</td>
-      <td></td>
+      <td>1.3.5</td>
+      <td>2016-02-11</td>
+    </tr>
+    <tr>
+      <td>OpenSSL</td>
+      <td>1.0.2h</td>
+      <td>2016-06-22</td>
     </tr>
     <tr>
       <td>opus</td>
-      <td>1.1</td>
-      <td></td>
+      <td>1.1.2</td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>opusfile</td>
-      <td>0.6</td>
-      <td></td>
+      <td>0.7</td>
+      <td>2016-02-11</td>
     </tr>
     <tr>
       <td>portaudio</td>
@@ -85,42 +85,42 @@ Most recent library versions present in this directory.
     </tr>
     <tr>
       <td>portmidi</td>
-      <td>228</td>
-      <td></td>
+      <td>r228</td>
+      <td>2015-03-15</td>
     </tr>
     <tr>
       <td>protobuf</td>
-      <td>2.5.0</td>
-      <td></td>
+      <td>2.6.1</td>
+      <td>2016-02-09</td>
     </tr>
     <tr>
       <td>pthreads-win32</td>
       <td>2.9.1</td>
-      <td></td>
+      <td>2016-02-09</td>
     </tr>
     <tr>
-      <td>qt</td>
-      <td>4.8.6</td>
-      <td></td>
+      <td>Qt4</td>
+      <td>4.8.7</td>
+      <td>2016-06-23 (no longer updated)</td>
     </tr>
     <tr>
       <td>rubberband</td>
       <td>1.8.1</td>
-      <td></td>
+      <td>2016-02-12</td>
     </tr>
     <tr>
-      <td>sqlite-amalgamation</td>
-      <td>3080600</td>
-      <td></td>
+      <td>SQLite</td>
+      <td>3.13.0</td>
+      <td>2016-06-22</td>
     </tr>
     <tr>
       <td>taglib</td>
       <td>1.10</td>
-      <td>2015-11-15</td>
+      <td>2016-03-14</td>
     </tr>
     <tr>
       <td>zlib</td>
       <td>1.2.8</td>
-      <td>2015-11-15</td>
+      <td>2016-02-09</td>
     </tr>
 </table>

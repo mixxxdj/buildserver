@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="Windows-1252"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -19,41 +19,42 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{B4B3B191-48F4-4592-A02E-96D1F78C989C}</ProjectGUID>
+    <ProjectGUID>{E5E6CDC1-A3BC-49BA-9C6F-C83B490A61ED}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
     <ProjectName>INSTALL</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType></ConfigurationType>
+    <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType></ConfigurationType>
+    <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
-    <ConfigurationType></ConfigurationType>
+    <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
-    <ConfigurationType></ConfigurationType>
+    <ConfigurationType>Utility</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />  </ImportGroup>
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
     <PropertyGroup>
       <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
@@ -64,8 +65,8 @@
     </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\trueaudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\trueaudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -74,7 +75,7 @@
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -86,8 +87,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\trueaudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\trueaudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -96,7 +97,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -108,8 +109,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\trueaudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\trueaudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -118,7 +119,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -130,8 +131,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\mixxx\environments\prototype\build\taglib-1.10;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\toolkit;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\asf;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\vorbis;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\flac;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\flac;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpc;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mp4;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2\frames;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\wavpack;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\ogg\speex;C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\..\..\taglib\trueaudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\..\..\taglib\trueaudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
@@ -140,7 +141,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -DBUILD_TYPE=$(Configuration) -P cmake_install.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -151,7 +152,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="..\..\CMakeFiles\31ade3dcb8ad18cd549d7f8ad29512fe\INSTALL_force.rule">
+    <CustomBuild Include="E:\Mixxx\Buildserver\build\taglib-1.10\CMakeFiles\480574d79b065622e63d7057596023a6\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd .
@@ -162,8 +163,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/mixxx/environments/prototype/build/taglib-1.10/CMakeFiles/31ade3dcb8ad18cd549d7f8ad29512fe/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/480574d79b065622e63d7057596023a6/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
@@ -175,8 +176,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/mixxx/environments/prototype/build/taglib-1.10/CMakeFiles/31ade3dcb8ad18cd549d7f8ad29512fe/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/480574d79b065622e63d7057596023a6/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
@@ -188,8 +189,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/mixxx/environments/prototype/build/taglib-1.10/CMakeFiles/31ade3dcb8ad18cd549d7f8ad29512fe/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/480574d79b065622e63d7057596023a6/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
@@ -201,14 +202,14 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/mixxx/environments/prototype/build/taglib-1.10/CMakeFiles/31ade3dcb8ad18cd549d7f8ad29512fe/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\mixxx\environments\prototype\build\taglib-1.10\bindings\c\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/480574d79b065622e63d7057596023a6/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\bindings\c\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:/mixxx/environments/prototype/build/taglib-1.10/ALL_BUILD.vcxproj">
-      <Project>E9DF0FAE-A4F1-487A-B949-A010908D7FDF</Project>
+    <ProjectReference Include="E:/Mixxx/Buildserver/build/taglib-1.10/ALL_BUILD.vcxproj">
+      <Project>90A29C8B-2BF4-4FA2-A91C-A7238A3D6FFC</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

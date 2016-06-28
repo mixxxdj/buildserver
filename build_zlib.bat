@@ -1,4 +1,4 @@
-echo "Building zlib"
+echo ---- Building Zlib ----
 SET ZLIB_PATH=zlib-1.2.8
 
 if %MACHINE_X86% (
@@ -13,12 +13,25 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
-cd build\%ZLIB_PATH%\contrib\vstudio\vc11
-%MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Clean;zlibvc:Rebuild
+cd build\%ZLIB_PATH%\contrib\vstudio\vc14
+echo Cleaning both...
+%MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Clean;zlibstat:Clean
 
-copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.dll %LIB_DIR%
-copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.lib %LIB_DIR%
-copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.pdb %LIB_DIR%
+echo Building...
+if %STATIC_LIBS% (
+  %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibstat:Rebuild
+  copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi.lib %LIB_DIR%
+  copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi.pdb %LIB_DIR%
+  rem May need to do this hack at an elevated command prompt (so not in this script)
+  rem   so Qt can find the file by another name
+  rem mklink zdll.lib zlibwapi.lib
+) else (
+  %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Rebuild
+  copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.dll %LIB_DIR%
+  copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.lib %LIB_DIR%
+  copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi.pdb %LIB_DIR%
+)
+
 cd %BUILD_DIR%\%ZLIB_PATH%
 copy zlib.h %INCLUDE_DIR%
 copy zconf.h %INCLUDE_DIR%

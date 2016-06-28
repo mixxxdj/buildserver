@@ -1,5 +1,5 @@
-echo "Building sqlite3"
-set SQLITE_PATH=sqlite-amalgamation-3080600
+echo --- Building SQLite3 ----
+set SQLITE_PATH=sqlite-amalgamation-3130000
 
 if %MACHINE_X86% (
   set PLATFORM=Win32

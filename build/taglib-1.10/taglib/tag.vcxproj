@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="us-ascii"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -35,64 +35,65 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{48F4E43B-9F90-4B72-883B-7528D163E90C}</ProjectGUID>
+    <ProjectGUID>{01E1C9E5-5300-44E5-A980-11CFE66919B5}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
     <ProjectName>tag</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -105,41 +106,33 @@
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tag.dir\Debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tag</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">tag</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tag.dir\Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tag</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">tag</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">tag.dir\MinSizeRel\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">tag</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">tag</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">tag.dir\RelWithDebInfo\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">tag</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">tag</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
@@ -147,11 +140,10 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <Optimization>Disabled</Optimization>
@@ -159,29 +151,31 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Debug";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Debug";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Debug\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Debug\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalOptions>/debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\Mixxx\Buildserver\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Debug/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Debug/tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
@@ -191,11 +185,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <Optimization>Disabled</Optimization>
@@ -203,29 +196,31 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Debug";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Debug";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Debug\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Debug\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalOptions>/debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\Mixxx\Buildserver\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Debug/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Debug/tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
@@ -235,7 +230,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -245,33 +240,33 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Release";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Release";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Release\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Release\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\Mixxx\Buildserver\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Release/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Release/tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -279,7 +274,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -289,33 +284,33 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Release";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="Release";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Release\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"Release\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\Mixxx\Buildserver\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Release/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/Release/tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -323,43 +318,43 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="MinSizeRel";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="MinSizeRel";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"MinSizeRel\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"MinSizeRel\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\Mixxx\Buildserver\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/MinSizeRel/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/MinSizeRel/tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -367,43 +362,43 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="MinSizeRel";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="MinSizeRel";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"MinSizeRel\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"MinSizeRel\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\Mixxx\Buildserver\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/MinSizeRel/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/MinSizeRel/tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -411,10 +406,9 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <Optimization>MaxSpeed</Optimization>
@@ -422,32 +416,33 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="RelWithDebInfo";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="RelWithDebInfo";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"RelWithDebInfo\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"RelWithDebInfo\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalOptions>/debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\Mixxx\Buildserver\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/RelWithDebInfo/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/RelWithDebInfo/tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -455,10 +450,9 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <Optimization>MaxSpeed</Optimization>
@@ -466,242 +460,354 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="RelWithDebInfo";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR="RelWithDebInfo";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>ZLIB_WINAPI;WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"RelWithDebInfo\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;CMAKE_INTDIR=\"RelWithDebInfo\";MAKE_TAGLIB_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>.;..;.\toolkit;.\asf;.\mpeg;.\ogg;.\ogg\flac;.\flac;.\mpc;.\mp4;.\ogg\vorbis;.\ogg\speex;.\ogg\opus;.\mpeg\id3v2;.\mpeg\id3v2\frames;.\mpeg\id3v1;.\ape;.\wavpack;.\trueaudio;.\riff;.\riff\aiff;.\riff\wav;.\mod;.\s3m;.\it;.\xm;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <AdditionalIncludeDirectories>E:\Mixxx\Buildserver\build\taglib-1.10\taglib;E:\Mixxx\Buildserver\build\taglib-1.10;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm;E:\Mixxx\Buildserver\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalOptions>/debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\zlibwapi.lib</AdditionalDependencies>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\Mixxx\Buildserver\lib\zlibwapi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>$(SolutionDir)$(Platform)\$(Configuration)\tag.lib</ImportLibrary>
-      <ProgramDataBaseFile>$(SolutionDir)$(Platform)\$(Configuration)\tag.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/RelWithDebInfo/tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Mixxx/Buildserver/build/taglib-1.10/taglib/RelWithDebInfo/tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="tag.h" />
-    <ClInclude Include="fileref.h" />
-    <ClInclude Include="audioproperties.h" />
-    <ClInclude Include="taglib_export.h" />
-    <ClInclude Include="..\taglib_config.h" />
-    <ClInclude Include="toolkit\taglib.h" />
-    <ClInclude Include="toolkit\tstring.h" />
-    <ClInclude Include="toolkit\tlist.h" />
-    <ClInclude Include="toolkit\tstringlist.h" />
-    <ClInclude Include="toolkit\tbytevector.h" />
-    <ClInclude Include="toolkit\tbytevectorlist.h" />
-    <ClInclude Include="toolkit\tbytevectorstream.h" />
-    <ClInclude Include="toolkit\tiostream.h" />
-    <ClInclude Include="toolkit\tfile.h" />
-    <ClInclude Include="toolkit\tfilestream.h" />
-    <ClInclude Include="toolkit\tmap.h" />
-    <ClInclude Include="toolkit\tpropertymap.h" />
-    <ClInclude Include="toolkit\trefcounter.h" />
-    <ClInclude Include="toolkit\tdebuglistener.h" />
-    <ClInclude Include="mpeg\mpegfile.h" />
-    <ClInclude Include="mpeg\mpegproperties.h" />
-    <ClInclude Include="mpeg\mpegheader.h" />
-    <ClInclude Include="mpeg\xingheader.h" />
-    <ClInclude Include="mpeg\id3v1\id3v1tag.h" />
-    <ClInclude Include="mpeg\id3v1\id3v1genres.h" />
-    <ClInclude Include="mpeg\id3v2\id3v2extendedheader.h" />
-    <ClInclude Include="mpeg\id3v2\id3v2frame.h" />
-    <ClInclude Include="mpeg\id3v2\id3v2header.h" />
-    <ClInclude Include="mpeg\id3v2\id3v2synchdata.h" />
-    <ClInclude Include="mpeg\id3v2\id3v2footer.h" />
-    <ClInclude Include="mpeg\id3v2\id3v2framefactory.h" />
-    <ClInclude Include="mpeg\id3v2\id3v2tag.h" />
-    <ClInclude Include="mpeg\id3v2\frames\attachedpictureframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\commentsframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\eventtimingcodesframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\generalencapsulatedobjectframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\ownershipframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\popularimeterframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\privateframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\relativevolumeframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\synchronizedlyricsframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\textidentificationframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\uniquefileidentifierframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\unknownframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\unsynchronizedlyricsframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\urllinkframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\chapterframe.h" />
-    <ClInclude Include="mpeg\id3v2\frames\tableofcontentsframe.h" />
-    <ClInclude Include="ogg\oggfile.h" />
-    <ClInclude Include="ogg\oggpage.h" />
-    <ClInclude Include="ogg\oggpageheader.h" />
-    <ClInclude Include="ogg\xiphcomment.h" />
-    <ClInclude Include="ogg\vorbis\vorbisfile.h" />
-    <ClInclude Include="ogg\vorbis\vorbisproperties.h" />
-    <ClInclude Include="ogg\flac\oggflacfile.h" />
-    <ClInclude Include="ogg\speex\speexfile.h" />
-    <ClInclude Include="ogg\speex\speexproperties.h" />
-    <ClInclude Include="ogg\opus\opusfile.h" />
-    <ClInclude Include="ogg\opus\opusproperties.h" />
-    <ClInclude Include="flac\flacfile.h" />
-    <ClInclude Include="flac\flacpicture.h" />
-    <ClInclude Include="flac\flacproperties.h" />
-    <ClInclude Include="flac\flacmetadatablock.h" />
-    <ClInclude Include="ape\apefile.h" />
-    <ClInclude Include="ape\apeproperties.h" />
-    <ClInclude Include="ape\apetag.h" />
-    <ClInclude Include="ape\apefooter.h" />
-    <ClInclude Include="ape\apeitem.h" />
-    <ClInclude Include="mpc\mpcfile.h" />
-    <ClInclude Include="mpc\mpcproperties.h" />
-    <ClInclude Include="wavpack\wavpackfile.h" />
-    <ClInclude Include="wavpack\wavpackproperties.h" />
-    <ClInclude Include="trueaudio\trueaudiofile.h" />
-    <ClInclude Include="trueaudio\trueaudioproperties.h" />
-    <ClInclude Include="riff\rifffile.h" />
-    <ClInclude Include="riff\aiff\aifffile.h" />
-    <ClInclude Include="riff\aiff\aiffproperties.h" />
-    <ClInclude Include="riff\wav\wavfile.h" />
-    <ClInclude Include="riff\wav\wavproperties.h" />
-    <ClInclude Include="riff\wav\infotag.h" />
-    <ClInclude Include="asf\asffile.h" />
-    <ClInclude Include="asf\asfproperties.h" />
-    <ClInclude Include="asf\asftag.h" />
-    <ClInclude Include="asf\asfattribute.h" />
-    <ClInclude Include="asf\asfpicture.h" />
-    <ClInclude Include="mp4\mp4file.h" />
-    <ClInclude Include="mp4\mp4atom.h" />
-    <ClInclude Include="mp4\mp4tag.h" />
-    <ClInclude Include="mp4\mp4item.h" />
-    <ClInclude Include="mp4\mp4properties.h" />
-    <ClInclude Include="mp4\mp4coverart.h" />
-    <ClInclude Include="mod\modfilebase.h" />
-    <ClInclude Include="mod\modfile.h" />
-    <ClInclude Include="mod\modtag.h" />
-    <ClInclude Include="mod\modproperties.h" />
-    <ClInclude Include="it\itfile.h" />
-    <ClInclude Include="it\itproperties.h" />
-    <ClInclude Include="s3m\s3mfile.h" />
-    <ClInclude Include="s3m\s3mproperties.h" />
-    <ClInclude Include="xm\xmfile.h" />
-    <ClInclude Include="xm\xmproperties.h" />
-    <ClCompile Include="mpeg\mpegfile.cpp" />
-    <ClCompile Include="mpeg\mpegproperties.cpp" />
-    <ClCompile Include="mpeg\mpegheader.cpp" />
-    <ClCompile Include="mpeg\xingheader.cpp" />
-    <ClCompile Include="mpeg\id3v1\id3v1tag.cpp" />
-    <ClCompile Include="mpeg\id3v1\id3v1genres.cpp" />
-    <ClCompile Include="mpeg\id3v2\id3v2framefactory.cpp" />
-    <ClCompile Include="mpeg\id3v2\id3v2synchdata.cpp" />
-    <ClCompile Include="mpeg\id3v2\id3v2tag.cpp" />
-    <ClCompile Include="mpeg\id3v2\id3v2header.cpp" />
-    <ClCompile Include="mpeg\id3v2\id3v2frame.cpp" />
-    <ClCompile Include="mpeg\id3v2\id3v2footer.cpp" />
-    <ClCompile Include="mpeg\id3v2\id3v2extendedheader.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\attachedpictureframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\commentsframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\eventtimingcodesframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\generalencapsulatedobjectframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\ownershipframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\popularimeterframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\privateframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\relativevolumeframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\synchronizedlyricsframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\textidentificationframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\uniquefileidentifierframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\unknownframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\unsynchronizedlyricsframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\urllinkframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\chapterframe.cpp" />
-    <ClCompile Include="mpeg\id3v2\frames\tableofcontentsframe.cpp" />
-    <ClCompile Include="ogg\oggfile.cpp" />
-    <ClCompile Include="ogg\oggpage.cpp" />
-    <ClCompile Include="ogg\oggpageheader.cpp" />
-    <ClCompile Include="ogg\xiphcomment.cpp" />
-    <ClCompile Include="ogg\vorbis\vorbisfile.cpp" />
-    <ClCompile Include="ogg\vorbis\vorbisproperties.cpp" />
-    <ClCompile Include="ogg\flac\oggflacfile.cpp" />
-    <ClCompile Include="mpc\mpcfile.cpp" />
-    <ClCompile Include="mpc\mpcproperties.cpp" />
-    <ClCompile Include="ape\apetag.cpp" />
-    <ClCompile Include="ape\apefooter.cpp" />
-    <ClCompile Include="ape\apeitem.cpp" />
-    <ClCompile Include="ape\apefile.cpp" />
-    <ClCompile Include="ape\apeproperties.cpp" />
-    <ClCompile Include="toolkit\tstring.cpp" />
-    <ClCompile Include="toolkit\tstringlist.cpp" />
-    <ClCompile Include="toolkit\tbytevector.cpp" />
-    <ClCompile Include="toolkit\tbytevectorlist.cpp" />
-    <ClCompile Include="toolkit\tbytevectorstream.cpp" />
-    <ClCompile Include="toolkit\tiostream.cpp" />
-    <ClCompile Include="toolkit\tfile.cpp" />
-    <ClCompile Include="toolkit\tfilestream.cpp" />
-    <ClCompile Include="toolkit\tdebug.cpp" />
-    <ClCompile Include="toolkit\tpropertymap.cpp" />
-    <ClCompile Include="toolkit\trefcounter.cpp" />
-    <ClCompile Include="toolkit\tdebuglistener.cpp" />
-    <ClCompile Include="flac\flacfile.cpp" />
-    <ClCompile Include="flac\flacpicture.cpp" />
-    <ClCompile Include="flac\flacproperties.cpp" />
-    <ClCompile Include="flac\flacmetadatablock.cpp" />
-    <ClCompile Include="flac\flacunknownmetadatablock.cpp" />
-    <ClCompile Include="wavpack\wavpackfile.cpp" />
-    <ClCompile Include="wavpack\wavpackproperties.cpp" />
-    <ClCompile Include="ogg\speex\speexfile.cpp" />
-    <ClCompile Include="ogg\speex\speexproperties.cpp" />
-    <ClCompile Include="trueaudio\trueaudiofile.cpp" />
-    <ClCompile Include="trueaudio\trueaudioproperties.cpp" />
-    <ClCompile Include="riff\rifffile.cpp" />
-    <ClCompile Include="riff\aiff\aifffile.cpp" />
-    <ClCompile Include="riff\aiff\aiffproperties.cpp" />
-    <ClCompile Include="riff\wav\wavfile.cpp" />
-    <ClCompile Include="riff\wav\wavproperties.cpp" />
-    <ClCompile Include="riff\wav\infotag.cpp" />
-    <ClCompile Include="asf\asftag.cpp" />
-    <ClCompile Include="asf\asffile.cpp" />
-    <ClCompile Include="asf\asfproperties.cpp" />
-    <ClCompile Include="asf\asfattribute.cpp" />
-    <ClCompile Include="asf\asfpicture.cpp" />
-    <ClCompile Include="mp4\mp4file.cpp" />
-    <ClCompile Include="mp4\mp4atom.cpp" />
-    <ClCompile Include="mp4\mp4tag.cpp" />
-    <ClCompile Include="mp4\mp4item.cpp" />
-    <ClCompile Include="mp4\mp4properties.cpp" />
-    <ClCompile Include="mp4\mp4coverart.cpp" />
-    <ClCompile Include="mod\modfilebase.cpp" />
-    <ClCompile Include="mod\modfile.cpp" />
-    <ClCompile Include="mod\modtag.cpp" />
-    <ClCompile Include="mod\modproperties.cpp" />
-    <ClCompile Include="s3m\s3mfile.cpp" />
-    <ClCompile Include="s3m\s3mproperties.cpp" />
-    <ClCompile Include="it\itfile.cpp" />
-    <ClCompile Include="it\itproperties.cpp" />
-    <ClCompile Include="xm\xmfile.cpp" />
-    <ClCompile Include="xm\xmproperties.cpp" />
-    <ClCompile Include="ogg\opus\opusfile.cpp" />
-    <ClCompile Include="ogg\opus\opusproperties.cpp" />
-    <ClCompile Include="tag.cpp" />
-    <ClCompile Include="tagunion.cpp" />
-    <ClCompile Include="fileref.cpp" />
-    <ClCompile Include="audioproperties.cpp" />
-    <None Include="toolkit\tlist.tcc" />
-    <None Include="toolkit\tmap.tcc" />
+    <CustomBuild Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"E:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/Mixxx/Buildserver/build/taglib-1.10 -BE:/Mixxx/Buildserver/build/taglib-1.10 --check-stamp-file E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\Mixxx\Buildserver\build\taglib-1.10\taglib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\tag.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\fileref.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\audioproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\taglib_export.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib_config.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\taglib.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tstring.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tlist.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tstringlist.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tbytevector.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tbytevectorlist.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tbytevectorstream.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tiostream.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tfilestream.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tmap.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tpropertymap.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\trefcounter.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tdebuglistener.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\mpegfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\mpegproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\mpegheader.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\xingheader.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1\id3v1tag.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1\id3v1genres.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2extendedheader.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2frame.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2header.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2synchdata.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2footer.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2framefactory.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2tag.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\attachedpictureframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\commentsframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\eventtimingcodesframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\generalencapsulatedobjectframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\ownershipframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\popularimeterframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\privateframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\relativevolumeframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\synchronizedlyricsframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\textidentificationframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\uniquefileidentifierframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\unknownframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\unsynchronizedlyricsframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\urllinkframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\chapterframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\tableofcontentsframe.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\oggfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\oggpage.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\oggpageheader.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\xiphcomment.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis\vorbisfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis\vorbisproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac\oggflacfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex\speexfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex\speexproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus\opusfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus\opusproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacpicture.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacmetadatablock.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apefile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apeproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apetag.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apefooter.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apeitem.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc\mpcfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc\mpcproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack\wavpackfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack\wavpackproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio\trueaudiofile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio\trueaudioproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\rifffile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff\aifffile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff\aiffproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav\wavfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav\wavproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav\infotag.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asffile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asfproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asftag.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asfattribute.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asfpicture.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4file.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4atom.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4tag.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4item.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4properties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4coverart.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod\modfilebase.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod\modfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod\modtag.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod\modproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it\itfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it\itproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m\s3mfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m\s3mproperties.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm\xmfile.h" />
+    <ClInclude Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm\xmproperties.h" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\mpegfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\mpegproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\mpegheader.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\xingheader.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1\id3v1tag.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v1\id3v1genres.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2framefactory.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2synchdata.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2tag.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2header.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2frame.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2footer.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\id3v2extendedheader.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\attachedpictureframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\commentsframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\eventtimingcodesframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\generalencapsulatedobjectframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\ownershipframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\popularimeterframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\privateframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\relativevolumeframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\synchronizedlyricsframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\textidentificationframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\uniquefileidentifierframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\unknownframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\unsynchronizedlyricsframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\urllinkframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\chapterframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpeg\id3v2\frames\tableofcontentsframe.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\oggfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\oggpage.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\oggpageheader.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\xiphcomment.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis\vorbisfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\vorbis\vorbisproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\flac\oggflacfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc\mpcfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mpc\mpcproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apetag.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apefooter.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apeitem.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apefile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ape\apeproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tstring.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tstringlist.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tbytevector.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tbytevectorlist.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tbytevectorstream.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tiostream.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tfilestream.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tdebug.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tpropertymap.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\trefcounter.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tdebuglistener.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacpicture.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacmetadatablock.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\flac\flacunknownmetadatablock.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack\wavpackfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\wavpack\wavpackproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex\speexfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\speex\speexproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio\trueaudiofile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\trueaudio\trueaudioproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\rifffile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff\aifffile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\aiff\aiffproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav\wavfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav\wavproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\riff\wav\infotag.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asftag.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asffile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asfproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asfattribute.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\asf\asfpicture.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4file.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4atom.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4tag.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4item.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4properties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mp4\mp4coverart.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod\modfilebase.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod\modfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod\modtag.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\mod\modproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m\s3mfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\s3m\s3mproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it\itfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\it\itproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm\xmfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\xm\xmproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus\opusfile.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\ogg\opus\opusproperties.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\tag.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\tagunion.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\fileref.cpp" />
+    <ClCompile Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\audioproperties.cpp" />
+    <None Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tlist.tcc" />
+    <None Include="E:\Mixxx\Buildserver\build\taglib-1.10\taglib\toolkit\tmap.tcc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:/Mixxx/Buildserver/build/taglib-1.10/ZERO_CHECK.vcxproj">
+      <Project>424ED9F1-7C2E-484E-8FDB-35455EBFF73D</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

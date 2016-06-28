@@ -1,4 +1,4 @@
-# Install script for directory: C:/mixxx/environments/prototype/build/taglib-1.10/bindings
+# Install script for directory: E:/Mixxx/Buildserver/build/taglib-1.10/bindings
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,7 +29,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/mixxx/environments/prototype/build/taglib-1.10/bindings/c/cmake_install.cmake")
+  include("E:/Mixxx/Buildserver/build/taglib-1.10/bindings/c/cmake_install.cmake")
 
 endif()
 

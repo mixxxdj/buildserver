@@ -1,5 +1,5 @@
 echo "Building protobuf"
-set PROTOBUF_PATH=protobuf-2.5.0
+set PROTOBUF_PATH=protobuf-2.6.1
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
@@ -21,5 +21,8 @@ copy %PLATFORM%\%CONFIG%\libprotobuf-lite.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libprotobuf-lite.pdb %LIB_DIR%
 call extract_includes.bat 
 xcopy /E /Y include %INCLUDE_DIR%
+
+rem Get items their extractor missed that we need:
+copy ..\src\google\protobuf\stubs\stl_util.h %INCLUDE_DIR%\google\protobuf\stubs\
 
 cd %ROOT_DIR%

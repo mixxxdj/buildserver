@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -22,23 +22,26 @@
     <ProjectGuid>{020CEB11-EF4E-400E-971D-A35DB69D7CF9}</ProjectGuid>
     <RootNamespace>rubberband-library</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -57,7 +60,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+    <_ProjectFileVersion>14.0.24730.2</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
@@ -66,6 +69,8 @@
     <TargetName>rubberband</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
     <TargetName>rubberband</TargetName>
   </PropertyGroup>
@@ -75,43 +80,49 @@
     <TargetName>rubberband</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>rubberband</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>__MSVC__;WIN32;_DEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;USE_SPEEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__MSVC__;WIN32;HAVE_FFTW3;_DEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;USE_SPEEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level2</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <ShowIncludes>false</ShowIncludes>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <UndefinePreprocessorDefinitions>USE_KISSFFT</UndefinePreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>.;./src</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
+    <Lib>
+      <AdditionalDependencies>libfftwf-3.3.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>__MSVC__;WIN32;_DEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;USE_SPEEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__MSVC__;WIN32;HAVE_FFTW3;_DEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;USE_SPEEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level2</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ShowIncludes>false</ShowIncludes>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <UndefinePreprocessorDefinitions>USE_KISSFFT</UndefinePreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>.;./src</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
+    <Lib>
+      <AdditionalDependencies>libfftwf-3.3.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -120,22 +131,21 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>.;.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>__MSVC__;WIN32;NDEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;NO_TIMING;USE_SPEEX;NO_THREAD_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>__MSVC__;WIN32;HAVE_FFTW3;NDEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;NO_TIMING;USE_SPEEX;NO_THREAD_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BufferSecurityCheck>false</BufferSecurityCheck>
-      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <PrecompiledHeader />
       <WarningLevel>Level2</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <UndefinePreprocessorDefinitions>USE_KISSFFT</UndefinePreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;./src</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-    </Link>
+    <Lib>
+      <AdditionalDependencies>libfftwf-3.3.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -144,77 +154,70 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>.;.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>__MSVC__;WIN32;NDEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;NO_TIMING;USE_SPEEX;NO_THREAD_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>__MSVC__;WIN32;HAVE_FFTW3;NDEBUG;_LIB;NOMINMAX;_USE_MATH_DEFINES;USE_KISSFFT;NO_TIMING;USE_SPEEX;NO_THREAD_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BufferSecurityCheck>false</BufferSecurityCheck>
-      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level2</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <UndefinePreprocessorDefinitions>USE_KISSFFT</UndefinePreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;./src</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-    </Link>
+    <Lib>
+      <AdditionalDependencies>libfftwf-3.3.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\kissfft\kiss_fft.h" />
-    <ClInclude Include="src\kissfft\kiss_fftr.h" />
-    <ClInclude Include="src\kissfft\_kiss_fft_guts.h" />
-    <ClInclude Include="src\system\Allocators.h" />
-    <ClInclude Include="src\dsp\AudioCurveCalculator.h" />
-    <ClInclude Include="src\audiocurves\CompoundAudioCurve.h" />
-    <ClInclude Include="src\audiocurves\ConstantAudioCurve.h" />
-    <ClInclude Include="src\dsp\FFT.h" />
-    <ClInclude Include="src\float_cast\float_cast.h" />
-    <ClInclude Include="src\audiocurves\HighFrequencyAudioCurve.h" />
-    <ClInclude Include="src\dsp\MovingMedian.h" />
-    <ClInclude Include="src\audiocurves\PercussiveAudioCurve.h" />
-    <ClInclude Include="src\base\Profiler.h" />
-    <ClInclude Include="src\dsp\Resampler.h" />
-    <ClInclude Include="src\base\RingBuffer.h" />
     <ClInclude Include="rubberband\rubberband-c.h" />
     <ClInclude Include="rubberband\RubberBandStretcher.h" />
-    <ClInclude Include="src\dsp\SampleFilter.h" />
-    <ClInclude Include="src\base\Scavenger.h" />
+    <ClInclude Include="src\audiocurves\CompoundAudioCurve.h" />
+    <ClInclude Include="src\audiocurves\ConstantAudioCurve.h" />
+    <ClInclude Include="src\audiocurves\HighFrequencyAudioCurve.h" />
+    <ClInclude Include="src\audiocurves\PercussiveAudioCurve.h" />
     <ClInclude Include="src\audiocurves\SilentAudioCurve.h" />
     <ClInclude Include="src\audiocurves\SpectralDifferenceAudioCurve.h" />
+    <ClInclude Include="src\base\Profiler.h" />
+    <ClInclude Include="src\base\RingBuffer.h" />
+    <ClInclude Include="src\base\Scavenger.h" />
+    <ClInclude Include="src\dsp\AudioCurveCalculator.h" />
+    <ClInclude Include="src\dsp\FFT.h" />
+    <ClInclude Include="src\dsp\MovingMedian.h" />
+    <ClInclude Include="src\dsp\Resampler.h" />
+    <ClInclude Include="src\dsp\SampleFilter.h" />
+    <ClInclude Include="src\dsp\SincWindow.h" />
+    <ClInclude Include="src\dsp\Window.h" />
+    <ClInclude Include="src\float_cast\float_cast.h" />
     <ClInclude Include="src\speex\speex_resampler.h" />
     <ClInclude Include="src\StretchCalculator.h" />
     <ClInclude Include="src\StretcherChannelData.h" />
     <ClInclude Include="src\StretcherImpl.h" />
+    <ClInclude Include="src\system\Allocators.h" />
     <ClInclude Include="src\system\sysutils.h" />
     <ClInclude Include="src\system\Thread.h" />
     <ClInclude Include="src\system\VectorOps.h" />
-    <ClInclude Include="src\dsp\SincWindow.h" />
-    <ClInclude Include="src\dsp\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\kissfft\kiss_fft.c" />
-    <ClCompile Include="src\kissfft\kiss_fftr.c" />
-    <ClCompile Include="src\system\Allocators.cpp" />
-    <ClCompile Include="src\dsp\AudioCurveCalculator.cpp" />
     <ClCompile Include="src\audiocurves\CompoundAudioCurve.cpp" />
     <ClCompile Include="src\audiocurves\ConstantAudioCurve.cpp" />
-    <ClCompile Include="src\dsp\FFT.cpp" />
     <ClCompile Include="src\audiocurves\HighFrequencyAudioCurve.cpp" />
     <ClCompile Include="src\audiocurves\PercussiveAudioCurve.cpp" />
+    <ClCompile Include="src\audiocurves\SilentAudioCurve.cpp" />
+    <ClCompile Include="src\audiocurves\SpectralDifferenceAudioCurve.cpp" />
     <ClCompile Include="src\base\Profiler.cpp" />
-    <ClCompile Include="src\speex\resample.c" />
+    <ClCompile Include="src\dsp\AudioCurveCalculator.cpp" />
+    <ClCompile Include="src\dsp\FFT.cpp" />
     <ClCompile Include="src\dsp\Resampler.cpp" />
     <ClCompile Include="src\rubberband-c.cpp" />
     <ClCompile Include="src\RubberBandStretcher.cpp" />
-    <ClCompile Include="src\audiocurves\SilentAudioCurve.cpp" />
-    <ClCompile Include="src\audiocurves\SpectralDifferenceAudioCurve.cpp" />
+    <ClCompile Include="src\speex\resample.c" />
     <ClCompile Include="src\StretchCalculator.cpp" />
     <ClCompile Include="src\StretcherChannelData.cpp" />
     <ClCompile Include="src\StretcherImpl.cpp" />
     <ClCompile Include="src\StretcherProcess.cpp" />
+    <ClCompile Include="src\system\Allocators.cpp" />
     <ClCompile Include="src\system\sysutils.cpp" />
     <ClCompile Include="src\system\Thread.cpp" />
   </ItemGroup>

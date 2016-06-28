@@ -26,6 +26,10 @@
 
 #include "system/sysutils.h"
 
+#ifdef __MSVC__
+#include <algorithm>
+#endif
+
 namespace RubberBand {
 
 class ResamplerImpl;
