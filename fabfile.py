@@ -6,6 +6,8 @@ LOGIN_KEY_NAME = 'build-login'
 LOGIN_KEY_PATH = os.path.join('keys', LOGIN_KEY_NAME)
 UBUNTU_VERSION = '16.04'
 UBUNTU_NAME = 'xenial'
+MACOSX_QEMU_ROOT = '/usr/local/osx'
+MACOSX_INSTALL_ISO = 'ElCapitan.iso'
 PBUILDER_DISTS = ['trusty', 'wily', 'xenial', 'yakkety']
 PBUILDER_ARCHS = ['amd64', 'i386']
 
@@ -77,28 +79,68 @@ def make_ubuntu_autoinstaller():
               '--ubuntu version %s' %
               ('%s.pub' % LOGIN_KEY_PATH, UBUNTU_NAME, UBUNTU_VERSION))
 
-def make_ubuntu_builder(name):
-    make_ubuntu_autoinstaller()
-
+def _builder_common(name):
     vm_path = os.path.join('vms', name)
     if os.path.exists(vm_path):
         raise Exception('Builder \'%s\' already exists!' % name)
+    local('mkdir ' + vm_path)
+    vm_disk = '{}.img'.format(name)
+
+    disk_space = prompt("How much disk (XXG)?")
+    with lcd(vm_path):
+        local('qemu-img create -f qcow2 {vm_disk} {disk_space}'.format(
+            vm_disk=vm_disk, disk_space=disk_space))
 
     ram = prompt('How much RAM?')
     cores = prompt('How many cores?')
     guest_ssh = prompt('Guest SSH host:port?')
     guest_vnc = prompt('Guest VNC host:display?')
+
+    return vm_path, vm_disk, disk_space, ram, cores, guest_ssh, guest_vnc
+
+def make_ubuntu_builder(name):
+    make_ubuntu_autoinstaller()
+    vm_path, vm_disk, disk_space, ram, cores, guest_ssh, guest_vnc = (
+        _builder_common(name))
+
     install_media = os.path.join(
         'isos', 'ubuntu-%s-server-amd64-auto.iso' % UBUNTU_VERSION)
-    vm_disk = '{}.img'.format(name)
-
-    local('mkdir ' + vm_path)
 
     with lcd(vm_path):
-        local('qemu-img create -f qcow2 {vm_disk} 100G'.format(vm_disk=vm_disk))
         local('echo "#!/usr/bin/env bash" > run.sh')
         local('echo "qemu-system-x86_64 --enable-kvm -m {ram} -cpu core2duo -smp {cores} -device ide-drive,drive=LinHDD -drive id=LinHDD,if=none,file={vm_path}/{vm_disk} -device virtio-net,netdev=hub0port0,id=eth0 -netdev user,id=hub0port0,hostfwd=tcp:{guest_ssh}-:22 -vnc {guest_vnc} -monitor stdio -boot c -cdrom {install_media}" >> run.sh'.format(ram=ram, cores=cores, vm_path=vm_path, vm_disk=vm_disk, guest_ssh=guest_ssh, guest_vnc=guest_vnc, install_media=install_media))
         local('chmod +x run.sh')
+
+def make_macosx_builder(name):
+    vm_path, vm_disk, disk_space, ram, cores, guest_ssh, guest_vnc = (
+        _builder_common(name))
+    guest_native_vnc = prompt('Guest native VNC host:display?')
+    install_media = os.path.join('isos', MACOSX_INSTALL_ISO)
+
+    with lcd(vm_path):
+        local('echo "#!/usr/bin/env bash" > run.sh')
+        local('echo "export PATH={qemu_root}/bin:\\$PATH" >> run.sh'.format(qemu_root=MACOSX_QEMU_ROOT))
+        local('echo "sudo su -- -c \\\"echo 1 > /sys/module/kvm/parameters/ignore_msrs\\\"" >> run.sh')
+        local('echo "qemu-system-x86_64 --enable-kvm -m {ram} -cpu core2duo,vendor=GenuineIntel -machine q35 -vga std -usb -device usb-kbd -device usb-mouse -device isa-applesmc,osk=\\\"ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc\\\" -kernel isos/enoch_rev2795_boot -smbios type=2 -device ide-drive,bus=ide.2,drive=MacHDD -drive id=MacHDD,if=none,file={vm_path}/{vm_disk} -netdev user,id=hub0port0,hostfwd=tcp:{guest_native_vnc}-:5900,hostfwd=tcp:{guest_ssh}-:22 -vnc {guest_vnc} -device e1000-82545em,netdev=hub0port0,id=mac_vnet0 -monitor stdio -smp {cores} -boot c -device ide-drive,bus=ide.0,drive=MacDVD -drive id=MacDVD,if=none,snapshot=on,file={install_media}" >> run.sh'.format(ram=ram, cores=cores, vm_path=vm_path, vm_disk=vm_disk, guest_ssh=guest_ssh, guest_vnc=guest_vnc, guest_native_vnc=guest_native_vnc, install_media=install_media))
+        local('chmod +x run.sh')
+
+# During setup:
+# "KernelBooter_kexts"="Yes" "CsrActiveConfig"="103"
+# Format with disk utility
+# Settings -> Sharing -> SSH/VNC
+# XCode, homebrew?
+
+# Create file /Extra/org.chameleon.boot.plist:
+"""
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+          "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Timeout</key>
+  <string>5</string>
+</dict>
+"""
 
 def run_builder(name):
     vm_path = os.path.join('vms', name)
