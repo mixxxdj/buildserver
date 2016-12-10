@@ -41,8 +41,6 @@ REM If you don't want to do that, just set -qt-zlib explicitly in the
 REM   Configure options below.
 
 REM patch Qt 4.8.7 to build on MSVC 2015.
-REM (Get patch.exe from http://gnuwin32.sourceforge.net/packages/patch.htm)
-REM No need. I've copied the msys2 version to the bin folder.
 %BIN_DIR%\patch.exe -N -p1 --verbose -i %CD%\..\qt-4.8.7-win.patch -r %CD%\..\qt4fix.rej.txt
 REM ERRORLEVEL 2 since it will report errorlevel 1 when already applied
 IF ERRORLEVEL 2 (
@@ -58,7 +56,6 @@ del /S /Q mkspecs/modules-inst/*.pri
 
 
 echo Building...
-set CONFIG_ADD=
 if %STATIC_LIBS% (
 rem Might need -openssl-linked instead
 configure.exe %CONFIG% -opensource -confirm-license -platform win32-msvc2015 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -s -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -openssl -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests
