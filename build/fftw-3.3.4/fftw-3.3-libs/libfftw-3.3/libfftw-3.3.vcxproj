@@ -143,7 +143,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>FFTW_DLL;WIN32;_WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBFFTWF33_EXPORTS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FFTW_DLL;WIN32;_WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBFFTWF33_EXPORTS;COMPILING_FFTW;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\..\..\api;$(ProjectDir)\..\..\kernel;$(ProjectDir)\..\..\dft;$(ProjectDir)\..\..\dft\simd;$(ProjectDir)\..\..\dft\scalar;$(ProjectDir)\..\..\rdft;$(ProjectDir)\..\..\rdft\simd;$(ProjectDir)\..\..\rdft\scalar;$(ProjectDir)\..\..\reodft;$(ProjectDir)\..\..\simd-support;$(ProjectDir)\..\..\threads</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <OpenMPSupport>true</OpenMPSupport>
@@ -162,7 +162,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>FFTW_DLL;WIN64;_WIN64;_DEBUG;_WINDOWS;_USRDLL;LIBFFTWF33_EXPORTS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FFTW_DLL;WIN64;_WIN64;_DEBUG;_WINDOWS;_USRDLL;LIBFFTWF33_EXPORTS;COMPILING_FFTW;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\..\..\api;$(ProjectDir)\..\..\kernel;$(ProjectDir)\..\..\dft;$(ProjectDir)\..\..\dft\simd;$(ProjectDir)\..\..\dft\scalar;$(ProjectDir)\..\..\rdft;$(ProjectDir)\..\..\rdft\simd;$(ProjectDir)\..\..\rdft\scalar;$(ProjectDir)\..\..\reodft;$(ProjectDir)\..\..\simd-support;$(ProjectDir)\..\..\threads</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <OpenMPSupport>true</OpenMPSupport>
@@ -223,7 +223,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>FFTW_DLL;WIN32;NDEBUG;_WIN32;_WINDOWS;_USRDLL;LIBFFTWF33_EXPORTS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FFTW_DLL;WIN32;NDEBUG;_WIN32;_WINDOWS;_USRDLL;LIBFFTWF33_EXPORTS;COMPILING_FFTW;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\..\..\api;$(ProjectDir)\..\..\kernel;$(ProjectDir)\..\..\dft;$(ProjectDir)\..\..\dft\simd;$(ProjectDir)\..\..\dft\scalar;$(ProjectDir)\..\..\rdft;$(ProjectDir)\..\..\rdft\simd;$(ProjectDir)\..\..\rdft\scalar;$(ProjectDir)\..\..\reodft;$(ProjectDir)\..\..\simd-support;$(ProjectDir)\..\..\threads</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <OpenMPSupport>true</OpenMPSupport>
@@ -246,7 +246,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>FFTW_DLL;WIN64;NDEBUG;_WIN64;_WINDOWS;_USRDLL;LIBFFTWF33_EXPORTS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FFTW_DLL;WIN64;NDEBUG;_WIN64;_WINDOWS;_USRDLL;LIBFFTWF33_EXPORTS;COMPILING_FFTW;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\..\..\api;$(ProjectDir)\..\..\kernel;$(ProjectDir)\..\..\dft;$(ProjectDir)\..\..\dft\simd;$(ProjectDir)\..\..\dft\scalar;$(ProjectDir)\..\..\rdft;$(ProjectDir)\..\..\rdft\simd;$(ProjectDir)\..\..\rdft\scalar;$(ProjectDir)\..\..\reodft;$(ProjectDir)\..\..\simd-support;$(ProjectDir)\..\..\threads</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <OpenMPSupport>true</OpenMPSupport>

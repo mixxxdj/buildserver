@@ -1,6 +1,0 @@
-E:/Mixxx/Buildserver/build/taglib-1.10/taglib/CMakeFiles/tag.dir
-E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/uninstall.dir
-E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/docs.dir
-E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/ALL_BUILD.dir
-E:/Mixxx/Buildserver/build/taglib-1.10/CMakeFiles/ZERO_CHECK.dir
-E:/Mixxx/Buildserver/build/taglib-1.10/bindings/c/CMakeFiles/tag_c.dir

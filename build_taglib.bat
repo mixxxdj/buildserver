@@ -1,10 +1,14 @@
+SETLOCAL
 echo "Building taglib"
 set TAGLIB_PATH=taglib-1.10
+SET VALRETURN=0
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
+  set COMPILERPROJECT="Visual Studio 14 2015"
 ) else (
   set PLATFORM=x64
+  set COMPILERPROJECT="Visual Studio 14 2015 Win64"
 )
 
 if %CONFIG_RELEASE% (
@@ -13,15 +17,35 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
-REM NOTE(pegasus): generated solution with
-REM cmake . -G "Visual Studio 14 2015" -DCMAKE_SUPPRESS_REGENERATION=1 -DCMAKE_USE_RELATIVE_PATHS=1 -DZLIB_INCLUDE_DIR=..\..\include -DZLIB_LIBRARY=..\..\lib\zlibwapi.lib
- 
-cd build\%TAGLIB_PATH%
-%MSBUILD% taglib.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:tag:Clean;tag:Rebuild
+if %STATIC_LIBS% (
+  set ZLIBNAME=zlibstat.lib
+) else (
+  set ZLIBNAME=zlibwapi.lib
+)
 
-copy %PLATFORM%\%CONFIG%\tag.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\tag.dll %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\tag.pdb %LIB_DIR%
+
+cd build\%TAGLIB_PATH%
+REM Re-generate solution files.
+rd /S /Q %PLATFORM%
+mkdir %PLATFORM%
+cd %PLATFORM%
+REM NOTE(pegasus): generated solution with
+"%CMAKEDIR%\cmake" ../ -G %COMPILERPROJECT% -DCMAKE_SUPPRESS_REGENERATION=1 -DCMAKE_USE_RELATIVE_PATHS=1 -DZLIB_INCLUDE_DIR=%INCLUDE_DIR% -DZLIB_LIBRARY=%LIB_DIR%\%ZLIBNAME%
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
+ 
+%MSBUILD% taglib.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:tag:Clean;tag:Rebuild
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
+
+copy taglib\%CONFIG%\tag.lib %LIB_DIR%
+copy taglib\%CONFIG%\tag.dll %LIB_DIR%
+copy taglib\%CONFIG%\tag.exp %LIB_DIR%
+cd ..
 md %INCLUDE_DIR%\taglib
 %XCOPY% taglib_config.h %INCLUDE_DIR%\taglib
 %XCOPY% taglib\*.h %INCLUDE_DIR%\taglib
@@ -51,4 +75,9 @@ md %INCLUDE_DIR%\taglib
 %XCOPY% taglib\wavpack\*.h %INCLUDE_DIR%\taglib
 %XCOPY% taglib\xm\*.h %INCLUDE_DIR%\taglib
 
+:END
 cd %ROOT_DIR%
+REM the GOTO command resets the errorlevel and the endlocal resets the local environment,
+REM so I have to use this workaround
+ENDLOCAL & SET VALRETURN=%VALRETURN%
+exit /b %VALRETURN%

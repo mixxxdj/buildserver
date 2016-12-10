@@ -1,5 +1,7 @@
+SETLOCAL
 echo ---- Building OpenSSL ----
 set OPENSSL_PATH=openssl-1.0.2h
+SET VALRETURN=0
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
@@ -26,10 +28,16 @@ if %PLATFORM% == x64 (
   rem perl Configure VC-WIN32 no-asm
   rem ms\do_ms
 )
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
 
 echo Cleaning both...
 nmake -f ms\ntdll.mak clean
 nmake -f ms\nt.mak clean
+REM IGNORING ERRORS on either of these, because if the directory does not exist, they fail with
+REM the del command and would make the compilation stop.
 
 echo Building...
 if %STATIC_LIBS% (
@@ -37,10 +45,18 @@ if %STATIC_LIBS% (
 ) else (
   nmake -f ms\ntdll.mak
 )
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
 
 set OPENSSL_TARGETS=out32
-if NOT %STATIC_LIBS% ( set OPENSSL_TARGETS=%OPENSSL_TARGETS%dll )
-if NOT %CONFIG_RELEASE% ( set OPENSSL_TARGETS=%OPENSSL_TARGETS%.dbg )
+if NOT %STATIC_LIBS% ( 
+set OPENSSL_TARGETS=%OPENSSL_TARGETS%dll
+)
+if NOT %CONFIG_RELEASE% (
+set OPENSSL_TARGETS=%OPENSSL_TARGETS%.dbg
+)
 
 copy /b %OPENSSL_TARGETS%\libeay32.lib %LIB_DIR%
 copy /b %OPENSSL_TARGETS%\ssleay32.lib %LIB_DIR%
@@ -51,4 +67,9 @@ if NOT %STATIC_LIBS% (
 md %INCLUDE_DIR%\openssl
 copy /b inc32\openssl\*.h %INCLUDE_DIR%\openssl\
 
+:END
 cd %ROOT_DIR%
+REM the GOTO command resets the errorlevel and the endlocal resets the local environment,
+REM so I have to use this workaround
+ENDLOCAL & SET VALRETURN=%VALRETURN%
+exit /b %VALRETURN%

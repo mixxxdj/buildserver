@@ -63,6 +63,7 @@ endif()
 
 option(WITH_AVFFT "Use FFmpeg for FFT calculations" OFF)
 option(WITH_FFTW3 "Use FFTW3 for FFT calculations" OFF)
+option(WITH_FFTW3_DYNAMIC "When linking with FFTW3, link it dynamically" OFF)
 option(WITH_VDSP "Use vDSP for FFT calculations" OFF)
 option(WITH_KISSFFT "Use KissFFT for FFT calculations" OFF)
 

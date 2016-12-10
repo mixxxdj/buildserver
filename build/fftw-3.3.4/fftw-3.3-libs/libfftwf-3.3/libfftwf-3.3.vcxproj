@@ -541,6 +541,7 @@
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Static-Release|Win32'">$(IntDir)api\</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Static-Release|x64'">$(IntDir)api\</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="..\..\api\mkprinter-str.c" />
     <ClCompile Include="..\..\api\mktensor-iodims.c">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)api\</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)api\</ObjectFileName>

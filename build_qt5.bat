@@ -1,7 +1,9 @@
+SETLOCAL
 echo "Building Qt5"
 REM SET QT5_PATH=qt-everywhere-opensource-src-5.5.1
 REM Qt5 has long paths so we run into the NTFS file path limit. Trim the directory name as much as possible to save on characters. (Yes, really.)
 SET QT5_PATH=qt551
+SET VALRETURN=0
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
@@ -16,6 +18,11 @@ if %CONFIG_RELEASE% (
 )
 
 cd build\%QT5_PATH%
+IF ERRORLEVEL 1 (
+echo could not find QT5 on %CD%\build\%QT5_PATH%
+    SET VALRETURN=1
+	goto END
+)
 
 REM We link against the system SQLite so that Mixxx can link with and use the 
 REM same instance of the SQLite library in our binary (for example, so we 
@@ -32,9 +39,18 @@ set QMAKESPEC=win32-msvc2013
 REM NOTE(rryan): By setting -system-sqlite, -system-zlib is set as well. Building with -system-zlib fails with missing "zlib.dll". So I think our zlib build is not currently ready to be used with Qt. We should fix this but for now use -qt-zlib.
 REM NOTE(rryan): For some reason configure.bat returns an error even if it succeeded. Use "& nmake" to build regardless of the result.
 configure %CONFIG% -opensource -confirm-license -platform %QMAKESPEC% -qt-zlib -system-sqlite -qt-sql-sqlite -c++11 -ltcg -shared -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -skip qtmultimedia -skip qt3d -skip qtwebkit -skip qtwebkit-examples -skip qtwebengine -nomake examples -nomake tests -no-dbus -no-audio-backend & nmake
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
 
 REM Copy uic, rcc, and other utilities.
 %XCOPY% qtbase\bin\*.exe %BIN_DIR%
 REM Don't copy DLLs or includes since we refer to them from QTDIR and the include files refer to the Qt source tree.
 
+:END
 cd %ROOT_DIR%
+REM the GOTO command resets the errorlevel and the endlocal resets the local environment,
+REM so I have to use this workaround
+ENDLOCAL & SET VALRETURN=%VALRETURN%
+exit /b %VALRETURN%
