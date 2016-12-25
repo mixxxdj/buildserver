@@ -4,7 +4,7 @@ set SHOUT_PATH=libshout-2.4.1
 SET VALRETURN=0
 
 if %MACHINE_X86% (
-  set PLATFORM=Win32
+  set PLATFORM=x86
 ) else (
   set PLATFORM=x64
 )
@@ -15,6 +15,13 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
+REM TODO(XXX): Fix the solution so the output path matches the platform name.
+if %MACHINE_X86% (
+  set OUTPUT_PATH=Win32\%CONFIG%
+) else (
+  set OUTPUT_PATH=%PLATFORM%\%CONFIG%
+)
+
 cd build\%SHOUT_PATH%\win32
 %MSBUILD% libshout.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libshout:Clean;libshout:Rebuild
 IF ERRORLEVEL 1 (
@@ -22,9 +29,9 @@ IF ERRORLEVEL 1 (
 	goto END
 )
 
-copy %PLATFORM%\%CONFIG%\libshout.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\libshout.dll %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\libshout.pdb %LIB_DIR%
+copy %OUTPUT_PATH%\libshout.lib %LIB_DIR%
+copy %OUTPUT_PATH%\libshout.dll %LIB_DIR%
+copy %OUTPUT_PATH%\libshout.pdb %LIB_DIR%
 md %INCLUDE_DIR%\shout
 copy ..\include\shout\*.h %INCLUDE_DIR%\shout\
 copy ..\include\os.h %INCLUDE_DIR%
