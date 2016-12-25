@@ -15,7 +15,15 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
-cd build\%ZLIB_PATH%\contrib\vstudio\vc14
+if %MACHINE_X86% (
+cd build\%ZLIB_PATH%\contrib\masmx86
+call bld_ml32.bat
+) else (
+cd build\%ZLIB_PATH%\contrib\masmx64
+call bld_ml64.bat
+)
+
+cd ..\vstudio\vc14
 echo Cleaning both...
 %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Clean;zlibstat:Clean
 IF ERRORLEVEL 1 (
