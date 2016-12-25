@@ -349,6 +349,13 @@ set_target_properties(tag PROPERTIES
   LINK_INTERFACE_LIBRARIES ""
   PUBLIC_HEADER "${tag_HDRS}"
 )
+ 
+set_target_properties(tag PROPERTIES COMPILE_PDB_NAME tag PDB_NAME tag)
+target_compile_options(
+    tag PRIVATE 
+	"$<$<CONFIG:Debug>:/Zi>"
+    "$<$<CONFIG:Release>:/Zi>"
+)
 if(BUILD_FRAMEWORK)
   set_target_properties(tag PROPERTIES FRAMEWORK TRUE)
 endif()
