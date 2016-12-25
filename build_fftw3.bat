@@ -21,6 +21,13 @@ if %CONFIG_RELEASE% (
   )
 )
 
+REM TODO(XXX): The output paths differ based on platform.
+if %MACHINE_X86% (
+  set OUTPUT_PATH=%CONFIG%
+) else (
+  set OUTPUT_PATH=%PLATFORM%\%CONFIG%
+)
+
 cd build\%FFTW_PATH%\fftw-3.3-libs
 
 echo Cleaning all...
@@ -37,6 +44,13 @@ IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
 )
+
+copy %PLATFORM%\%CONFIG%\libfftw-3.3.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\libfftw-3.3.pdb %LIB_DIR%
+if not %STATIC_LIBS% ( 
+  copy %PLATFORM%\%CONFIG%\libfftw-3.3.dll %LIB_DIR%
+) 
+
 rem Need libfftwf as well
 cd ..\libfftwf-3.3
 %MSBUILD% libfftwf-3.3.vcxproj /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:Rebuild
@@ -45,15 +59,11 @@ SET VALRETURN=1
 goto END
 )
 
-copy %PLATFORM%\%CONFIG%\libfftw-3.3.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\libfftw-3.3.pdb %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\libfftwf-3.3.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\libfftwf-3.3.pdb %LIB_DIR%
-if not %STATIC_LIBS% ( 
-  copy %PLATFORM%\%CONFIG%\libfftw-3.3.dll %LIB_DIR%
-  copy %PLATFORM%\%CONFIG%\libfftwf-3.3.dll %LIB_DIR%
+copy %OUTPUT_PATH%\libfftwf-3.3.lib %LIB_DIR%
+copy %OUTPUT_PATH%\libfftwf-3.3.pdb %LIB_DIR%
+if not %STATIC_LIBS% (
+  copy %OUTPUT_PATH%\libfftwf-3.3.dll %LIB_DIR%
 ) 
-
 
 copy ..\..\api\fftw3.h %INCLUDE_DIR%
 
