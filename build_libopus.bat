@@ -25,7 +25,7 @@ IF ERRORLEVEL 1 (
 
 copy %PLATFORM%\%CONFIG%\opus.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\opus.pdb %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\opus.dll %LIB_DIR%
+if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\opus.dll %LIB_DIR% )
 md %INCLUDE_DIR%\opus
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
 
@@ -50,7 +50,7 @@ IF ERRORLEVEL 1 (
 
 copy %PLATFORM%\%CONFIG%\opusfile.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\opusfile.pdb %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\opusfile.dll %LIB_DIR%
+if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\opusfile.dll %LIB_DIR% )
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
 git checkout ../../include/opusfile.h
 

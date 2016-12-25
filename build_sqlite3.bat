@@ -24,7 +24,7 @@ IF ERRORLEVEL 1 (
 )
 
 copy %PLATFORM%\%CONFIG%\sqlite3.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\sqlite3.dll %LIB_DIR%
+if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\sqlite3.dll %LIB_DIR% )
 copy %PLATFORM%\%CONFIG%\sqlite3.pdb %LIB_DIR%
 copy sqlite3.h %INCLUDE_DIR%
 

@@ -50,7 +50,7 @@ IF ERRORLEVEL 1 (
 )
 
 copy src\%CONFIG%\%PROJECT%.lib %LIB_DIR%
-copy src\%CONFIG%\%PROJECT%.dll %LIB_DIR%
+IF NOT %STATIC_LIBS% ( copy src\%CONFIG%\%PROJECT%.dll %LIB_DIR% )
 copy src\%CONFIG%\%PROJECT%.pdb %LIB_DIR%
 cd ..
 copy src\chromaprint.h %INCLUDE_DIR%

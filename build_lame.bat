@@ -24,7 +24,7 @@ IF ERRORLEVEL 1 (
 )
 
 copy output\%CONFIG%\libmp3lame.lib %LIB_DIR%
-copy output\%CONFIG%\libmp3lame.dll %LIB_DIR%
+if not %STATIC_LIBS% ( copy output\%CONFIG%\libmp3lame.dll %LIB_DIR% )
 copy output\%CONFIG%\libmp3lame.pdb %LIB_DIR%
 copy include\lame.h %INCLUDE_DIR%
 

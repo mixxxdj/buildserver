@@ -22,7 +22,7 @@ IF ERRORLEVEL 1 (
 	goto END
 )
 
-copy %PLATFORM%\%CONFIG%\libprotobuf-lite.dll %LIB_DIR%
+if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\libprotobuf-lite.dll %LIB_DIR% )
 copy %PLATFORM%\%CONFIG%\libprotobuf-lite.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libprotobuf-lite.pdb %LIB_DIR%
 call extract_includes.bat 

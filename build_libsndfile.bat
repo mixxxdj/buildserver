@@ -38,9 +38,7 @@ copy %PLATFORM%\%CONFIG%\g72x.lib %LIB_DIR%
 copy %LIB_OUTPUT_PATH%\libsndfile.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libsndfile.pdb %LIB_DIR%
 
-IF NOT %STATIC_LIBS% (
-copy %PLATFORM%\%CONFIG%\libsndfile.dll %LIB_DIR%
-)
+IF NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\libsndfile.dll %LIB_DIR% )
 
 copy src\sndfile.h %INCLUDE_DIR%
 

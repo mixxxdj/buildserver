@@ -23,7 +23,7 @@ IF ERRORLEVEL 1 (
 )
 
 copy %PLATFORM%\%CONFIG%\portaudio.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\portaudio.dll %LIB_DIR%
+if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\portaudio.dll %LIB_DIR% )
 copy %PLATFORM%\%CONFIG%\portaudio.pdb %LIB_DIR%
 copy ..\..\include\portaudio.h %INCLUDE_DIR%
 

@@ -38,8 +38,8 @@ IF ERRORLEVEL 1 (
 )
 
 copy taglib\%CONFIG%\tag.lib %LIB_DIR%
-copy taglib\%CONFIG%\tag.dll %LIB_DIR%
-copy taglib\%CONFIG%\tag.exp %LIB_DIR%
+if NOT %STATIC_LIBS% ( copy taglib\%CONFIG%\tag.dll %LIB_DIR% )
+copy taglib\%CONFIG%\tag.pdb %LIB_DIR%
 cd ..
 md %INCLUDE_DIR%\taglib
 %XCOPY% taglib_config.h %INCLUDE_DIR%\taglib

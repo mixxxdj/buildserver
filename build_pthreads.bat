@@ -23,7 +23,7 @@ IF ERRORLEVEL 1 (
 	goto END
 )
 
-copy %PLATFORM%\%CONFIG%\pthread.dll %LIB_DIR%
+if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\pthread.dll %LIB_DIR% )
 copy %PLATFORM%\%CONFIG%\pthread.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\pthread.pdb %LIB_DIR%
 copy pthread.h %INCLUDE_DIR%

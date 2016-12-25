@@ -34,9 +34,7 @@ IF ERRORLEVEL 1 (
 
 copy %OUTPUT_PLATFORM%\%CONFIG%\rubberband.lib %LIB_DIR%
 copy %OUTPUT_PLATFORM%\%CONFIG%\rubberband.pdb %LIB_DIR%
-if NOT %STATIC_LIBS% (
-  copy %OUTPUT_PLATFORM%\%CONFIG%\rubberband.dll %LIB_DIR%
-)
+if NOT %STATIC_LIBS% ( copy %OUTPUT_PLATFORM%\%CONFIG%\rubberband.dll %LIB_DIR% )
 md %INCLUDE_DIR%\rubberband
 copy rubberband\*.h %INCLUDE_DIR%\rubberband\
 
