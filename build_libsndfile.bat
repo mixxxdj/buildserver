@@ -3,16 +3,19 @@ echo ---- Building libsndfile ----
 set SNDFILE_PATH=libsndfile-1.0.26
 SET VALRETURN=0
 
-if %MACHINE_X86% (
-  set PLATFORM=Win32
-) else (
-  set PLATFORM=x64
-)
-
 if %CONFIG_RELEASE% (
   set CONFIG=Static-Release
 ) else (
   set CONFIG=Static-Debug
+)
+
+if %MACHINE_X86% (
+  set PLATFORM=Win32
+  REM TODO(rryan): Fix this in the solution.
+  set LIB_OUTPUT_PATH=%CONFIG%
+) else (
+  set PLATFORM=x64
+  set LIB_OUTPUT_PATH=%PLATFORM%\%CONFIG%
 )
 
 IF %STATIC_LIBS% (
@@ -32,7 +35,7 @@ IF ERRORLEVEL 1 (
 
 rem If built statically (and right now we always build this statically) Symbols from this file are not available from libsndfile
 copy %PLATFORM%\%CONFIG%\g72x.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\libsndfile.lib %LIB_DIR%
+copy %LIB_OUTPUT_PATH%\libsndfile.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\libsndfile.pdb %LIB_DIR%
 
 IF NOT %STATIC_LIBS% (
