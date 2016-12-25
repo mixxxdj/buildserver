@@ -30,11 +30,11 @@ SET "BUILDTOOLS_PATH=%MSVC_PATH%"
 SET BUILDTOOLS_SCRIPT=vcvarsall.bat
 SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=v%VCVERSION%_xp /p:RuntimeLibrary=%RUNTIMELIB%
 
-REM If a 64-bit compiler exists, we can use it and an x86 cross-compiler or vice-versa.
+REM Check whether we have a 64-bit compiler available.
 IF EXIST "%MSVC_PATH%\VC\bin\amd64\cl.exe" (
 SET COMPILER_X86=amd64_x86
 SET COMPILER_X64=amd64
-) ELSE ( 
+) ELSE (
 SET COMPILER_X86=x86
 SET COMPILER_X64=x86_amd64
 )
@@ -46,6 +46,9 @@ SET MSBUILD=msbuild /m /p:PlatformToolset=v140_xp /p:VCTargetsPath="%PLAT_TARGET
 rem If building for XP and using the C++ Build Tools package (not full VS,)
 rem   install the Windows 7.1 SDK and adjust the following if needed
 SET "WindowsSdkDir_71A=%PROGRAMFILES_PATH%\Microsoft SDKs\Windows\v7.1A\"
+
+SET COMPILER_X86=amd64_x86
+SET COMPILER_X64=amd64
 ) ELSE (
 echo.
 echo Could not find "%MSVC_PATH%" nor "%BUILDTOOLS_PATH%".
