@@ -17,12 +17,7 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
-if %STATIC_LIBS% (
-  set ZLIBNAME=zlibstat.lib
-) else (
-  set ZLIBNAME=zlibwapi.lib
-)
-
+set ZLIBNAME=zlibwapi.lib
 
 cd build\%TAGLIB_PATH%
 REM Re-generate solution files.
