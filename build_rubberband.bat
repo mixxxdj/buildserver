@@ -4,9 +4,11 @@ set RUBBERBAND_PATH=rubberband-1.8.1
 SET VALRETURN=0
 
 if %MACHINE_X86% (
-  set PLATFORM=Win32
+  set PLATFORM=x86
+  set OUTPUT_PLATFORM=Win32
 ) else (
   set PLATFORM=x64
+  set OUTPUT_PLATFORM=x64
 )
 
 if %CONFIG_RELEASE% (
@@ -30,9 +32,11 @@ IF ERRORLEVEL 1 (
 	goto END
 )
 
-copy %PLATFORM%\%CONFIG%\rubberband.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\rubberband.dll %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\rubberband.pdb %LIB_DIR%
+copy %OUTPUT_PLATFORM%\%CONFIG%\rubberband.lib %LIB_DIR%
+copy %OUTPUT_PLATFORM%\%CONFIG%\rubberband.pdb %LIB_DIR%
+if NOT %STATIC_LIBS% (
+  copy %OUTPUT_PLATFORM%\%CONFIG%\rubberband.dll %LIB_DIR%
+)
 md %INCLUDE_DIR%\rubberband
 copy rubberband\*.h %INCLUDE_DIR%\rubberband\
 
