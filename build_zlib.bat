@@ -41,7 +41,7 @@ if %STATIC_LIBS% (
   copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi-static.lib %LIB_DIR%\zlibwapi.lib
   copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi-static.pdb %LIB_DIR%\zlibwapi.pdb
   REM For QT4
-  copy %MACHINE_X%\ZlibDll%CONFIG%\zlibwapi-static.lib %LIB_DIR%\zdll.lib
+  copy %MACHINE_X%\ZlibStat%CONFIG%\zlibwapi-static.lib %LIB_DIR%\zdll.lib
 
 ) else (
   %MSBUILD% zlibvc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:zlibvc:Rebuild
