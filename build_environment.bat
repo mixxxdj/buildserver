@@ -233,7 +233,7 @@ REM ==================================
 SETLOCAL EnableDelayedExpansion
 SET PROCESSALL=1==1
 IF [%JUMPIDX%] == [] (
-  SET JUMPIDX = 1
+  SET JUMPIDX=1
 ) ELSE (
   SET firstchar=%JUMPIDX:~0,1%
   IF !firstchar! == * (
