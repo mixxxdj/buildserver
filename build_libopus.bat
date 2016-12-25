@@ -29,11 +29,21 @@ copy %PLATFORM%\%CONFIG%\opus.dll %LIB_DIR%
 md %INCLUDE_DIR%\opus
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
 
-cd %ROOT_DIR%
+cd %ROOT_DIR%\build\%OPUSFILE_PATH%
 
-cd build\%OPUSFILE_PATH%\win32\VS2015
+rem Fix a path problem
+python -c "import sys; sys.stdout.write(open('include\opusfile.h', 'r').read().replace('opus_multistream.h', 'opus/opus_multistream.h'))" > temp
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
+copy temp include\opusfile.h
+erase temp
+
+cd win32\VS2015
 %MSBUILD% opusfile.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:opusfile:Clean;opusfile:Rebuild
 IF ERRORLEVEL 1 (
+    git checkout ../../include/opusfile.h
     SET VALRETURN=1
 	goto END
 )
@@ -42,24 +52,8 @@ copy %PLATFORM%\%CONFIG%\opusfile.lib %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\opusfile.pdb %LIB_DIR%
 copy %PLATFORM%\%CONFIG%\opusfile.dll %LIB_DIR%
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
+git checkout ../../include/opusfile.h
 
-rem Fix a path problem
-REM NOTE: We need forward slashes for python to not crash on some paths
-SETLOCAL ENABLEDELAYEDEXPANSION
-for /f "delims=" %%i in ("%INCLUDE_DIR%") do (
-    set "replaceWith=/"
-    set "str=%%i"
-    call set "str=%%str:\=!replaceWith!%%"
-)
-ENDLOCAL & SET INCLUDE_DIR_FOR_PYTHON=%str%
-
-python -c "import sys; sys.stdout.write(open('%INCLUDE_DIR_FOR_PYTHON%opus/opusfile.h', 'r').read().replace('opus_multistream.h', 'opus/opus_multistream.h'))" > temp
-IF ERRORLEVEL 1 (
-    SET VALRETURN=1
-	goto END
-)
-copy temp %INCLUDE_DIR%\opus\opusfile.h
-erase temp
 
 :END
 cd %ROOT_DIR%
