@@ -15,15 +15,9 @@ if %CONFIG_RELEASE% (
   set CONFIG=Debug
 )
 
-if %STATIC_LIBS% (
-  set ZLIBNAME=zlibstat.lib
-) else (
-  set ZLIBNAME=zlibwapi.lib
-)
-
 cd build\%ID3TAG_PATH%\msvc++
 
-%MSBUILD% libid3tag.sln /p:ZLIBFilename=%ZLIBNAME% /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libid3tag:Clean;libid3tag:Rebuild
+%MSBUILD% libid3tag.sln /p:ZLIBFilename=zlibwapi.lib /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libid3tag:Clean;libid3tag:Rebuild
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
