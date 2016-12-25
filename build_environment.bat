@@ -29,6 +29,16 @@ IF EXIST "%MSVC_PATH%" (
 SET "BUILDTOOLS_PATH=%MSVC_PATH%"
 SET BUILDTOOLS_SCRIPT=vcvarsall.bat
 SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=v%VCVERSION%_xp /p:RuntimeLibrary=%RUNTIMELIB%
+
+REM If a 64-bit compiler exists, we can use it and an x86 cross-compiler or vice-versa.
+IF EXIST "%MSVC_PATH%\VC\bin\amd64\cl.exe" (
+SET COMPILER_X86=amd64_x86
+SET COMPILER_X64=amd64
+) ELSE ( 
+SET COMPILER_X86=x86
+SET COMPILER_X64=x86_amd64
+)
+
 ) ELSE (
 IF EXIST "%BUILDTOOLS_PATH%" (
 SET BUILDTOOLS_SCRIPT=vcbuildtools.bat
@@ -184,21 +194,10 @@ SET BUILD_DIR=%CD%\build\
 
 REM Everyting prepared. Setup the compiler.
 if %MACHINE_X86% (
-IF %OS_IS_64BIT% (
-call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" amd64_x86
+call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X86%
 ) else (
-call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" x86
+call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X64%
 )
-REM END OS_IS_64BIT
-) else ( REM NOT MACHINE_X86
-IF %OS_IS_64BIT% (
-call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" amd64
-) else (
-call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" x86_amd64
-)
-REM END OS_IS_64
-)
-REM END MACHINE_X86
 
 REM The Visual C++ compiler (cl.exe) recognizes certain environment variables, specifically LIB, LIBPATH, PATH, and INCLUDE
 rem Use our directories as well. Needed for a number of dependencies to find zlib, sqlite and xiph headers, including Qt.
