@@ -162,15 +162,16 @@ if %MACHINE_X86% (
   set FOLDER_PLATFORM=x64
 )
 
+set XP_SUPPORT=/D _USING_V110_SDK71_
 if %CONFIG_RELEASE% (
   echo Building release mode.
   set RUNTIMELIB="MultiThreadedDLL"
   REM the above doesn't actually seem to work, so we do the following
-  set _CL_=/MD
+  set _CL_=/MD %XP_SUPPORT%
 ) else (
   echo Building debug mode.
   set RUNTIMELIB="MultiThreadedDebugDLL"
-  set _CL_=/MDd
+  set _CL_=/MDd %XP_SUPPORT%
 )
 SET BUILDTYPEDIR=%2
 if %DYNAMIC_LIBS% (
