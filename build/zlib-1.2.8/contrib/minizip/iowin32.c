@@ -28,7 +28,8 @@
 
 #if defined(WINAPI_FAMILY_PARTITION) && (!(defined(IOWIN32_USING_WINRT_API)))
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
-#define IOWIN32_USING_WINRT_API 1
+// https://github.com/madler/zlib/issues/49
+//#define IOWIN32_USING_WINRT_API 1
 #endif
 #endif
 
