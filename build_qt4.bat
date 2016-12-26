@@ -56,7 +56,7 @@ del /S /Q mkspecs/modules-inst/*.pri
 
 
 echo Building...
-set QT_COMMON=-opensource -confirm-license -platform win32-msvc2015 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -D ZLIB_WINAPI -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests
+set QT_COMMON=-opensource -confirm-license -platform win32-msvc2015 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -D _USING_V110_SDK71_ -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -D ZLIB_WINAPI -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests
 
 if %STATIC_LIBS% (
 configure.exe %CONFIG% %QT_COMMON% -static -openssl-linked OPENSSL_LIBS="-luser32 -ladvapi32 -lgdi32 -lcrypt32 -lssleay32 -llibeay32"
