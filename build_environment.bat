@@ -191,9 +191,9 @@ SET XCOPY=xcopy /S /Y /I
 
 set OLDPATH=%PATH%
 set ROOT_DIR=%CD%
-SET BIN_DIR=%ROOT_DIR%\%FOLDER_PLATFORM%\%BUILDTYPEDIR%\bin\
-SET LIB_DIR=%ROOT_DIR%\%FOLDER_PLATFORM%\%BUILDTYPEDIR%\lib\
-SET INCLUDE_DIR=%ROOT_DIR%\%FOLDER_PLATFORM%\%BUILDTYPEDIR%\include\
+SET BIN_DIR=%ROOT_DIR%\bin\
+SET LIB_DIR=%ROOT_DIR%\lib\
+SET INCLUDE_DIR=%ROOT_DIR%\include\
 SET BUILD_DIR=%CD%\build\
 
 REM Everyting prepared. Setup the compiler.
@@ -225,7 +225,6 @@ IF %DELETE_OLD% (
 md %LIB_DIR%
 md %INCLUDE_DIR%
 md %BIN_DIR%
-copy %CD%\bin\*.* %BIN_DIR%
 
 REM ==================================
 REM Script execution to compile each lib
