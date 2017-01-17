@@ -76,13 +76,7 @@ IF ERRORLEVEL 1 (
 	goto END
 )
 
-rem Remove obj files, supposedly
-echo Cleaning up...
-nmake /nologo clean /K
-IF ERRORLEVEL 1 (
-    SET VALRETURN=1
-	goto END
-)
+rem Note, we do not run nmake clean because it deletes files we need (e.g. compiled translations).
 
 %XCOPY% bin\*.exe %BIN_DIR%
 REM Don't copy DLLs or includes since we refer to them from QTDIR and the include files refer to the Qt source tree.
