@@ -225,6 +225,8 @@ IF %DELETE_OLD% (
 md %LIB_DIR%
 md %INCLUDE_DIR%
 md %BIN_DIR%
+REM restore checked-in binaries
+git checkout bin\*
 
 REM ==================================
 REM Script execution to compile each lib
