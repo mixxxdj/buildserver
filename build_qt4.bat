@@ -78,8 +78,8 @@ IF ERRORLEVEL 1 (
 
 rem Note, we do not run nmake clean because it deletes files we need (e.g. compiled translations).
 
-%XCOPY% bin\*.exe %BIN_DIR%
-REM Don't copy DLLs or includes since we refer to them from QTDIR and the include files refer to the Qt source tree.
+REM Don't copy binaries or DLLs or includes since we refer to them from QTDIR and the include files refer to the Qt source tree.
+REM %XCOPY% bin\*.exe %BIN_DIR%
 REM %XCOPY% lib\*.dll %LIB_DIR%
 REM %XCOPY% lib\*.lib %LIB_DIR%
 REM %XCOPY% include\* %INCLUDE_DIR%
