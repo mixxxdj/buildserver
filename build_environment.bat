@@ -162,16 +162,15 @@ if %MACHINE_X86% (
   set FOLDER_PLATFORM=x64
 )
 
-set XP_SUPPORT=/D _USING_V110_SDK71_
 if %CONFIG_RELEASE% (
   echo Building release mode.
   set RUNTIMELIB="MultiThreadedDLL"
   REM the above doesn't actually seem to work, so we do the following
-  set _CL_=/MD %XP_SUPPORT%
+  set RUNTIME_FLAG=/MD
 ) else (
   echo Building debug mode.
   set RUNTIMELIB="MultiThreadedDebugDLL"
-  set _CL_=/MDd %XP_SUPPORT%
+  set RUNTIME_FLAG=/MDd
 )
 SET BUILDTYPEDIR=%2
 if %DYNAMIC_LIBS% (
@@ -184,8 +183,13 @@ if %DYNAMIC_LIBS% (
   set STATIC_LIBS=1==1
 )
 
-rem Use all CPU cores
-set CL=/MP /FS
+rem /MP Use all CPU cores.
+rem /EHsc Do not handle SEH in try / except blocks.
+rem /FS force synchronous PDB writes (prevents PDB corruption with /MP)
+rem /Zi write PDBs
+rem /Zc:threadSafeInit- disable C++11 magic static support (Bug #1653368)
+set XP_SUPPORT=/D _USING_V110_SDK71_
+set _CL_=/MP /FS /EHsc /Zi /Zc:threadSafeInit- %RUNTIME_FLAG% %XP_SUPPORT%
 
 SET XCOPY=xcopy /S /Y /I
 
