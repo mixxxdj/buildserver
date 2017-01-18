@@ -210,13 +210,14 @@ if %CONFIG_RELEASE% (
   if %CONFIG_FASTBUILD% (
     REM In fastbuild mode, disable /GL (whole program optimization) and /LTCG (link-time code generation).
     set _CL_=%_CL_% /GL- 
-    set _LINK_=%_LINK_% /LTCG:OFF
+    REM /DEBUG defaults /OPT:REF and /OPT:ICF to off, so enable them explicitly.
+    set _LINK_=%_LINK_% /LTCG:OFF /OPT:REF /OPT:ICF
   ) else (
     REM In release mode, use /GL and /LTCG.
     REM TODO(rryan): Try enabling /Gy here?
     REM /DEBUG defaults /OPT:REF and /OPT:ICF to off, so enable them explicitly.
-    set _CL_=%_CL_% /GL /OPT:REF /OPT:ICF
-    set _LINK_=%_LINK_% /LTCG:NOSTATUS
+    set _CL_=%_CL_% /GL
+    set _LINK_=%_LINK_% /LTCG:NOSTATUS /OPT:REF /OPT:ICF
   )
 ) else (
   REM Use project defaults in debug mode.
