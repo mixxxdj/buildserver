@@ -112,7 +112,7 @@ REM ^ is the escape character.
 if "%2" == "" (
   echo Missing parameters. Usage: ^(Note: keep same case and order^)
   echo.
-  echo build_environment.bat x64^|x86 Debug^|Release [Dynamic][nuke^|jumpIdx]
+  echo build_environment.bat x64^|x86 Debug^|Release^|ReleaseFastbuild [Dynamic][nuke^|jumpIdx]
   echo.
   echo Example: build_environment.bat x64 Release Dynamic nuke
   echo.
@@ -126,7 +126,20 @@ if "%2" == "" (
 
 set JUMPIDX=
 set MACHINE_X86="%1" == "x86"
-set CONFIG_RELEASE="%2" == "Release"
+
+if "%2" == "Release" (
+  set CONFIG_RELEASE=1==1
+  set CONFIG_FASTBUILD=0==1
+) else (
+  if "%2" == "ReleaseFastbuild" (
+    set CONFIG_RELEASE=1==1
+    set CONFIG_FASTBUILD=1==1
+  ) else (
+    set CONFIG_RELEASE=0==1
+    set CONFIG_FASTBUILD=0==1
+  )
+)
+
 if "%3" == "Dynamic" (
 set DYNAMIC_LIBS="%3" == "Dynamic"
 if "%4" == "nuke" (
@@ -188,8 +201,27 @@ rem /EHsc Do not handle SEH in try / except blocks.
 rem /FS force synchronous PDB writes (prevents PDB corruption with /MP)
 rem /Zi write PDBs
 rem /Zc:threadSafeInit- disable C++11 magic static support (Bug #1653368)
+rem /DEBUG moves debug information from the .o files to the .pdb during link.
 set XP_SUPPORT=/D _USING_V110_SDK71_
 set _CL_=/MP /FS /EHsc /Zi /Zc:threadSafeInit- %RUNTIME_FLAG% %XP_SUPPORT%
+set _LINK_=/DEBUG
+
+if %CONFIG_RELEASE% (
+  if %CONFIG_FASTBUILD% (
+    REM In fastbuild mode, disable /GL (whole program optimization) and /LTCG (link-time code generation).
+    set _CL_=%_CL_% /GL- 
+    set _LINK_=%_LINK_% /LTCG:OFF
+  ) else (
+    REM In release mode, use /GL and /LTCG.
+    REM TODO(rryan): Try enabling /Gy here?
+    REM /DEBUG defaults /OPT:REF and /OPT:ICF to off, so enable them explicitly.
+    set _CL_=%_CL_% /GL /OPT:REF /OPT:ICF
+    set _LINK_=%_LINK_% /LTCG:NOSTATUS
+  )
+) else (
+  REM Use project defaults in debug mode.
+)
+echo Building with _LINK_="%_LINK_%" and _CL_="%_CL_%".
 
 SET XCOPY=xcopy /S /Y /I
 
