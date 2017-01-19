@@ -12,7 +12,7 @@ workers as virtualized guests on that machine.
 * To setup the master environment, see [README.Master.md](README.Master.md).
 * To setup an Ubuntu builder, see [README.Ubuntu.worker.md](README.Ubuntu.worker.md).
 * To setup an OS X builder, see [README.MacOSX.worker.md](README.MacOSX.worker.md).
-* To setup a Windows builder, see the [`windows_environment` branch](https://github.com/mixxxdj/buildserver/tree/windows_environment/).
+* To setup a Windows builder, see the [`2.1.x-windows` branch](https://github.com/mixxxdj/buildserver/tree/2.1.x-windows/).
 
 Standalone Build Environment
 ============================
