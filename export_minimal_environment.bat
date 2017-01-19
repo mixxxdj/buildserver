@@ -14,6 +14,12 @@ md "%MINIMAL_PATH%"
 
 set COPY=copy /Y
 set XCOPY=xcopy /Y /I /E /Q
+
+REM copy the build log if it exists -- crucial for build archaeology
+if exist "%ENVIRONMENT_PATH%\build_environment.log" (
+  %COPY% "%ENVIRONMENT_PATH%\build_environment.log" "%MINIMAL_PATH%\"
+)
+
 %XCOPY% "%ENVIRONMENT_PATH%\vc_redist.*" "%MINIMAL_PATH%\"
 %XCOPY% "%ENVIRONMENT_PATH%\bin" "%MINIMAL_PATH%\bin"
 %XCOPY% "%ENVIRONMENT_PATH%\lib" "%MINIMAL_PATH%\lib"
