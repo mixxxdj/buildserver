@@ -17,7 +17,7 @@ if "%1" == "" (
   exit /b 1
 )
 
-git rev-parse HEAD > current-sha.txt
+git rev-parse --short HEAD > current-sha.txt
 set /p SHA=<current-sha.txt
 del current-sha.txt
 
