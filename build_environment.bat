@@ -222,7 +222,6 @@ if %CONFIG_RELEASE% (
 ) else (
   REM Use project defaults in debug mode.
 )
-echo Building with _LINK_="%_LINK_%" and _CL_="%_CL_%".
 
 SET XCOPY=xcopy /S /Y /I
 
@@ -264,6 +263,9 @@ md %INCLUDE_DIR%
 md %BIN_DIR%
 REM restore checked-in binaries
 git checkout bin\*
+
+echo Beginning build with environment:
+set
 
 REM ==================================
 REM Script execution to compile each lib
