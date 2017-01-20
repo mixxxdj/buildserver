@@ -1,26 +1,39 @@
 REM Exports a minimal environment from a build environment.
 @echo off
 SETLOCAL
-
-set "ENVIRONMENTS_DIR=%CD%"
-set "ENVIRONMENT_NAME=%1"
-set "ENVIRONMENT_PATH=%ENVIRONMENTS_DIR%\%1"
-if "%2" == "" (
-set "MINIMAL_PATH=%ENVIRONMENTS_DIR%\%1-minimal"
-) else (
-set "MINIMAL_PATH=%ENVIRONMENTS_DIR%\%2"
-)
-md "%MINIMAL_PATH%"
-
 set COPY=copy /Y
 set XCOPY=xcopy /Y /I /E /Q
+
+if "%1" == "" (
+  echo Usage: export_minimal_environment.bat winlib_dir [minimal_destination]
+  echo.
+  echo If minimal_destination is not provided, "winlib_dir-minimal" is used.
+  ENDLOCAL
+  exit /b 1
+)
+
+set "ENVIRONMENT_PATH=%1"
+
+if "%2" == "" (
+set "MINIMAL_PATH=%ENVIRONMENT_PATH%-minimal"
+) else (
+set "MINIMAL_PATH=%2"
+)
+
+md "%MINIMAL_PATH%"
+IF ERRORLEVEL 1 (
+  echo Error creating "%MINIMAL_PATH%".
+  ENDLOCAL
+  exit /b 1
+)
 
 REM copy the build log if it exists -- crucial for build archaeology
 if exist "%ENVIRONMENT_PATH%\build_environment.log" (
   %COPY% "%ENVIRONMENT_PATH%\build_environment.log" "%MINIMAL_PATH%\"
 )
 
-%XCOPY% "%ENVIRONMENT_PATH%\vc_redist.*" "%MINIMAL_PATH%\"
+%COPY% "%ENVIRONMENT_PATH%\vc_redist.x86.exe" "%MINIMAL_PATH%\"
+%COPY% "%ENVIRONMENT_PATH%\vc_redist.x64.exe" "%MINIMAL_PATH%\"
 %XCOPY% "%ENVIRONMENT_PATH%\bin" "%MINIMAL_PATH%\bin"
 %XCOPY% "%ENVIRONMENT_PATH%\lib" "%MINIMAL_PATH%\lib"
 %XCOPY% "%ENVIRONMENT_PATH%\include" "%MINIMAL_PATH%\include"
@@ -34,11 +47,11 @@ md "%QT_MINIMAL_DIR%"
 REM only copy binaries we need
 md "%QT_MINIMAL_DIR%\bin"
 %COPY% "%QT_DIR%\bin\lconvert.exe"  "%QT_MINIMAL_DIR%\bin"
-%COPY% "%QT_DIR%\bin\lrelease.exe"  "%QT_MINIMAL_DIR%\bin"  
+%COPY% "%QT_DIR%\bin\lrelease.exe"  "%QT_MINIMAL_DIR%\bin"
 %COPY% "%QT_DIR%\bin\lupdate.exe"  "%QT_MINIMAL_DIR%\bin"
-%COPY% "%QT_DIR%\bin\moc.exe"  "%QT_MINIMAL_DIR%\bin" 
-%COPY% "%QT_DIR%\bin\rcc.exe"  "%QT_MINIMAL_DIR%\bin" 
-%COPY% "%QT_DIR%\bin\uic.exe"  "%QT_MINIMAL_DIR%\bin" 
+%COPY% "%QT_DIR%\bin\moc.exe"  "%QT_MINIMAL_DIR%\bin"
+%COPY% "%QT_DIR%\bin\rcc.exe"  "%QT_MINIMAL_DIR%\bin"
+%COPY% "%QT_DIR%\bin\uic.exe"  "%QT_MINIMAL_DIR%\bin"
 
 %XCOPY% "%QT_DIR%\include" "%QT_MINIMAL_DIR%\include"
 
