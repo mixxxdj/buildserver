@@ -22,7 +22,14 @@ if %MACHINE_X86% (
   set OUTPUT_PATH=%PLATFORM%\%CONFIG%
 )
 
-cd build\%SHOUT_PATH%\win32
+cd build\%SHOUT_PATH%
+
+REM Apply patch fixing:
+REM https://trac.xiph.org/ticket/2244
+REM https://bugs.launchpad.net/mixxx/+bug/1544739
+%BIN_DIR%\patch.exe -N -p1 --verbose < fix_libshout_ticket2244.patch
+
+cd win32
 %MSBUILD% libshout.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libshout:Clean;libshout:Rebuild
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
