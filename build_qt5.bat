@@ -1,8 +1,7 @@
 SETLOCAL
-echo "Building Qt5"
-REM SET QT5_PATH=qt-everywhere-opensource-src-5.5.1
-REM Qt5 has long paths so we run into the NTFS file path limit. Trim the directory name as much as possible to save on characters. (Yes, really.)
-SET QT5_PATH=qt551
+echo.
+echo ---- Building Qt5 ----
+SET QT5_PATH=qt-everywhere-opensource-src-5.7.1
 SET VALRETURN=0
 
 if %MACHINE_X86% (
@@ -24,29 +23,51 @@ echo could not find QT5 on %CD%\build\%QT5_PATH%
 	goto END
 )
 
+REM nmake distclean or nmake confclean are not present in the Makefile, so we delete these files and hope it rebuilds.
+del qtbase\.qmake.cache
+del qtbase\config.log
+del /S /Q qtbase\mkspecs\modules\*.pri
+del /S /Q qtbase\mkspecs\modules-inst\*.pri
+
+echo Building...
+
+set QT_NOMAKE=-nomake examples -nomake tests
+REM skips can be any directory starting with 'qt' at the root of the repo -- keep list alphabetized.
+REM skipping qttools skips building translations (since it doesn't have lrelease)
+set QT_SKIP=-skip qt3d -skip qtdoc -skip qtmultimedia -skip qtwebengine -skip qtwebview
+
 REM We link against the system SQLite so that Mixxx can link with and use the 
 REM same instance of the SQLite library in our binary (for example, so we 
 REM can install custom functions).
+REM -D NOMINMAX https://forum.qt.io/topic/21605/solved-qt5-vs2010-qdatetime-not-enough-actual-parameters-for-macro-min-max
+set QT_COMMON=-prefix %ROOT_DIR% -opensource -confirm-license -platform win32-msvc2015 -force-debug-info -no-strip -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -D NOMINMAX -D _USING_V110_SDK71_ -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -D ZLIB_WINAPI %QT_NOMAKE% %QT_SKIP% -no-dbus -no-audio-backend
+ 
+if %STATIC_LIBS% (
+call configure.bat %CONFIG% %QT_COMMON% -static -openssl-linked OPENSSL_LIBS="-luser32 -ladvapi32 -lgdi32 -lcrypt32 -lssleay32 -llibeay32"
+) else (
+call configure.bat %CONFIG% %QT_COMMON% -shared -openssl -separate-debug-info 
+)
 
-REM Add %INCLUDE_DIR% and %LIB_DIR% to paths so Qt can find our version of sqlite3.
-set INCLUDE=%INCLUDE%;%INCLUDE_DIR%
-set LIB=%LIB%;%LIB_DIR%
-set LIBPATH=%LIBPATH%;%LIB_DIR%
-
-set PATH=%CD%\qtbase\bin;%CD%\gnuwin32\bin;%PATH%
-set QMAKESPEC=win32-msvc2013
-
-REM NOTE(rryan): By setting -system-sqlite, -system-zlib is set as well. Building with -system-zlib fails with missing "zlib.dll". So I think our zlib build is not currently ready to be used with Qt. We should fix this but for now use -qt-zlib.
-REM NOTE(rryan): For some reason configure.bat returns an error even if it succeeded. Use "& nmake" to build regardless of the result.
-configure %CONFIG% -opensource -confirm-license -platform %QMAKESPEC% -qt-zlib -system-sqlite -qt-sql-sqlite -c++11 -ltcg -shared -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -skip qtmultimedia -skip qt3d -skip qtwebkit -skip qtwebkit-examples -skip qtwebengine -nomake examples -nomake tests -no-dbus -no-audio-backend & nmake
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
 )
 
-REM Copy uic, rcc, and other utilities.
-%XCOPY% qtbase\bin\*.exe %BIN_DIR%
-REM Don't copy DLLs or includes since we refer to them from QTDIR and the include files refer to the Qt source tree.
+rem /K keeps building things not affected by errors
+nmake /nologo
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
+
+rem Now install to %ROOT_DIR%.
+nmake install 
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
+
+rem Note, we do not run nmake clean because it deletes files we need (e.g. compiled translations).
 
 :END
 cd %ROOT_DIR%

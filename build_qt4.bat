@@ -23,22 +23,8 @@ echo could not find QT4 on %CD%\build\%QT4_PATH%
 	goto END
 )
 
-REM We link against the system SQLite so that Mixxx can link with and use the 
-REM same instance of the SQLite library in our binary (for example, so we 
-REM can install custom functions).
-
 REM Needed so stuff (like uic.exe) can find our zlibwapi.dll at run time
 set PATH=%PATH%;%LIB_DIR%
-
-REM NOTE(rryan): By setting -system-sqlite, -system-zlib is set as well.
-REM NOTE(pegasus): To use the version we build, it's necessary to 
-REM   replace "zdll" with "zlibwapi" in the following files:
-REM   - src/3rdparty/zlib_dependency.pri
-REM   - (maybe) src/tools/bootstrap/bootstrap.pri
-REM   - (maybe) src/3rdparty/webkit/Source/WebKit2/win/WebKit2Common.vsprops
-REM 
-REM If you don't want to do that, just set -qt-zlib explicitly in the
-REM   Configure options below.
 
 REM patch Qt 4.8.7 to build on MSVC 2015.
 %BIN_DIR%\patch.exe -N -p1 --verbose -i %CD%\..\qt-4.8.7-win.patch -r %CD%\..\qt4fix.rej.txt
@@ -54,8 +40,11 @@ del config.log
 del /S /Q mkspecs/modules/*.pri \
 del /S /Q mkspecs/modules-inst/*.pri
 
-
 echo Building...
+REM We link against the system SQLite so that Mixxx can link with and use the 
+REM same instance of the SQLite library in our binary (for example, so we 
+REM can install custom functions).
+REM NOTE(rryan): By setting -system-sqlite, -system-zlib is set as well.
 set QT_COMMON=-opensource -confirm-license -platform win32-msvc2015 -mp -system-sqlite -qt-sql-sqlite -system-zlib -ltcg -fast -D _USING_V110_SDK71_ -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -D ZLIB_WINAPI -no-phonon -no-phonon-backend -no-multimedia -no-qt3support -no-dsp -no-vcproj -no-webkit -nomake demos -nomake examples -nomake tests
 
 if %STATIC_LIBS% (
@@ -67,7 +56,6 @@ IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
 )
-
 
 rem /K keeps building things not affected by errors
 nmake /nologo
