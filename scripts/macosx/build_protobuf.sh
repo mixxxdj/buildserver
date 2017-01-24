@@ -32,6 +32,11 @@ tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$HOST_ARCH --strip-components 1
 cd $VERSION-$HOST_ARCH
 source $PROGDIR/environment.sh $HOST_ARCH
 COMMON_FLAGS="--host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX"
+
+# Workaround for dead URL for gtest in autogen.sh.
+curl -L https://github.com/google/googletest/archive/release-1.5.0.tar.gz | tar jx
+mv googletest-release-1.5.0 gtest
+
 ./autogen.sh
 ./configure $COMMON_FLAGS
 make
