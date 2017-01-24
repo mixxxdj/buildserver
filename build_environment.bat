@@ -49,13 +49,14 @@ SET BUILDTOOLS_SCRIPT=vcvarsall.bat
 SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=v%VCVERSION%_xp /p:RuntimeLibrary=%RUNTIMELIB%
 
 REM Check whether we have a 64-bit compiler available.
-IF EXIST "%MSVC_PATH%\VC\bin\amd64\cl.exe" (
-SET COMPILER_X86=amd64_x86
-SET COMPILER_X64=amd64
-) ELSE (
+REM NOTE(rryan): Temporarily disabled because the build doesn't work with a 64-bit compiler.
+rem IF EXIST "%MSVC_PATH%\VC\bin\amd64\cl.exe" (
+rem SET COMPILER_X86=amd64_x86
+rem SET COMPILER_X64=amd64
+rem ) ELSE (
 SET COMPILER_X86=x86
 SET COMPILER_X64=x86_amd64
-)
+rem )
 
 ) ELSE (
 IF EXIST "%BUILDTOOLS_PATH%" (
