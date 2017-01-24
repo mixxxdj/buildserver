@@ -17,27 +17,46 @@ SET "PROGRAMFILES_PATH=%ProgramFiles(x86)%"
 
 rem ====== Edit to suit your environment =========
 SET VCVERSION=140
-SET "MSVC_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio 14.0\VC"
-SET "BUILDTOOLS_PATH=%PROGRAMFILES_PATH%\Microsoft Visual C++ Build Tools"
+
+REM Allow overriding MSSDKS_PATH from outside this script.
+IF "%MSSDKS_PATH%" == "" (
+  set "MSSDKS_PATH=%PROGRAMFILES_PATH%\Microsoft SDKs"
+)
+
+REM Allow overriding MSVC_PATH from outside this script.
+IF "%MSVC_PATH%" == "" (
+  SET "MSVC_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio 14.0"
+)
+
+REM Allow overriding BUILDTOOLS_PATH from outside this script.
+if "%BUILDTOOLS_PATH%" == "" (
+  SET "BUILDTOOLS_PATH=%PROGRAMFILES_PATH%\Microsoft Visual C++ Build Tools"
+)
+
+REM Allow overriding CMAKEDIR from outside this script.
+if "%CMAKEDIR%" == "" (
+  SET "CMAKEDIR=%PROGRAMFILES_PATH%\CMake\bin"
+)
+
 REM with two slashes at the end
 SET "PLAT_TARGETS_PATH=%PROGRAMFILES_PATH%\MSBuild\Microsoft.Cpp\v4.0\V140\\"
-SET "CMAKEDIR=%PROGRAMFILES_PATH%\CMake\bin"
 SET "NASMPATH=%CD%\bin"
 
 REM Verify paths.
 IF EXIST "%MSVC_PATH%" (
-SET "BUILDTOOLS_PATH=%MSVC_PATH%"
+SET "BUILDTOOLS_PATH=%MSVC_PATH%\VC"
 SET BUILDTOOLS_SCRIPT=vcvarsall.bat
 SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=v%VCVERSION%_xp /p:RuntimeLibrary=%RUNTIMELIB%
 
 REM Check whether we have a 64-bit compiler available.
-IF EXIST "%MSVC_PATH%\VC\bin\amd64\cl.exe" (
-SET COMPILER_X86=amd64_x86
-SET COMPILER_X64=amd64
-) ELSE (
+REM NOTE(rryan): Temporarily disabled because the build doesn't work with a 64-bit compiler.
+rem IF EXIST "%MSVC_PATH%\VC\bin\amd64\cl.exe" (
+rem SET COMPILER_X86=amd64_x86
+rem SET COMPILER_X64=amd64
+rem ) ELSE (
 SET COMPILER_X86=x86
 SET COMPILER_X64=x86_amd64
-)
+rem )
 
 ) ELSE (
 IF EXIST "%BUILDTOOLS_PATH%" (
@@ -45,7 +64,7 @@ SET BUILDTOOLS_SCRIPT=vcbuildtools.bat
 SET MSBUILD=msbuild /m /p:PlatformToolset=v140_xp /p:VCTargetsPath="%PLAT_TARGETS_PATH%"
 rem If building for XP and using the C++ Build Tools package (not full VS,)
 rem   install the Windows 7.1 SDK and adjust the following if needed
-SET "WindowsSdkDir_71A=%PROGRAMFILES_PATH%\Microsoft SDKs\Windows\v7.1A\"
+SET "WindowsSdkDir_71A=%MSSDKS_PATH%\Windows\v7.1A\"
 
 SET COMPILER_X86=amd64_x86
 SET COMPILER_X64=amd64
@@ -62,8 +81,8 @@ REM END EXIST BUILDTOOLS
 REM END EXIST VISUALSTUDIO
 
 if NOT EXIST "%CMAKEDIR%" (
-set "CMAKEDIROLD=%CMAKEDIR%"
-set "CMAKEDIR=%ProgramFiles%\CMake\bin"
+  set "CMAKEDIROLD=%CMAKEDIR%"
+  set "CMAKEDIR=%ProgramFiles%\CMake\bin"
 )
 if NOT EXIST "%CMAKEDIR%" (
 echo.
@@ -209,7 +228,7 @@ set _LINK_=/DEBUG
 if %CONFIG_RELEASE% (
   if %CONFIG_FASTBUILD% (
     REM In fastbuild mode, disable /GL (whole program optimization) and /LTCG (link-time code generation).
-    set _CL_=%_CL_% /GL- 
+    set _CL_=%_CL_% /GL-
     REM /DEBUG defaults /OPT:REF and /OPT:ICF to off, so enable them explicitly.
     set _LINK_=%_LINK_% /LTCG:OFF /OPT:REF /OPT:ICF
   ) else (
@@ -234,9 +253,9 @@ SET BUILD_DIR=%CD%\build\
 
 REM Everyting prepared. Setup the compiler.
 if %MACHINE_X86% (
-call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X86%
+  call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X86%
 ) else (
-call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X64%
+  call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X64%
 )
 
 REM The Visual C++ compiler (cl.exe) recognizes certain environment variables, specifically LIB, LIBPATH, PATH, and INCLUDE
@@ -344,9 +363,9 @@ ENDLOCAL
 
 REM Copy debug runtime DLLs for debug builds.
 if not %CONFIG_RELEASE% (
-  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCRT\*.dll" %LIB_DIR%
-  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCXXAMP\*.dll" %LIB_DIR%
-  %XCOPY% "%MSVC_PATH%\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugOpenMP\*.dll" %LIB_DIR%
+  %XCOPY% "%MSVC_PATH%\VC\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCRT\*.dll" %LIB_DIR%
+  %XCOPY% "%MSVC_PATH%\VC\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCXXAMP\*.dll" %LIB_DIR%
+  %XCOPY% "%MSVC_PATH%\VC\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugOpenMP\*.dll" %LIB_DIR%
 )
 echo.
 echo.
