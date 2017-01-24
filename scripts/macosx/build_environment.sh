@@ -8,7 +8,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-usage() { echo "Usage: $0 --name <name> [--macosx-sdk <version>] [--maxosx-target <version>] [--macosx-stdlib <stdlib>] [--enable-ppc] [--enable-i386] [--enable-x86-64]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 --name <name> [--dependency-cache <path>] [--macosx-sdk <version>] [--maxosx-target <version>] [--macosx-stdlib <stdlib>] [--enable-ppc] [--enable-i386] [--enable-x86-64]" 1>&2; exit 1; }
 
 MIXXX_ENVIRONMENT_NAME=""
 MIXXX_MACOSX_SDK='10.9'
@@ -17,12 +17,16 @@ MIXXX_MACOSX_STDLIB='libc++'
 ENABLE_I386=false
 ENABLE_X86_64=false
 ENABLE_PPC=false
+DEPENDENCIES=`pwd -P`/dependencies
 while getopts ":-:" o; do
     case "${o}" in
         -)
             case "${OPTARG}" in
                 name)
                     MIXXX_ENVIRONMENT_NAME="${!OPTIND}"; OPTIND=$(( $OPTIND + 1 ))
+                    ;;
+                dependency-cache)
+                    DEPENDENCIES="${!OPTIND}"; OPTIND=$(( $OPTIND + 1 ))
                     ;;
                 macosx-sdk)
                     MIXXX_MACOSX_SDK="${!OPTIND}"; OPTIND=$(( $OPTIND + 1 ))
@@ -76,14 +80,14 @@ if [ ${#ARCHS[@]} -eq 0 ]; then
     exit 1
 fi
 
-export MIXXX_PREFIX=`pwd -P`/environment/$MIXXX_ENVIRONMENT_NAME
-echo "Building environment ${MIXXX_ENVIRONMENT_NAME} for architectures ${ARCHS[@]} in $MIXXX_PREFIX on Mac OS X (sdk: $MIXXX_MACOSX_SDK, target: $MIXXX_MACOSX_TARGET, stdlib: $MIXXX_MACOSX_STDLIB)"
-
-export DEPENDENCIES=`pwd -P`/dependencies
+export DEPENDENCIES
 if [[ ! -d $DEPENDENCIES ]]; then
-    echo "There must be a 'dependencies' folder in the current directory with archives of all the dependencies."
+    echo "The dependency cache (${DEPENDENCIES}) does not exist. Have you run download_dependencies.sh?"
     exit 1
 fi
+
+export MIXXX_PREFIX=`pwd -P`/environment/$MIXXX_ENVIRONMENT_NAME
+echo "Building environment ${MIXXX_ENVIRONMENT_NAME} for architectures ${ARCHS[@]} in $MIXXX_PREFIX on Mac OS X (sdk: $MIXXX_MACOSX_SDK, target: $MIXXX_MACOSX_TARGET, stdlib: $MIXXX_MACOSX_STDLIB)"
 
 mkdir -p build/$MIXXX_ENVIRONMENT_NAME
 mkdir -p environment/$MIXXX_ENVIRONMENT_NAME

@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-set -e 
+set -e
 
-DEPENDENCIES=dependencies
+if [ "$1" = "" ]; then
+    DEPENDENCIES=dependencies
+else
+    DEPENDENCIES=$1
+fi
+echo "Downloading dependencies to ${DEPENDENCIES}."
 mkdir -p $DEPENDENCIES
 
-function download_and_verify { 
+function download_and_verify {
   URL=$1
   REMOTE_FILENAME=$(basename $URL)
   EXPECTED_SHA=$2
@@ -19,7 +24,7 @@ function download_and_verify {
   else
       curl -s -L -o $DEPENDENCIES/$FILENAME $URL
   fi
-  
+
   SHA=$(shasum -a 256 -b $DEPENDENCIES/$FILENAME | cut -d' ' -f1)
   if [[ "$EXPECTED_SHA" = "$SHA" ]]; then
       echo "$FILENAME matches expected sha256sum."
