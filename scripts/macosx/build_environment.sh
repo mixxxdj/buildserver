@@ -117,11 +117,12 @@ $PROGDIR/build_portmidi.sh
 $PROGDIR/build_protobuf.sh
 $PROGDIR/build_rubberband.sh
 $PROGDIR/build_sqlite.sh
-$PROGDIR/build_qt4.sh # depends on sqlite
-$PROGDIR/build_qt5.sh # depends on sqlite
+$PROGDIR/build_openssl.sh
+$PROGDIR/build_qt4.sh # depends on sqlite, openssl
+# Re-enable once we support Qt5.
+#$PROGDIR/build_qt5.sh # depends on sqlite, openssl
 $PROGDIR/build_sndfile.sh
 $PROGDIR/build_taglib.sh
 $PROGDIR/build_vorbis.sh
-$PROGDIR/build_openssl.sh
 # Shout depends on openssl, libogg and libvorbis.
 $PROGDIR/build_shout.sh

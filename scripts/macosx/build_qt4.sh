@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=4.8.6
+export VERSION_NUMBER=4.8.7
 export VERSION=qt-everywhere-opensource-src-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
@@ -27,7 +27,6 @@ export ARCH_FLAGS=
 export DISABLE_FFAST_MATH=yes
 
 source $PROGDIR/environment.sh
-export QTDIR=$MIXXX_PREFIX/Qt-${VERSION_NUMBER}
 
 # Qt uses -arch x86 not -arch i386. -arch ppc is no longer supported.
 QT_ARCHS=()
@@ -59,11 +58,8 @@ sed -e "s/-mmacosx-version-min=10.[45]/-mmacosx-version-min=$MIXXX_MACOSX_TARGET
 sed -e "s/QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4/QMAKE_MACOSX_DEPLOYMENT_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/mac.conf
 sed -e "s/-mmacosx-version-min=10.5/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/g++-macx.conf
 
-# https://bugreports.qt.io/browse/QTBUG-24361
-sed -e 's/\|contains/||contains/g' -i '' src/plugins/bearer/corewlan/corewlan.pro
-
 # Build issue with 10.11 SDK.
-curl https://raw.githubusercontent.com/Homebrew/patches/480b7142c4e2ae07de6028f672695eb927a34875/qt/el-capitan.patch | patch -p1 
+curl https://raw.githubusercontent.com/Homebrew/patches/480b7142c4e2ae07de6028f672695eb927a34875/qt/el-capitan.patch | patch -p1
 
 # Mixxx may want to call sqlite functions directly so we use the statically
 # linked version of SQLite (-qt-sql-sqlite) and link it to the system SQLite
@@ -72,7 +68,8 @@ curl https://raw.githubusercontent.com/Homebrew/patches/480b7142c4e2ae07de6028f6
 # See:
 # - http://www.mimec.org/node/296
 # NOTE(rryan): Setting -system-sqlite sets -system-zlib. Set -qt-zlib explicitly.
-./configure -opensource -prefix $QTDIR ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -no-qt3support -release -nomake examples -nomake demos -confirm-license
+export OPENSSL_LIBS="-L${MIXXX_PREFIX}/lib -lssl -lcrypto"
+./configure -opensource -prefix ${MIXXX_PREFIX} ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -no-qt3support -release -nomake examples -nomake demos -confirm-license -openssl -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib
 
 make && make install
 
