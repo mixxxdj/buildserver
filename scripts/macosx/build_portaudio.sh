@@ -11,8 +11,8 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=20140130
-export VERSION=pa_stable_v19_${VERSION_NUMBER}
+export VERSION_NUMBER=20161030
+export VERSION=pa_stable_v190600_${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tgz
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
