@@ -52,7 +52,7 @@ exit /b 1
 )
 
 echo Copying ASIO SDK.
-%XCOPY% ASIOSDK2.3 "%ENVIRONMENT_PATH%\build\pa_stable_v19_20140130\src\hostapi\asio\ASIOSDK"
+%XCOPY% ASIOSDK2.3 "%ENVIRONMENT_PATH%\build\pa_stable_v190600_20161030\src\hostapi\asio\ASIOSDK"
 IF ERRORLEVEL 1 (
 echo Copying ASIO SDK failed.
 ENDLOCAL
