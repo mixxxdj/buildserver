@@ -47,7 +47,7 @@ download_and_verify https://www.openssl.org/source/openssl-1.0.2h.tar.gz 1d4007e
 download_and_verify http://downloads.xiph.org/releases/ogg/libogg-1.3.2.tar.xz 3f687ccdd5ac8b52d76328fbbfebc70c459a40ea891dbf3dccb74a210826e79b
 download_and_verify http://downloads.xiph.org/releases/opus/opus-1.1.2.tar.gz 0e290078e31211baa7b5886bcc8ab6bc048b9fc83882532da4a1a45e58e907fd
 download_and_verify http://downloads.xiph.org/releases/opus/opusfile-0.7.tar.gz 9e2bed13bc729058591a0f1cab2505e8cfd8e7ac460bf10a78bcc3b125e7c301
-download_and_verify http://www.portaudio.com/archives/pa_stable_v19_20140130.tgz 8fe024a5f0681e112c6979808f684c3516061cc51d3acc0b726af98fc96c8d57
+download_and_verify http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513
 download_and_verify http://downloads.sourceforge.net/project/portmedia/portmidi/217/portmidi-src-217.zip 08e9a892bd80bdb1115213fb72dc29a7bf2ff108b378180586aa65f3cfd42e0f
 download_and_verify https://github.com/google/protobuf/archive/v2.6.1.tar.gz 2667b7cda4a6bc8a09e5463adf3b5984e08d94e72338277affa8594d8b6e5cd1 protobuf-2.6.1.tar.gz
 download_and_verify https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0
