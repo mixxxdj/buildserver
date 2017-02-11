@@ -4,7 +4,7 @@ SETLOCAL
 REM ==================================
 REM Path setup and  initial checks
 REM ==================================
-REM TEST
+
 IF "%ProgramW6432%" =="" (
 SET OS_IS_64BIT=0==1
 SET PROGRAMFILES_PATH=%ProgramFiles%

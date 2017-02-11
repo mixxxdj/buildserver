@@ -7,7 +7,7 @@ typedef int __w64 ssize_t;
 #undef COMPILER_IS_GCC
 
 /* Target processor clips on negative float to int conversion. */
-#define CPU_CLIPS_NEGATIVE 1
+#define CPU_CLIPS_NEGATIVE 0
 
 /* Target processor clips on positive float to int conversion. */
 #define CPU_CLIPS_POSITIVE 0
