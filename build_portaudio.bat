@@ -1,6 +1,6 @@
 SETLOCAL
 echo "Building portaudio"
-set PORTAUDIO_PATH=pa_stable_v19_20140130
+set PORTAUDIO_PATH=pa_stable_v190600_20161030
 SET VALRETURN=0
 
 if %MACHINE_X86% (

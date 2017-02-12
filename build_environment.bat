@@ -99,10 +99,10 @@ echo http://www.nasm.us/
 exit /b 1
 )
 
-if NOT EXIST "%CD%\build\pa_stable_v19_20140130\src\hostapi\asio\ASIOSDK" (
+if NOT EXIST "%CD%\build\pa_stable_v190600_20161030\src\hostapi\asio\ASIOSDK" (
 echo.
 echo You need to obtain and copy the ASIO SDK to the folder:
-echo %CD%\build\pa_stable_v19_20140130\src\hostapi\asio\ASIOSDK
+echo %CD%\build\pa_stable_v190600_20161030\src\hostapi\asio\ASIOSDK
 echo http://www.steinberg.net/en/company/developer.html
 exit /b 1
 )
