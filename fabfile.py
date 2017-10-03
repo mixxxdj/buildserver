@@ -8,7 +8,8 @@ UBUNTU_VERSION = '16.04'
 UBUNTU_NAME = 'xenial'
 MACOSX_QEMU_ROOT = '/usr/local/osx'
 MACOSX_INSTALL_ISO = 'ElCapitan.iso'
-PBUILDER_DISTS = ['trusty', 'wily', 'xenial', 'yakkety']
+# https://wiki.ubuntu.com/Releases for current list
+PBUILDER_DISTS = ['trusty', 'xenial', 'zesty']
 PBUILDER_ARCHS = ['amd64', 'i386']
 
 # Because our SConscripts are a little sloppy, the host system has to have
