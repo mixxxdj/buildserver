@@ -7,8 +7,8 @@ EXTRAPACKAGES="fakeroot debhelper pkg-config docbook-to-man libglu1-mesa-dev sco
 # Codenames for Debian suites according to their alias. Update these when
 # needed.
 UNSTABLE_CODENAME="sid"
-TESTING_CODENAME="jessie"
-STABLE_CODENAME="wheezy"
+TESTING_CODENAME="buster"
+STABLE_CODENAME="stretch"
 STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
 
 # List of Debian suites.
@@ -16,7 +16,7 @@ DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME
     "unstable" "testing" "stable")
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("yakkety" "xenial" "wily" "vivid" "utopic" "trusty" "saucy" "raring" "quantal" "precise" "oneiric" "natty" "maverick" "lucid" "karmic" "jaunty" "intrepid" "hardy")
+UBUNTU_SUITES=("zesty" "yakkety" "xenial" "wily" "vivid" "utopic" "trusty" "saucy" "raring" "quantal" "precise" "oneiric" "natty" "maverick" "lucid" "karmic" "jaunty" "intrepid" "hardy")
 
 
 # Mirrors to use. Update these to your preferred mirror.
