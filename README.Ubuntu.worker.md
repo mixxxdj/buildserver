@@ -7,6 +7,6 @@ Steps to setup an Ubuntu builder:
 1. Install latest LTS Ubuntu server.
 2. Create 'mixxx' account with standard password.
 3. `sudo apt-get install git-core`
-4. git clone https://github.com/mixxxdj/buildserver.git
+4. git clone https://github.com/mixxxdj/buildserver.git (--depth 1 to save bandwidth by getting just the latest branch)
 5. ./buildserver/scripts/linux-ubuntu/setup-builder.sh
 6. Copy release GPG key to ~/.gnupg
