@@ -9,6 +9,7 @@ On the machine/VM that will be the builder:
 2. Create 'mixxx' account with standard password.
 
 On your administration machine:
+
 3. `sudo apt-get install git-core fabric`
 4. git clone https://github.com/mixxxdj/buildserver.git --depth 1   (to save bandwidth by getting just the latest branch)
 5. cd buildserver
