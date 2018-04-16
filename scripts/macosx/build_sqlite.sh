@@ -18,7 +18,6 @@ export ARCHIVE=$VERSION.tar.gz
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export DYLIB=.libs/libsqlite3.0.dylib
 export STATICLIB=.libs/libsqlite3.a
 
 export DISABLE_FFAST_MATH="yes"
@@ -29,7 +28,10 @@ do
   tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$ARCH --strip-components 1
   cd $VERSION-$ARCH
   source $PROGDIR/environment.sh $ARCH
-  ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX
+  # Qt5 requires that we enable column metadata.
+  export CFLAGS=-DSQLITE_ENABLE_COLUMN_METADATA
+  # Qt5 requires that we build a static library only.
+  ./configure --host $HOST --target $TARGET --enable-shared=no --enable-static=yes --disable-dependency-tracking --prefix=$MIXXX_PREFIX
   make
   cd ..
 done
@@ -39,17 +41,14 @@ export ARCH=$HOST_ARCH
 cd $VERSION-$ARCH
 source $PROGDIR/environment.sh $ARCH
 
-OTHER_DYLIBS=()
 OTHER_STATICLIBS=()
 for OTHER_ARCH in ${MIXXX_ARCHS[@]}
 do
   if [ $OTHER_ARCH != $ARCH ]; then
-    OTHER_DYLIBS+=(../$VERSION-$OTHER_ARCH/$DYLIB)
     OTHER_STATICLIBS+=(../$VERSION-$OTHER_ARCH/$STATICLIB)
   fi
 done
 
-lipo -create ./$DYLIB ${OTHER_DYLIBS[@]} -output ./$DYLIB
 lipo -create ./$STATICLIB ${OTHER_STATICLIBS[@]} -output ./$STATICLIB
 make install
 cd ..

@@ -27,6 +27,7 @@ export ARCH_FLAGS=
 export DISABLE_FFAST_MATH=yes
 
 source $PROGDIR/environment.sh
+export QTDIR=$MIXXX_PREFIX/Qt-${VERSION_NUMBER}
 
 # Qt uses -arch x86 not -arch i386. -arch ppc is no longer supported.
 QT_ARCHS=()
@@ -69,7 +70,7 @@ curl https://raw.githubusercontent.com/Homebrew/patches/480b7142c4e2ae07de6028f6
 # - http://www.mimec.org/node/296
 # NOTE(rryan): Setting -system-sqlite sets -system-zlib. Set -qt-zlib explicitly.
 export OPENSSL_LIBS="-L${MIXXX_PREFIX}/lib -lssl -lcrypto"
-./configure -opensource -prefix ${MIXXX_PREFIX} ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -no-qt3support -release -nomake examples -nomake demos -confirm-license -openssl -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib
+./configure -opensource -prefix ${QTDIR} ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -no-qt3support -release -nomake examples -nomake demos -confirm-license -openssl -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib
 
 make && make install
 
