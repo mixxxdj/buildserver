@@ -125,3 +125,4 @@ $PROGDIR/build_taglib.sh
 $PROGDIR/build_vorbis.sh
 # Shout depends on openssl, libogg and libvorbis.
 $PROGDIR/build_shout.sh
+$PROGDIR/build_lame.sh
