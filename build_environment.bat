@@ -312,8 +312,8 @@ SET /A TASKNUM=1
  REM build_taglib.bat depends on zlib
  REM build_qt4.bat depends on sqlite3, zlib, openssl
  REM build_qt5.bat depends on sqlite3, zlib, openssl
- REM build_lame.bat We do not distribute LAME with Mixxx. If you wish to build it locally, add it to for loop.
 FOR %%G IN (
+build_lame.bat,
 build_sqlite3.bat,
 build_zlib.bat,
 build_pthreads.bat,
