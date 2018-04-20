@@ -334,7 +334,8 @@ build_portaudio.bat,
 build_hss1394.bat,
 build_chromaprint.bat,
 build_taglib.bat,
-build_qt4.bat) DO (
+build_qt4.bat,
+build_qt5.bat) DO (
   IF !TASKNUM! EQU %JUMPIDX% (
 	SET EXECUTE=1
   ) ELSE (
