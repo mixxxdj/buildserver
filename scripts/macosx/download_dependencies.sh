@@ -59,3 +59,4 @@ download_and_verify http://prdownloads.sourceforge.net/scons/scons-2.5.0.tar.gz 
 download_and_verify https://www.sqlite.org/2016/sqlite-autoconf-3130000.tar.gz e2797026b3310c9d08bd472f6d430058c6dd139ff9d4e30289884ccd9744086b
 download_and_verify https://taglib.github.io/releases/taglib-1.11.tar.gz ed4cabb3d970ff9a30b2620071c2b054c4347f44fc63546dbe06f97980ece288
 download_and_verify http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.xz 54f94a9527ff0a88477be0a71c0bab09a4c3febe0ed878b24824906cd4b0e1d1
+download_and_verify https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
