@@ -268,12 +268,10 @@ static const FLOAT tab[] = {
 };
 
 static const int tab_mask_add_delta[] = { 2, 2, 2, 1, 1, 1, 0, 0, -1 };
-#define STATIC_ASSERT_EQUAL_DIMENSION(A,B) {extern char static_assert_##A[dimension_of(A) == dimension_of(B) ? 1 : -1];(void) static_assert_##A;}
 
 inline static int
 mask_add_delta(int i)
 {
-    STATIC_ASSERT_EQUAL_DIMENSION(tab_mask_add_delta,tab);
     assert(i < (int)dimension_of(tab));
     return tab_mask_add_delta[i];
 }
