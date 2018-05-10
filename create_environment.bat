@@ -32,6 +32,15 @@ if not exist qt-everywhere-opensource-src-4.8.7 (
   exit /b 1
 )
 
+if not exist qt-everywhere-src-5.10.1 (
+  echo.
+  echo You need to obtain and unzip qt-everywhere-src-5.10.1.zip to the folder:
+  echo %CD%
+  echo https://download.qt.io/official_releases/qt/5.10/5.10.1/single/qt-everywhere-src-5.10.1.zip
+  ENDLOCAL
+  exit /b 1
+)
+
 if not exist vc_redist.x86.exe (
   echo.
   echo You need to obtain the Microsoft Visual C++ 2015 Redistributable and copy vc_redist.x86.exe and vc_redist.x64.exe to this folder:
@@ -59,7 +68,7 @@ ENDLOCAL
 exit /b 1
 )
 
-echo Copying Qt
+echo Copying Qt4
 REM Note that using xcopy to copy Qt can run into "Insufficient memory" errors
 REM due to path lengths growing larger than 254 characters.
 %ROBOCOPY% qt-everywhere-opensource-src-4.8.7 "%ENVIRONMENT_PATH%\build\qt-everywhere-opensource-src-4.8.7"
@@ -69,6 +78,18 @@ echo Copying Qt 4.8.7 failed.
 ENDLOCAL
 exit /b 1
 )
+
+echo Copying Qt5
+REM Note that using xcopy to copy Qt can run into "Insufficient memory" errors
+REM due to path lengths growing larger than 254 characters.
+%ROBOCOPY% qt-everywhere-src-5.10.1 "%ENVIRONMENT_PATH%\build\Q5101"
+REM robocopy errorlevel 1 means files were copied.
+IF ERRORLEVEL 2 (
+echo Copying Qt 5.10.1 failed.
+ENDLOCAL
+exit /b 1
+)
+
 echo Success.
 exit /b 0
 ENDLOCAL
