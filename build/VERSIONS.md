@@ -103,6 +103,11 @@ Most recent library versions present in this directory.
       <td>4.8.7</td>
       <td>2016-06-23 (no longer updated)</td>
     </tr>
+     <tr>
+      <td>Qt5</td>
+      <td>5.10.1</td>
+      <td>2018-05-11</td>
+    </tr>
     <tr>
       <td>rubberband</td>
       <td>1.8.1</td>
