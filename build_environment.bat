@@ -322,20 +322,7 @@ build_portmidi.bat,
 build_libid3tag.bat,
 build_libmad.bat,
 build_libogg.bat,
-build_libopus.bat,
-build_libvorbis.bat,
-build_openssl.bat,
-build_libshout.bat,
-build_libflac.bat,
-build_libsndfile.bat,
-build_fftw3.bat,
-build_rubberband.bat,
-build_portaudio.bat,
-build_hss1394.bat,
-build_chromaprint.bat,
-build_taglib.bat,
-build_qt4.bat,
-build_qt5.bat) DO (
+build_libopus.bat) DO (
   IF !TASKNUM! EQU %JUMPIDX% (
 	SET EXECUTE=1
   ) ELSE (
