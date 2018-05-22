@@ -126,3 +126,8 @@ $PROGDIR/build_vorbis.sh
 # Shout depends on openssl, libogg and libvorbis.
 $PROGDIR/build_shout.sh
 $PROGDIR/build_lame.sh
+$PROGDIR/build_lv2.sh
+$PROGDIR/build_serd.sh
+$PROGDIR/build_sord.sh  # depends on serd
+$PROGDIR/build_sratom.sh  # depends on lv2, serd, sord
+$PROGDIR/build_lilv.sh  # depends on lv2, serd, sord, sratom
