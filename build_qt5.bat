@@ -2,7 +2,7 @@ SETLOCAL
 echo.
 echo ---- Building Qt5 ----
 
-REM Qt5 paths can get really long. We use an abbreviated folder name to prevent hitting 
+REM Qt5 paths can get really long. We use an abbreviated folder name to prevent hitting
 REM Windows path length limits.
 SET QT5_PATH=Q5101
 SET VALRETURN=0
@@ -26,6 +26,13 @@ echo could not find QT5 on %CD%\build\%QT5_PATH%
 	goto END
 )
 
+REM Apply workaround for QTBUG-61342.
+%BIN_DIR%\patch.exe -N -p0 --verbose -i %CD%\..\QTBUG-61342.patch -r %CD%\..\QTBUG-61342.rej.txt
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
+
 REM nmake distclean or nmake confclean are not present in the Makefile, so we delete these files and hope it rebuilds.
 del qtbase\.qmake.cache
 del qtbase\config.log
@@ -39,16 +46,16 @@ REM skips can be any directory starting with 'qt' at the root of the repo -- kee
 REM skipping qttools skips building translations (since it doesn't have lrelease)
 set QT_SKIP=-skip qt3d -skip qtdoc -skip qtmultimedia -skip qtwebengine -skip qtwebview -skip qtconnectivity -skip qtpurchasing -skip qtgamepad -skip qtlocation -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtspeech
 
-REM We link against the system SQLite so that Mixxx can link with and use the 
-REM same instance of the SQLite library in our binary (for example, so we 
+REM We link against the system SQLite so that Mixxx can link with and use the
+REM same instance of the SQLite library in our binary (for example, so we
 REM can install custom functions).
 REM -D NOMINMAX https://forum.qt.io/topic/21605/solved-qt5-vs2010-qdatetime-not-enough-actual-parameters-for-macro-min-max
 set QT_COMMON=-prefix %ROOT_DIR%\Qt-5.10.1\ -opensource -confirm-license -platform win32-msvc2015 -force-debug-info -no-strip -mp -system-sqlite -sql-sqlite -no-sql-odbc -system-zlib -ltcg -D NOMINMAX -D _USING_V110_SDK71_ -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -D ZLIB_WINAPI %QT_NOMAKE% %QT_SKIP% -no-dbus -opengl dynamic -qt-pcre -qt-libpng -qt-harfbuzz
- 
+
 if %STATIC_LIBS% (
 call configure.bat %CONFIG% %QT_COMMON% -static -openssl-linked OPENSSL_LIBS="-luser32 -ladvapi32 -lgdi32 -lcrypt32 -lssleay32 -llibeay32"
 ) else (
-call configure.bat %CONFIG% %QT_COMMON% -shared -openssl -separate-debug-info 
+call configure.bat %CONFIG% %QT_COMMON% -shared -openssl -separate-debug-info
 )
 
 IF ERRORLEVEL 1 (
@@ -64,7 +71,7 @@ IF ERRORLEVEL 1 (
 )
 
 rem Now install to %ROOT_DIR%.
-nmake install 
+nmake install
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
