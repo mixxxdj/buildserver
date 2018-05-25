@@ -38,7 +38,8 @@ echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${QT_ARCH
 # See:
 # - http://www.mimec.org/node/296
 # NOTE(rryan): Setting -system-sqlite sets -system-zlib. Set -qt-zlib explicitly.
-./configure -opensource -prefix $QTDIR -sdk macosx${MIXXX_MACOSX_SDK} -system-sqlite -sql-sqlite -qt-zlib -platform macx-clang -release -confirm-license -securetransport -force-debug-info -nomake examples -nomake tests -skip qt3d -skip qtwebengine -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib
+# NOTE(rryan): Mixxx bundling handles rpaths manually so we disable setting of rpath.
+./configure -opensource -prefix $QTDIR -sdk macosx${MIXXX_MACOSX_SDK} -system-sqlite -sql-sqlite -qt-zlib -platform macx-clang -release -confirm-license -securetransport -force-debug-info -nomake examples -nomake tests -skip qt3d -skip qtwebengine -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib -no-rpath
 
 make && make install
 cd ..
