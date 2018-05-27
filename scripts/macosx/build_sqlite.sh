@@ -30,8 +30,7 @@ do
   source $PROGDIR/environment.sh $ARCH
   # Qt5 requires that we enable column metadata.
   export CFLAGS=-DSQLITE_ENABLE_COLUMN_METADATA
-  # Qt5 requires that we build a static library only.
-  ./configure --host $HOST --target $TARGET --enable-shared=no --enable-static=yes --disable-dependency-tracking --prefix=$MIXXX_PREFIX
+  ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX
   make
   cd ..
 done
