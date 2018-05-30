@@ -131,3 +131,4 @@ $PROGDIR/build_serd.sh
 $PROGDIR/build_sord.sh  # depends on serd
 $PROGDIR/build_sratom.sh  # depends on lv2, serd, sord
 $PROGDIR/build_lilv.sh  # depends on lv2, serd, sord, sratom
+$PROGDIR/build_qtkeychain.sh  # depends on qt5
