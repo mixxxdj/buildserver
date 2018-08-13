@@ -99,7 +99,7 @@ REM %XCOPY% "%QT4_DIR%\translations\QT4_*.qm" "%QT4_MINIMAL_DIR%\translations"
 REM The above also copies QT4_help_*, which we don't need.
 REM del "%QT4_MINIMAL_DIR%\translations\QT4_help_*"
 
-set QT5_VERSION=5.10.1
+set QT5_VERSION=5.11.1
 %XCOPY% "%ENVIRONMENT_PATH%\Qt-%QT5_VERSION%" "%MINIMAL_PATH%\Qt-%QT5_VERSION%\"
 
 ENDLOCAL

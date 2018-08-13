@@ -32,11 +32,15 @@ REM  ENDLOCAL
 REM  exit /b 1
 REM )
 
-if not exist qt-everywhere-src-5.10.1 (
+set QT_MAJOR=5
+set QT_MINOR=11
+set QT_PATCH=1
+set QTSHORTDIR=Q%QT_MAJOR%
+set QTDIR=qt-everywhere-src-%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%
+if not exist %QTDIR%.tar.xz (
   echo.
-  echo You need to obtain and unzip qt-everywhere-src-5.10.1.zip to the folder:
+  echo You need to obtain and unzip %QTDIR%.tar.xz to the folder:
   echo %CD%
-  echo https://download.qt.io/official_releases/qt/5.10/5.10.1/single/qt-everywhere-src-5.10.1.zip
   ENDLOCAL
   exit /b 1
 )
@@ -82,10 +86,10 @@ exit /b 1
 echo Copying Qt5
 REM Note that using xcopy to copy Qt can run into "Insufficient memory" errors
 REM due to path lengths growing larger than 254 characters.
-%ROBOCOPY% qt-everywhere-src-5.10.1 "%ENVIRONMENT_PATH%\build\Q5101"
+%ROBOCOPY% %QTDIR% "%ENVIRONMENT_PATH%\build\%QTSHORTDIR%"
 REM robocopy errorlevel 1 means files were copied.
 IF ERRORLEVEL 2 (
-echo Copying Qt 5.10.1 failed.
+echo Copying Qt %QTDIR% failed.
 ENDLOCAL
 exit /b 1
 )
