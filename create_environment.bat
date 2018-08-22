@@ -23,14 +23,14 @@ if not exist ASIOSDK2.3 (
   exit /b 1
 )
 
-if not exist qt-everywhere-opensource-src-4.8.7 (
-  echo.
-  echo You need to obtain and unzip qt-everywhere-opensource-src-4.8.7.zip to the folder:
-  echo %CD%
-  echo https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.zip
-  ENDLOCAL
-  exit /b 1
-)
+REM if not exist qt-everywhere-opensource-src-4.8.7 (
+REM  echo.
+REM  echo You need to obtain and unzip qt-everywhere-opensource-src-4.8.7.zip to the folder:
+REM  echo %CD%
+REM  echo https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.zip
+REM  ENDLOCAL
+REM  exit /b 1
+REM )
 
 if not exist qt-everywhere-src-5.10.1 (
   echo.
