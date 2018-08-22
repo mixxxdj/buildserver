@@ -50,14 +50,14 @@ download_and_verify http://downloads.xiph.org/releases/opus/opusfile-0.7.tar.gz 
 download_and_verify http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513
 download_and_verify http://downloads.sourceforge.net/project/portmedia/portmidi/217/portmidi-src-217.zip 08e9a892bd80bdb1115213fb72dc29a7bf2ff108b378180586aa65f3cfd42e0f
 download_and_verify https://github.com/google/protobuf/archive/v2.6.1.tar.gz 2667b7cda4a6bc8a09e5463adf3b5984e08d94e72338277affa8594d8b6e5cd1 protobuf-2.6.1.tar.gz
-download_and_verify https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0
+#download_and_verify https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0
 download_and_verify https://download.qt.io/archive/qt/5.11/5.11.1/single/qt-everywhere-src-5.11.1.tar.xz 39602cb08f9c96867910c375d783eed00fc4a244bffaa93b801225d17950fb2b
 download_and_verify http://code.breakfastquay.com/attachments/download/34/rubberband-1.8.1.tar.bz2 ff0c63b0b5ce41f937a8a3bc560f27918c5fe0b90c6bc1cb70829b86ada82b75
 download_and_verify http://downloads.xiph.org/releases/libshout/libshout-2.4.1.tar.gz f3acb8dec26f2dbf6df778888e0e429a4ce9378a9d461b02a7ccbf2991bbf24d
 download_and_verify http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.26.tar.gz cd6520ec763d1a45573885ecb1f8e4e42505ac12180268482a44b28484a25092
 download_and_verify http://prdownloads.sourceforge.net/scons/scons-2.5.0.tar.gz eb296b47f23c20aec7d87d35cfa386d3508e01d1caa3040ea6f5bbab2292ace9
 download_and_verify https://www.sqlite.org/2016/sqlite-autoconf-3130000.tar.gz e2797026b3310c9d08bd472f6d430058c6dd139ff9d4e30289884ccd9744086b
-download_and_verify https://taglib.github.io/releases/taglib-1.11.tar.gz ed4cabb3d970ff9a30b2620071c2b054c4347f44fc63546dbe06f97980ece288
+download_and_verify https://taglib.github.io/releases/taglib-1.11.1.tar.gz b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b
 download_and_verify http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.xz 54f94a9527ff0a88477be0a71c0bab09a4c3febe0ed878b24824906cd4b0e1d1
 download_and_verify https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
 download_and_verify http://lv2plug.in/spec/lv2-1.14.0.tar.bz2 b8052683894c04efd748c81b95dd065d274d4e856c8b9e58b7c3da3db4e71d32
