@@ -128,4 +128,9 @@ Most recent library versions present in this directory.
       <td>1.2.8</td>
       <td>2016-02-09</td>
     </tr>
+    <tr>
+      <td>qtkeychain</td>
+      <td>0.9.1</td>
+      <td>2018-08-22</td>
+    </tr>
 </table>
