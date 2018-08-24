@@ -40,13 +40,7 @@ IF ERRORLEVEL 1 (
 	goto END
 )
 
-IF %STATIC_LIBS% (
-  set PROJECT=qtkeychain_p
-) else (
-  set PROJECT=qtkeychain
-)
-
-%MSBUILD% qtkeychain.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:Clean;%PROJECT%:Rebuild
+"%CMAKEDIR%\cmake" --build . --config %CONFIG% --clean-first 
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
