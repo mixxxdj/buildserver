@@ -20,7 +20,7 @@ export ARCHIVE=$VERSION.tar.gz
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export DYLIB=libqt5keychain.0.8.0.dylib
+export DYLIB=libqt5keychain.${VERSION_NUMBER}.dylib
 
 for ARCH in ${MIXXX_ARCHS[@]}
 do
