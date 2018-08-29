@@ -53,6 +53,8 @@ IF ERRORLEVEL 1 (
     goto END
 )
 
+copy qt5keychain.dir\RelWithDebInfo\qt5keychain.pdb %LIB_DIR%
+
 :END
 cd %ROOT_DIR%
 REM the GOTO command resets the errorlevel and the endlocal resets the local environment,
