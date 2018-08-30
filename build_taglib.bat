@@ -77,6 +77,9 @@ md %INCLUDE_DIR%\taglib
 %XCOPY% taglib\wavpack\*.h %INCLUDE_DIR%\taglib
 %XCOPY% taglib\xm\*.h %INCLUDE_DIR%\taglib
 
+SET VALRETURN=1
+goto END
+
 :END
 cd %ROOT_DIR%
 REM the GOTO command resets the errorlevel and the endlocal resets the local environment,
