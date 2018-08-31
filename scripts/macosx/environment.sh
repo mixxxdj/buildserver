@@ -27,7 +27,7 @@ export CXX="${XCODE_ROOT}/usr/bin/g++ -stdlib=$MIXXX_MACOSX_STDLIB"
 export CPP="$CC -E"
 export CXXCPP="$CXX -E"
 
-export OSX_SDK=${XCODE_ROOT}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX${MIXXX_MACOSX_SDK}.sdk
+export OSX_SDK=$(xcrun --sdk macosx${MIXXX_MACOSX_SDK} --show-sdk-path)
 
 if [[ ! -d $OSX_SDK ]]; then
     echo "WARNING: SDK path does not exist: $OSX_SDK"

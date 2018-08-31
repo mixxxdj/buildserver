@@ -11,8 +11,10 @@ popd > /dev/null
 usage() { echo "Usage: $0 --name <name> [--dependency-cache <path>] [--macosx-sdk <version>] [--maxosx-target <version>] [--macosx-stdlib <stdlib>] [--enable-ppc] [--enable-i386] [--enable-x86-64]" 1>&2; exit 1; }
 
 MIXXX_ENVIRONMENT_NAME=""
-MIXXX_MACOSX_SDK='10.9'
-MIXXX_MACOSX_TARGET='10.9'
+# Use the default installed macOS SDK, allowing override via commandline flag.
+MIXXX_MACOSX_SDK=$(xcodebuild -version -sdk macosx SDKVersion)
+# Qt 5.11 requires a minimum of macOS 10.11.
+MIXXX_MACOSX_TARGET='10.11'
 MIXXX_MACOSX_STDLIB='libc++'
 ENABLE_I386=false
 ENABLE_X86_64=false
