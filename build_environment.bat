@@ -17,6 +17,7 @@ SET "PROGRAMFILES_PATH=%ProgramFiles(x86)%"
 
 rem ====== Edit to suit your environment =========
 SET VCVERSION=140
+SET PLATFORM_TOOLSET=v%VCVERSION%_xp
 
 REM Allow overriding MSSDKS_PATH from outside this script.
 IF "%MSSDKS_PATH%" == "" (
@@ -46,7 +47,7 @@ REM Verify paths.
 IF EXIST "%MSVC_PATH%" (
 SET "BUILDTOOLS_PATH=%MSVC_PATH%\VC"
 SET BUILDTOOLS_SCRIPT=vcvarsall.bat
-SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=v%VCVERSION%_xp /p:RuntimeLibrary=%RUNTIMELIB%
+SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=%PLATFORM_TOOLSET% /p:RuntimeLibrary=%RUNTIMELIB%
 
 REM Check whether we have a 64-bit compiler available.
 REM NOTE(rryan): Temporarily disabled because the build doesn't work with a 64-bit compiler.
