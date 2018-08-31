@@ -312,6 +312,7 @@ SET /A TASKNUM=1
  REM build_chromaprint.bat depends on fftw3
  REM build_taglib.bat depends on zlib
  REM build_qt4.bat depends on sqlite3, zlib, openssl
+ REM build_qt5.bat depends on sqlite3, zlib, openssl
  REM build_qtkeychain.bat depends on qt5
 FOR %%G IN (
 build_lame.bat,
