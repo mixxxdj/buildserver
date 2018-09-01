@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.11
+export VERSION_NUMBER=1.11.1
 export VERSION=taglib-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
