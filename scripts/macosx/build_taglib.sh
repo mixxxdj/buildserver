@@ -18,7 +18,7 @@ export ARCHIVE=$VERSION.tar.gz
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export DYLIB=taglib/libtag.1.16.0.dylib
+export DYLIB=taglib/libtag.1.17.0.dylib
 export STATICLIB=taglib/libtag.a
 
 for ARCH in ${MIXXX_ARCHS[@]}
