@@ -31,8 +31,8 @@ Pre-built environments are available for Windows and macOS at:
 * [Windows 2.2.x pre-built environments](https://downloads.mixxx.org/builds/buildserver/2.2.x-windows/)
 * [macOS 2.2.x pre-built environments](https://downloads.mixxx.org/builds/buildserver/2.2.x-macosx/)
 
-To see which environment Mixxx builds are currently using, check
-[build/osx/golden_environment](https://github.com/mixxxdj/mixxx/tree/master/build/osx/golden_environment)
+To see which environment Mixxx 2.2.x builds are currently using, check
+[build/osx/golden_environment](https://github.com/mixxxdj/mixxx/tree/2.2/build/osx/golden_environment)
 and
-[build/windows/golden_environment](https://github.com/mixxxdj/mixxx/tree/master/build/osx/golden_environment)
+[build/windows/golden_environment](https://github.com/mixxxdj/mixxx/tree/2.2/build/osx/golden_environment)
 files in the Mixxx source tree.
