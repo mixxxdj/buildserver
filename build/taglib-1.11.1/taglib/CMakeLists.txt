@@ -28,6 +28,7 @@ include_directories(
 
 if(ZLIB_FOUND)
   include_directories(${ZLIB_INCLUDE_DIR})
+  add_definitions(-DZLIB_WINAPI)
 elseif(HAVE_ZLIB_SOURCE)
   include_directories(${ZLIB_SOURCE})
 endif()
