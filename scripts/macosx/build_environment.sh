@@ -120,7 +120,6 @@ $PROGDIR/build_protobuf.sh
 $PROGDIR/build_rubberband.sh
 $PROGDIR/build_sqlite.sh
 $PROGDIR/build_openssl.sh
-$PROGDIR/build_qt5.sh # depends on sqlite
 $PROGDIR/build_sndfile.sh
 $PROGDIR/build_taglib.sh
 $PROGDIR/build_vorbis.sh
@@ -132,4 +131,7 @@ $PROGDIR/build_serd.sh
 $PROGDIR/build_sord.sh  # depends on serd
 $PROGDIR/build_sratom.sh  # depends on lv2, serd, sord
 $PROGDIR/build_lilv.sh  # depends on lv2, serd, sord, sratom
+
+# Build Qt last so we catch errors in the above dependencies faster.
+$PROGDIR/build_qt5.sh # depends on sqlite
 $PROGDIR/build_qtkeychain.sh  # depends on qt5

@@ -11,14 +11,14 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.11
+export VERSION_NUMBER=1.11.1
 export VERSION=taglib-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export DYLIB=taglib/libtag.1.16.0.dylib
+export DYLIB=taglib/libtag.1.17.0.dylib
 export STATICLIB=taglib/libtag.a
 
 for ARCH in ${MIXXX_ARCHS[@]}
