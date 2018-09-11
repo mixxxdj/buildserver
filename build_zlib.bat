@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building Zlib ----
-SET ZLIB_PATH=zlib-1.2.8
+SET ZLIB_PATH=zlib-1.2.11
 SET VALRETURN=0
 
 if %MACHINE_X86% (
