@@ -1,6 +1,6 @@
 SETLOCAL
 echo "Building rubberband"
-set RUBBERBAND_PATH=rubberband-1.8.1
+set RUBBERBAND_PATH=rubberband-1.8.2
 SET VALRETURN=0
 
 if %MACHINE_X86% (
