@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building FFTW ----
-set FFTW_PATH=fftw-3.3.4
+set FFTW_PATH=fftw-3.3.8
 SET VALRETURN=0
 
 if %MACHINE_X86% (
