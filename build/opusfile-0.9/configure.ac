@@ -34,7 +34,7 @@ dnl - interfaces added -> increment AGE
 dnl - interfaces removed -> AGE = 0
 
 OP_LT_CURRENT=4
-OP_LT_REVISION=0
+OP_LT_REVISION=2
 OP_LT_AGE=4
 
 AC_SUBST(OP_LT_CURRENT)
@@ -87,6 +87,11 @@ AM_COND_IF(OP_WIN32,
   )
 )
 AC_SEARCH_LIBS(ftime, [compat], , [enable_http=no])
+
+m4_ifndef([PKG_PROG_PKG_CONFIG],
+  [m4_fatal([Could not locate the pkg-config autoconf macros.
+Please make sure pkg-config is installed and, if necessary, set the environment
+variable ACLOCAL="aclocal -I/path/to/pkg.m4".])])
 
 AS_IF([test "$enable_http" != "no"], [
    openssl="openssl"
@@ -148,6 +153,7 @@ AC_ARG_ENABLE([doc],
 
 AS_IF([test "$enable_doc" = "yes"], [
   AC_CHECK_PROG([HAVE_DOXYGEN], [doxygen], [yes], [no])
+  AC_CHECK_PROG([HAVE_DOT], [dot], [yes], [no])
 ],[
   HAVE_DOXYGEN=no
 ])

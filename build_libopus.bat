@@ -1,7 +1,7 @@
 SETLOCAL
 echo ---- Building Opus ----
 set OPUS_PATH=opus-1.2.1
-set OPUSFILE_PATH=opusfile-0.7
+set OPUSFILE_PATH=opusfile-0.9
 SET VALRETURN=0
 
 if %MACHINE_X86% (

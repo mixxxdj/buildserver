@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS = -I m4
 
 AM_CFLAGS = -I$(top_srcdir)/include $(DEPS_CFLAGS)
 
-dist_doc_DATA = COPYING AUTHORS README.txt
+dist_doc_DATA = COPYING AUTHORS README.md
 
 opusincludedir = ${includedir}/opus
 opusinclude_HEADERS = include/opusfile.h
@@ -17,6 +17,7 @@ libopusfile_la_LDFLAGS = -no-undefined \
  -version-info @OP_LT_CURRENT@:@OP_LT_REVISION@:@OP_LT_AGE@
 
 libopusurl_la_SOURCES = src/http.c src/internal.c src/internal.h
+libopusurl_la_CFLAGS = $(AM_CFLAGS) $(URL_DEPS_CFLAGS)
 libopusurl_la_LIBADD = libopusfile.la $(URL_DEPS_LIBS)
 libopusurl_la_LDFLAGS = -no-undefined \
  -version-info @OP_LT_CURRENT@:@OP_LT_REVISION@:@OP_LT_AGE@
@@ -54,13 +55,13 @@ EXTRA_DIST = \
  doc/opus_logo.svg \
  doc/Makefile \
  unix/Makefile \
- win32/VS2010/opusfile.sln \
- win32/VS2010/opusfile.vcxproj \
- win32/VS2010/opusfile.vcxproj.filters \
- win32/VS2010/opusfile_example.vcxproj \
- win32/VS2010/opusfile_example.vcxproj.filters \
- win32/VS2010/seeking_example.vcxproj \
- win32/VS2010/seeking_example.vcxproj.filters
+ win32/VS2015/opusfile.sln \
+ win32/VS2015/opusfile.vcxproj \
+ win32/VS2015/opusfile.vcxproj.filters \
+ win32/VS2015/opusfile_example.vcxproj \
+ win32/VS2015/opusfile_example.vcxproj.filters \
+ win32/VS2015/seeking_example.vcxproj \
+ win32/VS2015/seeking_example.vcxproj.filters
 
 # Targets to build and install just the library without the docs
 opusfile install-opusfile: NO_DOXYGEN = 1

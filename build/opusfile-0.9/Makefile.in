@@ -165,13 +165,13 @@ libopusurl_la_DEPENDENCIES = libopusfile.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am__libopusurl_la_SOURCES_DIST = src/http.c src/internal.c \
 	src/internal.h src/wincerts.c src/winerrno.h
-@OP_ENABLE_HTTP_TRUE@@OP_WIN32_TRUE@am__objects_1 = src/wincerts.lo
-am_libopusurl_la_OBJECTS = src/http.lo src/internal.lo \
-	$(am__objects_1)
+@OP_ENABLE_HTTP_TRUE@@OP_WIN32_TRUE@am__objects_1 = src/libopusurl_la-wincerts.lo
+am_libopusurl_la_OBJECTS = src/libopusurl_la-http.lo \
+	src/libopusurl_la-internal.lo $(am__objects_1)
 libopusurl_la_OBJECTS = $(am_libopusurl_la_OBJECTS)
 libopusurl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(libopusurl_la_LDFLAGS) $(LDFLAGS) -o $@
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(libopusurl_la_CFLAGS) \
+	$(CFLAGS) $(libopusurl_la_LDFLAGS) $(LDFLAGS) -o $@
 PROGRAMS = $(noinst_PROGRAMS)
 am__examples_opusfile_example_SOURCES_DIST =  \
 	examples/opusfile_example.c examples/win32utf8.c \
@@ -310,6 +310,7 @@ EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
 GREP = @GREP@
+HAVE_DOT = @HAVE_DOT@
 HAVE_DOXYGEN = @HAVE_DOXYGEN@
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
@@ -413,7 +414,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I m4
 AM_CFLAGS = -I$(top_srcdir)/include $(DEPS_CFLAGS)
-dist_doc_DATA = COPYING AUTHORS README.txt
+dist_doc_DATA = COPYING AUTHORS README.md
 opusincludedir = ${includedir}/opus
 opusinclude_HEADERS = include/opusfile.h
 lib_LTLIBRARIES = libopusfile.la libopusurl.la
@@ -428,6 +429,7 @@ libopusfile_la_LDFLAGS = -no-undefined \
 
 libopusurl_la_SOURCES = src/http.c src/internal.c src/internal.h \
 	$(am__append_1)
+libopusurl_la_CFLAGS = $(AM_CFLAGS) $(URL_DEPS_CFLAGS)
 libopusurl_la_LIBADD = libopusfile.la $(URL_DEPS_LIBS) $(am__append_2)
 libopusurl_la_LDFLAGS = -no-undefined \
  -version-info @OP_LT_CURRENT@:@OP_LT_REVISION@:@OP_LT_AGE@
@@ -449,13 +451,13 @@ EXTRA_DIST = \
  doc/opus_logo.svg \
  doc/Makefile \
  unix/Makefile \
- win32/VS2010/opusfile.sln \
- win32/VS2010/opusfile.vcxproj \
- win32/VS2010/opusfile.vcxproj.filters \
- win32/VS2010/opusfile_example.vcxproj \
- win32/VS2010/opusfile_example.vcxproj.filters \
- win32/VS2010/seeking_example.vcxproj \
- win32/VS2010/seeking_example.vcxproj.filters
+ win32/VS2015/opusfile.sln \
+ win32/VS2015/opusfile.vcxproj \
+ win32/VS2015/opusfile.vcxproj.filters \
+ win32/VS2015/opusfile_example.vcxproj \
+ win32/VS2015/opusfile_example.vcxproj.filters \
+ win32/VS2015/seeking_example.vcxproj \
+ win32/VS2015/seeking_example.vcxproj.filters
 
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -568,8 +570,12 @@ src/stream.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 
 libopusfile.la: $(libopusfile_la_OBJECTS) $(libopusfile_la_DEPENDENCIES) $(EXTRA_libopusfile_la_DEPENDENCIES) 
 	$(AM_V_CCLD)$(libopusfile_la_LINK) -rpath $(libdir) $(libopusfile_la_OBJECTS) $(libopusfile_la_LIBADD) $(LIBS)
-src/http.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
-src/wincerts.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libopusurl_la-http.lo: src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/libopusurl_la-internal.lo: src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/libopusurl_la-wincerts.lo: src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 
 libopusurl.la: $(libopusurl_la_OBJECTS) $(libopusurl_la_DEPENDENCIES) $(EXTRA_libopusurl_la_DEPENDENCIES) 
 	$(AM_V_CCLD)$(libopusurl_la_LINK) -rpath $(libdir) $(libopusurl_la_OBJECTS) $(libopusurl_la_LIBADD) $(LIBS)
@@ -615,12 +621,13 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@examples/$(DEPDIR)/opusfile_example.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@examples/$(DEPDIR)/seeking_example.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@examples/$(DEPDIR)/win32utf8.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/http.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/info.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/internal.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libopusurl_la-http.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libopusurl_la-internal.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libopusurl_la-wincerts.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/opusfile.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/stream.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/wincerts.Plo@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -645,6 +652,27 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
+
+src/libopusurl_la-http.lo: src/http.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libopusurl_la_CFLAGS) $(CFLAGS) -MT src/libopusurl_la-http.lo -MD -MP -MF src/$(DEPDIR)/libopusurl_la-http.Tpo -c -o src/libopusurl_la-http.lo `test -f 'src/http.c' || echo '$(srcdir)/'`src/http.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libopusurl_la-http.Tpo src/$(DEPDIR)/libopusurl_la-http.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/http.c' object='src/libopusurl_la-http.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libopusurl_la_CFLAGS) $(CFLAGS) -c -o src/libopusurl_la-http.lo `test -f 'src/http.c' || echo '$(srcdir)/'`src/http.c
+
+src/libopusurl_la-internal.lo: src/internal.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libopusurl_la_CFLAGS) $(CFLAGS) -MT src/libopusurl_la-internal.lo -MD -MP -MF src/$(DEPDIR)/libopusurl_la-internal.Tpo -c -o src/libopusurl_la-internal.lo `test -f 'src/internal.c' || echo '$(srcdir)/'`src/internal.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libopusurl_la-internal.Tpo src/$(DEPDIR)/libopusurl_la-internal.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/internal.c' object='src/libopusurl_la-internal.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libopusurl_la_CFLAGS) $(CFLAGS) -c -o src/libopusurl_la-internal.lo `test -f 'src/internal.c' || echo '$(srcdir)/'`src/internal.c
+
+src/libopusurl_la-wincerts.lo: src/wincerts.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libopusurl_la_CFLAGS) $(CFLAGS) -MT src/libopusurl_la-wincerts.lo -MD -MP -MF src/$(DEPDIR)/libopusurl_la-wincerts.Tpo -c -o src/libopusurl_la-wincerts.lo `test -f 'src/wincerts.c' || echo '$(srcdir)/'`src/wincerts.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libopusurl_la-wincerts.Tpo src/$(DEPDIR)/libopusurl_la-wincerts.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/wincerts.c' object='src/libopusurl_la-wincerts.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libopusurl_la_CFLAGS) $(CFLAGS) -c -o src/libopusurl_la-wincerts.lo `test -f 'src/wincerts.c' || echo '$(srcdir)/'`src/wincerts.c
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -822,7 +850,7 @@ distdir: $(DISTFILES)
 	  ! -type d ! -perm -444 -exec $(install_sh) -c -m a+r {} {} \; \
 	|| chmod -R a+r "$(distdir)"
 dist-gzip: distdir
-	tardir=$(distdir) && $(am__tar) | GZIP=$(GZIP_ENV) gzip -c >$(distdir).tar.gz
+	tardir=$(distdir) && $(am__tar) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).tar.gz
 	$(am__post_remove_distdir)
 
 dist-bzip2: distdir
@@ -848,7 +876,7 @@ dist-shar: distdir
 	@echo WARNING: "Support for shar distribution archives is" \
 	               "deprecated." >&2
 	@echo WARNING: "It will be removed altogether in Automake 2.0" >&2
-	shar $(distdir) | GZIP=$(GZIP_ENV) gzip -c >$(distdir).shar.gz
+	shar $(distdir) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).shar.gz
 	$(am__post_remove_distdir)
 dist-zip: distdir
 	-rm -f $(distdir).zip
@@ -865,7 +893,7 @@ dist dist-all:
 distcheck: dist
 	case '$(DIST_ARCHIVES)' in \
 	*.tar.gz*) \
-	  GZIP=$(GZIP_ENV) gzip -dc $(distdir).tar.gz | $(am__untar) ;;\
+	  eval GZIP= gzip $(GZIP_ENV) -dc $(distdir).tar.gz | $(am__untar) ;;\
 	*.tar.bz2*) \
 	  bzip2 -dc $(distdir).tar.bz2 | $(am__untar) ;;\
 	*.tar.lz*) \
@@ -875,7 +903,7 @@ distcheck: dist
 	*.tar.Z*) \
 	  uncompress -c $(distdir).tar.Z | $(am__untar) ;;\
 	*.shar.gz*) \
-	  GZIP=$(GZIP_ENV) gzip -dc $(distdir).shar.gz | unshar ;;\
+	  eval GZIP= gzip $(GZIP_ENV) -dc $(distdir).shar.gz | unshar ;;\
 	*.zip*) \
 	  unzip $(distdir).zip ;;\
 	esac
@@ -987,9 +1015,9 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-@HAVE_DOXYGEN_FALSE@install-data-local:
-@HAVE_DOXYGEN_FALSE@clean-local:
 @HAVE_DOXYGEN_FALSE@uninstall-local:
+@HAVE_DOXYGEN_FALSE@clean-local:
+@HAVE_DOXYGEN_FALSE@install-data-local:
 clean: clean-am
 
 clean-am: clean-generic clean-libLTLIBRARIES clean-libtool clean-local \
