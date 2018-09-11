@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building Vorbis ----
-set VORBIS_PATH=vorbis-1.3.5
+set VORBIS_PATH=libvorbis-1.3.6
 SET VALRETURN=0
 
 if %MACHINE_X86% (
