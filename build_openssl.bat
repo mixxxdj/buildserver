@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building OpenSSL ----
-set OPENSSL_PATH=openssl-1.0.2h
+set OPENSSL_PATH=openssl-1.0.2p
 SET VALRETURN=0
 
 if %MACHINE_X86% (
