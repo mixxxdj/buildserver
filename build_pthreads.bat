@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building pthreads ----
-set PTHREADS_PATH=pthreads-2.9.1
+set PTHREADS_PATH=pthreads-3.0.0
 SET VALRETURN=0
 
 if %MACHINE_X86% (
