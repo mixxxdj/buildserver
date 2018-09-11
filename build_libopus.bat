@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building Opus ----
-set OPUS_PATH=opus-1.1.2
+set OPUS_PATH=opus-1.2.1
 set OPUSFILE_PATH=opusfile-0.7
 SET VALRETURN=0
 
