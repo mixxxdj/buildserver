@@ -4,6 +4,10 @@ from fabric.api import *
 
 LOGIN_KEY_NAME = 'build-login'
 LOGIN_KEY_PATH = os.path.join('keys', LOGIN_KEY_NAME)
+# A GPG key with no passphrase since it will be used for automatic signing
+# during builds. Ensure the key is not world readable.
+CODESIGN_GPG_KEY_NAME = 'codesigning-gpg.key'
+CODESIGN_GPG_KEY_PATH = os.path.join('keys', CODESIGN_GPG_KEY_NAME)
 UBUNTU_VERSION = '18.04.1'
 UBUNTU_NAME = 'bionic'
 MACOSX_QEMU_ROOT = '/usr/local/osx'
@@ -171,6 +175,11 @@ def setup_ubuntu_builder():
 def install_mixxx_dependencies():
     sudo('apt-get -y install ' + ' '.join(
         MIXXX_DEBIAN_DEPENDENCIES + MIXXX_MANUAL_WEBSITE_DEPEDENCIES))
+
+def install_gpg_key():
+    put(CODESIGN_GPG_KEY_PATH)
+    run('gpg --batch --import ' + CODESIGN_GPG_KEY_NAME)
+    run('shred -u ' + CODESIGN_GPG_KEY_NAME)
 
 def install_packages():
     # default-jre-headless: for running Jenkins node
