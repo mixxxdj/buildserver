@@ -157,6 +157,7 @@ def setup_ubuntu_builder():
     install_packages()
     install_mixxx_dependencies()
     setup_pbuilder()
+    create_pbuilder_chroots()
 
 def install_mixxx_dependencies():
     sudo('apt-get -y install ' + ' '.join(MIXXX_DEBIAN_DEPENDENCIES))
