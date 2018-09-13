@@ -57,6 +57,14 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'vamp-plugin-sdk',
 ]
 
+# Dependencies required for building the Mixxx manual or website.
+MIXXX_MANUAL_WEBSITE_DEPEDENCIES = [
+    'python-dev',
+    'python-virtualenv',
+    'texlive-fonts-recommended',
+    'texlive-latex-extra',
+]
+
 env.user = 'mixxx'
 env.key_filename = LOGIN_KEY_PATH
 
@@ -160,7 +168,8 @@ def setup_ubuntu_builder():
     create_pbuilder_chroots()
 
 def install_mixxx_dependencies():
-    sudo('apt-get -y install ' + ' '.join(MIXXX_DEBIAN_DEPENDENCIES))
+    sudo('apt-get -y install ' + ' '.join(
+        MIXXX_DEBIAN_DEPENDENCIES + MIXXX_MANUAL_WEBSITE_DEPEDENCIES))
 
 def install_packages():
     # default-jre-headless: for running Jenkins node
