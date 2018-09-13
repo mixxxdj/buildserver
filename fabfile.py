@@ -109,7 +109,7 @@ def make_ubuntu_builder(name):
 
     with lcd(vm_path):
         local('echo "#!/usr/bin/env bash" > run.sh')
-        local('echo "qemu-system-x86_64 --enable-kvm -m {ram} -cpu core2duo -smp {cores} -device ide-drive,drive=LinHDD -drive id=LinHDD,if=none,file={vm_path}/{vm_disk} -device virtio-net,netdev=hub0port0,id=eth0 -netdev user,id=hub0port0,hostfwd=tcp:{guest_ssh}-:22 -vnc {guest_vnc} -monitor stdio -boot c -cdrom {install_media}" >> run.sh'.format(ram=ram, cores=cores, vm_path=vm_path, vm_disk=vm_disk, guest_ssh=guest_ssh, guest_vnc=guest_vnc, install_media=install_media))
+        local('echo "qemu-system-x86_64 --enable-kvm -m {ram} -cpu core2duo -smp {cores} -device ide-drive,drive=LinHDD -drive id=LinHDD,if=none,file={vm_path}/{vm_disk} -device virtio-net,netdev=hub0port0,id=eth0 -netdev user,id=hub0port0,hostfwd=tcp:{guest_ssh}-:22 -vnc {guest_vnc} -monitor stdio -boot cd -cdrom {install_media}" >> run.sh'.format(ram=ram, cores=cores, vm_path=vm_path, vm_disk=vm_disk, guest_ssh=guest_ssh, guest_vnc=guest_vnc, install_media=install_media))
         local('chmod +x run.sh')
 
 def make_macosx_builder(name):
