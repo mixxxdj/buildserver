@@ -30,7 +30,8 @@ if not %STATIC_LIBS% (
   copy output\%CONFIG%\libmp3lame-static.lib %LIB_DIR%
 )
 copy output\%CONFIG%\libmp3lame.pdb %LIB_DIR%
-copy include\lame.h %INCLUDE_DIR%
+md %INCLUDE_DIR%\lame
+copy include\lame.h %INCLUDE_DIR%\lame\
 
 :END
 cd %ROOT_DIR%
