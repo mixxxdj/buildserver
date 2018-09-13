@@ -92,10 +92,10 @@ def _builder_common(name):
         local('qemu-img create -f qcow2 {vm_disk} {disk_space}'.format(
             vm_disk=vm_disk, disk_space=disk_space))
 
-    ram = prompt('How much RAM?')
+    ram = prompt('How much RAM in MB (XXXX)?')
     cores = prompt('How many cores?')
-    guest_ssh = prompt('Guest SSH host:port?')
-    guest_vnc = prompt('Guest VNC host:display?')
+    guest_ssh = prompt('Guest SSH host:port (127.0.0.1:10010)?')
+    guest_vnc = prompt('Guest VNC host:display (127.0.0.1:14)?')
 
     return vm_path, vm_disk, disk_space, ram, cores, guest_ssh, guest_vnc
 
