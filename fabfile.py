@@ -25,6 +25,7 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'libhidapi-dev',
     'libid3tag0-dev',
     'libjack-dev',
+    'liblilv-dev',
     'libmad0-dev',
     'libmp4v2-dev',
     'libogg-dev',
