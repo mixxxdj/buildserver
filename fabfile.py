@@ -4,8 +4,8 @@ from fabric.api import *
 
 LOGIN_KEY_NAME = 'build-login'
 LOGIN_KEY_PATH = os.path.join('keys', LOGIN_KEY_NAME)
-UBUNTU_VERSION = '16.04'
-UBUNTU_NAME = 'xenial'
+UBUNTU_VERSION = '18.04.1'
+UBUNTU_NAME = 'bionic'
 MACOSX_QEMU_ROOT = '/usr/local/osx'
 MACOSX_INSTALL_ISO = 'ElCapitan.iso'
 # https://wiki.ubuntu.com/Releases for current list
