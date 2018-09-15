@@ -313,6 +313,7 @@ SET /A TASKNUM=1
  REM build_taglib.bat depends on zlib
  REM build_qt4.bat depends on sqlite3, zlib, openssl
  REM build_qt5.bat depends on sqlite3, zlib, openssl
+ REM build_qtkeychain.bat depends on qt5
 FOR %%G IN (
 build_lame.bat,
 build_sqlite3.bat,
@@ -335,7 +336,8 @@ build_portaudio.bat,
 build_hss1394.bat,
 build_chromaprint.bat,
 build_taglib.bat,
-build_qt5.bat) DO (
+build_qt5.bat,
+build_qtkeychain.bat) DO (
   IF !TASKNUM! EQU %JUMPIDX% (
 	SET EXECUTE=1
   ) ELSE (
