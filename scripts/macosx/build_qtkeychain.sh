@@ -12,7 +12,7 @@ PROGDIR=`pwd -P`
 popd > /dev/null
 
 export VERSION_NUMBER=0.9.1
-export QT_VERSION=5.10.1
+export QT_VERSION=${MIXXX_QT_VERSION}
 
 export VERSION=qtkeychain-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
