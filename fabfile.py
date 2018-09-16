@@ -4,8 +4,12 @@ from fabric.api import *
 
 LOGIN_KEY_NAME = 'build-login'
 LOGIN_KEY_PATH = os.path.join('keys', LOGIN_KEY_NAME)
-UBUNTU_VERSION = '16.04'
-UBUNTU_NAME = 'xenial'
+# A GPG key with no passphrase since it will be used for automatic signing
+# during builds. Ensure the key is not world readable.
+CODESIGN_GPG_KEY_NAME = 'codesigning-gpg.key'
+CODESIGN_GPG_KEY_PATH = os.path.join('keys', CODESIGN_GPG_KEY_NAME)
+UBUNTU_VERSION = '18.04.1'
+UBUNTU_NAME = 'bionic'
 MACOSX_QEMU_ROOT = '/usr/local/osx'
 MACOSX_INSTALL_ISO = 'ElCapitan.iso'
 # https://wiki.ubuntu.com/Releases for current list
@@ -25,7 +29,9 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'libhidapi-dev',
     'libid3tag0-dev',
     'libjack-dev',
+    'liblilv-dev',
     'libmad0-dev',
+    'libmp3lame-dev',
     'libmp4v2-dev',
     'libogg-dev',
     'libopus-dev',
@@ -36,6 +42,7 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'libqt4-opengl-dev',
     'libqt4-sql-sqlite',
     'libqt5opengl5-dev',
+    'libqt5sql5-sqlite',
     'libqt5svg5-dev',
     'libqt5xmlpatterns5-dev',
     'librubberband-dev',
@@ -55,6 +62,14 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'qtscript5-dev',
     'scons',
     'vamp-plugin-sdk',
+]
+
+# Dependencies required for building the Mixxx manual or website.
+MIXXX_MANUAL_WEBSITE_DEPEDENCIES = [
+    'python-dev',
+    'python-virtualenv',
+    'texlive-fonts-recommended',
+    'texlive-latex-extra',
 ]
 
 env.user = 'mixxx'
@@ -92,10 +107,10 @@ def _builder_common(name):
         local('qemu-img create -f qcow2 {vm_disk} {disk_space}'.format(
             vm_disk=vm_disk, disk_space=disk_space))
 
-    ram = prompt('How much RAM?')
+    ram = prompt('How much RAM in MB (XXXX)?')
     cores = prompt('How many cores?')
-    guest_ssh = prompt('Guest SSH host:port?')
-    guest_vnc = prompt('Guest VNC host:display?')
+    guest_ssh = prompt('Guest SSH host:port (127.0.0.1:10010)?')
+    guest_vnc = prompt('Guest VNC host:display (127.0.0.1:14)?')
 
     return vm_path, vm_disk, disk_space, ram, cores, guest_ssh, guest_vnc
 
@@ -109,7 +124,7 @@ def make_ubuntu_builder(name):
 
     with lcd(vm_path):
         local('echo "#!/usr/bin/env bash" > run.sh')
-        local('echo "qemu-system-x86_64 --enable-kvm -m {ram} -cpu core2duo -smp {cores} -device ide-drive,drive=LinHDD -drive id=LinHDD,if=none,file={vm_path}/{vm_disk} -device virtio-net,netdev=hub0port0,id=eth0 -netdev user,id=hub0port0,hostfwd=tcp:{guest_ssh}-:22 -vnc {guest_vnc} -monitor stdio -boot c -cdrom {install_media}" >> run.sh'.format(ram=ram, cores=cores, vm_path=vm_path, vm_disk=vm_disk, guest_ssh=guest_ssh, guest_vnc=guest_vnc, install_media=install_media))
+        local('echo "qemu-system-x86_64 --enable-kvm -m {ram} -cpu core2duo -smp {cores} -device ide-drive,drive=LinHDD -drive id=LinHDD,if=none,file={vm_path}/{vm_disk} -device virtio-net,netdev=hub0port0,id=eth0 -netdev user,id=hub0port0,hostfwd=tcp:{guest_ssh}-:22 -vnc {guest_vnc} -monitor stdio -boot cd -cdrom {install_media}" >> run.sh'.format(ram=ram, cores=cores, vm_path=vm_path, vm_disk=vm_disk, guest_ssh=guest_ssh, guest_vnc=guest_vnc, install_media=install_media))
         local('chmod +x run.sh')
 
 def make_macosx_builder(name):
@@ -157,9 +172,16 @@ def setup_ubuntu_builder():
     install_packages()
     install_mixxx_dependencies()
     setup_pbuilder()
+    create_pbuilder_chroots()
 
 def install_mixxx_dependencies():
-    sudo('apt-get -y install ' + ' '.join(MIXXX_DEBIAN_DEPENDENCIES))
+    sudo('apt-get -y install ' + ' '.join(
+        MIXXX_DEBIAN_DEPENDENCIES + MIXXX_MANUAL_WEBSITE_DEPEDENCIES))
+
+def install_gpg_key():
+    put(CODESIGN_GPG_KEY_PATH)
+    run('gpg --batch --import ' + CODESIGN_GPG_KEY_NAME)
+    run('shred -u ' + CODESIGN_GPG_KEY_NAME)
 
 def install_packages():
     # default-jre-headless: for running Jenkins node

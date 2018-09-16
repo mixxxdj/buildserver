@@ -9,8 +9,9 @@ MIXXX_SSH_KEY_PATH=""
 #
 # Ubuntu release selection
 #
-release_name="xenial"
-release_version="16.04"
+release_name="bionic"
+release_version="18.04.1"
+# Do not use a "live" server ISO.
 release_variant="server"
 release_architecture="amd64"
 
@@ -70,10 +71,10 @@ builddir="$tmpdir/build.$$"
 mntdir="$tmpdir/mnt.$$"
 
 
-release_base_url="http://releases.ubuntu.com"
+release_base_url="http://cdimage.ubuntu.com/releases/"
 release_base_name="ubuntu-$release_version-$release_variant-$release_architecture"
 release_image_file="$release_base_name.iso"
-release_url="$release_base_url/$release_version/$release_image_file"
+release_url="$release_base_url/$release_version/release/$release_image_file"
 
 #
 # Target settings
@@ -257,13 +258,13 @@ patch_isolinuxcfg() {
   include menu.cfg
   default vesamenu.c32
   prompt 0
-! timeout 0
+! timeout 300
   ui gfxboot bootlogo
 --- 2,6 ----
   include menu.cfg
   default vesamenu.c32
   prompt 0
-! timeout 5
+! timeout 1
   ui gfxboot bootlogo
 EOF
     )
@@ -274,7 +275,7 @@ modify_release() {
 	create_kscfg && \
 	create_kspreseed && \
 	patch_txtcfg && \
-	patch_isolinuxcfg 
+	patch_isolinuxcfg
 }
 
 create_image() {

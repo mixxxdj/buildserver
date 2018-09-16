@@ -1,3 +1,18 @@
+Host Setup
+==========
+
+These instructions require [Fabric](http://www.fabfile.org/) to run. You should
+pick a prefix for Mixxx-related data (VMs, ISOs, SSH keys, etc.) to live. This
+has traditionally been `/opt/mixxx`, but it can be anywhere.
+
+```
+$ MIXXX_ROOT=/opt/mixxx
+$ mkdir -p $MIXXX_ROOT && cd $MIXXX_ROOT
+$ sudo apt-get install git-core fabric
+$ git clone https://github.com/mixxxdj/buildserver.git --depth 1 ./
+$ fab setup_host
+```
+
 Machine and Directory Layout
 ============================
 
