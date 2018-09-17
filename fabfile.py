@@ -41,7 +41,7 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'libqt4-dev',
     'libqt4-opengl-dev',
     'libqt4-sql-sqlite',
-	'qtkeychain-dev', # qt4 version 
+    'qtkeychain-dev', # qt4 version 
     'libqt5opengl5-dev',
     'libqt5sql5-sqlite',
     'libqt5svg5-dev',
