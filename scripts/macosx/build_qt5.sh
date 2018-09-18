@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=5.11.1
+export VERSION_NUMBER=${MIXXX_QT_VERSION}
 export VERSION=qt-everywhere-src-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.xz
 
@@ -28,8 +28,6 @@ export DISABLE_FFAST_MATH=yes
 
 source $PROGDIR/environment.sh
 export QTDIR=$MIXXX_PREFIX/Qt-${VERSION_NUMBER}
-
-echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${QT_ARCHS[@]}"
 
 # Mixxx may want to call sqlite functions directly so we use the statically
 # linked version of SQLite (-sql-sqlite) and link it to the system SQLite

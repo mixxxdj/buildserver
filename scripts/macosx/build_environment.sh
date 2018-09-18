@@ -16,6 +16,7 @@ MIXXX_MACOSX_SDK=$(xcodebuild -version -sdk macosx SDKVersion)
 # Qt 5.11 requires a minimum of macOS 10.11.
 MIXXX_MACOSX_TARGET='10.11'
 MIXXX_MACOSX_STDLIB='libc++'
+MIXXX_QT_VERSION='5.11.1'
 ENABLE_I386=false
 ENABLE_X86_64=false
 ENABLE_PPC=false
@@ -64,6 +65,7 @@ export MIXXX_ENVIRONMENT_NAME
 export MIXXX_MACOSX_SDK
 export MIXXX_MACOSX_TARGET
 export MIXXX_MACOSX_STDLIB
+export MIXXX_QT_VERSION
 ARCHS=()
 if $ENABLE_I386; then
     ARCHS+=(i386)
@@ -134,3 +136,4 @@ $PROGDIR/build_lilv.sh  # depends on lv2, serd, sord, sratom
 
 # Build Qt last so we catch errors in the above dependencies faster.
 $PROGDIR/build_qt5.sh # depends on sqlite
+$PROGDIR/build_qtkeychain.sh  # depends on qt5

@@ -1,5 +1,5 @@
-QT4_PACKAGES="libqt4-dev libqt4-opengl libqt4-svg libqt4-xmlpatterns libqt4-opengl-dev libqt4-sql libqt4-sql-sqlite"
-QT5_PACKAGES="qt5-default libqt5opengl5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qtscript5-dev qtdeclarative5-dev qtdeclarative5-dev-tools libqt5sql5 libqt5sql5-sqlite"
+QT4_PACKAGES="libqt4-dev libqt4-opengl libqt4-svg libqt4-xmlpatterns libqt4-opengl-dev libqt4-sql libqt4-sql-sqlite qtkeychain-dev"
+QT5_PACKAGES="qt5-default libqt5opengl5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qtscript5-dev qtdeclarative5-dev qtdeclarative5-dev-tools libqt5sql5 libqt5sql5-sqlite qt5keychain-dev"
 EXTRAPACKAGES="fakeroot debhelper pkg-config docbook-to-man libglu1-mesa-dev scons libjack-dev portaudio19-dev libid3tag0-dev libmad0-dev libogg-dev libsndfile1-dev libasound2-dev libvorbis-dev libmp4v2-dev libfaad-dev libportmidi-dev libtag1-dev libshout-dev vamp-plugin-sdk libprotobuf-dev protobuf-compiler libusb-1.0-0-dev libchromaprint-dev librubberband-dev libopus-dev libopusfile-dev libsqlite3-dev libsoundtouch-dev libhidapi-dev libupower-glib-dev liblilv-dev libmp3lame-dev $QT4_PACKAGES $QT5_PACKAGES"
 
 # Taken from https://wiki.ubuntu.com/PbuilderHowto
