@@ -16,56 +16,51 @@ SET "PROGRAMFILES_PATH=%ProgramFiles(x86)%"
 
 
 rem ====== Edit to suit your environment =========
-SET VCVERSION=140
-SET PLATFORM_TOOLSET=v%VCVERSION%_xp
+SET VCVERSION=141
+SET PLATFORM_TOOLSET=v%VCVERSION%
+REM The Windows SDK version in use.
+SET WINDOWS_TARGET_PLATFORM_VERSION=10.0.17134.0
 
 REM Allow overriding MSSDKS_PATH from outside this script.
 IF "%MSSDKS_PATH%" == "" (
-  set "MSSDKS_PATH=%PROGRAMFILES_PATH%\Microsoft SDKs"
+  set "MSSDKS_PATH=%PROGRAMFILES_PATH%\Windows Kits"
 )
 
 REM Allow overriding MSVC_PATH from outside this script.
 IF "%MSVC_PATH%" == "" (
-  SET "MSVC_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio 14.0"
+  SET "MSVC_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\2017\Community\VC"
 )
 
 REM Allow overriding BUILDTOOLS_PATH from outside this script.
 if "%BUILDTOOLS_PATH%" == "" (
-  SET "BUILDTOOLS_PATH=%PROGRAMFILES_PATH%\Microsoft Visual C++ Build Tools"
+  SET "BUILDTOOLS_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\2017\BuildTools\VC"
 )
 
 REM Allow overriding CMAKEDIR from outside this script.
 if "%CMAKEDIR%" == "" (
-  SET "CMAKEDIR=%PROGRAMFILES_PATH%\CMake\bin"
+  SET "CMAKEDIR=%CD%\build\cmake-3.12.2-win32-x86\bin"
 )
-
-REM with two slashes at the end
-SET "PLAT_TARGETS_PATH=%PROGRAMFILES_PATH%\MSBuild\Microsoft.Cpp\v4.0\V140\\"
-SET "NASMPATH=%CD%\bin"
 
 REM Verify paths.
 IF EXIST "%MSVC_PATH%" (
-SET "BUILDTOOLS_PATH=%MSVC_PATH%\VC"
-SET BUILDTOOLS_SCRIPT=vcvarsall.bat
-SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=%PLATFORM_TOOLSET% /p:RuntimeLibrary=%RUNTIMELIB%
+echo Using Visual Studio 2017 Community Edition to build.
+SET "BUILDTOOLS_PATH=%MSVC_PATH%"
+SET BUILDTOOLS_SCRIPT=Auxiliary\Build\vcvarsall.bat
 
 REM Check whether we have a 64-bit compiler available.
 REM NOTE(rryan): Temporarily disabled because the build doesn't work with a 64-bit compiler.
-rem IF EXIST "%MSVC_PATH%\VC\bin\amd64\cl.exe" (
-rem SET COMPILER_X86=amd64_x86
-rem SET COMPILER_X64=amd64
+rem IF EXIST "%MSVC_PATH%\bin\amd64\cl.exe" (
+SET COMPILER_X86=amd64_x86
+SET COMPILER_X64=amd64
 rem ) ELSE (
-SET COMPILER_X86=x86
-SET COMPILER_X64=x86_amd64
+rem SET COMPILER_X86=x86
+rem SET COMPILER_X64=x86_amd64
 rem )
 
 ) ELSE (
 IF EXIST "%BUILDTOOLS_PATH%" (
-SET BUILDTOOLS_SCRIPT=vcbuildtools.bat
-SET MSBUILD=msbuild /m /p:PlatformToolset=v140_xp /p:VCTargetsPath="%PLAT_TARGETS_PATH%"
-rem If building for XP and using the C++ Build Tools package (not full VS,)
-rem   install the Windows 7.1 SDK and adjust the following if needed
-SET "WindowsSdkDir_71A=%MSSDKS_PATH%\Windows\v7.1A\"
+echo Using Visual Studio 2017 Build Tools to build.
+SET BUILDTOOLS_SCRIPT=Auxiliary\Build\vcvarsall.bat
 
 SET COMPILER_X86=amd64_x86
 SET COMPILER_X64=amd64
@@ -90,13 +85,6 @@ echo.
 echo could not find CMake path on "%CMAKEDIROLD%" or "%CMAKEDIR%"
 echo edit the build_environment.bat file and/or install the required software
 echo https://cmake.org/
-exit /b 1
-)
-if NOT EXIST "%NASMPATH%" (
-echo.
-echo Could not find NASM path on %NASMPATH%, needed for libFLAC and others
-echo Edit the build_environment.bat file and/or install the required software
-echo http://www.nasm.us/
 exit /b 1
 )
 
@@ -220,11 +208,16 @@ rem /MP Use all CPU cores.
 rem /EHsc Do not handle SEH in try / except blocks.
 rem /FS force synchronous PDB writes (prevents PDB corruption with /MP)
 rem /Zi write PDBs
-rem /Zc:threadSafeInit- disable C++11 magic static support (Bug #1653368)
 rem /DEBUG moves debug information from the .o files to the .pdb during link.
-set XP_SUPPORT=/D _USING_V110_SDK71_
-set _CL_=/MP /FS /EHsc /Zi /Zc:threadSafeInit- %RUNTIME_FLAG% %XP_SUPPORT%
+set _CL_=/MP /FS /EHsc /Zi %RUNTIME_FLAG%
 set _LINK_=/DEBUG
+rem PlatformToolset: Over-ride the platform toolset of solutions with this value.
+rem RuntimeLibrary: Over-ride the runtime library with this value.
+rem WindowsTargetPlatformVersion: Over-ride the target platform version wih this value. Without this flag, the 
+rem default SDK version is used by VS solutions that do not specify an SDK version explicitly, and this is potentially
+rem not the installed SDK version.
+SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=%PLATFORM_TOOLSET% /p:RuntimeLibrary=%RUNTIME_FLAG% /p:WindowsTargetPlatformVersion=%WINDOWS_TARGET_PLATFORM_VERSION%
+
 
 if %CONFIG_RELEASE% (
   if %CONFIG_FASTBUILD% (
@@ -263,6 +256,7 @@ REM The Visual C++ compiler (cl.exe) recognizes certain environment variables, s
 rem Use our directories as well. Needed for a number of dependencies to find zlib, sqlite and xiph headers, including Qt.
 set INCLUDE=%INCLUDE%;%INCLUDE_DIR%
 set LIB=%LIB%;%LIB_DIR%
+set PATH=%BIN_DIR%;%PATH%
 set UseEnv=true
 rem Qt may need this
 set LIBPATH=%LIBPATH%;%LIB_DIR%
@@ -366,9 +360,9 @@ ENDLOCAL
 
 REM Copy debug runtime DLLs for debug builds.
 if not %CONFIG_RELEASE% (
-  %XCOPY% "%MSVC_PATH%\VC\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCRT\*.dll" %LIB_DIR%
-  %XCOPY% "%MSVC_PATH%\VC\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCXXAMP\*.dll" %LIB_DIR%
-  %XCOPY% "%MSVC_PATH%\VC\redist\Debug_NonRedist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugOpenMP\*.dll" %LIB_DIR%
+  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCRT\*.dll" %LIB_DIR%
+  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCXXAMP\*.dll" %LIB_DIR%
+  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugOpenMP\*.dll" %LIB_DIR%
 )
 echo.
 echo.

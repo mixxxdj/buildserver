@@ -5,10 +5,10 @@ SET VALRETURN=0
 
 if %MACHINE_X86% (
   set PLATFORM=Win32
-  set COMPILERPROJECT="Visual Studio 14 2015"
+  set COMPILERPROJECT="Visual Studio 15 2017"
 ) else (
   set PLATFORM=x64
-  set COMPILERPROJECT="Visual Studio 14 2015 Win64"
+  set COMPILERPROJECT="Visual Studio 15 2017 Win64"
 )
 
 if %CONFIG_RELEASE% (
