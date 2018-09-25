@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building OGG ----
-set OGG_PATH=ogg-1.3.2
+set OGG_PATH=libogg-1.3.3
 SET VALRETURN=0
 
 if %MACHINE_X86% (

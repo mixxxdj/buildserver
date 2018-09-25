@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building FLAC ----
-set FLAC_PATH=flac-1.3.1
+set FLAC_PATH=flac-1.3.2
 SET VALRETURN=0
 
 if %MACHINE_X86% (

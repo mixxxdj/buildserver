@@ -1,6 +1,6 @@
 SETLOCAL
 echo "Building lame"
-set LAME_PATH=lame-3.99.5
+set LAME_PATH=lame-3.100
 SET VALRETURN=0
 
 if %MACHINE_X86% (

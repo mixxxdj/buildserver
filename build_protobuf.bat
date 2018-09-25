@@ -1,6 +1,6 @@
 SETLOCAL
 echo "Building protobuf"
-set PROTOBUF_PATH=protobuf-2.6.1
+set PROTOBUF_PATH=protobuf-3.6.1
 SET VALRETURN=0
 
 if %MACHINE_X86% (

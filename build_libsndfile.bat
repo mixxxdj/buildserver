@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building libsndfile ----
-set SNDFILE_PATH=libsndfile-1.0.26
+set SNDFILE_PATH=libsndfile-1.0.28
 SET VALRETURN=0
 
 if %CONFIG_RELEASE% (

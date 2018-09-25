@@ -1,6 +1,6 @@
 SETLOCAL
 echo ---- Building chromaprint ----
-set CHROMAPRINT_PATH=chromaprint-1.3.1
+set CHROMAPRINT_PATH=chromaprint-1.4.3
 SET VALRETURN=0
 
 if %MACHINE_X86% (
