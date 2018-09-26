@@ -358,8 +358,14 @@ build_qtkeychain.bat) DO (
 ENDLOCAL
 
 
-REM Copy debug runtime DLLs for debug builds.
-if not %CONFIG_RELEASE% (
+REM Copy runtime installers for release builds and debug runtime DLLs for debug builds.
+%XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\vc_redist.x64.exe" %ROOT_DIR%
+%XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\vc_redist.x86.exe" %ROOT_DIR%
+if %CONFIG_RELEASE% (
+  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\%MACHINE_X%\Microsoft.VC%VCVERSION%.CRT\*.dll" %LIB_DIR%
+  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\%MACHINE_X%\Microsoft.VC%VCVERSION%.CXXAMP\*.dll" %LIB_DIR%
+  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\%MACHINE_X%\Microsoft.VC%VCVERSION%.OpenMP\*.dll" %LIB_DIR%
+) else (
   %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCRT\*.dll" %LIB_DIR%
   %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCXXAMP\*.dll" %LIB_DIR%
   %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugOpenMP\*.dll" %LIB_DIR%
