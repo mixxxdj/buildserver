@@ -137,3 +137,8 @@ $PROGDIR/build_lilv.sh  # depends on lv2, serd, sord, sratom
 # Build Qt last so we catch errors in the above dependencies faster.
 $PROGDIR/build_qt5.sh # depends on sqlite
 $PROGDIR/build_qtkeychain.sh  # depends on qt5
+
+# After installing everything to the environment, make all the libraries and
+# executables relocatable.
+cd ../..
+$PROGDIR/relocate_environment.py environment/$MIXXX_ENVIRONMENT_NAME
