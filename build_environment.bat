@@ -5,6 +5,14 @@ REM ==================================
 REM Path setup and  initial checks
 REM ==================================
 
+set OLDPATH=%PATH%
+set ROOT_DIR=%CD%
+SET BIN_DIR=%ROOT_DIR%\bin\
+set PATH=%BIN_DIR%;%PATH%
+SET LIB_DIR=%ROOT_DIR%\lib\
+SET INCLUDE_DIR=%ROOT_DIR%\include\
+SET BUILD_DIR=%CD%\build\
+
 IF "%ProgramW6432%" =="" (
 SET OS_IS_64BIT=0==1
 SET PROGRAMFILES_PATH=%ProgramFiles%
@@ -88,12 +96,23 @@ echo https://cmake.org/
 exit /b 1
 )
 
-if NOT EXIST "%CD%\build\pa_stable_v190600_20161030\src\hostapi\asio\ASIOSDK" (
-echo.
-echo You need to obtain and copy the ASIO SDK to the folder:
-echo %CD%\build\pa_stable_v190600_20161030\src\hostapi\asio\ASIOSDK
-echo http://www.steinberg.net/en/company/developer.html
-exit /b 1
+set PA_ASIO_PATH=build\pa_stable_v190600_20161030\src\hostapi\asio
+if NOT EXIST "%CD%\%PA_ASIO_PATH%\ASIOSDK" (
+  echo --- Downloading ASIO SDK ---
+  echo By running this script, you must have agreed to the Steinberg ASIO SDK terms.
+  bitsadmin /transfer downloadASIO /download http://www.steinberg.net/sdk_downloads/ASIOSDK2.3.1.zip %CD%\ASIOSDK2.3.1.zip
+  powershell "Exit !((get-filehash -algorithm sha256 ASIOSDK2.3.1.zip).Hash -eq '31074764475059448A9B7A56F103F4723ED60465E0E9D1A9446CA03DCF840F04')"
+  if ERRORLEVEL 1 (
+    echo ASIO SDK does not match expected hash.
+	powershell "(get-filehash -algorithm sha256 ASIOSDK2.3.1.zip).Hash"
+    exit /b 1	
+  )
+  7za x ASIOSDK2.3.1.zip
+  if ERRORLEVEL 1 (
+    echo Unzipping ASIO SDK failed.
+	exit /b 1
+  )
+  move "asiosdk2.3.1 svnrev312937\ASIOSDK2.3.1" "%CD%\%PA_ASIO_PATH%\ASIOSDK"
 )
 
 python -V > NUL
@@ -238,13 +257,6 @@ if %CONFIG_RELEASE% (
 
 SET XCOPY=xcopy /S /Y /I
 
-set OLDPATH=%PATH%
-set ROOT_DIR=%CD%
-SET BIN_DIR=%ROOT_DIR%\bin\
-SET LIB_DIR=%ROOT_DIR%\lib\
-SET INCLUDE_DIR=%ROOT_DIR%\include\
-SET BUILD_DIR=%CD%\build\
-
 REM Everyting prepared. Setup the compiler.
 if %MACHINE_X86% (
   call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X86%
@@ -256,7 +268,6 @@ REM The Visual C++ compiler (cl.exe) recognizes certain environment variables, s
 rem Use our directories as well. Needed for a number of dependencies to find zlib, sqlite and xiph headers, including Qt.
 set INCLUDE=%INCLUDE%;%INCLUDE_DIR%
 set LIB=%LIB%;%LIB_DIR%
-set PATH=%BIN_DIR%;%PATH%
 set UseEnv=true
 rem Qt may need this
 set LIBPATH=%LIBPATH%;%LIB_DIR%
