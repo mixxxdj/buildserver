@@ -255,6 +255,13 @@ if %CONFIG_RELEASE% (
   REM Use project defaults in debug mode.
 )
 
+REM In case a solution doesn't specify target machine (VS defaults to the host platform of the compiler).
+IF %MACHINE_X86% (
+  set _LINK_=%_LINK_% /MACHINE:X86
+) else (
+  set _LINK_=%_LINK_% /MACHINE:X64
+)
+
 SET XCOPY=xcopy /S /Y /I
 
 REM Everyting prepared. Setup the compiler.
