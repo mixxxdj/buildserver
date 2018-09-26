@@ -17,13 +17,11 @@ rd /s /q build\%QTSHORTDIR%
 set QTDIR=qt-everywhere-src-%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%
 if not exist %QTDIR%.tar.xz (
   echo --- Downloading Qt5 ---
-  bitsadmin /transfer downloadQt5 /download http://download.qt.io/official_releases/qt/%QT_MAJOR%.%QT_MINOR%/%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%/single/%QTDIR%.zip %CD%\%QTDIR%.tar.xz
+  bitsadmin /transfer downloadQt5 /download http://download.qt.io/official_releases/qt/%QT_MAJOR%.%QT_MINOR%/%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%/single/%QTDIR%.zip %CD%\%QTDIR%.zip
 )
 
 REM 7z requires separate extraction steps for the xz compression and the tar archive
-7z x -obuild %QTDIR%.tar.xz
-7z x -obuild build/%QTDIR%.tar
-del build/%QTDIR%.tar
+7za x -obuild %QTDIR%.zip
 move build\%QTDIR% build\%QTSHORTDIR%
 
 SET VALRETURN=0
