@@ -58,4 +58,7 @@ lipo -create ./$LIBCRYPTO_STATICLIB ${OTHER_LIBCRYPTO_STATICLIBS[@]} -output ./$
 lipo -create ./$LIBSSL_DYLIB ${OTHER_LIBSSL_DYLIBS[@]} -output ./$LIBSSL_DYLIB
 lipo -create ./$LIBSSL_STATICLIB ${OTHER_LIBSSL_STATICLIBS[@]} -output ./$LIBSSL_STATICLIB
 make install
+chmod 644 $MIXXX_PREFIX/lib/$LIBCRYPTO_DYLIB
+chmod 644 $MIXXX_PREFIX/lib/$LIBSSL_DYLIB
+chmod 644 $MIXXX_PREFIX/lib/engines/*.dylib
 cd ..

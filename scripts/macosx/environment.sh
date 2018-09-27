@@ -19,11 +19,8 @@ else
 fi
 
 export XCODE_ROOT=$(xcode-select -print-path)
-# Older versions of libtool strip unknown flags (-stdlib) from CFLAGS/LDFLAGS
-# when producing SHLIB/DYLIB arguments. Without this, libraries get linked to
-# the default stdlib (libstdc++ when using Apple's shim gcc).
-export CC="${XCODE_ROOT}/usr/bin/gcc -stdlib=$MIXXX_MACOSX_STDLIB"
-export CXX="${XCODE_ROOT}/usr/bin/g++ -stdlib=$MIXXX_MACOSX_STDLIB"
+export CC="${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+export CXX="${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++"
 export CPP="$CC -E"
 export CXXCPP="$CXX -E"
 
