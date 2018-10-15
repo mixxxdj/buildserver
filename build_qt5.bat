@@ -45,6 +45,13 @@ echo could not find QT5 on %CD%\build\%QTSHORTDIR%
 	goto END
 )
 
+REM Apply workaround for QTBUG-61342.
+%BIN_DIR%\patch.exe -N -p0 --verbose -i %CD%\..\QTBUG-61342.patch -r %CD%\..\QTBUG-61342.rej.txt
+IF ERRORLEVEL 1 (
+    SET VALRETURN=1
+	goto END
+)
+
 REM nmake distclean or nmake confclean are not present in the Makefile, so we delete these files and hope it rebuilds.
 del qtbase\.qmake.cache
 del qtbase\config.log

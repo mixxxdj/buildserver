@@ -1,0 +1,17 @@
+diff --git qtscript/src/3rdparty/javascriptcore/JavaScriptCore/runtime/ArgList.h qtscript/src/3rdparty/javascriptcore/JavaScriptCore/runtime/ArgList.h
+index 8e1fdbe..a525860 100644
+--- qtscript/src/3rdparty/javascriptcore/JavaScriptCore/runtime/ArgList.h
++++ qtscript/src/3rdparty/javascriptcore/JavaScriptCore/runtime/ArgList.h
+@@ -172,7 +172,12 @@ namespace JSC {
+         void operator delete[](void*);
+ 
+         void* operator new(size_t, void*);
++#if defined(_MSC_VER) && _MSC_VER >= 1900
++        enum class size__ : size_t {};
++        void operator delete(void*, size__);
++#else
+         void operator delete(void*, size_t);
++#endif
+     };
+ 
+     class ArgList {
