@@ -23,8 +23,10 @@ IF ERRORLEVEL 1 (
 	goto END
 )
 
-copy %PLATFORM%\%CONFIG%\opus.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\opus.pdb %LIB_DIR%
+
+copy %PLATFORM%\%CONFIG%\*.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\*.pdb %LIB_DIR%
+
 if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\opus.dll %LIB_DIR% )
 md %INCLUDE_DIR%\opus
 copy ..\..\include\*.h %INCLUDE_DIR%\opus\
