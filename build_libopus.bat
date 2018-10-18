@@ -23,16 +23,9 @@ IF ERRORLEVEL 1 (
 	goto END
 )
 
-copy %PLATFORM%\%CONFIG%\opus.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\opus.pdb %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\celt.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\celt.pdb %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\silk_common.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\silk_common.pdb %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\silk_float.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\silk_float.pdb %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\silk_fixed.lib %LIB_DIR%
-copy %PLATFORM%\%CONFIG%\silk_fixed.pdb %LIB_DIR%
+
+copy %PLATFORM%\%CONFIG%\*.lib %LIB_DIR%
+copy %PLATFORM%\%CONFIG%\*.pdb %LIB_DIR%
 
 if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\opus.dll %LIB_DIR% )
 md %INCLUDE_DIR%\opus
