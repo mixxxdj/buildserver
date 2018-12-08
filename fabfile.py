@@ -45,6 +45,7 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'libqt5opengl5-dev',
     'libqt5sql5-sqlite',
     'libqt5svg5-dev',
+    'libqt5x11extras5-dev',
     'libqt5xmlpatterns5-dev',
     'librubberband-dev',
     'libshout-dev',
