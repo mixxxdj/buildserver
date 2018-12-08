@@ -23,6 +23,7 @@ PBUILDER_ARCHS = ['amd64', 'i386']
 # TODO(rryan): Fix this mess.
 MIXXX_DEBIAN_DEPENDENCIES = [
     'debhelper',
+    'docbook-to-man',
     'libasound2-dev',
     'libchromaprint-dev',
     'libfaad-dev',
@@ -41,7 +42,7 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'libqt4-dev',
     'libqt4-opengl-dev',
     'libqt4-sql-sqlite',
-    'qtkeychain-dev', # qt4 version 
+    'qtkeychain-dev', # qt4 version
     'libqt5opengl5-dev',
     'libqt5sql5-sqlite',
     'libqt5svg5-dev',
@@ -62,17 +63,19 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'qtdeclarative5-dev',
     'qtdeclarative5-dev-tools',
     'qtscript5-dev',
-	'qt5keychain-dev',
+    'qt5keychain-dev',
     'scons',
     'vamp-plugin-sdk',
 ]
 
 # Dependencies required for building the Mixxx manual or website.
 MIXXX_MANUAL_WEBSITE_DEPEDENCIES = [
+    'graphviz',
     'python-dev',
     'python-virtualenv',
     'texlive-fonts-recommended',
     'texlive-latex-extra',
+    'texlive-xetex',
 ]
 
 env.user = 'mixxx'
