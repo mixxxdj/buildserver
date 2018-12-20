@@ -17,7 +17,7 @@ if %CONFIG_RELEASE% (
 )
 
 cd build\%OPUS_PATH%\win32\VS2015
-%MSBUILD% opus.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:Clean;opus:Rebuild
+%MSBUILD% opus.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:Clean;opus:Rebuild;silk_float:Rebuild;silk_fixed:Rebuild
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
