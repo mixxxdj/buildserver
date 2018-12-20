@@ -1,7 +1,7 @@
 SETLOCAL
 echo ---- Building qtkeychain ----
 set QTKEYCHAIN_PATH=qtkeychain-0.9.1
-set QT_VERSION=5.11.2
+set QT_VERSION=5.12.0
 
 set VALRETURN=0
 
