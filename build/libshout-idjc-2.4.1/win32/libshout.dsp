@@ -1,4 +1,4 @@
-# Microsoft Developer Studio Project File - Name="libshout" - Package Owner=<4>
+# Microsoft Developer Studio Project File - Name="libshout-idjc" - Package Owner=<4>
 # Microsoft Developer Studio Generated Build File, Format Version 6.00
 # ** DO NOT EDIT **
 
@@ -8,17 +8,17 @@ CFG=libshout - Win32 Debug
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
 !MESSAGE 
-!MESSAGE NMAKE /f "libshout.mak".
+!MESSAGE NMAKE /f "libshout-idjc.mak".
 !MESSAGE 
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
 !MESSAGE 
-!MESSAGE NMAKE /f "libshout.mak" CFG="libshout - Win32 Debug"
+!MESSAGE NMAKE /f "libshout-idjc.mak" CFG="libshout-idjc - Win32 Debug"
 !MESSAGE 
 !MESSAGE Possible choices for configuration are:
 !MESSAGE 
-!MESSAGE "libshout - Win32 Release" (based on "Win32 (x86) Static Library")
-!MESSAGE "libshout - Win32 Debug" (based on "Win32 (x86) Static Library")
+!MESSAGE "libshout-idjc - Win32 Release" (based on "Win32 (x86) Static Library")
+!MESSAGE "libshout-idjc - Win32 Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE 
 
 # Begin Project
@@ -28,7 +28,7 @@ CFG=libshout - Win32 Debug
 CPP=cl.exe
 RSC=rc.exe
 
-!IF  "$(CFG)" == "libshout - Win32 Release"
+!IF  "$(CFG)" == "libshout-idjc - Win32 Release"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 0
@@ -51,7 +51,7 @@ LIB32=link.exe -lib
 # ADD BASE LIB32 /nologo
 # ADD LIB32 /nologo
 
-!ELSEIF  "$(CFG)" == "libshout - Win32 Debug"
+!ELSEIF  "$(CFG)" == "libshout-idjc - Win32 Debug"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 1
@@ -78,42 +78,118 @@ LIB32=link.exe -lib
 
 # Begin Target
 
-# Name "libshout - Win32 Release"
-# Name "libshout - Win32 Debug"
+# Name "libshout-idjc - Win32 Release"
+# Name "libshout-idjc - Win32 Debug"
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 # Begin Source File
 
-SOURCE=..\src\avl\avl.c
+SOURCE=..\src\common\avl\avl.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\avl\avl.h
+SOURCE=..\src\common\avl\avl.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\httpp\httpp.c
+SOURCE=..\src\common\httpp\encoding.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\httpp\httpp.h
+SOURCE=..\src\common\httpp\encoding.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\mp3.c
+SOURCE=..\src\common\httpp\httpp.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\ogg.c
+SOURCE=..\src\common\httpp\httpp.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\net\resolver.c
+SOURCE=..\src\common\net\resolver.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\net\resolver.h
+SOURCE=..\src\common\net\resolver.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\common\net\sock.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\common\net\sock.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\common\thread\thread.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\common\thread\thread.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\common\timing\timing.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\common\timing\timing.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\codec_opus.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\codec_speex.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\codec_theora.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\codec_vorbis.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\format_mpeg.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\format_ogg.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\format_ogg.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\format_webm.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\proto_http.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\proto_icy.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\proto_roaraudio.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\proto_xaudiocast.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\queue.c
 # End Source File
 # Begin Source File
 
@@ -122,30 +198,6 @@ SOURCE=..\src\shout.c
 # Begin Source File
 
 SOURCE=..\src\shout_private.h
-# End Source File
-# Begin Source File
-
-SOURCE=..\src\net\sock.c
-# End Source File
-# Begin Source File
-
-SOURCE=..\src\net\sock.h
-# End Source File
-# Begin Source File
-
-SOURCE=..\src\thread\thread.c
-# End Source File
-# Begin Source File
-
-SOURCE=..\src\thread\thread.h
-# End Source File
-# Begin Source File
-
-SOURCE=..\src\timing\timing.c
-# End Source File
-# Begin Source File
-
-SOURCE=..\src\timing\timing.h
 # End Source File
 # Begin Source File
 
@@ -165,7 +217,7 @@ SOURCE=..\include\os.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\include\shout\shout.h
+SOURCE=..\include\shoutidjc\shout.h
 # End Source File
 # End Group
 # End Target
