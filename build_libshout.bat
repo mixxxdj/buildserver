@@ -39,8 +39,8 @@ IF ERRORLEVEL 1 (
 copy %OUTPUT_PATH%\libshout.lib %LIB_DIR%
 if NOT %STATIC_LIBS% ( copy %OUTPUT_PATH%\libshout.dll %LIB_DIR% )
 copy %OUTPUT_PATH%\libshout.pdb %LIB_DIR%
-md %INCLUDE_DIR%\shout
-copy ..\include\shout\*.h %INCLUDE_DIR%\shout\
+md %INCLUDE_DIR%\shoutidjc
+copy ..\include\shoutidjc\*.h %INCLUDE_DIR%\shoutidjc\
 copy ..\include\os.h %INCLUDE_DIR%
 
 :END
