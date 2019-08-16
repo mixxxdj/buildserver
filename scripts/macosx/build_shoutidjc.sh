@@ -27,11 +27,6 @@ do
   tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$ARCH --strip-components 1
   cd $VERSION-$ARCH
 
-  # Apply patch fixing: 
-  # https://trac.xiph.org/ticket/2244
-  # https://bugs.launchpad.net/mixxx/+bug/1544739
-  patch -p1 < $PROGDIR/fix_libshout_ticket2244.patch
-
   source $PROGDIR/environment.sh $ARCH
   ./configure --host $HOST --target $TARGET --disable-dependency-tracking --prefix=$MIXXX_PREFIX
   make
