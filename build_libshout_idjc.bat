@@ -1,6 +1,6 @@
 SETLOCAL
-echo "Building libshout"
-set SHOUT_PATH=libshout-2.4.1
+echo "Building libshout-idjc"
+set SHOUT_PATH=libshout-idjc-2.4.1
 SET VALRETURN=0
 
 if %MACHINE_X86% (
@@ -24,11 +24,6 @@ if %MACHINE_X86% (
 
 cd build\%SHOUT_PATH%
 
-REM Apply patch fixing:
-REM https://trac.xiph.org/ticket/2244
-REM https://bugs.launchpad.net/mixxx/+bug/1544739
-%BIN_DIR%\patch.exe -N -p1 --verbose < fix_libshout_ticket2244.patch
-
 cd win32
 %MSBUILD% libshout.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libshout:Clean;libshout:Rebuild
 IF ERRORLEVEL 1 (
@@ -39,8 +34,8 @@ IF ERRORLEVEL 1 (
 copy %OUTPUT_PATH%\libshout.lib %LIB_DIR%
 if NOT %STATIC_LIBS% ( copy %OUTPUT_PATH%\libshout.dll %LIB_DIR% )
 copy %OUTPUT_PATH%\libshout.pdb %LIB_DIR%
-md %INCLUDE_DIR%\shout
-copy ..\include\shout\*.h %INCLUDE_DIR%\shout\
+md %INCLUDE_DIR%\shoutidjc
+copy ..\include\shoutidjc\*.h %INCLUDE_DIR%\shoutidjc\
 copy ..\include\os.h %INCLUDE_DIR%
 
 :END
