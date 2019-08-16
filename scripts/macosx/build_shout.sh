@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=2.4.1
+export VERSION_NUMBER=idjc-2.4.1
 export VERSION=libshout-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
