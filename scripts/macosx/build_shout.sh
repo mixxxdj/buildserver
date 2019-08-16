@@ -11,15 +11,15 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=idjc-2.4.1
-export VERSION=libshout-${VERSION_NUMBER}
+export VERSION_NUMBER=2.4.1
+export VERSION=libshout-idjc-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export DYLIB=src/.libs/libshout.3.dylib
-export STATICLIB=src/.libs/libshout.a
+export DYLIB=src/.libs/libshout-idjc.3.dylib
+export STATICLIB=src/.libs/libshout-idjc.a
 
 for ARCH in ${MIXXX_ARCHS[@]}
 do
