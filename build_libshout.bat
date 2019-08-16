@@ -1,6 +1,6 @@
 SETLOCAL
 echo "Building libshout"
-set SHOUT_PATH=libshout-2.4.1
+set SHOUT_PATH=libshout-idjc-2.4.1
 SET VALRETURN=0
 
 if %MACHINE_X86% (
