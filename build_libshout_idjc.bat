@@ -25,15 +25,15 @@ if %MACHINE_X86% (
 cd build\%SHOUT_PATH%
 
 cd win32
-%MSBUILD% libshout.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libshout:Clean;libshout:Rebuild
+%MSBUILD% libshout-idjc.sln /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /t:libshout-idjc:Clean;libshout-idjc:Rebuild
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
 )
 
-copy %OUTPUT_PATH%\libshout.lib %LIB_DIR%
-if NOT %STATIC_LIBS% ( copy %OUTPUT_PATH%\libshout.dll %LIB_DIR% )
-copy %OUTPUT_PATH%\libshout.pdb %LIB_DIR%
+copy %OUTPUT_PATH%\libshout-idjc.lib %LIB_DIR%
+if NOT %STATIC_LIBS% ( copy %OUTPUT_PATH%\libshout-idjc.dll %LIB_DIR% )
+copy %OUTPUT_PATH%\libshout-idjc.pdb %LIB_DIR%
 md %INCLUDE_DIR%\shoutidjc
 copy ..\include\shoutidjc\*.h %INCLUDE_DIR%\shoutidjc\
 copy ..\include\os.h %INCLUDE_DIR%
