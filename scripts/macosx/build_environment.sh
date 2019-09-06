@@ -125,8 +125,9 @@ $PROGDIR/build_openssl.sh
 $PROGDIR/build_sndfile.sh
 $PROGDIR/build_taglib.sh
 $PROGDIR/build_vorbis.sh
-# Shout depends on openssl, libogg and libvorbis.
+# Shout & its IDJC variant depend on openssl, libogg and libvorbis.
 $PROGDIR/build_shout.sh
+$PROGDIR/build_shoutidjc.sh
 $PROGDIR/build_lame.sh
 $PROGDIR/build_lv2.sh
 $PROGDIR/build_serd.sh
