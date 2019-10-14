@@ -22,6 +22,7 @@ PBUILDER_ARCHS = ['amd64', 'i386']
 # TODO(rryan): Remove duplication with pbuilderrc.
 # TODO(rryan): Fix this mess.
 MIXXX_DEBIAN_DEPENDENCIES = [
+    'cmake',
     'debhelper',
     'libasound2-dev',
     'libchromaprint-dev',
