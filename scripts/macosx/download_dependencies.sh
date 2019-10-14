@@ -39,7 +39,7 @@ download_and_verify http://ftp.gnu.org/gnu/automake/automake-1.15.tar.xz 9908c75
 download_and_verify http://ftp.wayne.edu/gnu/libtool/libtool-2.4.tar.xz afcce660d3dc54c63a0a5ba3cf05272239dc3c54bbeba20f6bad250f9dc007ae
 download_and_verify https://pkg-config.freedesktop.org/releases/pkg-config-0.29.1.tar.gz beb43c9e064555469bd4390dcfd8030b1536e0aa103f08d7abf7ae8cac0cb001
 download_and_verify https://bitbucket.org/acoustid/chromaprint/downloads/chromaprint-1.3.1.tar.gz 8f95a011e6fe3a75281520daa9376b7f028300e20a5be9af08ef9c851d4bb581
-download_and_verify https://cmake.org/files/v3.5/cmake-3.5.2.tar.gz 92d8410d3d981bb881dfff2aed466da55a58d34c7390d50449aa59b32bb5e62a
+download_and_verify https://github.com/Kitware/CMake/releases/download/v3.15.4/cmake-3.15.4.tar.gz 8a211589ea21374e49b25fc1fc170e2d5c7462b795f1b29c84dd0e984301ed7a
 download_and_verify http://downloads.xiph.org/releases/flac/flac-1.3.1.tar.xz 4773c0099dba767d963fd92143263be338c48702172e8754b9bc5103efe1c56c
 download_and_verify http://downloads.mixxx.org/hss1394-r8.tar.gz d5c87a92ad8e277b418300fbbfcc06a0826dfde71f7b10643ac59703d795c002
 download_and_verify http://downloads.sourceforge.net/project/libusb/libusb-1.0/libusb-1.0.20/libusb-1.0.20.tar.bz2 cb057190ba0a961768224e4dc6883104c6f945b2bf2ef90d7da39e7c1834f7ff
