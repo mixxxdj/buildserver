@@ -104,7 +104,6 @@ export HOST_ARCH=x86_64
 
 # Setup build systems first so that we can build other projects that use them.
 $PROGDIR/build_cmake.sh
-$PROGDIR/build_scons.sh
 $PROGDIR/build_autoconf.sh
 $PROGDIR/build_automake.sh
 $PROGDIR/build_libtool.sh

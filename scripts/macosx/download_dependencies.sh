@@ -56,7 +56,6 @@ download_and_verify http://code.breakfastquay.com/attachments/download/34/rubber
 download_and_verify http://downloads.xiph.org/releases/libshout/libshout-2.4.1.tar.gz f3acb8dec26f2dbf6df778888e0e429a4ce9378a9d461b02a7ccbf2991bbf24d
 download_and_verify https://downloads.sourceforge.net/project/libshoutidjc.idjc.p/libshout-idjc-2.4.1.tar.gz 4751c75fc85fc5d10e5b03753b046bcdee39576278bf30565c751816a87facdf
 download_and_verify http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.26.tar.gz cd6520ec763d1a45573885ecb1f8e4e42505ac12180268482a44b28484a25092
-download_and_verify http://prdownloads.sourceforge.net/scons/scons-2.5.0.tar.gz eb296b47f23c20aec7d87d35cfa386d3508e01d1caa3040ea6f5bbab2292ace9
 download_and_verify https://www.sqlite.org/2016/sqlite-autoconf-3130000.tar.gz e2797026b3310c9d08bd472f6d430058c6dd139ff9d4e30289884ccd9744086b
 download_and_verify https://taglib.github.io/releases/taglib-1.11.1.tar.gz b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b
 download_and_verify http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.xz 54f94a9527ff0a88477be0a71c0bab09a4c3febe0ed878b24824906cd4b0e1d1
