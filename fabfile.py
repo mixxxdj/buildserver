@@ -32,6 +32,7 @@ MIXXX_DEBIAN_DEPENDENCIES = [
     'libjack-dev',
     'liblilv-dev',
     'libmad0-dev',
+    'libmodplug-dev',
     'libmp3lame-dev',
     'libmp4v2-dev',
     'libogg-dev',
