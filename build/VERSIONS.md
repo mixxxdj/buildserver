@@ -105,8 +105,8 @@ Most recent library versions present in this directory.
     </tr>
      <tr>
       <td>Qt5</td>
-      <td>5.12.0</td>
-      <td>2018-12-11</td>
+      <td>5.14.1</td>
+      <td>2020-03-30</td>
     </tr>
     <tr>
       <td>rubberband</td>
