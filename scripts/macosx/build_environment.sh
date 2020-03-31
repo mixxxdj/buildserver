@@ -16,7 +16,7 @@ MIXXX_MACOSX_SDK=$(xcodebuild -version -sdk macosx SDKVersion)
 # Qt 5.11 requires a minimum of macOS 10.11.
 MIXXX_MACOSX_TARGET='10.11'
 MIXXX_MACOSX_STDLIB='libc++'
-MIXXX_QT_VERSION='5.12.3'
+MIXXX_QT_VERSION='5.14.1'
 ENABLE_I386=false
 ENABLE_X86_64=false
 ENABLE_PPC=false
