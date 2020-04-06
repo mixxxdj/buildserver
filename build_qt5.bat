@@ -4,8 +4,8 @@ echo ---- Building Qt5 ----
 REM NOTE(Be): manually clear the Jenkins workspace when updating Qt versions to avoid
 REM wasting disk space for the old source code archive.
 set QT_MAJOR=5
-set QT_MINOR=12
-set QT_PATCH=0
+set QT_MINOR=14
+set QT_PATCH=1
 
 REM Qt5 paths can get really long. We use an abbreviated folder name to prevent hitting
 REM Windows path length limits.
@@ -72,7 +72,7 @@ REM -D NOMINMAX https://forum.qt.io/topic/21605/solved-qt5-vs2010-qdatetime-not-
 set QT_COMMON=-prefix %ROOT_DIR%\Qt-%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%\ -opensource -confirm-license -platform win32-msvc2017 -force-debug-info -no-strip -mp -system-sqlite -sql-sqlite -no-sql-odbc -system-zlib -ltcg -D NOMINMAX -D SQLITE_ENABLE_FTS3 -D SQLITE_ENABLE_FTS3_PARENTHESIS -D ZLIB_WINAPI %QT_NOMAKE% %QT_SKIP% -no-dbus -opengl dynamic -qt-pcre -qt-libpng -qt-harfbuzz
 
 if %STATIC_LIBS% (
-call configure.bat %CONFIG% %QT_COMMON% -static -openssl-linked OPENSSL_LIBS="-luser32 -ladvapi32 -lgdi32 -lcrypt32 -lssleay32 -llibeay32"
+call configure.bat %CONFIG% %QT_COMMON% -static -openssl-linked OPENSSL_LIBS="-luser32 -ladvapi32 -lgdi32 -lcrypt32 -lssleay32 -llibeay32 -lws2_32"
 ) else (
 call configure.bat %CONFIG% %QT_COMMON% -shared -openssl -separate-debug-info
 )

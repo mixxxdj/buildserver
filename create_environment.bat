@@ -33,8 +33,8 @@ REM  exit /b 1
 REM )
 
 set QT_MAJOR=5
-set QT_MINOR=12
-set QT_PATCH=0
+set QT_MINOR=14
+set QT_PATCH=1
 set QTSHORTDIR=Q%QT_MAJOR%
 set QTDIR=qt-everywhere-src-%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%
 if not exist %QTDIR%.tar.xz (
