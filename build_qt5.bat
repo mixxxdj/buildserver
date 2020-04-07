@@ -5,7 +5,7 @@ REM NOTE(Be): manually clear the Jenkins workspace when updating Qt versions to 
 REM wasting disk space for the old source code archive.
 set QT_MAJOR=5
 set QT_MINOR=14
-set QT_PATCH=1
+set QT_PATCH=2
 
 REM Qt5 paths can get really long. We use an abbreviated folder name to prevent hitting
 REM Windows path length limits.
