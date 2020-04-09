@@ -54,9 +54,12 @@ set OPENSSL_TARGETS=out32
 if NOT %STATIC_LIBS% ( 
 set OPENSSL_TARGETS=%OPENSSL_TARGETS%dll
 )
-if NOT %CONFIG_RELEASE% (
-set OPENSSL_TARGETS=%OPENSSL_TARGETS%.dbg
-)
+
+rem This will trigger build fail since libeay32.lib and ssleay32.lig
+rem are not put in this folder in Debug mode
+rem if NOT %CONFIG_RELEASE% (
+rem set OPENSSL_TARGETS=%OPENSSL_TARGETS%.dbg
+rem )
 
 copy /b %OPENSSL_TARGETS%\libeay32.lib %LIB_DIR%
 copy /b %OPENSSL_TARGETS%\ssleay32.lib %LIB_DIR%
