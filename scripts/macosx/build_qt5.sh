@@ -36,7 +36,10 @@ export QTDIR=$MIXXX_PREFIX/Qt-${VERSION_NUMBER}
 # See:
 # - http://www.mimec.org/node/296
 # NOTE(rryan): Setting -system-sqlite sets -system-zlib. Set -qt-zlib explicitly.
-./configure -opensource -prefix $QTDIR -sdk macosx${MIXXX_MACOSX_SDK} -system-sqlite -sql-sqlite -qt-zlib -platform macx-clang -release -confirm-license -securetransport -force-debug-info -nomake examples -nomake tests -skip qt3d -skip qtwebengine -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib
+# Disable relocatable qt due to https://bugs.launchpad.net/mixxx/+bug/1871238
+# TODO(rryan): Disable framework build or use frameworks properly. Qt assumes
+# that if frameworks are enabled then they are used for deployment.
+./configure -opensource -prefix $QTDIR -sdk macosx${MIXXX_MACOSX_SDK} -system-sqlite -sql-sqlite -qt-zlib -platform macx-clang -release -confirm-license -securetransport -force-debug-info -no-feature-relocatable -nomake examples -nomake tests -skip qt3d -skip qtwebengine -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib
 
 make && make install
 cd ..
