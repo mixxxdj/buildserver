@@ -1,6 +1,6 @@
 SETLOCAL
 echo --- Building SQLite3 ----
-set SQLITE_PATH=sqlite-amalgamation-3130000
+set SQLITE_PATH=sqlite-amalgamation-3310100
 SET VALRETURN=0
 
 if %MACHINE_X86% (
@@ -24,7 +24,8 @@ IF ERRORLEVEL 1 (
 )
 
 copy %PLATFORM%\%CONFIG%\sqlite3.lib %LIB_DIR%
-if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\sqlite3.dll %LIB_DIR% )
+REM build is always static
+REM if NOT %STATIC_LIBS% ( copy %PLATFORM%\%CONFIG%\sqlite3.dll %LIB_DIR% )
 copy %PLATFORM%\%CONFIG%\sqlite3.pdb %LIB_DIR%
 copy sqlite3.h %INCLUDE_DIR%
 
