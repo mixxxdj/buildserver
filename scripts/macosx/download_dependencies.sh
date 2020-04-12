@@ -60,6 +60,7 @@ download_and_verify https://www.sqlite.org/2016/sqlite-autoconf-3130000.tar.gz e
 download_and_verify https://taglib.github.io/releases/taglib-1.11.1.tar.gz b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b
 download_and_verify http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.xz 54f94a9527ff0a88477be0a71c0bab09a4c3febe0ed878b24824906cd4b0e1d1
 download_and_verify https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
+download_and_verify https://downloads.sourceforge.net/project/modplug-xmms/libmodplug/0.8.9.0/libmodplug-0.8.9.0.tar.gz 457ca5a6c179656d66c01505c0d95fafaead4329b9dbaa0f997d00a3508ad9de
 download_and_verify http://lv2plug.in/spec/lv2-1.14.0.tar.bz2 b8052683894c04efd748c81b95dd065d274d4e856c8b9e58b7c3da3db4e71d32
 download_and_verify https://download.drobilla.net/serd-0.28.0.tar.bz2 1df21a8874d256a9f3d51a18b8c6e2539e8092b62cc2674b110307e93f898aec
 download_and_verify https://download.drobilla.net/sord-0.16.0.tar.bz2 9d3cb2c9966e93f537f37377171f162023cea6784ca069699be4a7770c8a035a
