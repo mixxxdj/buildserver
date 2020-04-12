@@ -72,16 +72,16 @@ ENDLOCAL
 exit /b 1
 )
 
-echo Copying Qt4
+REM echo Copying Qt4
 REM Note that using xcopy to copy Qt can run into "Insufficient memory" errors
 REM due to path lengths growing larger than 254 characters.
-%ROBOCOPY% qt-everywhere-opensource-src-4.8.7 "%ENVIRONMENT_PATH%\build\qt-everywhere-opensource-src-4.8.7"
+REM %ROBOCOPY% qt-everywhere-opensource-src-4.8.7 "%ENVIRONMENT_PATH%\build\qt-everywhere-opensource-src-4.8.7"
 REM robocopy errorlevel 1 means files were copied.
-IF ERRORLEVEL 2 (
-echo Copying Qt 4.8.7 failed.
-ENDLOCAL
-exit /b 1
-)
+REM IF ERRORLEVEL 2 (
+REM echo Copying Qt 4.8.7 failed.
+REM ENDLOCAL
+REM exit /b 1
+REM )
 
 echo Copying Qt5
 REM Note that using xcopy to copy Qt can run into "Insufficient memory" errors
