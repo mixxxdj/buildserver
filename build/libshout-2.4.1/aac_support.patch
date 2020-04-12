@@ -1,0 +1,357 @@
+diff --git libshout-2.4.1-a/include/shout/shout.h libshout-2.4.1-b/include/shout/shout.h
+index a017974..af18a87 100644
+--- libshout-2.4.1-a/include/shout/shout.h
++++ libshout-2.4.1-b/include/shout/shout.h
+@@ -44,6 +44,7 @@
+ 
+ #define SHOUT_FORMAT_OGG		(0) /* application/ogg */
+ #define SHOUT_FORMAT_MP3		(1) /* audio/mpeg */
++#define SHOUT_FORMAT_AAC        (101) /* audio/aac */
+ #define SHOUT_FORMAT_WEBM		(2) /* video/webm */
+ #define SHOUT_FORMAT_WEBMAUDIO		(3) /* audio/webm audio only */
+ 
+diff --git libshout-2.4.1-a/src/Makefile.am libshout-2.4.1-b/src/Makefile.am
+index af1dab3..1ab0d73 100644
+--- libshout-2.4.1-a/src/Makefile.am
++++ libshout-2.4.1-b/src/Makefile.am
+@@ -27,7 +27,7 @@ libshout_la_LDFLAGS = -version-info 5:0:2
+ EXTRA_DIST = codec_theora.c codec_speex.c tls.c
+ noinst_HEADERS = format_ogg.h shout_private.h util.h
+ PROTOCOLS=proto_http.c proto_xaudiocast.c proto_icy.c proto_roaraudio.c
+-FORMATS=format_ogg.c format_webm.c format_mp3.c
++FORMATS=format_ogg.c format_webm.c format_mp3.c  format_aac.c
+ CODECS=codec_vorbis.c codec_opus.c $(MAYBE_THEORA) $(MAYBE_SPEEX)
+ libshout_la_SOURCES = shout.c util.c queue.c $(PROTOCOLS) $(FORMATS) $(CODECS) $(MAYBE_TLS)
+ AM_CFLAGS = @XIPH_CFLAGS@
+diff --git libshout-2.4.1-a/src/Makefile.in libshout-2.4.1-b/src/Makefile.in
+index 2c5eed2..4d525e6 100644
+--- libshout-2.4.1-a/src/Makefile.in
++++ libshout-2.4.1-b/src/Makefile.in
+@@ -438,7 +438,7 @@ libshout_la_LDFLAGS = -version-info 5:0:2
+ EXTRA_DIST = codec_theora.c codec_speex.c tls.c
+ noinst_HEADERS = format_ogg.h shout_private.h util.h
+ PROTOCOLS = proto_http.c proto_xaudiocast.c proto_icy.c proto_roaraudio.c
+-FORMATS = format_ogg.c format_webm.c format_mp3.c
++FORMATS = format_ogg.c format_webm.c format_mp3.c format_aac.c
+ CODECS = codec_vorbis.c codec_opus.c $(MAYBE_THEORA) $(MAYBE_SPEEX)
+ libshout_la_SOURCES = shout.c util.c queue.c $(PROTOCOLS) $(FORMATS) $(CODECS) $(MAYBE_TLS)
+ AM_CFLAGS = @XIPH_CFLAGS@
+diff --git libshout-2.4.1-a/src/proto_http.c libshout-2.4.1-b/src/proto_http.c
+index d6f5fa0..b99036f 100644
+--- libshout-2.4.1-a/src/proto_http.c
++++ libshout-2.4.1-b/src/proto_http.c
+@@ -78,6 +78,9 @@ int shout_create_http_request(shout_t *self)
+ 	case SHOUT_FORMAT_MP3:
+ 		mimetype = "audio/mpeg";
+ 		break;
++	case SHOUT_FORMAT_AAC:
++		mimetype = "audio/aac";
++		break;
+ 	case SHOUT_FORMAT_WEBM:
+ 		mimetype = "video/webm";
+ 		break;
+diff --git libshout-2.4.1-a/src/shout.c libshout-2.4.1-b/src/shout.c
+index bb03c3f..8b2703d 100644
+--- libshout-2.4.1-a/src/shout.c
++++ libshout-2.4.1-b/src/shout.c
+@@ -851,6 +851,7 @@ int shout_set_format(shout_t *self, unsigned int format)
+ 
+ 	if (format != SHOUT_FORMAT_OGG
+          && format != SHOUT_FORMAT_MP3
++     && format != SHOUT_FORMAT_AAC
+ 	 && format != SHOUT_FORMAT_WEBM
+ 	 && format != SHOUT_FORMAT_WEBMAUDIO)
+ 		return self->error = SHOUTERR_UNSUPPORTED;
+@@ -1262,6 +1263,10 @@ retry:
+ 			if ((rc = self->error = shout_open_mp3(self)) != SHOUTERR_SUCCESS)
+                                 goto failure;
+ 			break;
++        case SHOUT_FORMAT_AAC:
++			if ((rc = self->error = shout_open_aac(self)) != SHOUTERR_SUCCESS)
++				goto failure;
++			break;
+ 		case SHOUT_FORMAT_WEBM:
+ 		case SHOUT_FORMAT_WEBMAUDIO:
+ 			if ((rc = self->error = shout_open_webm(self)) != SHOUTERR_SUCCESS)
+diff --git libshout-2.4.1-a/src/shout_private.h libshout-2.4.1-b/src/shout_private.h
+index 7902d36..a6e90ca 100644
+--- libshout-2.4.1-a/src/shout_private.h
++++ libshout-2.4.1-b/src/shout_private.h
+@@ -205,6 +205,7 @@ int shout_parse_roaraudio_response(shout_t *self);
+ /* containsers */
+ int shout_open_ogg(shout_t *self);
+ int shout_open_mp3(shout_t *self);
++int shout_open_aac(shout_t *self);
+ int shout_open_webm(shout_t *self);
+ 
+ #endif /* __LIBSHOUT_SHOUT_PRIVATE_H__ */
+diff --git libshout-2.4.1-a/win32/libshout.dsp libshout-2.4.1-b/win32/libshout.dsp
+index 583f117..4400646 100644
+--- libshout-2.4.1-a/win32/libshout.dsp
++++ libshout-2.4.1-b/win32/libshout.dsp
+@@ -101,6 +101,10 @@ SOURCE=..\src\httpp\httpp.h
+ # End Source File
+ # Begin Source File
+ 
++SOURCE=..\src\format_aac.c
++# End Source File
++# Begin Source File
++
+ SOURCE=..\src\format_mp3.c
+ # End Source File
+ # Begin Source File
+diff --git libshout-2.4.1-a/win32/libshout.vcxproj libshout-2.4.1-b/win32/libshout.vcxproj
+index 49bc2e7..ccce79a 100644
+--- libshout-2.4.1-a/win32/libshout.vcxproj
++++ libshout-2.4.1-b/win32/libshout.vcxproj
+@@ -204,6 +204,7 @@
+     <ClCompile Include="..\src\avl\avl.c" />
+     <ClCompile Include="..\src\codec_opus.c" />
+     <ClCompile Include="..\src\codec_vorbis.c" />
++    <ClCompile Include="..\src\format_aac.c" />
+     <ClCompile Include="..\src\format_mp3.c" />
+     <ClCompile Include="..\src\format_ogg.c" />
+     <ClCompile Include="..\src\format_webm.c" />
+diff --git libshout-2.4.1-a/src/format_aac.c libshout-2.4.1-b/src/format_aac.c
+new file mode 100644
+index 00000000..9afcc64d
+--- /dev/null
++++ libshout-2.4.1-b/src/format_aac.c
+@@ -0,0 +1,237 @@
++/* -*- c-basic-offset: 8; -*- */
++/* aac.c: libshout AAC format handler
++ *
++ *  Copyright (C) 2010 Aupeo GmbH, Arthur Taylor <arthur@aupeo.com>
++ *
++ *  This library is free software; you can redistribute it and/or
++ *  modify it under the terms of the GNU Library General Public
++ *  License as published by the Free Software Foundation; either
++ *  version 2 of the License, or (at your option) any later version.
++ *
++ *  This library is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *  Library General Public License for more details.
++ *
++ *  You should have received a copy of the GNU Library General Public
++ *  License along with this library; if not, write to the Free
++ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++ */
++
++/*
++ * AAC frame handling courtesy Arthur Taylor
++ */
++
++#include <stdlib.h>
++#include <string.h>
++#include <malloc.h>
++#include <stdio.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++//#include <unistd.h>
++
++#include <shout/shout.h>
++#include "shout_private.h"
++
++#define ADTS_HEADER_SIZE 8 /* Actual ADTS Header size -> 56 bits */
++
++#define min(a,b) (a<b ? a : b)
++
++#undef TRACE
++#ifdef TRACE
++#define trace(x, ...) fprintf(stderr, x, ##__VA_ARGS__)
++#else
++#define trace(x, ...) ;
++#endif
++
++#define DEBUG
++#ifdef DEBUG
++#define debug(x, ...) fprintf(stderr, x, ##__VA_ARGS__)
++#else
++#define debug(x, ...) ;
++#endif
++
++typedef struct {
++    int version;
++    int channels;
++    int sampling_rate;
++    int bitrate;
++    int length;
++    int object_type;
++    int headertype;
++} faadAACInfo;
++
++static int sample_rates[] = {96000,88200,64000,48000,44100,32000,24000,22050,16000,12000,11025,8000};
++
++typedef enum {
++  SEEK,
++  PARSE_HEADER,
++  READ_FRAME
++} ParseState_e;
++
++struct aac_data {
++  faadAACInfo *info;
++  ParseState_e state;
++  unsigned char *buffer;
++  int buffer_position;
++  int buffer_length;
++  int buffer_allocated;
++  int frame_length;
++  int frames_sent;
++  float frames_per_second;
++};
++typedef struct aac_data aac_data_t;
++
++/* -- static prototypes -- */
++static int process_local_buffer(shout_t *self, aac_data_t *data);
++static int send_aac(shout_t *self, const unsigned char *data, size_t len);
++static void close_aac(shout_t *self);
++
++int shout_open_aac(shout_t *self)
++{
++  aac_data_t *aac_data;
++  if (!(aac_data = (aac_data_t *)calloc(1, sizeof(aac_data_t))))
++    return SHOUTERR_MALLOC;
++  self->format_data = aac_data;
++
++  memset(aac_data, 0, sizeof(aac_data));
++
++  aac_data->info = (faadAACInfo *)calloc(1, sizeof(faadAACInfo));
++  aac_data->state = SEEK;
++
++  self->send = send_aac;
++  self->close = close_aac;
++
++  return SHOUTERR_SUCCESS;
++}
++
++static void copy_to_local_buffer(aac_data_t *data, const unsigned char *buf, size_t offset, size_t length) {
++  trace("%s\n", __FUNCTION__);
++  data->buffer = malloc(length);
++  memcpy(data->buffer, buf + offset, length);
++  data->buffer_position = 0;
++  data->buffer_length = length;
++  data->buffer_allocated = length;
++}
++
++static void append_to_local_buffer(aac_data_t *data, const unsigned char *buf, size_t length) {
++  trace("%s\n", __FUNCTION__);
++  if (data->buffer_allocated - data->buffer_length < length) {
++    data->buffer = realloc(data->buffer, data->buffer_length + length);
++    data->buffer_allocated = data->buffer_length + length;
++  }
++  memcpy(data->buffer + data->buffer_length, buf, length);
++  data->buffer_length += length;
++}
++
++static void read_header_data(aac_data_t *data) {
++  trace("%s\n", __FUNCTION__);
++  int version_id = data->buffer[1] & 0x08;
++  data->info->object_type = (data->buffer[2]&0xC0)>>6;
++  int sr_idx = (data->buffer[2]&0x3C)>>2;
++  data->info->channels = ((data->buffer[2]&0x01)<<2)|((data->buffer[3]&0xC0)>>6);
++
++  data->frames_per_second = sample_rates[sr_idx] / 1024.f;
++  trace("Frames per sec: %f\n", data->frames_per_second);
++
++  if (version_id == 0) {
++    data->info->version = 4;
++  } else { /* MPEG-2 */
++    data->info->version = 2;
++  }
++// XXX Bail if frame is too long
++  data->frame_length = ((((unsigned int)data->buffer[3] & 0x3)) << 11)
++                      | (((unsigned int)data->buffer[4]) << 3) | (data->buffer[5] >> 5);
++}
++
++static void shift_data_left(aac_data_t *data, size_t amount) {
++  trace("%s\n", __FUNCTION__);
++  size_t shift = min(amount, data->buffer_length);
++  memmove(data->buffer, data->buffer + shift, data->buffer_length - shift);
++  data->buffer_length -= shift;
++}
++
++static int send_frame(shout_t *self, aac_data_t *data) {
++  trace("%s\n", __FUNCTION__);
++  int ret;
++  if (data->buffer_length < data->frame_length)
++   return SHOUTERR_SUCCESS;
++
++  data->frames_sent++;
++  self->senttime = (int64_t)((double)data->frames_sent * 1000000/(double)data->frames_per_second);
++
++  ret = shout_send_raw(self, data->buffer, data->frame_length);
++  if (ret != data->frame_length)
++    return SHOUTERR_SOCKET;
++
++  shift_data_left(data, data->frame_length);
++  data->state = PARSE_HEADER;
++  return process_local_buffer(self, data);
++}
++
++static int valid_header_bytes(const unsigned char *buf) {
++  return buf[0] == 0xFF && (buf[1] & 0xF6) == 0xF0;
++}
++
++static int process_local_buffer(shout_t *self, aac_data_t *data) {
++  trace("%s\n", __FUNCTION__);
++  if (!data->buffer) {
++    return SHOUTERR_SUCCESS;
++  }
++  switch (data->state) {
++    case PARSE_HEADER:
++      if (data->buffer_length < ADTS_HEADER_SIZE) {
++        return SHOUTERR_SUCCESS;
++      }
++      if (!valid_header_bytes(data->buffer)) {
++        fprintf(stderr, "Invalid header bytes detected. Quittung\n");
++        exit(1);
++      }
++      read_header_data(data);
++      data->state = READ_FRAME;
++      return process_local_buffer(self, data);
++    case READ_FRAME:
++      return send_frame(self, data);
++    case SEEK:
++      fprintf(stderr, "Shouldn't get here\n");
++      exit(1);
++      break;
++  }
++  return SHOUTERR_SUCCESS;
++}
++
++static int send_aac(shout_t* self, const unsigned char* buf, size_t len)
++{
++  aac_data_t *data = (aac_data_t *)self->format_data;
++  int i = 0;
++  switch (data->state) {
++    case SEEK:
++      debug("Looking for frame header\n");
++      while (i<len-2) {
++        if (valid_header_bytes(buf + i)) {
++          debug("Found Frame Header\n");
++          copy_to_local_buffer(data, buf, i, len - i);
++          data->state = PARSE_HEADER;
++          if ((self->error = process_local_buffer(self, data)) != SHOUTERR_SUCCESS)
++            return self->error;
++          break;
++        }
++        i++;
++      }
++      break;
++    default:
++      debug("Copying data to end of existing buffer\n");
++      append_to_local_buffer(data, buf, len);
++      return self->error = process_local_buffer(self, data);
++  }
++  return self->error = SHOUTERR_SUCCESS;
++}
++
++static void close_aac(shout_t *self) {
++  aac_data_t *aac_data = (aac_data_t *)self->format_data;
++  free(aac_data->buffer);
++  free(aac_data->info);
++  free(aac_data);
++}
++
++
