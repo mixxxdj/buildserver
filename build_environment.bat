@@ -1,5 +1,5 @@
 @echo off
-SETLOCAL
+SETLOCAL ENABLEDELAYEDEXPANSION
 
 REM ==================================
 REM Path setup and  initial checks
@@ -14,10 +14,8 @@ SET INCLUDE_DIR=%ROOT_DIR%\include\
 SET BUILD_DIR=%CD%\build\
 
 IF "%ProgramW6432%" =="" (
-SET OS_IS_64BIT=0==1
 SET PROGRAMFILES_PATH=%ProgramFiles%
 ) else (
-SET OS_IS_64BIT=1==1
 REM doublequote the whole SET command prevents an error with parentheses
 SET "PROGRAMFILES_PATH=%ProgramFiles(x86)%"
 )
@@ -25,64 +23,63 @@ SET "PROGRAMFILES_PATH=%ProgramFiles(x86)%"
 
 rem ====== Edit to suit your environment =========
 SET VCVERSION=141
+SET PARAM_VCVARSVER=14.1
 SET PLATFORM_TOOLSET=v%VCVERSION%
 REM The Windows SDK version in use.
 SET WINDOWS_TARGET_PLATFORM_VERSION=10.0.17134.0
+SET MSVCREDIST_VERSION=14.15.26706
+REM SET WINDOWS_TARGET_PLATFORM_VERSION=10.0.18362.0
+REM SET MSVCREDIST_VERSION=14.16.27012
 
 REM Allow overriding MSSDKS_PATH from outside this script.
 IF "%MSSDKS_PATH%" == "" (
   set "MSSDKS_PATH=%PROGRAMFILES_PATH%\Windows Kits"
 )
 
-REM Allow overriding MSVC_PATH from outside this script.
+REM Allow overriding BUILDTOOLS_PATH from outside this script.
 IF "%MSVC_PATH%" == "" (
-  SET "MSVC_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\2017\Community\VC"
+  if "%BUILDTOOLS_PATH%" == "" (
+    SET "BUILDTOOLS_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\2017\BuildTools\VC"
+  )
+) ELSE (
+  SET "BUILDTOOLS_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\2017\Community\VC"
+)
+IF EXIST "%BUILDTOOLS_PATH%" (
+echo Building with preconfigured path at: "%BUILDTOOLS_PATH%"
+) ELSE (
+call :function_get_product
+IF ERRORLEVEL 1 (
+echo.
+echo Could not find "%BUILDTOOLS_PATH%" and the detection of product didn't work
+echo Edit the %~nx0 file and/or install the required software
+echo http://landinghub.visualstudio.com/visual-cpp-build-tools
+echo https://www.microsoft.com/en-us/download/details.aspx?id=8279
+exit /b 1
+)
+REM END NO PRODUCT
+)
+REM END EXIST BUILDTOOLS_PATH
+
+SET BUILDTOOLS_SCRIPT=Auxiliary\Build\vcvarsall.bat
+SET PATH_REDIST=%BUILDTOOLS_PATH%\Redist\MSVC\%MSVCREDIST_VERSION%
+
+REM Check whether we have a 64-bit compiler available.
+call :function_has_64bit
+IF ERRORLEVEL 1 (
+echo Using 32-bit compiler.
+SET COMPILER_X86=x86
+SET COMPILER_X64=x86_amd64
+) ELSE (
+echo Using 64-bit compiler.
+SET COMPILER_X86=amd64_x86
+SET COMPILER_X64=amd64
 )
 
-REM Allow overriding BUILDTOOLS_PATH from outside this script.
-if "%BUILDTOOLS_PATH%" == "" (
-  SET "BUILDTOOLS_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\2017\BuildTools\VC"
-)
 
 REM Allow overriding CMAKEDIR from outside this script.
 if "%CMAKEDIR%" == "" (
   SET "CMAKEDIR=%CD%\build\cmake-3.12.2-win32-x86\bin"
 )
-
-REM Verify paths.
-IF EXIST "%MSVC_PATH%" (
-echo Using Visual Studio 2017 Community Edition to build.
-SET "BUILDTOOLS_PATH=%MSVC_PATH%"
-SET BUILDTOOLS_SCRIPT=Auxiliary\Build\vcvarsall.bat
-
-REM Check whether we have a 64-bit compiler available.
-REM NOTE(rryan): Temporarily disabled because the build doesn't work with a 64-bit compiler.
-rem IF EXIST "%MSVC_PATH%\bin\amd64\cl.exe" (
-SET COMPILER_X86=amd64_x86
-SET COMPILER_X64=amd64
-rem ) ELSE (
-rem SET COMPILER_X86=x86
-rem SET COMPILER_X64=x86_amd64
-rem )
-
-) ELSE (
-IF EXIST "%BUILDTOOLS_PATH%" (
-echo Using Visual Studio 2017 Build Tools to build.
-SET BUILDTOOLS_SCRIPT=Auxiliary\Build\vcvarsall.bat
-
-SET COMPILER_X86=amd64_x86
-SET COMPILER_X64=amd64
-) ELSE (
-echo.
-echo Could not find "%MSVC_PATH%" nor "%BUILDTOOLS_PATH%".
-echo Edit the build_environment.bat file and/or install the required software
-echo http://landinghub.visualstudio.com/visual-cpp-build-tools
-echo https://www.microsoft.com/en-us/download/details.aspx?id=8279
-exit /b 1
-)
-REM END EXIST BUILDTOOLS
-)
-REM END EXIST VISUALSTUDIO
 
 if NOT EXIST "%CMAKEDIR%" (
   set "CMAKEDIROLD=%CMAKEDIR%"
@@ -229,6 +226,8 @@ rem /FS force synchronous PDB writes (prevents PDB corruption with /MP)
 rem /Zi write PDBs
 rem /DEBUG moves debug information from the .o files to the .pdb during link.
 set _CL_=/MP /FS /EHsc /Zi %RUNTIME_FLAG%
+set CXXFLAGS=/MP /FS /EHsc
+set CFLAGS=/MP /FS /EHsc
 set _LINK_=/DEBUG
 rem PlatformToolset: Over-ride the platform toolset of solutions with this value.
 rem RuntimeLibrary: Over-ride the runtime library with this value.
@@ -266,9 +265,9 @@ SET XCOPY=xcopy /S /Y /I
 
 REM Everyting prepared. Setup the compiler.
 if %MACHINE_X86% (
-  call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X86%
+  call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X86% -vcvars_ver=%PARAM_VCVARSVER%
 ) else (
-  call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X64%
+  call "%BUILDTOOLS_PATH%\%BUILDTOOLS_SCRIPT%" %COMPILER_X64% -vcvars_ver=%PARAM_VCVARSVER%
 )
 
 REM The Visual C++ compiler (cl.exe) recognizes certain environment variables, specifically LIB, LIBPATH, PATH, and INCLUDE
@@ -323,7 +322,6 @@ SET /A TASKNUM=1
  REM build_rubberband.bat depends on fftw3
  REM build_chromaprint.bat depends on fftw3
  REM build_taglib.bat depends on zlib
- REM build_qt4.bat depends on sqlite3, zlib, openssl
  REM build_qt5.bat depends on sqlite3, zlib, openssl
  REM build_qtkeychain.bat depends on qt5
 FOR %%G IN (
@@ -377,16 +375,16 @@ ENDLOCAL
 
 
 REM Copy runtime installers for release builds and debug runtime DLLs for debug builds.
-%XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\vc_redist.x64.exe" %ROOT_DIR%
-%XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\vc_redist.x86.exe" %ROOT_DIR%
+%XCOPY% "%PATH_REDIST%\vc_redist.x64.exe" %ROOT_DIR%
+%XCOPY% "%PATH_REDIST%\vc_redist.x86.exe" %ROOT_DIR%
 if %CONFIG_RELEASE% (
-  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\%MACHINE_X%\Microsoft.VC%VCVERSION%.CRT\*.dll" %LIB_DIR%
-  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\%MACHINE_X%\Microsoft.VC%VCVERSION%.CXXAMP\*.dll" %LIB_DIR%
-  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\%MACHINE_X%\Microsoft.VC%VCVERSION%.OpenMP\*.dll" %LIB_DIR%
+  %XCOPY% "%PATH_REDIST%\%MACHINE_X%\Microsoft.VC%VCVERSION%.CRT\*.dll" %LIB_DIR%
+  %XCOPY% "%PATH_REDIST%\%MACHINE_X%\Microsoft.VC%VCVERSION%.CXXAMP\*.dll" %LIB_DIR%
+  %XCOPY% "%PATH_REDIST%\%MACHINE_X%\Microsoft.VC%VCVERSION%.OpenMP\*.dll" %LIB_DIR%
 ) else (
-  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCRT\*.dll" %LIB_DIR%
-  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCXXAMP\*.dll" %LIB_DIR%
-  %XCOPY% "%BUILDTOOLS_PATH%\Redist\MSVC\14.15.26706\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugOpenMP\*.dll" %LIB_DIR%
+  %XCOPY% "%PATH_REDIST%\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCRT\*.dll" %LIB_DIR%
+  %XCOPY% "%PATH_REDIST%\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugCXXAMP\*.dll" %LIB_DIR%
+  %XCOPY% "%PATH_REDIST%\debug_nonredist\%MACHINE_X%\Microsoft.VC%VCVERSION%.DebugOpenMP\*.dll" %LIB_DIR%
 )
 echo.
 echo.
@@ -394,3 +392,35 @@ echo Everything was built successfully
 echo.
 
 ENDLOCAL
+EXIT /b 0
+
+:function_get_product
+FOR %%Y IN (2019,2017) DO (
+  FOR %%P IN (Community,Professional,Enterprise) DO (
+    SET "LOCAL_VS_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\%%Y\%%P\VC"
+    IF EXIST "!LOCAL_VS_PATH!" (
+      SET "BUILDTOOLS_PATH=!LOCAL_VS_PATH!"
+      ECHO Using Visual Studio %%Y %%P at: !LOCAL_VS_PATH!
+      EXIT /B 0
+    )
+  )
+  REM FOR
+  SET "LOCAL_BT_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\%%Y\BuildTools\VC"
+  IF EXIST "!LOCAL_BT_PATH!" (
+    SET "BUILDTOOLS_PATH=!LOCAL_BT_PATH!"
+    ECHO Using BuildTools %%Y at: !LOCAL_BT_PATH!
+    EXIT /B 0
+  )
+  REM BT
+)
+REM FOR
+EXIT /B 1
+
+:function_has_64bit
+FOR /F %%G IN ('dir "%BUILDTOOLS_PATH%\Tools\MSVC\%PARAM_VCVARSVER%*" /b /ad-h /o-n') DO (
+  set "LOCAL_64_CL=%BUILDTOOLS_PATH%\Tools\MSVC\%%G\bin\Hostx64\x64\cl.exe"
+  if EXIST "!LOCAL_64_CL!" (
+    EXIT /B 0
+  ) 
+)
+EXIT /B 1

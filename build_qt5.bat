@@ -10,19 +10,7 @@ set QT_PATCH=2
 REM Qt5 paths can get really long. We use an abbreviated folder name to prevent hitting
 REM Windows path length limits.
 SET QTSHORTDIR=QT%QT_MAJOR%
-
-REM remove old built files
-rd /s /q build\%QTSHORTDIR%
-
 set QTDIR=qt-everywhere-src-%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%
-if not exist %QTDIR%.tar.xz (
-  echo --- Downloading Qt5 ---
-  bitsadmin /transfer downloadQt5 /download http://download.qt.io/official_releases/qt/%QT_MAJOR%.%QT_MINOR%/%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%/single/%QTDIR%.zip %CD%\%QTDIR%.zip
-)
-
-REM 7z requires separate extraction steps for the xz compression and the tar archive
-7za x -obuild %QTDIR%.zip
-move build\%QTDIR% build\%QTSHORTDIR%
 
 SET VALRETURN=0
 
@@ -38,18 +26,34 @@ if %CONFIG_RELEASE% (
   set CONFIG=-debug
 )
 
-cd build\%QTSHORTDIR%
-IF ERRORLEVEL 1 (
-echo could not find QT5 on %CD%\build\%QTSHORTDIR%
-    SET VALRETURN=1
-	goto END
+
+if %DELETE_OLD% (
+    REM remove old built files
+    rd /s /q build\%QTSHORTDIR%
 )
 
-REM Apply workaround for QTBUG-61342.
-%BIN_DIR%\patch.exe -N -p0 --verbose -i %CD%\..\QTBUG-61342.patch -r %CD%\..\QTBUG-61342.rej.txt
-IF ERRORLEVEL 1 (
-    SET VALRETURN=1
-	goto END
+if not exist %CD%\build\%QTSHORTDIR% (
+    if exist %CD%\%QTDIR%.tar.xz (
+      7za x %QTDIR%.tar.xz -so | 7za x -aoa -si -ttar -obuild
+    ) else (
+      if exist  %CD%\%QTDIR%.zip (
+        7za x -obuild %QTDIR%.zip
+      ) else (
+          bitsadmin /transfer downloadQt5 /download http://download.qt.io/official_releases/qt/%QT_MAJOR%.%QT_MINOR%/%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%/single/%QTDIR%.tar.xz %CD%\%QTDIR%.zip
+          7za x %QTDIR%.tar.xz -so | 7za x -aoa -si -ttar -obuild
+      )
+    )
+
+    move build\%QTDIR% build\%QTSHORTDIR%
+    cd build\%QTSHORTDIR%
+    REM Apply workaround for QTBUG-61342.
+    %BIN_DIR%\patch.exe -N -p0 --verbose -i %CD%\..\QTBUG-61342.patch -r %CD%\..\QTBUG-61342.rej.txt
+    IF ERRORLEVEL 1 (
+        SET VALRETURN=1
+        goto END
+    )
+) else (
+    cd build\%QTSHORTDIR%
 )
 
 REM nmake distclean or nmake confclean are not present in the Makefile, so we delete these files and hope it rebuilds.
@@ -79,7 +83,7 @@ call configure.bat %CONFIG% %QT_COMMON% -shared -openssl -separate-debug-info
 
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
-	goto END
+    goto END
 )
 
 rem /K keeps building things not affected by errors
@@ -94,6 +98,9 @@ nmake install
 IF ERRORLEVEL 1 (
     SET VALRETURN=1
 	goto END
+)
+if not %STATIC_LIBS% (
+    xcopy %LIB_DIR%\zlibwapi.dll %ROOT_DIR%\%QTSHORTDIR%\bin
 )
 
 rem Note, we do not run nmake clean because it deletes files we need (e.g. compiled translations).
