@@ -39,8 +39,8 @@ if not exist %CD%\build\%QTSHORTDIR% (
       if exist  %CD%\%QTDIR%.zip (
         7za x -obuild %QTDIR%.zip
       ) else (
-          bitsadmin /transfer downloadQt5 /download http://download.qt.io/official_releases/qt/%QT_MAJOR%.%QT_MINOR%/%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%/single/%QTDIR%.tar.xz %CD%\%QTDIR%.zip
-          7za x %QTDIR%.tar.xz -so | 7za x -aoa -si -ttar -obuild
+          bitsadmin /transfer downloadQt5 /download http://download.qt.io/official_releases/qt/%QT_MAJOR%.%QT_MINOR%/%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%/single/%QTDIR%.tar.xz %CD%\%QTDIR%.tar.xz
+          7za x %CD%\%QTDIR%.tar.xz -so | 7za x -aoa -si -ttar -obuild
       )
     )
 
