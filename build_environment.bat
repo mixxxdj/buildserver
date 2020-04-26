@@ -98,7 +98,7 @@ if NOT EXIST "%CD%\%PA_ASIO_PATH%\ASIOSDK" (
   echo --- Downloading ASIO SDK ---
   echo By running this script, you must have agreed to the Steinberg ASIO SDK terms.
   bitsadmin /transfer downloadASIO /download http://www.steinberg.net/sdk_downloads/ASIOSDK2.3.1.zip %CD%\ASIOSDK2.3.1.zip
-  powershell "Exit !((get-filehash -algorithm sha256 ASIOSDK2.3.1.zip).Hash -eq '31074764475059448A9B7A56F103F4723ED60465E0E9D1A9446CA03DCF840F04')"
+  powershell "if((get-filehash -algorithm sha256 ASIOSDK2.3.1.zip).Hash -eq '31074764475059448A9B7A56F103F4723ED60465E0E9D1A9446CA03DCF840F04') { Exit 0 } else { Exit 1 } "
   if ERRORLEVEL 1 (
     echo ASIO SDK does not match expected hash.
 	powershell "(get-filehash -algorithm sha256 ASIOSDK2.3.1.zip).Hash"
