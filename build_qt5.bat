@@ -32,22 +32,23 @@ if %DELETE_OLD% (
     rd /s /q build\%QTSHORTDIR%
 )
 
-if not exist %CD%\build\%QTSHORTDIR% (
-    if exist %CD%\%QTDIR%.tar.xz (
-      7za x %QTDIR%.tar.xz -so | 7za x -aoa -si -ttar -obuild
+if not exist %ROOT_DIR%\build\%QTSHORTDIR% (
+    REM Note: Current 7z does not support the "paxheader" of tars, so it counts the @PaxHeader as files but doesn't seem to have any side effects right now
+    if exist %ROOT_DIR%\%QTDIR%.tar.xz (
+      7za x %ROOT_DIR%\%QTDIR%.tar.xz -so | 7za x -aoa -si -ttar -obuild
     ) else (
-      if exist  %CD%\%QTDIR%.zip (
-        7za x -obuild %QTDIR%.zip
+      if exist  %ROOT_DIR%\%QTDIR%.zip (
+        7za x -obuild %ROOT_DIR%\%QTDIR%.zip
       ) else (
-          bitsadmin /transfer downloadQt5 /download http://download.qt.io/official_releases/qt/%QT_MAJOR%.%QT_MINOR%/%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%/single/%QTDIR%.tar.xz %CD%\%QTDIR%.tar.xz
-          7za x %CD%\%QTDIR%.tar.xz -so | 7za x -aoa -si -ttar -obuild
+          bitsadmin /transfer downloadQt5 /download http://download.qt.io/official_releases/qt/%QT_MAJOR%.%QT_MINOR%/%QT_MAJOR%.%QT_MINOR%.%QT_PATCH%/single/%QTDIR%.tar.xz %ROOT_DIR%\%QTDIR%.tar.xz
+          7za x %ROOT_DIR%\%QTDIR%.tar.xz -so | 7za x -aoa -si -ttar -obuild
       )
     )
 
     move build\%QTDIR% build\%QTSHORTDIR%
     cd build\%QTSHORTDIR%
     REM Apply workaround for QTBUG-61342.
-    %BIN_DIR%\patch.exe -N -p0 --verbose -i %CD%\..\QTBUG-61342.patch -r %CD%\..\QTBUG-61342.rej.txt
+    %BIN_DIR%\patch.exe -N -p0 --verbose -i %ROOT_DIR%\build\QTBUG-61342.patch -r %ROOT_DIR%\build\QTBUG-61342.rej.txt
     IF ERRORLEVEL 1 (
         SET VALRETURN=1
         goto END
