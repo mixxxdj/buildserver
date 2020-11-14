@@ -1,0 +1,37 @@
+name: Mixxx build environment build
+
+on: [pull_request, push]
+
+jobs:
+  build-mac:
+    name: macOS
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        # Quit on errors. 
+        # See also:
+        # - http://mywiki.wooledge.org/BashFAQ/105
+        # - https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+        set -e -o pipefail
+        # Local echo.
+        set -x
+
+        # Get the current installed macOS SDK.
+        MACOSX_SDK=$(xcodebuild -version -sdk macosx SDKVersion)
+        MACOSX_TARGET=10.11
+        SHA=`git rev-parse --short HEAD`
+        BUILD_PADDED=`printf "j%05d" ${BUILD_NUMBER}`
+        ENVIRONMENT_NAME=2.3-${SHA}-osx${MACOSX_TARGET}-x86_64
+
+        # So we can tee into it right away.
+        mkdir -p environment/${ENVIRONMENT_NAME}
+
+        scripts/macosx/download_dependencies.sh ${RESOURCE_PATH}
+        scripts/macosx/build_environment.sh --dependency-cache ${RESOURCE_PATH} --name ${ENVIRONMENT_NAME} --macosx-sdk ${MACOSX_SDK} --macosx-target ${MACOSX_TARGET} --enable-x86_64 --macosx-stdlib libc++ 2>&1 | tee environment/${ENVIRONMENT_NAME}/build_environment.log 
+        tar -C environment -czf ${ENVIRONMENT_NAME}.tar.gz ${ENVIRONMENT_NAME}
+    - name: macOS build environment artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: macOS-build-environment
+        path: ./*.tar.gz
