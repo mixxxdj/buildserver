@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.3.1
+export VERSION_NUMBER=1.3.3
 export VERSION=flac-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.xz
 
