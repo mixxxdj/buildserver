@@ -1,0 +1,59 @@
+name: Mixxx build environment build
+
+on: [pull_request, push]
+
+jobs:
+  build-mac:
+    name: macOS
+    runs-on: macos-10.15
+    steps:
+    - name: checkout Git repository
+      uses: actions/checkout@v2
+    - name: dependency cache
+      uses: actions/cache@v2
+      env:
+        cache-name: dependencies
+      with:
+        path: /Users/runner/dependencies
+        key: ${{ env.cache-name }}-${{ runner.os}}-${{ hashFiles('download_dependencies.sh') }}
+        restore-keys: |
+          ${{ env.cache-name }}-${{ runner.os }}
+    - name: ccache
+      uses: actions/cache@v2
+      env:
+        cache-name: ccache
+      with:
+        path: /Users/runner/Library/Caches/ccache
+        key: ${{ env.cache-name }}-${{ runner.os }}-${{ github.head_ref }}-${{ github.run_number }}
+        restore-keys: |
+          ${{ env.cache-name }}-${{ runner.os }}-${{ github.head_ref }}
+          ${{ env.cache-name }}-${{ runner.os }}
+    - name: build
+      run: |
+        # Quit on errors. 
+        # See also:
+        # - http://mywiki.wooledge.org/BashFAQ/105
+        # - https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+        set -e -o pipefail
+        # Local echo.
+        set -x
+
+        # Get the current installed macOS SDK.
+        MACOSX_SDK=10.15
+        # 10.12 is the minimum macOS version for Qt 5.12
+        MACOSX_TARGET=10.12
+        SHA=`git rev-parse --short HEAD`
+        ENVIRONMENT_NAME=2.3-${SHA}-sdk${MACOSX_SDK}-macosminimum${MACOSX_TARGET}-x86_64
+
+        # So we can tee into it right away.
+        mkdir -p environment/${ENVIRONMENT_NAME}
+
+        export DEPENDENCY_CACHE=/Users/runner/dependencies
+        scripts/macosx/download_dependencies.sh ${DEPENDENCY_CACHE}
+        scripts/macosx/build_environment.sh --dependency-cache ${DEPENDENCY_CACHE} --name ${ENVIRONMENT_NAME} --macosx-sdk ${MACOSX_SDK} --macosx-target ${MACOSX_TARGET} --macosx-stdlib libc++ --enable-x86-64 2>&1 | tee environment/${ENVIRONMENT_NAME}/build_environment.log
+        tar -C environment -czf ${ENVIRONMENT_NAME}.tar.gz ${ENVIRONMENT_NAME}
+    - name: upload macOS build environment artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: macOS-build-environment
+        path: ./*.tar.gz
