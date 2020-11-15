@@ -52,8 +52,8 @@ download_and_verify http://downloads.sourceforge.net/project/portmedia/portmidi/
 download_and_verify https://github.com/google/protobuf/archive/v2.6.1.tar.gz 2667b7cda4a6bc8a09e5463adf3b5984e08d94e72338277affa8594d8b6e5cd1 protobuf-2.6.1.tar.gz
 #download_and_verify https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0
 download_and_verify https://download.qt.io/archive/qt/5.14/5.14.2/single/qt-everywhere-src-5.14.2.tar.xz c6fcd53c744df89e7d3223c02838a33309bd1c291fcb6f9341505fe99f7f19fa
-download_and_verify http://downloads.xiph.org/releases/libshout/libshout-2.4.1.tar.gz f3acb8dec26f2dbf6df778888e0e429a4ce9378a9d461b02a7ccbf2991bbf24d
 download_and_verify https://breakfastquay.com/files/releases/rubberband-1.9.0.tar.bz2 4f5b9509364ea876b4052fc390c079a3ad4ab63a2683aad09662fb905c2dc026
+download_and_verify http://downloads.xiph.org/releases/libshout/libshout-2.4.4.tar.gz 8ce90c5d05e7ad1da4c12f185837e8a867c22df2d557b0125afaba4b1438e6c3
 download_and_verify https://downloads.sourceforge.net/project/libshoutidjc.idjc.p/libshout-idjc-2.4.1.tar.gz 4751c75fc85fc5d10e5b03753b046bcdee39576278bf30565c751816a87facdf
 download_and_verify http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.26.tar.gz cd6520ec763d1a45573885ecb1f8e4e42505ac12180268482a44b28484a25092
 download_and_verify http://prdownloads.sourceforge.net/scons/scons-2.5.0.tar.gz eb296b47f23c20aec7d87d35cfa386d3508e01d1caa3040ea6f5bbab2292ace9
