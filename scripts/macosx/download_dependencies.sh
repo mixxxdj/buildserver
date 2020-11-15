@@ -67,3 +67,4 @@ download_and_verify https://download.drobilla.net/sord-0.16.4.tar.bz2 b15998f4e7
 download_and_verify https://download.drobilla.net/sratom-0.6.6.tar.bz2 fb910bf62a5e69f4430bf09653d386fc4de9ff02bfd58635e1d45cbd31481b9d
 download_and_verify http://download.drobilla.net/lilv-0.24.10.tar.bz2 d1bba93d6ddacadb5e742fd10ad732727edb743524de229c70cc90ef81ffc594
 download_and_verify https://github.com/frankosterfeld/qtkeychain/archive/v0.11.1.tar.gz 77fc6841c1743d9e6bd499989481cd9239c21bc9bf0760d41a4f4068d2f0a49d qtkeychain-0.11.1.tar.gz
+download_and_verify https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz 98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e
