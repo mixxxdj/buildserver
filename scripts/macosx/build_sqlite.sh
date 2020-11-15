@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=3130000
+export VERSION_NUMBER=3330000
 export VERSION=sqlite-autoconf-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
