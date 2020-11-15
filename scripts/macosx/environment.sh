@@ -19,8 +19,8 @@ else
 fi
 
 export XCODE_ROOT=$(xcode-select -print-path)
-export CC="${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
-export CXX="${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++"
+export CC="$MIXXX_PREFIX/bin/ccache ${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+export CXX="$MIXXX_PREFIX/bin/ccache ${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++"
 export CPP="$CC -E"
 export CXXCPP="$CXX -E"
 
@@ -36,7 +36,7 @@ if [[ ! -d $MIXXX_PREFIX ]]; then
     exit 1;
 fi
 
-export PATH=$PATH:$MIXXX_PREFIX/bin/
+export PATH=$MIXXX_PREFIX/bin/:$PATH
 
 if [[ "$DISABLE_FFAST_MATH" == "yes" ]]; then
     export COMMON_OPT_FLAGS="-O2"
