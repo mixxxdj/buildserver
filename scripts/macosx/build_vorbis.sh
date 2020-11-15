@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.3.5
+export VERSION_NUMBER=1.3.7
 export VERSION=libvorbis-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.xz
 

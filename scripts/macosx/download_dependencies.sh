@@ -59,7 +59,7 @@ download_and_verify https://github.com/libsndfile/libsndfile/releases/download/v
 download_and_verify http://prdownloads.sourceforge.net/scons/scons-2.5.0.tar.gz eb296b47f23c20aec7d87d35cfa386d3508e01d1caa3040ea6f5bbab2292ace9
 download_and_verify https://sqlite.org/2020/sqlite-autoconf-3330000.tar.gz 106a2c48c7f75a298a7557bcc0d5f4f454e5b43811cc738b7ca294d6956bbb15
 download_and_verify https://taglib.github.io/releases/taglib-1.11.1.tar.gz b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b
-download_and_verify http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.xz 54f94a9527ff0a88477be0a71c0bab09a4c3febe0ed878b24824906cd4b0e1d1
+download_and_verify http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.7.tar.xz b33cc4934322bcbf6efcbacf49e3ca01aadbea4114ec9589d1b1e9d20f72954b
 download_and_verify https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
 download_and_verify http://lv2plug.in/spec/lv2-1.18.0.tar.bz2 90a3e5cf8bdca81b49def917e89fd6bba1d5845261642cd54e7888df0320473f
 download_and_verify https://download.drobilla.net/serd-0.30.4.tar.bz2 0c95616a6587bee5e728e026190f4acd5ab6e2400e8890d5c2a93031eab01999
