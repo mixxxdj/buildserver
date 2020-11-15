@@ -65,5 +65,5 @@ download_and_verify https://download.drobilla.net/serd-0.28.0.tar.bz2 1df21a8874
 download_and_verify https://download.drobilla.net/sord-0.16.0.tar.bz2 9d3cb2c9966e93f537f37377171f162023cea6784ca069699be4a7770c8a035a
 download_and_verify https://download.drobilla.net/sratom-0.6.0.tar.bz2 440ac2b1f4f0b7878f8b95698faa1e8f8c50929a498f68ec5d066863626a3d43
 download_and_verify http://download.drobilla.net/lilv-0.24.2.tar.bz2 f7ec65b1c1f1734ded3a6c051bbaf50f996a0b8b77e814a33a34e42bce50a522
-download_and_verify https://github.com/frankosterfeld/qtkeychain/archive/v0.9.1.tar.gz 9c2762d9d0759a65cdb80106d547db83c6e9fdea66f1973c6e9014f867c6f28e qtkeychain-0.9.1.tar.gz
 download_and_verify http://lv2plug.in/spec/lv2-1.18.0.tar.bz2 90a3e5cf8bdca81b49def917e89fd6bba1d5845261642cd54e7888df0320473f
+download_and_verify https://github.com/frankosterfeld/qtkeychain/archive/v0.11.1.tar.gz 77fc6841c1743d9e6bd499989481cd9239c21bc9bf0760d41a4f4068d2f0a49d qtkeychain-0.11.1.tar.gz

@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=0.9.1
+export VERSION_NUMBER=0.11.1
 export QT_VERSION=${MIXXX_QT_VERSION}
 
 export VERSION=qtkeychain-${VERSION_NUMBER}
