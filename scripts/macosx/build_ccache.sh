@@ -32,7 +32,7 @@ do
   # The GitHub Action macOS VM has zstd in /usr/local/opt
   # Make sure ccache links to the libzstd in the build environment instead so
   # it can be used locally for working on Mixxx on macOS.
-  cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$MIXXX_PREFIX" -DCMAKE_INSTALL_RPATH="@loader_path/../lib" -DCMAKE_INSTALL_PREFIX="$MIXXX_PREFIX" -DCMAKE_OSX_DEPLOYMENT_TARGET="$MACOSX_DEPLOYMENT_TARGET" -DCMAKE_OSX_SYSROOT="$SDKROOT" -DCMAKE_VERBOSE_MAKEFILE=TRUE -DBUILD_SHARED_LIBS=TRUE
+  cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$MIXXX_PREFIX" -DCMAKE_INSTALL_RPATH="@loader_path/../lib" -DCMAKE_INSTALL_PREFIX="$MIXXX_PREFIX" -DCMAKE_OSX_DEPLOYMENT_TARGET="$MIXXX_MACOSX_TARGET" -DCMAKE_OSX_SYSROOT="$SDKROOT" -DCMAKE_VERBOSE_MAKEFILE=TRUE -DBUILD_SHARED_LIBS=TRUE
   cmake --build . --target install
   cd ..
 done

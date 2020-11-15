@@ -53,10 +53,10 @@ export CXXCPP="$CXX -E"
 
 # Qt embeds various OSX platform selections in its makefiles and configure
 # scripts. Fix them to use $MIXXX_MACOSX_TARGET.
-sed -e "s/MACOSX_DEPLOYMENT_TARGET = 10.5/MACOSX_DEPLOYMENT_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' configure
-sed -e "s/MACOSX_DEPLOYMENT_TARGET 10.[45]/MACOSX_DEPLOYMENT_TARGET $MIXXX_MACOSX_TARGET/g" -i '' configure
+sed -e "s/MIXXX_MACOSX_TARGET = 10.5/MIXXX_MACOSX_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' configure
+sed -e "s/MIXXX_MACOSX_TARGET 10.[45]/MIXXX_MACOSX_TARGET $MIXXX_MACOSX_TARGET/g" -i '' configure
 sed -e "s/-mmacosx-version-min=10.[45]/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g" -i '' configure
-sed -e "s/QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4/QMAKE_MACOSX_DEPLOYMENT_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/mac.conf
+sed -e "s/QMAKE_MIXXX_MACOSX_TARGET = 10.4/QMAKE_MIXXX_MACOSX_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/mac.conf
 sed -e "s/-mmacosx-version-min=10.5/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/g++-macx.conf
 
 # Build issue with 10.11 SDK.
