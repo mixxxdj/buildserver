@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.8.1
+export VERSION_NUMBER=1.9.0
 export VERSION=rubberband-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.bz2
 
