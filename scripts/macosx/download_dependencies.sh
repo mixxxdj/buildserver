@@ -43,10 +43,10 @@ download_and_verify https://cmake.org/files/v3.18/cmake-3.18.4.tar.gz 597c61358e
 download_and_verify http://downloads.xiph.org/releases/flac/flac-1.3.3.tar.xz 213e82bd716c9de6db2f98bcadbc4c24c7e2efe8c75939a1a84e28539c4e1748
 download_and_verify http://downloads.mixxx.org/hss1394-r8.tar.gz d5c87a92ad8e277b418300fbbfcc06a0826dfde71f7b10643ac59703d795c002
 download_and_verify https://www.openssl.org/source/openssl-1.0.2h.tar.gz 1d4007e53aad94a5b2002fe045ee7bb0b3d98f1a47f8b2bc851dcd1c74332919
-download_and_verify http://downloads.xiph.org/releases/ogg/libogg-1.3.2.tar.xz 3f687ccdd5ac8b52d76328fbbfebc70c459a40ea891dbf3dccb74a210826e79b
 download_and_verify http://downloads.xiph.org/releases/opus/opus-1.1.2.tar.gz 0e290078e31211baa7b5886bcc8ab6bc048b9fc83882532da4a1a45e58e907fd
 download_and_verify http://downloads.xiph.org/releases/opus/opusfile-0.7.tar.gz 9e2bed13bc729058591a0f1cab2505e8cfd8e7ac460bf10a78bcc3b125e7c301
 download_and_verify https://github.com/libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.tar.bz2 db11c06e958a82dac52cf3c65cb4dd2c3f339c8a988665110e0d24d19312ad8d
+download_and_verify http://downloads.xiph.org/releases/ogg/libogg-1.3.3.tar.xz 4f3fc6178a533d392064f14776b23c397ed4b9f48f5de297aba73b643f955c08
 download_and_verify http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513
 download_and_verify http://downloads.sourceforge.net/project/portmedia/portmidi/217/portmidi-src-217.zip 08e9a892bd80bdb1115213fb72dc29a7bf2ff108b378180586aa65f3cfd42e0f
 download_and_verify https://github.com/google/protobuf/archive/v2.6.1.tar.gz 2667b7cda4a6bc8a09e5463adf3b5984e08d94e72338277affa8594d8b6e5cd1 protobuf-2.6.1.tar.gz
