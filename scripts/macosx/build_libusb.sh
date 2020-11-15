@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.0.20
+export VERSION_NUMBER=1.0.23
 export VERSION=libusb-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.bz2
 
