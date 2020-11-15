@@ -27,9 +27,9 @@ do
   tar -jxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$ARCH --strip-components 1
   cd $VERSION-$ARCH
   source $PROGDIR/environment.sh $ARCH
-  export CFLAGS="$CFLAGS -F$OSX_SDK/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/"
-  export CXXFLAGS="$CXXFLAGS -F$OSX_SDK/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/"
-  export LDFLAGS="$LDFLAGS -framework Accelerate -F$OSX_SDK/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/"
+  export CFLAGS="$CFLAGS -F$SDKROOT/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/"
+  export CXXFLAGS="$CXXFLAGS -F$SDKROOT/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/"
+  export LDFLAGS="$LDFLAGS -framework Accelerate -F$SDKROOT/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/"
   SRC_CFLAGS="-I." SRC_LIBS=" " SNDFILE_CFLAGS=" " SNDFILE_LIBS=" " FFTW_CFLAGS=" " FFTW_LIBS=" " Vamp_LIBS=" " Vamp_CFLAGS=" " ./configure --host $HOST --target $TARGET --prefix=$MIXXX_PREFIX
   # Hack up the Makefile to build on OS X and use Speex / VDSP.
   sed -i -e 's/LIBRARY_INCLUDES := \\/LIBRARY_INCLUDES := src\/speex\/speex_resampler.h \\/g' Makefile
