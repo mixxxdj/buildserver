@@ -35,9 +35,9 @@ function download_and_verify {
 }
 
 download_and_verify http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz 64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684
-download_and_verify https://pkg-config.freedesktop.org/releases/pkg-config-0.29.1.tar.gz beb43c9e064555469bd4390dcfd8030b1536e0aa103f08d7abf7ae8cac0cb001
 download_and_verify http://ftp.gnu.org/gnu/automake/automake-1.16.2.tar.xz ccc459de3d710e066ab9e12d2f119bd164a08c9341ca24ba22c9adaa179eedd0
 download_and_verify http://ftp.gnu.org/gnu/libtool/libtool-2.4.6.tar.xz 7c87a8c2c8c0fc9cd5019e402bed4292462d00a718a7cd5f11218153bf28b26f
+download_and_verify https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 download_and_verify https://github.com/acoustid/chromaprint/releases/download/v1.5.0/chromaprint-1.5.0.tar.gz 573a5400e635b3823fc2394cfa7a217fbb46e8e50ecebd4a61991451a8af766a
 download_and_verify https://cmake.org/files/v3.18/cmake-3.18.4.tar.gz 597c61358e6a92ecbfad42a9b5321ddd801fc7e7eca08441307c9138382d4f77
 download_and_verify http://downloads.xiph.org/releases/flac/flac-1.3.3.tar.xz 213e82bd716c9de6db2f98bcadbc4c24c7e2efe8c75939a1a84e28539c4e1748
