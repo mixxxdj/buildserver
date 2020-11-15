@@ -11,14 +11,14 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.3.1
+export VERSION_NUMBER=1.5.0
 export VERSION=chromaprint-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export DYLIB_NAME=libchromaprint.1.3.0.dylib
+export DYLIB_NAME=libchromaprint.${VERSION_NUMBER}.dylib
 export DYLIB=src/$DYLIB_NAME
 export STATICLIB=src/libchromaprint_p.a
 
@@ -50,7 +50,7 @@ do
 done
 
 lipo -create ./$DYLIB ${OTHER_DYLIBS[@]} -output ./$DYLIB
-lipo -create ./$STATICLIB ${OTHER_STATICLIBS[@]} -output ./$STATICLIB
+#lipo -create ./$STATICLIB ${OTHER_STATICLIBS[@]} -output ./$STATICLIB
 make install
 # NOTE(rryan): Mixxx depends on id (not rpath) being the full path to the
 # dylib. Until we fix this, set the chromaprint dylib id:
