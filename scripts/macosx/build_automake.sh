@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.15
+export VERSION_NUMBER=1.16.2
 export VERSION=automake-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.xz
 
