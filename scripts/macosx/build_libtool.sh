@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=2.4
+export VERSION_NUMBER=2.4.6
 export VERSION=libtool-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.xz
 
