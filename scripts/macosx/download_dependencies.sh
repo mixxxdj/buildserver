@@ -61,9 +61,9 @@ download_and_verify https://www.sqlite.org/2016/sqlite-autoconf-3130000.tar.gz e
 download_and_verify https://taglib.github.io/releases/taglib-1.11.1.tar.gz b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b
 download_and_verify http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.xz 54f94a9527ff0a88477be0a71c0bab09a4c3febe0ed878b24824906cd4b0e1d1
 download_and_verify https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
-download_and_verify https://download.drobilla.net/serd-0.28.0.tar.bz2 1df21a8874d256a9f3d51a18b8c6e2539e8092b62cc2674b110307e93f898aec
-download_and_verify https://download.drobilla.net/sord-0.16.0.tar.bz2 9d3cb2c9966e93f537f37377171f162023cea6784ca069699be4a7770c8a035a
-download_and_verify https://download.drobilla.net/sratom-0.6.0.tar.bz2 440ac2b1f4f0b7878f8b95698faa1e8f8c50929a498f68ec5d066863626a3d43
-download_and_verify http://download.drobilla.net/lilv-0.24.2.tar.bz2 f7ec65b1c1f1734ded3a6c051bbaf50f996a0b8b77e814a33a34e42bce50a522
 download_and_verify http://lv2plug.in/spec/lv2-1.18.0.tar.bz2 90a3e5cf8bdca81b49def917e89fd6bba1d5845261642cd54e7888df0320473f
+download_and_verify https://download.drobilla.net/serd-0.30.4.tar.bz2 0c95616a6587bee5e728e026190f4acd5ab6e2400e8890d5c2a93031eab01999
+download_and_verify https://download.drobilla.net/sord-0.16.4.tar.bz2 b15998f4e7ad958201346009477d6696e90ee5d3e9aff25e7e9be074372690d7
+download_and_verify https://download.drobilla.net/sratom-0.6.6.tar.bz2 fb910bf62a5e69f4430bf09653d386fc4de9ff02bfd58635e1d45cbd31481b9d
+download_and_verify http://download.drobilla.net/lilv-0.24.10.tar.bz2 d1bba93d6ddacadb5e742fd10ad732727edb743524de229c70cc90ef81ffc594
 download_and_verify https://github.com/frankosterfeld/qtkeychain/archive/v0.11.1.tar.gz 77fc6841c1743d9e6bd499989481cd9239c21bc9bf0760d41a4f4068d2f0a49d qtkeychain-0.11.1.tar.gz
