@@ -1,0 +1,34 @@
+name: Build
+
+on: [pull_request, push]
+
+jobs:
+  build-windows:
+    name: Windows
+    runs-on: windows-2019
+    steps:
+    - name: checkout Git repository
+      uses: actions/checkout@v2
+    - name: build
+      shell: cmd
+      run: |
+        set PATH=%CD%\bin;%PATH%
+
+        call build_environment.bat x64 release-fastbuild
+      
+        git rev-parse --short HEAD > current-sha.txt
+        set /p SHA=<current-sha.txt
+        del current-sha.txt
+        
+        set MINIMAL_PATH=2.3-%SHA%
+        
+        call export_minimal_environment.bat . %MINIMAL_PATH%
+
+        7za a %MINIMAL_PATH%.zip %MINIMAL_PATH%
+    - name: upload build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Windows build environment
+        path: .\*.zip
+
+        

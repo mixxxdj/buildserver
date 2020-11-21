@@ -27,7 +27,7 @@ rem ====== Edit to suit your environment =========
 SET VCVERSION=141
 SET PLATFORM_TOOLSET=v%VCVERSION%
 REM The Windows SDK version in use.
-SET WINDOWS_TARGET_PLATFORM_VERSION=10.0.17134.0
+SET WINDOWS_TARGET_PLATFORM_VERSION=16.4.29409.204
 
 REM Allow overriding MSSDKS_PATH from outside this script.
 IF "%MSSDKS_PATH%" == "" (
@@ -36,7 +36,7 @@ IF "%MSSDKS_PATH%" == "" (
 
 REM Allow overriding MSVC_PATH from outside this script.
 IF "%MSVC_PATH%" == "" (
-  SET "MSVC_PATH=%PROGRAMFILES_PATH%\Microsoft Visual Studio\2017\Community\VC"
+  SET "MSVC_PATH=C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise"
 )
 
 REM Allow overriding BUILDTOOLS_PATH from outside this script.
@@ -51,7 +51,7 @@ if "%CMAKEDIR%" == "" (
 
 REM Verify paths.
 IF EXIST "%MSVC_PATH%" (
-echo Using Visual Studio 2017 Community Edition to build.
+echo Using Visual Studio 2019 Enterprise Edition to build.
 SET "BUILDTOOLS_PATH=%MSVC_PATH%"
 SET BUILDTOOLS_SCRIPT=Auxiliary\Build\vcvarsall.bat
 
@@ -67,7 +67,7 @@ rem )
 
 ) ELSE (
 IF EXIST "%BUILDTOOLS_PATH%" (
-echo Using Visual Studio 2017 Build Tools to build.
+echo Using Visual Studio 2019 Build Tools to build.
 SET BUILDTOOLS_SCRIPT=Auxiliary\Build\vcvarsall.bat
 
 SET COMPILER_X86=amd64_x86
@@ -235,7 +235,7 @@ rem RuntimeLibrary: Over-ride the runtime library with this value.
 rem WindowsTargetPlatformVersion: Over-ride the target platform version wih this value. Without this flag, the 
 rem default SDK version is used by VS solutions that do not specify an SDK version explicitly, and this is potentially
 rem not the installed SDK version.
-SET MSBUILD=msbuild /nologo /m /p:PlatformToolset=%PLATFORM_TOOLSET% /p:RuntimeLibrary=%RUNTIME_FLAG% /p:WindowsTargetPlatformVersion=%WINDOWS_TARGET_PLATFORM_VERSION%
+SET MSBUILD="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild" /nologo /m /p:PlatformToolset=%PLATFORM_TOOLSET% /p:RuntimeLibrary=%RUNTIME_FLAG% /p:WindowsTargetPlatformVersion=%WINDOWS_TARGET_PLATFORM_VERSION%
 
 
 if %CONFIG_RELEASE% (
