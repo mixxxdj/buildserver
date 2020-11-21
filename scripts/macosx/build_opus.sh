@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export OPUS_VERSION_NUMBER=1.1.2
+export OPUS_VERSION_NUMBER=1.3.1
 export OPUS_VERSION=opus-${OPUS_VERSION_NUMBER}
 export OPUS_ARCHIVE=$OPUS_VERSION.tar.gz
 
@@ -53,7 +53,7 @@ lipo -create ./$OPUS_STATICLIB ${OTHER_OPUS_STATICLIBS[@]} -output ./$OPUS_STATI
 make install
 cd ..
 
-export OPUSFILE_VERSION_NUMBER=0.7
+export OPUSFILE_VERSION_NUMBER=0.12
 export OPUSFILE_VERSION=opusfile-${OPUSFILE_VERSION_NUMBER}
 export OPUSFILE_ARCHIVE=$OPUSFILE_VERSION.tar.gz
 

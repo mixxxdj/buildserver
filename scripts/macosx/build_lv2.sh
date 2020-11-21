@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.14.0
+export VERSION_NUMBER=1.18.0
 export VERSION=lv2-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.bz2
 

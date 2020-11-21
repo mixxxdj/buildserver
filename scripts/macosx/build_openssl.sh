@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=1.0.2h
+export VERSION_NUMBER=1.0.2u
 export VERSION=openssl-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 

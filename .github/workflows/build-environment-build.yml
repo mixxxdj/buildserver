@@ -1,0 +1,67 @@
+name: Build
+
+on: [pull_request, push]
+
+jobs:
+  build-mac:
+    name: macOS
+    runs-on: macos-10.15
+    env:
+      DEPENDENCY_CACHE: /Users/runner/dependencies
+    steps:
+    - name: checkout Git repository
+      uses: actions/checkout@v2
+    - name: dependency cache
+      uses: actions/cache@v2
+      env:
+        cache-name: dependencies
+      with:
+        path: ${{ env.DEPENDENCY_CACHE }}
+        key: ${{ env.cache-name }}-${{ runner.os}}-${{ hashFiles('download_dependencies.sh') }}
+        restore-keys: |
+          ${{ env.cache-name }}-${{ runner.os }}
+    - name: ccache
+      uses: actions/cache@v2
+      env:
+        cache-name: ccache
+      with:
+        path: /Users/runner/Library/Caches/ccache
+        key: ${{ env.cache-name }}-${{ runner.os }}-${{ github.head_ref }}-${{ github.run_number }}
+        restore-keys: |
+          ${{ env.cache-name }}-${{ runner.os }}-${{ github.head_ref }}
+          ${{ env.cache-name }}-${{ runner.os }}
+    - name: build
+      env:
+        # 10.12 is the minimum macOS version for Qt 5.12
+        MACOSX_DEPLOYMENT_TARGET: 10.12
+        BRANCH_NAME: 2.3
+        ARCHITECTURE: x86_64
+      run: |
+        # Quit on errors. 
+        # See also:
+        # - http://mywiki.wooledge.org/BashFAQ/105
+        # - https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+        set -e -o pipefail
+        # Local echo.
+        set -x
+
+        # remove last number (patch number) from version number because Qt's configure script doesn't work with it
+        if [[ $(xcrun --show-sdk-version) =~ ([0-9]*\.[0-9]*)(.[0-9]*)? ]]; then
+          export MACOSX_SDK=${BASH_REMATCH[1]}
+        else
+          echo "macOS SDK version did not match expected format"
+          exit
+        fi
+        SHA=`git rev-parse --short HEAD`
+        ENVIRONMENT_NAME=${BRANCH_NAME}-${SHA}-sdk${MACOSX_SDK}-macosminimum${MACOSX_DEPLOYMENT_TARGET}-${ARCHITECTURE}
+
+        mkdir -p environment/${ENVIRONMENT_NAME}
+
+        scripts/macosx/download_dependencies.sh ${DEPENDENCY_CACHE}
+        scripts/macosx/build_environment.sh --macosx-sdk ${MACOSX_SDK} --dependency-cache ${DEPENDENCY_CACHE} --name ${ENVIRONMENT_NAME} --macosx-stdlib libc++ --enable-x86-64 2>&1 | tee environment/${ENVIRONMENT_NAME}/build_environment.log
+        tar -C environment -czf ${ENVIRONMENT_NAME}.tar.gz ${ENVIRONMENT_NAME}
+    - name: upload macOS build environment artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: macOS-build-environment
+        path: ./*.tar.gz

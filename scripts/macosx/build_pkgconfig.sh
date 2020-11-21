@@ -11,7 +11,7 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=0.29.1
+export VERSION_NUMBER=0.29.2
 export VERSION=pkg-config-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.gz
 

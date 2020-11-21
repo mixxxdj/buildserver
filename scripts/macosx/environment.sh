@@ -19,15 +19,15 @@ else
 fi
 
 export XCODE_ROOT=$(xcode-select -print-path)
-export CC="${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
-export CXX="${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++"
+export CC="$MIXXX_PREFIX/bin/ccache ${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+export CXX="$MIXXX_PREFIX/bin/ccache ${XCODE_ROOT}/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++"
 export CPP="$CC -E"
 export CXXCPP="$CXX -E"
 
-export OSX_SDK=$(xcrun --sdk macosx${MIXXX_MACOSX_SDK} --show-sdk-path)
+export SDKROOT=$(xcrun --sdk macosx${MIXXX_MACSDKROOT} --show-sdk-path)
 
-if [[ ! -d $OSX_SDK ]]; then
-    echo "WARNING: SDK path does not exist: $OSX_SDK"
+if [[ ! -d $SDKROOT ]]; then
+    echo "WARNING: SDK path does not exist: $SDKROOT"
     exit 1;
 fi
 
@@ -36,7 +36,7 @@ if [[ ! -d $MIXXX_PREFIX ]]; then
     exit 1;
 fi
 
-export PATH=$PATH:$MIXXX_PREFIX/bin/
+export PATH=$MIXXX_PREFIX/bin/:$PATH
 
 if [[ "$DISABLE_FFAST_MATH" == "yes" ]]; then
     export COMMON_OPT_FLAGS="-O2"
@@ -49,8 +49,8 @@ export I386_OPT_FLAGS="-mmmx -msse -msse2 -msse3 -mfpmath=sse -march=prescott -m
 export X86_64_OPT_FLAGS="-mmmx -msse -msse2 -msse3 -mfpmath=sse -mtune=generic"
 export POWERPC_OPT_FLAGS=""
 
-export OSX_CFLAGS="-isysroot $OSX_SDK -mmacosx-version-min=$MIXXX_MACOSX_TARGET -stdlib=$MIXXX_MACOSX_STDLIB $ARCH_FLAGS $COMMON_OPT_FLAGS -I$MIXXX_PREFIX/include"
-export OSX_LDFLAGS="-isysroot $OSX_SDK -Wl,-syslibroot,$OSX_SDK -mmacosx-version-min=$MIXXX_MACOSX_TARGET -stdlib=$MIXXX_MACOSX_STDLIB $ARCH_FLAGS $COMMON_OPT_FLAGS -L$MIXXX_PREFIX/lib"
+export OSX_CFLAGS="-isysroot $SDKROOT -mmacosx-version-min=$MIXXX_MACOSX_TARGET -stdlib=$MIXXX_MACOSX_STDLIB $ARCH_FLAGS $COMMON_OPT_FLAGS -I$MIXXX_PREFIX/include"
+export OSX_LDFLAGS="-isysroot $SDKROOT -Wl,-syslibroot,$SDKROOT -mmacosx-version-min=$MIXXX_MACOSX_TARGET -stdlib=$MIXXX_MACOSX_STDLIB $ARCH_FLAGS $COMMON_OPT_FLAGS -L$MIXXX_PREFIX/lib"
 
 if [[ "$1" == "i386" ]]; then
   echo "Setting options for $1";

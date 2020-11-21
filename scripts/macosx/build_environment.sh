@@ -13,10 +13,11 @@ usage() { echo "Usage: $0 --name <name> [--dependency-cache <path>] [--macosx-sd
 MIXXX_ENVIRONMENT_NAME=""
 # Use the default installed macOS SDK, allowing override via commandline flag.
 MIXXX_MACOSX_SDK=$(xcodebuild -version -sdk macosx SDKVersion)
-# Qt 5.11 requires a minimum of macOS 10.11.
-MIXXX_MACOSX_TARGET='10.11'
+# Qt 5.12 requires a minimum of macOS 10.12.
+# https://doc.qt.io/qt-5.12/supported-platforms.html
+MIXXX_MACOSX_TARGET='10.12'
 MIXXX_MACOSX_STDLIB='libc++'
-MIXXX_QT_VERSION='5.14.2'
+MIXXX_QT_VERSION='5.12.10'
 ENABLE_I386=false
 ENABLE_X86_64=false
 ENABLE_PPC=false
@@ -104,6 +105,8 @@ export HOST_ARCH=x86_64
 
 # Setup build systems first so that we can build other projects that use them.
 $PROGDIR/build_cmake.sh
+$PROGDIR/build_zstd.sh
+$PROGDIR/build_ccache.sh # depends on zstd
 $PROGDIR/build_scons.sh
 $PROGDIR/build_autoconf.sh
 $PROGDIR/build_automake.sh

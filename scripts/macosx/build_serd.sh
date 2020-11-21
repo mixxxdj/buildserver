@@ -11,14 +11,14 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=0.28.0
+export VERSION_NUMBER=0.30.4
 export VERSION=serd-${VERSION_NUMBER}
 export ARCHIVE=$VERSION.tar.bz2
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
 # You may need to change these from version to version.
-export DYLIB=build/libserd-0.0.28.0.dylib
+export DYLIB=build/libserd-0.${VERSION_NUMBER}.dylib
 export STATICLIB=build/libserd-0.a
 
 for ARCH in ${MIXXX_ARCHS[@]}

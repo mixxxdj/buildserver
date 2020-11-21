@@ -53,10 +53,10 @@ export CXXCPP="$CXX -E"
 
 # Qt embeds various OSX platform selections in its makefiles and configure
 # scripts. Fix them to use $MIXXX_MACOSX_TARGET.
-sed -e "s/MACOSX_DEPLOYMENT_TARGET = 10.5/MACOSX_DEPLOYMENT_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' configure
-sed -e "s/MACOSX_DEPLOYMENT_TARGET 10.[45]/MACOSX_DEPLOYMENT_TARGET $MIXXX_MACOSX_TARGET/g" -i '' configure
+sed -e "s/MIXXX_MACOSX_TARGET = 10.5/MIXXX_MACOSX_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' configure
+sed -e "s/MIXXX_MACOSX_TARGET 10.[45]/MIXXX_MACOSX_TARGET $MIXXX_MACOSX_TARGET/g" -i '' configure
 sed -e "s/-mmacosx-version-min=10.[45]/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g" -i '' configure
-sed -e "s/QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4/QMAKE_MACOSX_DEPLOYMENT_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/mac.conf
+sed -e "s/QMAKE_MIXXX_MACOSX_TARGET = 10.4/QMAKE_MIXXX_MACOSX_TARGET = $MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/mac.conf
 sed -e "s/-mmacosx-version-min=10.5/-mmacosx-version-min=$MIXXX_MACOSX_TARGET/g" -i '' mkspecs/common/g++-macx.conf
 
 # Build issue with 10.11 SDK.
@@ -70,7 +70,7 @@ curl https://raw.githubusercontent.com/Homebrew/patches/480b7142c4e2ae07de6028f6
 # - http://www.mimec.org/node/296
 # NOTE(rryan): Setting -system-sqlite sets -system-zlib. Set -qt-zlib explicitly.
 export OPENSSL_LIBS="-L${MIXXX_PREFIX}/lib -lssl -lcrypto"
-./configure -opensource -prefix ${QTDIR} ${QT_ARCHS[@]} -sdk $OSX_SDK -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -no-qt3support -release -nomake examples -nomake demos -confirm-license -openssl -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib
+./configure -opensource -prefix ${QTDIR} ${QT_ARCHS[@]} -sdk $SDKROOT -system-sqlite -qt-sql-sqlite -qt-zlib -no-phonon -no-webkit -no-qt3support -release -nomake examples -nomake demos -confirm-license -openssl -I${MIXXX_PREFIX}/include -L${MIXXX_PREFIX}/lib
 
 make && make install
 
