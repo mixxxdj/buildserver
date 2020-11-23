@@ -60,8 +60,16 @@ jobs:
         scripts/macosx/download_dependencies.sh ${DEPENDENCY_CACHE}
         scripts/macosx/build_environment.sh --macosx-sdk ${MACOSX_SDK} --dependency-cache ${DEPENDENCY_CACHE} --name ${ENVIRONMENT_NAME} --macosx-stdlib libc++ --enable-x86-64 2>&1 | tee environment/${ENVIRONMENT_NAME}/build_environment.log
         tar -C environment -czf ${ENVIRONMENT_NAME}.tar.gz ${ENVIRONMENT_NAME}
-    - name: upload macOS build environment artifact
+    - name: "upload macOS build environment as GitHub Actions artifact"
       uses: actions/upload-artifact@v2
       with:
         name: macOS-build-environment
         path: ./*.tar.gz
+    - name: "upload build environment to downloads.mixxx.org"
+      # skip deploying Ubuntu builds to downloads.mixxx.org because these are deployed to the PPA
+      if: env.DOWNLOADS_HOSTGATOR_DOT_MIXXX_DOT_ORG_KEY_PASSWORD != null
+      run: deploy.sh
+      env:
+        FILE_TO_DEPLOY: ./*.tar.gz
+        DOWNLOADS_HOSTGATOR_DOT_MIXXX_DOT_ORG_KEY_PASSWORD: ${{ secrets.DOWNLOADS_HOSTGATOR_DOT_MIXXX_DOT_ORG_KEY_PASSWORD }}
+        SSH_KEY: downloads-hostgator.mixxx.org.key
