@@ -11,9 +11,10 @@ pushd `dirname $0` > /dev/null
 PROGDIR=`pwd -P`
 popd > /dev/null
 
-export VERSION_NUMBER=20161030
-export VERSION=pa_stable_v190600_${VERSION_NUMBER}
-export ARCHIVE=$VERSION.tgz
+# export VERSION_NUMBER=20161030
+# export VERSION=pa_stable_v190600_${VERSION_NUMBER}
+export VERSION=f6cf12b7fffa66791194d7f368f220f81f9c1230
+# export ARCHIVE=$VERSION.tgz
 
 echo "Building $VERSION for $MIXXX_ENVIRONMENT_NAME for architectures: ${MIXXX_ARCHS[@]}"
 
@@ -23,9 +24,10 @@ export STATICLIB=lib/.libs/libportaudio.a
 
 for ARCH in ${MIXXX_ARCHS[@]}
 do
-  mkdir -p $VERSION-$ARCH
-  tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$ARCH --strip-components 1
-  cd $VERSION-$ARCH
+#   mkdir -p $VERSION-$ARCH
+#   tar -zxf $DEPENDENCIES/$ARCHIVE -C $VERSION-$ARCH --strip-components 1
+#   cd $VERSION-$ARCH
+  cd $DEPENDENCIES/portaudio
   source $PROGDIR/environment.sh $ARCH
 
   # As of the PA 2011/3/26 snapshot, a deprecated API function of CoreAudio is
@@ -37,12 +39,12 @@ do
   # Mac universal in this case includes ppc64 which we aren't supporting.
   ./configure --host $HOST --target $TARGET --prefix=$MIXXX_PREFIX --disable-mac-universal
   make
-  cd ..
+  cd $DEPENDENCIES
 done
 
 # Install the $HOST_ARCH version in case there are binaries we want to run.
 export ARCH=$HOST_ARCH
-cd $VERSION-$ARCH
+cd portaudio
 source $PROGDIR/environment.sh $ARCH
 
 OTHER_DYLIBS=()

@@ -46,7 +46,7 @@ jobs:
         set -x
 
         # remove last number (patch number) from version number because Qt's configure script doesn't work with it
-        if [[ $(xcrun --show-sdk-version) =~ ([0-9]*\.[0-9]*)(.[0-9]*)? ]]; then
+        if [[ "10.15" =~ ([0-9]*\.[0-9]*)(.[0-9]*)? ]]; then
           export MACOSX_SDK=${BASH_REMATCH[1]}
         else
           echo "macOS SDK version did not match expected format"

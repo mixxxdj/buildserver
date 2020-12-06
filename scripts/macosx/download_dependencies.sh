@@ -48,7 +48,15 @@ download_and_verify https://www.openssl.org/source/openssl-1.0.2u.tar.gz ecd0c6f
 download_and_verify http://downloads.xiph.org/releases/ogg/libogg-1.3.3.tar.xz 4f3fc6178a533d392064f14776b23c397ed4b9f48f5de297aba73b643f955c08
 download_and_verify https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.3.1.tar.gz 65b58e1e25b2a114157014736a3d9dfeaad8d41be1c8179866f144a2fb44ff9d
 download_and_verify https://ftp.osuosl.org/pub/xiph/releases/opus/opusfile-0.12.tar.gz 118d8601c12dd6a44f52423e68ca9083cc9f2bfe72da7a8c1acb22a80ae3550b
-download_and_verify http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513
+# download_and_verify http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513
+cd $DEPENDENCIES
+git init portaudio
+cd portaudio
+git remote add jmelas https://github.com/jmelas/portaudio.git
+git fetch --depth=1 jmelas f6cf12b7fffa66791194d7f368f220f81f9c1230
+git checkout f6cf12b7fffa66791194d7f368f220f81f9c1230
+cd ..
+
 download_and_verify http://downloads.sourceforge.net/project/portmedia/portmidi/217/portmidi-src-217.zip 08e9a892bd80bdb1115213fb72dc29a7bf2ff108b378180586aa65f3cfd42e0f
 download_and_verify https://github.com/google/protobuf/archive/v2.6.1.tar.gz 2667b7cda4a6bc8a09e5463adf3b5984e08d94e72338277affa8594d8b6e5cd1 protobuf-2.6.1.tar.gz
 #download_and_verify https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0
