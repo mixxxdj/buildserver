@@ -45,13 +45,7 @@ jobs:
         # Local echo.
         set -x
 
-        # remove last number (patch number) from version number because Qt's configure script doesn't work with it
-        if [[ $(xcrun --show-sdk-version) =~ ([0-9]*\.[0-9]*)(.[0-9]*)? ]]; then
-          export MACOSX_SDK=${BASH_REMATCH[1]}
-        else
-          echo "macOS SDK version did not match expected format"
-          exit
-        fi
+        MACOSX_SDK=10.13
         SHA=`git rev-parse --short HEAD`
         ENVIRONMENT_NAME=${BRANCH_NAME}-${SHA}-sdk${MACOSX_SDK}-macosminimum${MACOSX_DEPLOYMENT_TARGET}-${ARCHITECTURE}
 

@@ -24,7 +24,7 @@ export CXX="$MIXXX_PREFIX/bin/ccache ${XCODE_ROOT}/Toolchains/XcodeDefault.xctoo
 export CPP="$CC -E"
 export CXXCPP="$CXX -E"
 
-export SDKROOT=$(xcrun --sdk macosx${MIXXX_MACSDKROOT} --show-sdk-path)
+export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 
 if [[ ! -d $SDKROOT ]]; then
     echo "WARNING: SDK path does not exist: $SDKROOT"
