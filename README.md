@@ -12,7 +12,7 @@ workers as virtualized guests on that machine.
 * To setup the master environment, see [README.Master.md](README.Master.md).
 * To setup an Ubuntu builder, see [README.Ubuntu.worker.md](README.Ubuntu.worker.md).
 * To setup an OS X builder, see [README.macOS.worker.md](README.macOS.worker.md).
-* To setup a Windows builder, see the [`2.2.x-windows` branch](https://github.com/mixxxdj/buildserver/tree/2.2.x-windows/).
+* To setup a Windows builder, see the [`2.3.x-windows` branch](https://github.com/mixxxdj/buildserver/tree/2.3.x-windows/).
 
 Standalone Build Environment
 ============================
@@ -28,11 +28,11 @@ Pre-built Environments
 ======================
 
 Pre-built environments are available for Windows and macOS at:
-* [Windows 2.2.x pre-built environments](https://downloads.mixxx.org/builds/buildserver/2.2.x-windows/)
-* [macOS 2.2.x pre-built environments](https://downloads.mixxx.org/builds/buildserver/2.2.x-macosx/)
+* [Windows 2.3.x pre-built environments](https://downloads.mixxx.org/builds/buildserver/2.3.x-windows/?C=M;O=D)
+* [macOS 2.3.x pre-built environments](https://downloads.mixxx.org/builds/buildserver/2.3.x-unix/?C=M;O=D)
 
-To see which environment Mixxx 2.2.x builds are currently using, check
-[build/osx/golden_environment](https://github.com/mixxxdj/mixxx/tree/2.2/build/osx/golden_environment)
+To see which environment Mixxx 2.3.x builds are currently using, check
+[packaging/macos/build_environment](https://github.com/mixxxdj/mixxx/tree/2.3/packaging/macos/build_environment)
 and
-[build/windows/golden_environment](https://github.com/mixxxdj/mixxx/tree/2.2/build/osx/golden_environment)
+[packaging/windows/build_environment](https://github.com/mixxxdj/mixxx/tree/2.3/packaging/windows/build_environment)
 files in the Mixxx source tree.
