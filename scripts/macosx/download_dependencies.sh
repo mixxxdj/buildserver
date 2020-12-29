@@ -42,6 +42,8 @@ download_and_verify https://github.com/acoustid/chromaprint/releases/download/v1
 download_and_verify https://github.com/ccache/ccache/releases/download/v4.0/ccache-4.0.tar.gz ac97af86679028ebc8555c99318352588ff50f515fc3a7f8ed21a8ad367e3d45
 download_and_verify https://cmake.org/files/v3.18/cmake-3.18.4.tar.gz 597c61358e6a92ecbfad42a9b5321ddd801fc7e7eca08441307c9138382d4f77
 download_and_verify http://downloads.xiph.org/releases/flac/flac-1.3.3.tar.xz 213e82bd716c9de6db2f98bcadbc4c24c7e2efe8c75939a1a84e28539c4e1748
+download_and_verify http://fftw.org/fftw-3.3.9.tar.gz bf2c7ce40b04ae811af714deb512510cc2c17b9ab9d6ddcf49fe4487eea7af3d
+download_and_verify https://github.com/mixxxdj/libKeyFinder/archive/v2.2.3.tar.gz 6d8c1306ef9fa31f434ebb81ae2b9df62a001b234edbbf32a727109f8f251c3f libKeyFinder-2.2.3.tar.gz
 download_and_verify http://downloads.mixxx.org/hss1394-r8.tar.gz d5c87a92ad8e277b418300fbbfcc06a0826dfde71f7b10643ac59703d795c002
 download_and_verify https://github.com/libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.tar.bz2 db11c06e958a82dac52cf3c65cb4dd2c3f339c8a988665110e0d24d19312ad8d
 download_and_verify https://www.openssl.org/source/openssl-1.0.2u.tar.gz ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16

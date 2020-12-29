@@ -113,6 +113,8 @@ $PROGDIR/build_automake.sh
 $PROGDIR/build_libtool.sh
 $PROGDIR/build_pkgconfig.sh
 
+$PROGDIR/build_fftw.sh
+$PROGDIR/build_libkeyfinder.sh # depends on fftw
 $PROGDIR/build_chromaprint.sh
 $PROGDIR/build_flac.sh
 $PROGDIR/build_hss1394.sh
