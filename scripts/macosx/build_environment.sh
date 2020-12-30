@@ -17,7 +17,7 @@ MIXXX_MACOSX_SDK=$(xcodebuild -version -sdk macosx SDKVersion)
 # https://doc.qt.io/qt-5.12/supported-platforms.html
 MIXXX_MACOSX_TARGET='10.12'
 MIXXX_MACOSX_STDLIB='libc++'
-MIXXX_QT_VERSION='5.12.10'
+MIXXX_QT_VERSION='5.12.3'
 ENABLE_I386=false
 ENABLE_X86_64=false
 ENABLE_PPC=false

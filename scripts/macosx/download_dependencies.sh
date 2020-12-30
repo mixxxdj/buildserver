@@ -54,7 +54,7 @@ download_and_verify http://www.portaudio.com/archives/pa_stable_v190600_20161030
 download_and_verify http://downloads.sourceforge.net/project/portmedia/portmidi/217/portmidi-src-217.zip 08e9a892bd80bdb1115213fb72dc29a7bf2ff108b378180586aa65f3cfd42e0f
 download_and_verify https://github.com/google/protobuf/archive/v2.6.1.tar.gz 2667b7cda4a6bc8a09e5463adf3b5984e08d94e72338277affa8594d8b6e5cd1 protobuf-2.6.1.tar.gz
 #download_and_verify https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0
-download_and_verify https://download.qt.io/archive/qt/5.12/5.12.10/single/qt-everywhere-src-5.12.10.tar.xz 3e0ee1e57f5cf3eeb038d0b4b22c7eb442285c62639290756b39dc93a1d0e14f
+download_and_verify https://download.qt.io/official_releases/qt/5.12/5.12.3/single/qt-everywhere-src-5.12.3.tar.xz 6462ac74c00ff466487d8ef8d0922971aa5b1d5b33c0753308ec9d57711f5a42
 download_and_verify https://breakfastquay.com/files/releases/rubberband-1.9.0.tar.bz2 4f5b9509364ea876b4052fc390c079a3ad4ab63a2683aad09662fb905c2dc026
 download_and_verify http://downloads.xiph.org/releases/libshout/libshout-2.4.4.tar.gz 8ce90c5d05e7ad1da4c12f185837e8a867c22df2d557b0125afaba4b1438e6c3
 download_and_verify https://downloads.sourceforge.net/project/libshoutidjc.idjc.p/libshout-idjc-2.4.1.tar.gz 4751c75fc85fc5d10e5b03753b046bcdee39576278bf30565c751816a87facdf
