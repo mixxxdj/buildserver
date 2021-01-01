@@ -20,9 +20,9 @@ Standalone Build Environment
 If you're looking to build Mixxx on your own computer, you don't need this
 repository. You can follow instructions on our wiki for each platform:
 
-* [Compiling on Linux](http://www.mixxx.org/wiki/doku.php/compiling_on_linux)
-* [Compiling on Mac OS X](http://www.mixxx.org/wiki/doku.php/compiling_on_os_x)
-* [Compiling on Windows](http://www.mixxx.org/wiki/doku.php/compiling_on_windows)
+* [Compiling on Linux](https://github.com/mixxxdj/mixxx/wiki/compiling-on-linux)
+* [Compiling on Mac OS X](https://github.com/mixxxdj/mixxx/wiki/Compiling-on-macOS)
+* [Compiling on Windows](https://github.com/mixxxdj/mixxx/wiki/compiling-on-windows)
 
 Pre-built Environments
 ======================
