@@ -41,6 +41,7 @@ download_and_verify https://pkg-config.freedesktop.org/releases/pkg-config-0.29.
 download_and_verify https://github.com/acoustid/chromaprint/releases/download/v1.5.0/chromaprint-1.5.0.tar.gz 573a5400e635b3823fc2394cfa7a217fbb46e8e50ecebd4a61991451a8af766a
 download_and_verify https://github.com/ccache/ccache/releases/download/v4.0/ccache-4.0.tar.gz ac97af86679028ebc8555c99318352588ff50f515fc3a7f8ed21a8ad367e3d45
 download_and_verify https://cmake.org/files/v3.19/cmake-3.19.2.tar.gz e3e0fd3b23b7fb13e1a856581078e0776ffa2df4e9d3164039c36d3315e0c7f0
+download_and_verify https://github.com/jiixyj/libebur128/archive/refs/tags/v1.2.6.tar.gz baa7fc293a3d4651e244d8022ad03ab797ca3c2ad8442c43199afe8059faa613 libebur128-1.2.6.tar.gz
 download_and_verify http://downloads.xiph.org/releases/flac/flac-1.3.3.tar.xz 213e82bd716c9de6db2f98bcadbc4c24c7e2efe8c75939a1a84e28539c4e1748
 download_and_verify http://fftw.org/fftw-3.3.9.tar.gz bf2c7ce40b04ae811af714deb512510cc2c17b9ab9d6ddcf49fe4487eea7af3d
 download_and_verify https://github.com/mixxxdj/libKeyFinder/archive/v2.2.3.tar.gz 6d8c1306ef9fa31f434ebb81ae2b9df62a001b234edbbf32a727109f8f251c3f libKeyFinder-2.2.3.tar.gz
