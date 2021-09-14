@@ -1,5 +1,12 @@
-This repository contains instructions and script files for producing a Mixxx
-build server.
+DEPRECATED
+==========
+
+This repository contains instructions and script files for building Mixxx's
+dependencies and producing a Mixxx build server. This was used for Mixxx =< 2.3.
+Mixxx's dependencies are now built with vcpkg from our
+[vcpkg repository](https://github.com/mixxxdj/vcpkg) (vcpkg was first used for
+Mixxx 2.3 on Windows, but Mixxx 2.3 still used the scripts in this repository
+for macOS).
 
 Build Server Architecture
 =========================
